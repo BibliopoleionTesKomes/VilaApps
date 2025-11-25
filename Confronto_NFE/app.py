@@ -188,7 +188,7 @@ def tarefa_processamento_background(modulo):
             itens = df_itens_erp[df_itens_erp['Numero_Pedido_Chave'] == ped]
             if not itens.empty: nota['Itens_ERP'] = itens.to_dict('records')
         
-        # Calcula divergência com a nova lógica de Valor Unitário
+        # Calcula divergência com a nova lógica de Valor Unitário.
         nota['Divergencia_Resumo'] = gerar_resumo_divergencia(nota)
 
         if 'Valor_Total' in nota: nota['Valor_Total'] = formatar_moeda(nota['Valor_Total'])
