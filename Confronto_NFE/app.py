@@ -281,7 +281,7 @@ def devolucao():
     dados, ts = ler_cache(CACHE_DEVOLUCAO)
     return render_template('devolucao.html', dados=dados, ultima_atualizacao=ts)
 
-# --- APIs ---
+# --- APIs de rotas---
 
 @app.route('/api/dados_fornecedor')
 def api_dados_fornecedor():
