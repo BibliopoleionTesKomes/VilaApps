@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe versao="4.00" Id="NFe35251135288052000190550010000097001710339072">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>71033907</cNF>
+        <natOp>(B) Acerto de Consignação (EdLab Press) CFOP: 5113/6113</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>9700</nNF>
+        <dhEmi>2025-11-13T10:04:04-03:00</dhEmi>
+        <dhSaiEnt>2025-11-13T10:04:04-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3550308</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>2</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>0</indPres>
+        <procEmi>0</procEmi>
+        <verProc>0.1.0</verProc>
+      </ide>
+      <emit>
+        <CNPJ>35288052000190</CNPJ>
+        <xNome>EdLab Press</xNome>
+        <xFant>EdLab Press</xFant>
+        <enderEmit>
+          <xLgr>Rua Milton Ribeiro</xLgr>
+          <nro>79</nro>
+          <xCpl>Sala 2</xCpl>
+          <xBairro>Vila Guilherme</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>São Paulo</xMun>
+          <UF>SP</UF>
+          <CEP>02055060</CEP>
+          <cPais>1058</cPais>
+          <xPais>Brasil</xPais>
+        </enderEmit>
+        <IE>126988937117</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962000100</CNPJ>
+        <xNome>Livraria da Vila Fradique</xNome>
+        <enderDest>
+          <xLgr>Rua Fradique Coutinho</xLgr>
+          <nro>915</nro>
+          <xBairro>Vila Madalena</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>São Paulo</xMun>
+          <UF>SP</UF>
+          <CEP>05416011</CEP>
+          <fone>551138145811</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>111092339110</IE>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>9786586974133</cProd>
+          <cEAN>9786586974133</cEAN>
+          <xProd>[9786586974133] O que exatamente voces fazem, quando fazem ou esperam fazer curadoria? (Yuri Firmeza</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5113</CFOP>
+          <uCom>UN</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>50.90</vUnCom>
+          <vProd>50.90</vProd>
+          <cEANTrib>9786586974133</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>50.90</vUnTrib>
+          <vDesc>25.45</vDesc>
+          <indTot>1</indTot>
+          <xPed>acerto 938403</xPed>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>9786589705390</cProd>
+          <cEAN>9786589705390</cEAN>
+          <xProd>[9786589705390] As Big Techs e a Guerra Total (Sérgio Amadeu da Silveira. Editora Hedra) [SOC000000]</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5113</CFOP>
+          <uCom>UN</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>49.00</vUnCom>
+          <vProd>49.00</vProd>
+          <cEANTrib>9786589705390</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>49.00</vUnTrib>
+          <vDesc>24.50</vDesc>
+          <indTot>1</indTot>
+          <xPed>acerto 938403</xPed>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="3">
+        <prod>
+          <cProd>9786589705055</cProd>
+          <cEAN>9786589705055</cEAN>
+          <xProd>[9786589705055] Hino a Afrodite e outros poemas (Bilíngue) (Safo de Lesbos; Giuliana Ragusa. Editora</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5113</CFOP>
+          <uCom>UN</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>64.00</vUnCom>
+          <vProd>64.00</vProd>
+          <cEANTrib>9786589705055</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>64.00</vUnTrib>
+          <vDesc>32.00</vDesc>
+          <indTot>1</indTot>
+          <xPed>acerto 938403</xPed>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="4">
+        <prod>
+          <cProd>9788577156276</cProd>
+          <cEAN>9788577156276</cEAN>
+          <xProd>[9788577156276] O contador de histórias (Walter Benjamin; Patrícia Lavelle; Georg Otte; Marcelo Bac</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5113</CFOP>
+          <uCom>UN</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>99.90</vUnCom>
+          <vProd>99.90</vProd>
+          <cEANTrib>9788577156276</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>99.90</vUnTrib>
+          <vDesc>49.95</vDesc>
+          <indTot>1</indTot>
+          <xPed>acerto 938403</xPed>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0</vBC>
+          <vICMS>0</vICMS>
+          <vICMSDeson>0</vICMSDeson>
+          <vFCP>0</vFCP>
+          <vBCST>0</vBCST>
+          <vST>0</vST>
+          <vFCPST>0</vFCPST>
+          <vFCPSTRet>0</vFCPSTRet>
+          <vProd>263.80</vProd>
+          <vFrete>0</vFrete>
+          <vSeg>0</vSeg>
+          <vDesc>131.90</vDesc>
+          <vII>0</vII>
+          <vIPI>0</vIPI>
+          <vIPIDevol>0</vIPIDevol>
+          <vPIS>0</vPIS>
+          <vCOFINS>0</vCOFINS>
+          <vOutro>0</vOutro>
+          <vNF>131.90</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>9</modFrete>
+      </transp>
+      <cobr>
+        <fat>
+          <nFat>11211</nFat>
+          <vOrig>131.90</vOrig>
+          <vDesc>0</vDesc>
+          <vLiq>131.90</vLiq>
+        </fat>
+        <dup>
+          <nDup>001</nDup>
+          <dVenc>2026-01-11</dVenc>
+          <vDup>131.90</vDup>
+        </dup>
+      </cobr>
+      <pag>
+        <detPag>
+          <tPag>14</tPag>
+          <vPag>131.90</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>Ordem de Compra: acerto 938403\nInformações Adicionais: \nObservações:</infCpl>
+      </infAdic>
+      <infRespTec>
+        <CNPJ>35288052000190</CNPJ>
+        <xContato>EdLab Press</xContato>
+        <email>comercial@edlab.press</email>
+        <fone>1130978304</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251135288052000190550010000097001710339072">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>73AEysaOsnEDQqwbDV3dUtix+Ag=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>QAHYdkBu5VNSJ2+43J3wHrGuE+LnCHtl4pTGITbFoDg9oXhUdnE/ca0amm42k1ICPFIz9y0T+T/6
+7ZF2Rc1aJ10zd03y9ToVT8MRwv/x+wFjr8dZofncitFce8EQ2Z6QO90V31VkgknvmsCRWfZoEBII
+HpwOcknYNgruThNy71cOmv24uX5FHVY96MEEI5jNEgPFTehWsYAqsmPiJECzphxZuu9Wbi7k5kIT
+/xmZR6cpcnw4QfVrtxjipjCTIAJwlxCYw3cAQPp2hED96qvL46unpfwajal9d6vmVsvRn48EWLas
+6CSJ15A/e6nWQ1u4N7KKrGa5FgtpXYOIYIyz2w==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>MIIH/jCCBeagAwIBAgIQe1LtH8m9D3N2MA226znmzjANBgkqhkiG9w0BAQsFADB4MQswCQYDVQQG
+EwJCUjETMBEGA1UEChMKSUNQLUJyYXNpbDE2MDQGA1UECxMtU2VjcmV0YXJpYSBkYSBSZWNlaXRh
+IEZlZGVyYWwgZG8gQnJhc2lsIC0gUkZCMRwwGgYDVQQDExNBQyBDZXJ0aXNpZ24gUkZCIEc1MB4X
+DTI0MTEyMTIxNDEyOVoXDTI1MTEyMTIxNDEyOVowgfkxCzAJBgNVBAYTAkJSMRMwEQYDVQQKDApJ
+Q1AtQnJhc2lsMQswCQYDVQQIDAJTUDESMBAGA1UEBwwJU2FvIFBhdWxvMRkwFwYDVQQLDBBWaWRl
+b0NvbmZlcmVuY2lhMRcwFQYDVQQLDA4zMTUyMjAwNTAwMDEwODE2MDQGA1UECwwtU2VjcmV0YXJp
+YSBkYSBSZWNlaXRhIEZlZGVyYWwgZG8gQnJhc2lsIC0gUkZCMRYwFAYDVQQLDA1SRkIgZS1DTlBK
+IEExMTAwLgYDVQQDDCdFRExBQiBQUkVTUyBFRElUT1JBIExUREE6MzUyODgwNTIwMDAxOTAwggEi
+MA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDQ4Y0mskqUnMlurGkSpWe+MdpFFHZGVrdsyr12
+NEXg/+54TIa6vxtQIoAXKgbCR5vVhqvKNNrchNk7NPyEO+YcZYR9f2CZ2PGXBnvMeddWa841AgXL
+V2KktvpPVsvlfRdSiwF90VpyQyEqmx8GA6EwotyAd/APSt0xlA2Hc1puqeL7vBXYvjZaKVaD1+C7
+w0y0mSBATYOQMVgYCRjY4k6pGDhGBIZJrEBZLdt2i1+5k9Ymg+kSb41IAxQcyWkRvJ3I6sZFgp1T
+dIBUHFVgMuTTQLYVvlGhwYsDpGn8AQihdQeZdoyrcqaI1416Tuj7dREd4Wkfi27Tu3bFNXj6HwjD
+AgMBAAGjggMAMIIC/DCBrwYDVR0RBIGnMIGkoDgGBWBMAQMEoC8ELTA3MDgxOTg2MzYwMDYxNDI4
+MjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMKAfBgVgTAEDAqAWBBRGRUxJUEUgUkFNT1MgTVVT
+RVRUSaAZBgVgTAEDA6AQBA4zNTI4ODA1MjAwMDE5MKAXBgVgTAEDB6AOBAwwMDAwMDAwMDAwMDCB
+E2ZlbGlwZUBoZWRyYS5jb20uYnIwCQYDVR0TBAIwADAfBgNVHSMEGDAWgBRTfX+dvtFh0CC62p/j
+iacTc1jNQjB/BgNVHSAEeDB2MHQGBmBMAQIBDDBqMGgGCCsGAQUFBwIBFlxodHRwOi8vaWNwLWJy
+YXNpbC5jZXJ0aXNpZ24uY29tLmJyL3JlcG9zaXRvcmlvL2RwYy9BQ19DZXJ0aXNpZ25fUkZCL0RQ
+Q19BQ19DZXJ0aXNpZ25fUkZCLnBkZjCBvAYDVR0fBIG0MIGxMFegVaBThlFodHRwOi8vaWNwLWJy
+YXNpbC5jZXJ0aXNpZ24uY29tLmJyL3JlcG9zaXRvcmlvL2xjci9BQ0NlcnRpc2lnblJGQkc1L0xh
+dGVzdENSTC5jcmwwVqBUoFKGUGh0dHA6Ly9pY3AtYnJhc2lsLm91dHJhbGNyLmNvbS5ici9yZXBv
+c2l0b3Jpby9sY3IvQUNDZXJ0aXNpZ25SRkJHNS9MYXRlc3RDUkwuY3JsMA4GA1UdDwEB/wQEAwIF
+4DAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwQwgawGCCsGAQUFBwEBBIGfMIGcMF8GCCsG
+AQUFBzAChlNodHRwOi8vaWNwLWJyYXNpbC5jZXJ0aXNpZ24uY29tLmJyL3JlcG9zaXRvcmlvL2Nl
+cnRpZmljYWRvcy9BQ19DZXJ0aXNpZ25fUkZCX0c1LnA3YzA5BggrBgEFBQcwAYYtaHR0cDovL29j
+c3AtYWMtY2VydGlzaWduLXJmYi5jZXJ0aXNpZ24uY29tLmJyMA0GCSqGSIb3DQEBCwUAA4ICAQBB
+yGXmAgQO2C/pR2/DRL+HU3lXd7r7cKf33d8BR9uOHW7IkVDfEnEUjP/CX83JpAdsX8SX7+XM1tXE
+r8s50oLqfswn8ymas41STjIno3DEODrY+MDcd0I2DoHAtU/Qdd9pxeRTLFS1JvMmX5JiXVjrUh9r
+04HVcd8syy++ISbnDDo2PY5+/o7+aGrNbXbkyhLl+1PtNW8VgPBppMGr1w4MKkQnOu2kc6YWe8m8
+g4AX139HCTv378FWwK9nkPH8p6DnmmkN+qPltY+JCbPDKC1v2KMgpOvjD7jHgqQOh1lmOj2cEGrj
+M9UjUhIPxzSwtPFZBzqGOdZhQW5kMiVBg9aMhap0vBzI+XhGPVyjNEjQbnVhxFB5mSY2TjdOb2VP
+a7cmNmtQR5dUVvisXfgvNDZmJM733AagHEZ0ojD2a1fOKjUrfofzQcE7v/U/up7dcOIhdkJjTLFk
+OnR7jN7MOvZvQcJQoGejLk+UFein7w7q5jFO7DBKw3NiOQjF7sDolfiHtWlTywiQA2gsrcExOq9i
+xFGpTC77kid7CZ/Uwr6FZ0Wy6vnIxzDnkuoZCoNxDQlLOvmKQnHDavY9X91himC6Klcwyb9enTI4
+LGm0pNaG1rgEFjd7F07MXBWwSv0mWT/8TQuqBk/wWsIa2N29Rr2JVUgRvAaqUlglGbeAHzEh6g==</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt>
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251135288052000190550010000097001710339072</chNFe>
+      <dhRecbto>2025-11-13T10:04:34-03:00</dhRecbto>
+      <nProt>135253472143035</nProt>
+      <digVal>73AEysaOsnEDQqwbDV3dUtix+Ag=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

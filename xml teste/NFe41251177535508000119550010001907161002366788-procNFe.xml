@@ -1,0 +1,197 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe41251177535508000119550010001907161002366788" versao="4.00">
+      <ide>
+        <cUF>41</cUF>
+        <cNF>00236678</cNF>
+        <natOp>REMESSA DE MERC. EM CONSIGNACAO - F.ESTADO</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>190716</nNF>
+        <dhEmi>2025-11-19T00:00:00-03:00</dhEmi>
+        <dhSaiEnt>2025-11-19T09:32:00-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>2</idDest>
+        <cMunFG>4106902</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>8</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>9</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>DauerAdm 2.0</verProc>
+      </ide>
+      <emit>
+        <CNPJ>77535508000119</CNPJ>
+        <xNome>JURUA EDITORA LTDA</xNome>
+        <xFant>Jurua Editora</xFant>
+        <enderEmit>
+          <xLgr>Rua Flavio Dallegrave</xLgr>
+          <nro>7665</nro>
+          <xBairro>Sao Lourenco</xBairro>
+          <cMun>4106902</cMun>
+          <xMun>CURITIBA</xMun>
+          <UF>PR</UF>
+          <CEP>82210310</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>4140093900</fone>
+        </enderEmit>
+        <IE>1014111502</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962002153</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA - CENTER NORTE</xNome>
+        <enderDest>
+          <xLgr>AVENIDA OTTO BAUMGART</xLgr>
+          <nro>500 - QUADRATV CASALBUONO N 120</nro>
+          <xBairro>VILA GUILHERME</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>02049900</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1130964490</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>131405280114</IE>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>9786526316320</cProd>
+          <cEAN>9786526316320</cEAN>
+          <xProd>ASSIM NASCE UMA HOLDING - HOLDING PARA ADVOGADOS</xProd>
+          <NCM>49019900</NCM>
+          <cBenef>PR800001</cBenef>
+          <CFOP>6917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>300</qCom>
+          <vUnCom>149.9</vUnCom>
+          <vProd>44970.00</vProd>
+          <cEANTrib>9786526316320</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>300</qTrib>
+          <vUnTrib>149.9</vUnTrib>
+          <vDesc>17988.00</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <PIS>
+            <PISOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pPIS>0.00</pPIS>
+              <vPIS>0.00</vPIS>
+            </PISOutr>
+          </PIS>
+          <COFINS>
+            <COFINSOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pCOFINS>0.00</pCOFINS>
+              <vCOFINS>0.00</vCOFINS>
+            </COFINSOutr>
+          </COFINS>
+        </imposto>
+        <infAdProd>Desconto percentual: 40,00</infAdProd>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0.00</vBC>
+          <vICMS>0.00</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>44970.00</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>17988.00</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>0.00</vPIS>
+          <vCOFINS>0.00</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>26982.00</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+        <transporta>
+          <CNPJ>71698476000358</CNPJ>
+          <xNome>TRANSPO EXPRESS TRANSPORTE E LOG. LTDA</xNome>
+          <IE>9078810677</IE>
+          <xEnder>AVENIDA MARINGA NR: 4155 BRCAO F ATUBA CEP: 83326112</xEnder>
+          <xMun>PINHAIS</xMun>
+          <UF>PR</UF>
+        </transporta>
+        <vol>
+          <qVol>6</qVol>
+          <pesoL>117.000</pesoL>
+          <pesoB>117.000</pesoB>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <tPag>90</tPag>
+          <vPag>0.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>Vendedor: FATURAMENTO;Nro Pedido Daueradm: 183332;Qtde. de Livros/Outros Impressos: 300;Observacao: PRAZO DE PAGAMENTO - 30 DIAS;Nao incidencia de ICMS conforme art. 3, inciso I, letra A do Decreto 6.080/2012 - RICMS/PR;ORDEM DE FORNECIMENTO 957546 + BANNER</infCpl>
+      </infAdic>
+      <infRespTec>
+        <CNPJ>00521123000178</CNPJ>
+        <xContato>VILSON ROBERTO DOGNINI</xContato>
+        <email>suporte@dauertec.com.br</email>
+        <fone>4733636235</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe41251177535508000119550010001907161002366788">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>zaAYCXr0kreukKknu9BH3RY337A=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>bgxK5SmbPTPGKIAoq3JB4zwwDdeAHGr/WrjHIYjKhNG9gRrcZRkJuL440qe62Mn9tZp2iaUmkbsjmKBwUlYxm3s3DKb9/8VFi2pbPCumMuOKxZxut/+a8C1U1IobmMZoRJ/2O77uN1weT9X2EPIkDqCzz+4aELArbS5MC9f0LwjBPJDjE4k9bQyXQjtrPe4LHuCuRQdMvK+6HwLOWHgxanbyjNqf2JDtniCf3+thsrjC+J+gW5JDrd9U0yubviqgksHXN+jpllpM7+8m9mtJUCnuaYI1/9+WVKLBgwReNrbQTnptsUpn7p156FB2BLWGC/bR48lx0TlgxyF+/q++oQ==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>MIIH4jCCBcqgAwIBAgIIY68OYk+TDW8wDQYJKoZIhvcNAQELBQAwdjELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEaMBgGA1UEAxMRQUMgU0FGRVdFQiBSRkIgdjUwHhcNMjUwMTA3MTAzNzE1WhcNMjYwMTA3MTAzNzE1WjCB7DELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxCzAJBgNVBAgTAlBSMREwDwYDVQQHEwhDVVJJVElCQTE2MDQGA1UECxMtU2VjcmV0YXJpYSBkYSBSZWNlaXRhIEZlZGVyYWwgZG8gQnJhc2lsIC0gUkZCMRYwFAYDVQQLEw1SRkIgZS1DTlBKIEExMRcwFQYDVQQLEw4yMDA4NTEwNTAwMDEwNjETMBEGA1UECxMKcHJlc2VuY2lhbDEqMCgGA1UEAxMhSlVSVUEgRURJVE9SQSBMVERBOjc3NTM1NTA4MDAwMTE5MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArrNKvekIbGztPM/B3D8us/jin4xrZSxKHfqeirVsruHKHrtSnJh9puNYdrPTaS/kIVcM/b6jtOwcpGqe/t+r43IlBH6UYp/L+nQpompmwM102PLatZDQpcpcglOcwcq6O1maWuyVj0pysEQdkzrWHB+36jXR/XEaIZFix5nLABO5MW0X6YmiVn1oFzlYkD/A92bJCRCYLhv6Q3icYtMdF3aKjq6h2AArlttKPX8MnY4WSVU8i5cSXjzOClVrZTH+NH1R1/uIcICqZtiR7ODdH+fXXxyKh3HwM/q5iiijQaz451nMMzdYtOAM34h6vFb178pARvUW4RBtGUzl2N1grQIDAQABo4IC+zCCAvcwHwYDVR0jBBgwFoAUKV5L1UZMu/4Wp2PBHcQm8t3Y8wUwDgYDVR0PAQH/BAQDAgXgMGkGA1UdIARiMGAwXgYGYEwBAgEzMFQwUgYIKwYBBQUHAgEWRmh0dHA6Ly9yZXBvc2l0b3Jpby5hY3NhZmV3ZWIuY29tLmJyL2FjLXNhZmV3ZWJyZmIvZHBjLWFjc2FmZXdlYnJmYi5wZGYwga4GA1UdHwSBpjCBozBPoE2gS4ZJaHR0cDovL3JlcG9zaXRvcmlvLmFjc2FmZXdlYi5jb20uYnIvYWMtc2FmZXdlYnJmYi9sY3ItYWMtc2FmZXdlYnJmYnY1LmNybDBQoE6gTIZKaHR0cDovL3JlcG9zaXRvcmlvMi5hY3NhZmV3ZWIuY29tLmJyL2FjLXNhZmV3ZWJyZmIvbGNyLWFjLXNhZmV3ZWJyZmJ2NS5jcmwwgbcGCCsGAQUFBwEBBIGqMIGnMFEGCCsGAQUFBzAChkVodHRwOi8vcmVwb3NpdG9yaW8uYWNzYWZld2ViLmNvbS5ici9hYy1zYWZld2VicmZiL2FjLXNhZmV3ZWJyZmJ2NS5wN2IwUgYIKwYBBQUHMAKGRmh0dHA6Ly9yZXBvc2l0b3JpbzIuYWNzYWZld2ViLmNvbS5ici9hYy1zYWZld2VicmZiL2FjLXNhZmV3ZWJyZmJ2NS5wN2IwgcMGA1UdEQSBuzCBuIEYRklOQU5DRUlSTzJASlVSVUEuQ09NLkJSoC4GBWBMAQMCoCUTI0lTQUJFTCBDUklTVElOQSBERSBDQVJWQUxITyBQQUNIRUNPoBkGBWBMAQMDoBATDjc3NTM1NTA4MDAwMTE5oDgGBWBMAQMEoC8TLTI3MDkxOTcxNzgwNTY0NDY5MTUwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMKAXBgVgTAEDB6AOEwwwMDAwMDAwMDAwMDAwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMEMAkGA1UdEwQCMAAwDQYJKoZIhvcNAQELBQADggIBAB+fj1JubIAjXbQs5gTFKYYPaZPHuLefJGIxuaEI1IrBbf75GE2Ebi6sShg1X2w5HwNFuQQWbmSHfbU2LODwr+UaJim00tSBJTqelT02zKG6oLZyzjbakNtLZDutW/MneczH26OybCaJPtoav6MHhDmhAeuWUfVcIQ8tAiya9T7A/W6CBUWGSjo3RsJFIF0SsFw5OibPMHp4W1idp1BTePb4X/7Ca7Koe4w/I43Y9Nj6jcBDtZDn6lwJBSJA2b1fjUxaFBNDOFprOUfLikO6XKLqMxcrFlSgs8gTj2qWo34TJg2mcrzb/Xp2BDujdNvqxjenJZI+eN5YTG6N3storoywH+v3fYSHIZGNVGCrcVZ6iKUw+1KYRTtKhsC2ANvxVbEIuZi2NyIHag8mJZedowL1NHDUb8X1uc7IZ9LMSV0BDQ5EXhK/0zSO/7wfs5e1wMjIy+lX0M4J5S9g6HpFkI4ibnpNCsglWHhmLZ960D0oHdMp8pmzNa7S8y61gRvsuK9CHtfxK7jDpxWK5xW87xdgyyU//KyNt9JpVJMclCuPH3o0n8eYO8mqXiBF6wWwI+Z/bSNPAM3uz24xaa6JLIG/2wx5QFVy98X9IoW5Qm+BiTWWkdLFS2LgcaN3XXQZwNfYVKQ2aM1/r0nan6fZV+gxYY3tFfkvzYlLFSNcJx8F</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt Id="ID141250394007931">
+      <tpAmb>1</tpAmb>
+      <verAplic>PR-v4_9_46</verAplic>
+      <chNFe>41251177535508000119550010001907161002366788</chNFe>
+      <dhRecbto>2025-11-19T09:33:21-03:00</dhRecbto>
+      <nProt>141250394007931</nProt>
+      <digVal>zaAYCXr0kreukKknu9BH3RY337A=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

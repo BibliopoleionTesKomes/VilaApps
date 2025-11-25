@@ -1,0 +1,256 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe35251103349328000297550010000884101230828309" versao="4.00">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>23082830</cNF>
+        <natOp>VENDA POR CONTA E ORDEM</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>88410</nNF>
+        <dhEmi>2025-11-13T13:20:00-03:00</dhEmi>
+        <dhSaiEnt>2025-11-13T13:20:00-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3548708</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>9</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>3</indPres>
+        <procEmi>0</procEmi>
+        <verProc>ERP NETGERA 4.0</verProc>
+      </ide>
+      <emit>
+        <CNPJ>03349328000297</CNPJ>
+        <xNome>FIEL MADEIRAS LTDA</xNome>
+        <xFant>FIEL MADEIRAS</xFant>
+        <enderEmit>
+          <xLgr>RUA TIETE</xLgr>
+          <nro>145</nro>
+          <xBairro>VL. VIVALDI</xBairro>
+          <cMun>3548708</cMun>
+          <xMun>SAO BERNARDO DO CAMPO</xMun>
+          <UF>SP</UF>
+          <CEP>09615000</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>11973349905</fone>
+        </enderEmit>
+        <IE>635622208119</IE>
+        <IM>1935569</IM>
+        <CNAE>4671100</CNAE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962003125</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA.</xNome>
+        <enderDest>
+          <xLgr>AVENIDA PAULISTA</xLgr>
+          <nro>1063</nro>
+          <xBairro>BELA VISTA</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>01311200</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1130964499</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>153188645110</IE>
+        <email>.</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>5703</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>MDF BRANCO TX 2750X1850X18MM 2F FIBRAPLAC</xProd>
+          <NCM>44111490</NCM>
+          <CFOP>5119</CFOP>
+          <uCom>CH</uCom>
+          <qCom>15</qCom>
+          <vUnCom>265.00</vUnCom>
+          <vProd>3975.00</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>CH</uTrib>
+          <qTrib>15</qTrib>
+          <vUnTrib>265.00</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>3975.00</vBC>
+              <pICMS>12.00</pICMS>
+              <vICMS>477.00</vICMS>
+            </ICMS00>
+          </ICMS>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>3975.00</vBC>
+              <pPIS>1.6500</pPIS>
+              <vPIS>65.59</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>3975.00</vBC>
+              <pCOFINS>7.6000</pCOFINS>
+              <vCOFINS>302.10</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>5938</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>MDF BRANCO TX 2750X1850X06MM 2F FIBRAPLAC</xProd>
+          <NCM>44111399</NCM>
+          <CFOP>5119</CFOP>
+          <uCom>CH</uCom>
+          <qCom>10</qCom>
+          <vUnCom>165.00</vUnCom>
+          <vProd>1650.00</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>CH</uTrib>
+          <qTrib>10</qTrib>
+          <vUnTrib>165.00</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>1650.00</vBC>
+              <pICMS>12.00</pICMS>
+              <vICMS>198.00</vICMS>
+            </ICMS00>
+          </ICMS>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>1650.00</vBC>
+              <pPIS>1.6500</pPIS>
+              <vPIS>27.23</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>1650.00</vBC>
+              <pCOFINS>7.6000</pCOFINS>
+              <vCOFINS>125.40</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>5625.00</vBC>
+          <vICMS>675.00</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>5625.00</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>0.00</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>92.82</vPIS>
+          <vCOFINS>427.50</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>5625.00</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>9</modFrete>
+        <vol>
+          <qVol>0</qVol>
+          <esp>VOLUMES</esp>
+          <pesoL>1236.000</pesoL>
+          <pesoB>1236.000</pesoB>
+        </vol>
+      </transp>
+      <cobr>
+        <fat>
+          <nFat>88410</nFat>
+          <vOrig>5625.00</vOrig>
+          <vLiq>5625.00</vLiq>
+        </fat>
+        <dup>
+          <nDup>001</nDup>
+          <dVenc>2025-12-15</dVenc>
+          <vDup>1875.00</vDup>
+        </dup>
+        <dup>
+          <nDup>002</nDup>
+          <dVenc>2026-01-12</dVenc>
+          <vDup>1875.00</vDup>
+        </dup>
+        <dup>
+          <nDup>003</nDup>
+          <dVenc>2026-02-11</dVenc>
+          <vDup>1875.00</vDup>
+        </dup>
+      </cobr>
+      <pag>
+        <detPag>
+          <indPag>1</indPag>
+          <tPag>15</tPag>
+          <vPag>5625.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>Nosso Pedido: 63554/1\nMERCADORIA PARA SER ENTREGUE A NPL MARENARIA LTDA - EPP CNPJ 17.837.562/0001-97 CONF NF DE REMESSA N 88411 DO DIA 13/11/2025\n</infCpl>
+      </infAdic>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251103349328000297550010000884101230828309">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>kUko2/6BfNeCCIyrB2Qmv4rIZHY=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>VNMUQR+et+9zYB5/nmXzcZ4tNVVKbm3eiYfBHvMhV+2b97aOM35Bn6xxrkhXEk2DqAK9wvB8TOF11Qhmuif2WeTPv4x/6Thurp4R3UDag7GM5ogRRx5ld3iyensPOPlnjj2r6OUXmUdRhhB7zh9rrdVC09sn0tJak/oyAevP1lx5R6nqTBXW95QnOEuYEFrAG/x+FnyRdf+qJakTOqY9d0t6BKnL3P21mf93vbDSBkutXY61ccqjI7phihxJeiamUNHSClAhm+TI87n8OK0J8CobUrq4QWlF5mo/2yJdJorm3+U2jy5/tVjoRSdcsQXtQAvttRz2ExhLR7+Ec/WaaQ==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt Id="Id135253475000083">
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251103349328000297550010000884101230828309</chNFe>
+      <dhRecbto>2025-11-13T13:24:22-03:00</dhRecbto>
+      <nProt>135253475000083</nProt>
+      <digVal>kUko2/6BfNeCCIyrB2Qmv4rIZHY=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

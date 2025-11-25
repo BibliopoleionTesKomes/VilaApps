@@ -1,0 +1,333 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe35251117909657001493550140000502541369378748" versao="4.00">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>36937874</cNF>
+        <natOp>VENDA MERC. RECEB.TERCEIROS</natOp>
+        <mod>55</mod>
+        <serie>14</serie>
+        <nNF>50254</nNF>
+        <dhEmi>2025-11-13T16:54:00-03:00</dhEmi>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3550308</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>8</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>1</indFinal>
+        <indPres>9</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>12.1.2410 | 3.0</verProc>
+      </ide>
+      <emit>
+        <CNPJ>17909657001493</CNPJ>
+        <xNome>COBREFLEX IDC DE FIOS E CABOS LTDA</xNome>
+        <xFant>COBREFLEX - LAPA - SP</xFant>
+        <enderEmit>
+          <xLgr>R RICARDO CAVATTON</xLgr>
+          <nro>227</nro>
+          <xCpl>ARM CD COBREFLEX</xCpl>
+          <xBairro>LAPA</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>05038110</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1136132280</fone>
+        </enderEmit>
+        <IE>135325398116</IE>
+        <IM>7.993.758-6</IM>
+        <CNAE>4679699</CNAE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962003125</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA</xNome>
+        <enderDest>
+          <xLgr>AVENIDA PAULISTA</xLgr>
+          <nro>1063</nro>
+          <xBairro>BELA VISTA</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>01311200</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>153188645110</IE>
+        <email>eliete.domingos@larconstrutora.com.br</email>
+      </dest>
+      <autXML>
+        <CNPJ>30710101000117</CNPJ>
+      </autXML>
+      <det nItem="1">
+        <prod>
+          <cProd>A040PAPTM.01005</cProd>
+          <cEAN>7908508500189</cEAN>
+          <xProd>CABO FLEXIVEL 750V 1X2,5MM2 CL4 PRETO</xProd>
+          <NCM>85444900</NCM>
+          <CEST>1200700</CEST>
+          <cBenef />
+          <CFOP>5102</CFOP>
+          <uCom>MT</uCom>
+          <qCom>500.0000</qCom>
+          <vUnCom>1.9600000000</vUnCom>
+          <vProd>980.00</vProd>
+          <cEANTrib>7908508500189</cEANTrib>
+          <uTrib>MT</uTrib>
+          <qTrib>500.0000</qTrib>
+          <vUnTrib>1.9600000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <vTotTrib>250.73</vTotTrib>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>980.00</vBC>
+              <pICMS>18.0000</pICMS>
+              <vICMS>176.40</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>803.60</vBC>
+              <pPIS>1.6500</pPIS>
+              <vPIS>13.26</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>803.60</vBC>
+              <pCOFINS>7.6000</pCOFINS>
+              <vCOFINS>61.07</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>A040PAAZM.01005</cProd>
+          <cEAN>7908508500134</cEAN>
+          <xProd>CABO FLEXIVEL 750V 1X2,5MM2 CL4 AZULCL</xProd>
+          <NCM>85444900</NCM>
+          <CEST>1200700</CEST>
+          <cBenef />
+          <CFOP>5102</CFOP>
+          <uCom>MT</uCom>
+          <qCom>1500.0000</qCom>
+          <vUnCom>1.9600000000</vUnCom>
+          <vProd>2940.00</vProd>
+          <cEANTrib>7908508500134</cEANTrib>
+          <uTrib>MT</uTrib>
+          <qTrib>1500.0000</qTrib>
+          <vUnTrib>1.9600000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <vTotTrib>752.20</vTotTrib>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>2940.00</vBC>
+              <pICMS>18.0000</pICMS>
+              <vICMS>529.20</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>2410.80</vBC>
+              <pPIS>1.6500</pPIS>
+              <vPIS>39.78</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>2410.80</vBC>
+              <pCOFINS>7.6000</pCOFINS>
+              <vCOFINS>183.22</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="3">
+        <prod>
+          <cProd>A040PAVDM.01005</cProd>
+          <cEAN>7908508500196</cEAN>
+          <xProd>CABO FLEXIVEL 750V 1X2,5MM2 CL4 VERDE</xProd>
+          <NCM>85444900</NCM>
+          <CEST>1200700</CEST>
+          <cBenef />
+          <CFOP>5102</CFOP>
+          <uCom>MT</uCom>
+          <qCom>500.0000</qCom>
+          <vUnCom>1.9600000000</vUnCom>
+          <vProd>980.00</vProd>
+          <cEANTrib>7908508500196</cEANTrib>
+          <uTrib>MT</uTrib>
+          <qTrib>500.0000</qTrib>
+          <vUnTrib>1.9600000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <vTotTrib>250.74</vTotTrib>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>980.00</vBC>
+              <pICMS>18.0000</pICMS>
+              <vICMS>176.40</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>803.60</vBC>
+              <pPIS>1.6500</pPIS>
+              <vPIS>13.26</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>803.60</vBC>
+              <pCOFINS>7.6000</pCOFINS>
+              <vCOFINS>61.08</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>4900.00</vBC>
+          <vICMS>882.00</vICMS>
+          <vICMSDeson>0</vICMSDeson>
+          <vFCPUFDest>0</vFCPUFDest>
+          <vICMSUFDest>0</vICMSUFDest>
+          <vICMSUFRemet>0</vICMSUFRemet>
+          <vFCP>0</vFCP>
+          <vBCST>0</vBCST>
+          <vST>0</vST>
+          <vFCPST>0</vFCPST>
+          <vFCPSTRet>0</vFCPSTRet>
+          <vProd>4900.00</vProd>
+          <vFrete>0</vFrete>
+          <vSeg>0</vSeg>
+          <vDesc>0</vDesc>
+          <vII>0</vII>
+          <vIPI>0</vIPI>
+          <vIPIDevol>0</vIPIDevol>
+          <vPIS>66.30</vPIS>
+          <vCOFINS>305.37</vCOFINS>
+          <vOutro>0</vOutro>
+          <vNF>4900.00</vNF>
+          <vTotTrib>1253.67</vTotTrib>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>1</modFrete>
+        <transporta>
+          <xNome>CLIENTE RETIRA</xNome>
+          <IE>ISENTO</IE>
+          <UF>SP</UF>
+        </transporta>
+      </transp>
+      <cobr>
+        <fat>
+          <nFat>14050254</nFat>
+          <vOrig>4900.00</vOrig>
+          <vDesc>0</vDesc>
+          <vLiq>4900.00</vLiq>
+        </fat>
+        <dup>
+          <nDup>001</nDup>
+          <dVenc>2025-12-13</dVenc>
+          <vDup>4900.00</vDup>
+        </dup>
+      </cobr>
+      <pag>
+        <detPag>
+          <indPag>1</indPag>
+          <tPag>15</tPag>
+          <vPag>4900.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infAdFisco>MD-5:94DBB831B0F3C67A412EAC4010EC561F</infAdFisco>
+        <infCpl>Pedido : 049072 Cod. Vend. : 000312 Grupo de Vendas : AREA - SP - VENDAS             End Entrega : AVENIDA PAULISTA 1063 BELA VISTA SAO PAULO SP 01311200 Valor Aproximado dos Tributos: R$ 1253.67 (25.59%).</infCpl>
+      </infAdic>
+      <infRespTec>
+        <CNPJ>53113791000122</CNPJ>
+        <xContato>Rodrigo de Almeida Sartorio</xContato>
+        <email>resp_tecnico_dfe_protheus@totvs.com.br</email>
+        <fone>1128593904</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251117909657001493550140000502541369378748">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>J00QWh21wqMchcgFXOODKY3O4hc=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>fKOuGMPFGXxDiCRyh/2DN5xBqxasKUkVocHewqOl37IE8bCtB3dXCOQqHSasfJXdWq+yl51Zx9laT+FWj4l4E4wXHdDu+5yzrc4JLbkHuidEyyvNGkrj4YrjROpS4Q2Qqrt5mpZO4BDtyWFFjxI5Qi0t3D2fzGhU1kuVMM2IvihiLFPG9Kdnlw0QzZT/oUCEGnPFu5JD1y2bTT3yUq/XjapdEXU8WQT3WlISnKjiedC0H5fAu+teBhkRegHYFZYU/lKUihPpI1HC6SXABSX2m6qfq5wx7+vf2bj/5U5MFtn79NKjtQX2rT9mPiG0sQY9wlkIlp0DgRiTbTMfvkel+w==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt Id="Id135253477951855">
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251117909657001493550140000502541369378748</chNFe>
+      <dhRecbto>2025-11-13T16:55:08-03:00</dhRecbto>
+      <nProt>135253477951855</nProt>
+      <digVal>J00QWh21wqMchcgFXOODKY3O4hc=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

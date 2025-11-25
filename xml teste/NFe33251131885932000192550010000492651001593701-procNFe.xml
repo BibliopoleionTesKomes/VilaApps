@@ -1,0 +1,248 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe33251131885932000192550010000492651001593701" versao="4.00">
+      <ide>
+        <cUF>33</cUF>
+        <cNF>00159370</cNF>
+        <natOp>VENDA ACERTO CONSIGNACAO</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>49265</nNF>
+        <dhEmi>2025-11-18T16:25:49-03:00</dhEmi>
+        <tpNF>1</tpNF>
+        <idDest>2</idDest>
+        <cMunFG>3304557</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>1</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>3</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>18.15.3973</verProc>
+        <NFref>
+          <refNFe>33250431885932000192550010000471161001570972</refNFe>
+        </NFref>
+      </ide>
+      <emit>
+        <CNPJ>31885932000192</CNPJ>
+        <xNome>CONTRAPONTO EDITORA LTDA</xNome>
+        <xFant>CONTRAPONTO EDITORA</xFant>
+        <enderEmit>
+          <xLgr>RUA GENERAL ROCA</xLgr>
+          <nro>935</nro>
+          <xCpl>SALA 605</xCpl>
+          <xBairro>TIJUCA</xBairro>
+          <cMun>3304557</cMun>
+          <xMun>RIO DE JANEIRO</xMun>
+          <UF>RJ</UF>
+          <CEP>20521071</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1967287706</fone>
+        </enderEmit>
+        <IE>85640585</IE>
+        <CRT>1</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962000100</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA</xNome>
+        <enderDest>
+          <xLgr>RUA FRADIQUE COUTINHO</xLgr>
+          <nro>915</nro>
+          <xBairro>VILA MADALENA</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>05416011</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>01138145811</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>111092339110</IE>
+        <email>fiscal@livrariadavila.com.br</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>0000007449</cProd>
+          <cEAN>9786556390208</cEAN>
+          <xProd>ALEM DE DARWIN: ENSAIO SOBRE CIENCIA E VIDA</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>6113</CFOP>
+          <uCom>UM</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>95.0000000</vUnCom>
+          <vProd>95.00</vProd>
+          <cEANTrib>9786556390208</cEANTrib>
+          <uTrib>UM</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>95.0000000</vUnTrib>
+          <vDesc>42.75</vDesc>
+          <indTot>1</indTot>
+          <xPed>10</xPed>
+        </prod>
+        <imposto>
+          <vTotTrib>0</vTotTrib>
+          <ICMS>
+            <ICMSSN102>
+              <orig>0</orig>
+              <CSOSN>300</CSOSN>
+            </ICMSSN102>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>07</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>04</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>0000007458</cProd>
+          <cEAN>9786556390222</cEAN>
+          <xProd>K DE KOLONIA: KAFKA E A DESCOLONIZACAO DO IMAGINAR</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>6113</CFOP>
+          <uCom>UN</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>85.0000000</vUnCom>
+          <vProd>85.00</vProd>
+          <cEANTrib>9786556390222</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>85.0000000</vUnTrib>
+          <vDesc>38.25</vDesc>
+          <indTot>1</indTot>
+          <xPed>10</xPed>
+        </prod>
+        <imposto>
+          <vTotTrib>0</vTotTrib>
+          <ICMS>
+            <ICMSSN102>
+              <orig>0</orig>
+              <CSOSN>300</CSOSN>
+            </ICMSSN102>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>07</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>04</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0</vBC>
+          <vICMS>0</vICMS>
+          <vICMSDeson>0</vICMSDeson>
+          <vFCP>0</vFCP>
+          <vBCST>0</vBCST>
+          <vST>0</vST>
+          <vFCPST>0</vFCPST>
+          <vFCPSTRet>0</vFCPSTRet>
+          <vProd>180.00</vProd>
+          <vFrete>0</vFrete>
+          <vSeg>0</vSeg>
+          <vDesc>81.00</vDesc>
+          <vII>0</vII>
+          <vIPI>0</vIPI>
+          <vIPIDevol>0</vIPIDevol>
+          <vPIS>0</vPIS>
+          <vCOFINS>0</vCOFINS>
+          <vOutro>0</vOutro>
+          <vNF>99.00</vNF>
+          <vTotTrib>0</vTotTrib>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>9</modFrete>
+        <vol>
+          <pesoL>0.750</pesoL>
+          <pesoB>0.750</pesoB>
+        </vol>
+      </transp>
+      <cobr>
+        <fat>
+          <nFat>001</nFat>
+          <vOrig>99.00</vOrig>
+          <vLiq>99.00</vLiq>
+        </fat>
+        <dup>
+          <nDup>001</nDup>
+          <dVenc>2026-01-02</dVenc>
+          <vDup>99.00</vDup>
+        </dup>
+      </cobr>
+      <pag>
+        <detPag>
+          <indPag>1</indPag>
+          <tPag>15</tPag>
+          <vPag>99.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>PD Nr.: 0000159370 - Ped. do Cliente: 10 ACERTO DE CONSIGNACAO Ref. NF(s): 047116</infCpl>
+      </infAdic>
+      <compra>
+        <xPed>10</xPed>
+      </compra>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe33251131885932000192550010000492651001593701">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>Pb6jSW+qI6VRw4XGHiqLu1vYEO8=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>Zdz6ran/MsF6x71A/hNv50m2xb+jZ+osYftWx6WpOSiWTd0US/xlmGaT7oio6EKAibW4j+qDKDQiItuIOdHXsK36AzqnyEhN+8VDCIx0NH0vJDho0Nv640KeFKLqvloRnuQJfqtORlQ0VWVgxNdDoZzk3eVg/8JW+0YYlcFDEGEvwOV7ajk5lSZWPVACP1ZAUwFeh648uSjwrqsFjCatH9ewRqOZzlXya/WzHFAPoKfaYuHB/9iYcLEI6r47TE50tCxqW9hPJ/UT2zhaMkYAfxluSE09e08alqXBlLL7Ou1DtwvpPI18oZvK1PF1q0qLnOuTmCtQaUc7mD8EH1jEuQ==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infProt>
+      <tpAmb>1</tpAmb>
+      <verAplic>SVRS2511121006DR</verAplic>
+      <chNFe>33251131885932000192550010000492651001593701</chNFe>
+      <dhRecbto>2025-11-18T16:25:37-03:00</dhRecbto>
+      <nProt>233250454070161</nProt>
+      <digVal>Pb6jSW+qI6VRw4XGHiqLu1vYEO8=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

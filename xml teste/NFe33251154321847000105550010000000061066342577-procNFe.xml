@@ -1,0 +1,239 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe33251154321847000105550010000000061066342577" versao="4.00">
+      <ide>
+        <cUF>33</cUF>
+        <cNF>06634257</cNF>
+        <natOp>REMESSA DE MERCADORIA EM CONSIGNAÇÃO</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>6</nNF>
+        <dhEmi>2025-11-18T13:00:18-03:00</dhEmi>
+        <tpNF>1</tpNF>
+        <idDest>2</idDest>
+        <cMunFG>3304557</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>7</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>1</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>0.1.0</verProc>
+      </ide>
+      <emit>
+        <CNPJ>54321847000105</CNPJ>
+        <xNome>AMBAYBA EDIÇÕES, CURSOS E PUBLICAÇÕES LTDA.</xNome>
+        <xFant>AMBAYBA</xFant>
+        <enderEmit>
+          <xLgr>RUA PRESIDENTE CARLOS DE CAMPOS</xLgr>
+          <nro>115</nro>
+          <xCpl>201</xCpl>
+          <xBairro>LARANJEIRAS</xBairro>
+          <cMun>3304557</cMun>
+          <xMun>RIO DE JANEIRO</xMun>
+          <UF>RJ</UF>
+          <CEP>22231080</CEP>
+          <cPais>1058</cPais>
+          <xPais>Brasil</xPais>
+        </enderEmit>
+        <IE>14514384</IE>
+        <CRT>1</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962000886</CNPJ>
+        <xNome>LOJA 4 - SHOPPING JK</xNome>
+        <enderDest>
+          <xLgr>Avenida Presidente Juscelino Kubitschek</xLgr>
+          <nro>2041</nro>
+          <xCpl>Lojas 335/336</xCpl>
+          <xBairro>Vila Nova Conceição</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SÃO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>04543011</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1151804790</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>146005488119</IE>
+        <email>mkt.eventos@livrariadavila.com.br</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>9786598642235</cProd>
+          <cEAN>9786598642235</cEAN>
+          <xProd>QUE BICHO VOCÊ VÊ?</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>6917</CFOP>
+          <uCom>UNID.</uCom>
+          <qCom>80.0000</qCom>
+          <vUnCom>75.00</vUnCom>
+          <vProd>6000.00</vProd>
+          <cEANTrib>9786598642235</cEANTrib>
+          <uTrib>UNID.</uTrib>
+          <qTrib>80.0000</qTrib>
+          <vUnTrib>75.00</vUnTrib>
+          <vDesc>3000.00</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMSSN102>
+              <orig>0</orig>
+              <CSOSN>300</CSOSN>
+            </ICMSSN102>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <II>
+            <vBC>0</vBC>
+            <vDespAdu>0</vDespAdu>
+            <vII>0</vII>
+            <vIOF>0</vIOF>
+          </II>
+          <PIS>
+            <PISNT>
+              <CST>07</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>07</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+        <infAdProd>Desconto: 50,00%  Vlr Unit. Líquido: R$ 37,50</infAdProd>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0</vBC>
+          <vICMS>0</vICMS>
+          <vICMSDeson>0</vICMSDeson>
+          <vFCP>0</vFCP>
+          <vBCST>0</vBCST>
+          <vST>0</vST>
+          <vFCPST>0</vFCPST>
+          <vFCPSTRet>0</vFCPSTRet>
+          <vProd>6000.00</vProd>
+          <vFrete>0</vFrete>
+          <vSeg>0</vSeg>
+          <vDesc>3000.00</vDesc>
+          <vII>0</vII>
+          <vIPI>0</vIPI>
+          <vIPIDevol>0</vIPIDevol>
+          <vPIS>0</vPIS>
+          <vCOFINS>0</vCOFINS>
+          <vOutro>0</vOutro>
+          <vNF>3000.00</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+        <transporta>
+          <CNPJ>71698476000196</CNPJ>
+          <xNome>TRANSPO EXPRESS TRANSPORTE E LOGISTICA LTDA</xNome>
+          <xEnder>DAS COMUNICACOES</xEnder>
+          <xMun>OSASCO</xMun>
+          <UF>SP</UF>
+        </transporta>
+        <vol>
+          <pesoB>12.000</pesoB>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <tPag>01</tPag>
+          <vPag>3000.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>2 VOLUMES \n40 EXEMPLARES E 6KG CADA\n33 X 33 X 23 Conforme lei 5.817 de 03/09/2010 endereço da comissão de defesa do consumidor da ALERJ: Rua da Alfândega, 08 térreo Centro RJ TEL.: 0800-282-7060 PROCON Rio: Praça Cristiano Ottoni, S/N - Subsolo - Ed. D. Pedro II - Central do Brasil Tel.: 151</infCpl>
+      </infAdic>
+      <infRespTec>
+        <CNPJ>07504505000132</CNPJ>
+        <xContato>Ricardo Acras</xContato>
+        <email>contato@focusnfe.com.br</email>
+        <fone>41991820810</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe33251154321847000105550010000000061066342577">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>npeLd/XEgtXnwZ7+ERuNtFImq38=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>d3igl9lvsaQFB80g0qWHoU0uuM20P0RExzMM7DQ+mR1yF9BA4Fnit+dyDucOAtMgczgEVg0bLdy5
+fcO3/zIThzHOl6jZG61xLowoKSc7zplFT6ltc3pNa75FY0LO7xiqn3lqrck4r7tEStI4B2rNYNmw
+WLJTTA2VhoFUDAY5e6oWpxfPoWPuCZ8PiUwlNuu/AMOkAHdUL4OsuWbAbjDDFNTbEoFv/0esSJuQ
+vVo7bqJXanUj2CBw/8x0TMZn7CmCnqkBgwHrm4Q3f2qvqOlI83QQGNZrUmSjU+MSaVmCD+Fssv7E
+p40KG2QbFzDcG3fVI/7n0k0/uUQ5MeqDHChmFg==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>MIIH+jCCBeKgAwIBAgILAN6ML5aRJ6xAa8MwDQYJKoZIhvcNAQELBQAwWzELMAkGA1UEBhMCQlIx
+FjAUBgNVBAsMDUFDIFN5bmd1bGFySUQxEzARBgNVBAoMCklDUC1CcmFzaWwxHzAdBgNVBAMMFkFD
+IFN5bmd1bGFySUQgTXVsdGlwbGEwHhcNMjUxMTEwMjMxMzQ2WhcNMjYxMTEwMjMxMzQ2WjCB3jEL
+MAkGA1UEBhMCQlIxEzARBgNVBAoMCklDUC1CcmFzaWwxIjAgBgNVBAsMGUNlcnRpZmljYWRvIERp
+Z2l0YWwgUEogQTExGTAXBgNVBAsMEFZpZGVvY29uZmVyZW5jaWExFzAVBgNVBAsMDjE4MTc4OTQ1
+MDAwMTYzMR8wHQYDVQQLDBZBQyBTeW5ndWxhcklEIE11bHRpcGxhMUEwPwYDVQQDDDhBTUJBWUJB
+IEVESUNPRVMgQ1VSU09TIEUgUFVCTElDQUNPRVMgTFREQTo1NDMyMTg0NzAwMDEwNTCCASIwDQYJ
+KoZIhvcNAQEBBQADggEPADCCAQoCggEBANQtiVGVoKSZ9AxUkuxyopRbwtOm7CXgDVemCvKvugPd
+Oi0gULIS2hk4HOFlY1PiXLB2O/jG+ztt50TrKRy6SZ2LhaZl/S4VH4uxDb4diY3CKmZ8MBKTzQSN
+ezJNlR6U/PL5lJ9pcJKyPE88XeJ7LFUgxx41gE1qOfGJrMDa9RDfFu4MLsmbREuJjhXplXA10Ngc
+GkrqaaeYaGB9jnSzfWH6gtI/TPAC32ija60LybwibEcO9vizXVQm1VK6/BqXJYRqM8wqHs+gzXz2
+IDbCA6fLk0JpZ/p5kNFf0H2TbjgQk4A0dLRoz4LNTC36/E5ayykWGJnRlBFA1dzBo+dDpasCAwEA
+AaOCAzkwggM1MA4GA1UdDwEB/wQEAwIF4DAdBgNVHSUEFjAUBggrBgEFBQcDBAYIKwYBBQUHAwIw
+CQYDVR0TBAIwADAfBgNVHSMEGDAWgBST4f9+HeX15E3hOWKLIWmV5q9yFjAdBgNVHQ4EFgQUhm7J
+2ajVPOFkp0E5fG2b/dfT8MIwfwYIKwYBBQUHAQEEczBxMG8GCCsGAQUFBzAChmNodHRwOi8vc3lu
+Z3VsYXJpZC5jb20uYnIvcmVwb3NpdG9yaW8vYWMtc3luZ3VsYXJpZC1tdWx0aXBsYS9jZXJ0aWZp
+Y2Fkb3MvYWMtc3luZ3VsYXJpZC1tdWx0aXBsYS5wN2IwgYIGA1UdIAR7MHkwdwYHYEwBAgGBBTBs
+MGoGCCsGAQUFBwIBFl5odHRwOi8vc3luZ3VsYXJpZC5jb20uYnIvcmVwb3NpdG9yaW8vYWMtc3lu
+Z3VsYXJpZC1tdWx0aXBsYS9kcGMvZHBjLWFjLXN5bmd1bGFySUQtbXVsdGlwbGEucGRmMIHNBgNV
+HREEgcUwgcKgLQYFYEwBAwKgJAQiUEFUUklDSUEgQklUVEVOQ09VUlQgQ09VVE8gQ0FQRUxMQaAZ
+BgVgTAEDA6AQBA41NDMyMTg0NzAwMDEwNaBCBgVgTAEDBKA5BDcwNjAyMTk3ODA3MzE0Nzk2NzAw
+MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwoBcGBWBMAQMHoA4EDDAwMDAwMDAw
+MDAwMIEZUEFUUklDSUFDT1VUT0BIT1RNQUlMLkNPTTCB4gYDVR0fBIHaMIHXMGSgYqBghl5odHRw
+Oi8vc3luZ3VsYXJpZC5jb20uYnIvcmVwb3NpdG9yaW8vYWMtc3luZ3VsYXJpZC1tdWx0aXBsYS9s
+Y3IvbGNyLWFjLXN5bmd1bGFyaWQtbXVsdGlwbGEuY3JsMG+gbaBrhmlodHRwOi8vaWNwLWJyYXNp
+bC5zeW5ndWxhcmlkLmNvbS5ici9yZXBvc2l0b3Jpby9hYy1zeW5ndWxhcmlkLW11bHRpcGxhL2xj
+ci9sY3ItYWMtc3luZ3VsYXJpZC1tdWx0aXBsYS5jcmwwDQYJKoZIhvcNAQELBQADggIBAIjfQLGg
+BTfibxv0NrcGgEYFLJr5xRjz4cq5ILVRiBjEfTAT/pOGygAF79L7/c66Y+JKVAgHOjjkyiz7BpFp
+c6oBR6YKisuARJn1Vjj+7Acd8qimcvdDaOXGp8mb1bTzW8xNRdFIqHrD9Og7zpuU44qdEYxxNIzy
+FeRkB8gsS76MSqogLuvQlA8a7x0H0hjsjTlXIc2jmm2l8rClNqidSnQ2rzVj3dh8YU/KgELQCE+H
+Uk5FKZlHGt61cKyiToXKE4WbgbHGoV17PulpfcoF3GgLtW31xqgO2OoF/mUdBfhIUcWolVuPEHNf
+kXPI0Y+HnGAyvuXUvTge9JX7vaHTNHlEG8sB+icljfBjdT+kLrJqt3j1vuc4ZDLOVIQPxwLNxzY8
+xJOYDtw6rOQJ6HnbQSkKVYZsnD+g3ArDkE6RIpDzjTzJ19t7LRKlxFQm3J4kIFbAWsG6zIKlbSgs
+ICCqVgfD5JgZE/y4ezbOGzK/tGKiHqh+JnH1WglTld8x7s0c0knRGKDhAdVhGVp2SEHJsTEOVxtc
+ZgNGQiGoeYu0i8NdB93fqoBo5MHuKZxmCM1OU28Qj25hscyVfzinds/BmNa4jtoa4RinHdUpfYeK
+AbqVO/u25PF8AXSP1pvY7GdPT4vUmd8GirFPgWFghWBKAaZ0tEUoYv5Sub8cu38rNdR/</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infProt>
+      <tpAmb>1</tpAmb>
+      <verAplic>SVRS2511121006DR</verAplic>
+      <chNFe>33251154321847000105550010000000061066342577</chNFe>
+      <dhRecbto>2025-11-18T13:14:25-03:00</dhRecbto>
+      <nProt>233250453713106</nProt>
+      <digVal>npeLd/XEgtXnwZ7+ERuNtFImq38=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

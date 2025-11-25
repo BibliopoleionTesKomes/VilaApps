@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe35251113360966000181550010000086791884036109" versao="4.00">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>88403610</cNF>
+        <natOp>ACERTO DE CONSIGNACAO</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>8679</nNF>
+        <dhEmi>2025-11-18T11:11:04-03:00</dhEmi>
+        <dhSaiEnt>2025-11-18T11:11:04-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3550308</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>9</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>0</indPres>
+        <procEmi>0</procEmi>
+        <verProc>Liter: 3.0.0.446</verProc>
+      </ide>
+      <emit>
+        <CNPJ>13360966000181</CNPJ>
+        <xNome>OZE EDITORA E LIVRARIA LTDA.</xNome>
+        <xFant>OZE EDITORA</xFant>
+        <enderEmit>
+          <xLgr>RUA CONSELHEIRO CARRAO</xLgr>
+          <nro>420</nro>
+          <xBairro>BELA VISTA</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>01328000</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1123739006</fone>
+        </enderEmit>
+        <IE>147882863117</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962000100</CNPJ>
+        <xNome>Livraria da Vila Fradique</xNome>
+        <enderDest>
+          <xLgr>RUA FRADIQUE COUTINHO</xLgr>
+          <nro>915</nro>
+          <xBairro>PINHEIROS</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>05416011</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>111092339110</IE>
+        <email>fiscal@livrariadavila.com.br</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>9786589835349</cProd>
+          <cEAN>9786589835349</cEAN>
+          <xProd>AINDA</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5114</CFOP>
+          <uCom>UN</uCom>
+          <qCom>2.0000</qCom>
+          <vUnCom>60.0000000000</vUnCom>
+          <vProd>120.00</vProd>
+          <cEANTrib>9786589835349</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>2.0000</qTrib>
+          <vUnTrib>60.0000000000</vUnTrib>
+          <vDesc>60.00</vDesc>
+          <indTot>1</indTot>
+          <nItemPed>000000</nItemPed>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>07</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>07</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>9788564571143</cProd>
+          <cEAN>9788564571143</cEAN>
+          <xProd>UM TIME PARA SEMPRE</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5114</CFOP>
+          <uCom>UN</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>45.0000000000</vUnCom>
+          <vProd>45.00</vProd>
+          <cEANTrib>9788564571143</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>45.0000000000</vUnTrib>
+          <vDesc>22.50</vDesc>
+          <indTot>1</indTot>
+          <nItemPed>000000</nItemPed>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>07</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>07</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="3">
+        <prod>
+          <cProd>9786589835387</cProd>
+          <cEAN>9786589835387</cEAN>
+          <xProd>PEQUENO CONTO DE ENGOLIR</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5114</CFOP>
+          <uCom>UN</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>55.0000000000</vUnCom>
+          <vProd>55.00</vProd>
+          <cEANTrib>9786589835387</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>55.0000000000</vUnTrib>
+          <vDesc>27.50</vDesc>
+          <indTot>1</indTot>
+          <nItemPed>000000</nItemPed>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>07</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>07</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0.00</vBC>
+          <vICMS>0.00</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>220.00</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>110.00</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>0.00</vPIS>
+          <vCOFINS>0.00</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>110.00</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>9</modFrete>
+        <vol>
+          <qVol>0</qVol>
+          <pesoL>0.801</pesoL>
+          <pesoB>0.871</pesoB>
+        </vol>
+      </transp>
+      <cobr>
+        <fat>
+          <nFat>001</nFat>
+          <vOrig>110.00</vOrig>
+          <vDesc>0.00</vDesc>
+          <vLiq>110.00</vLiq>
+        </fat>
+        <dup>
+          <nDup>001</nDup>
+          <dVenc>2026-01-17</dVenc>
+          <vDup>110.00</vDup>
+        </dup>
+      </cobr>
+      <pag>
+        <detPag>
+          <tPag>99</tPag>
+          <xPag>DEPOSITO EM CONTA</xPag>
+          <vPag>110.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infAdFisco>;</infAdFisco>
+        <infCpl>Acerto de consignacao referente ao mes de novembro/2025. |Pagamento via deposito bancario, com vencimento em 17/01/2026. |Banco do Brasil, AG: 3043-0 | C/C: 112637-7|Pix (CNPJ) 13360966000181</infCpl>
+        <obsCont xCampo="TipoNota">
+          <xTexto>3</xTexto>
+        </obsCont>
+        <obsCont xCampo="OperacaoFiscal">
+          <xTexto>6</xTexto>
+        </obsCont>
+        <obsCont xCampo="Vendedor">
+          <xTexto>1223</xTexto>
+        </obsCont>
+        <obsCont xCampo="EnderecoEntrega">
+          <xTexto>1</xTexto>
+        </obsCont>
+        <obsCont xCampo="Setor">
+          <xTexto>1</xTexto>
+        </obsCont>
+        <obsCont xCampo="Consignacao">
+          <xTexto>50022</xTexto>
+        </obsCont>
+        <obsCont xCampo="NumeroPedido">
+          <xTexto>0</xTexto>
+        </obsCont>
+      </infAdic>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315">
+        </CanonicalizationMethod>
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1">
+        </SignatureMethod>
+        <Reference URI="#NFe35251113360966000181550010000086791884036109">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature">
+            </Transform>
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315">
+            </Transform>
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+          </DigestMethod>
+          <DigestValue>3s4Q6vRRdfBAg1EJA0xYtZneNUg=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>YjMbJcx67g2sGgWd8DWdnAmarswJMqvFjftjzsmqnkaVaYqEVbShvehAzpunxKzhKL5tZKWiEdXHPVAg4Oyz8gWWVociZ/Lk7qKXbr8BGDbdFv4r3grA/YVz9cfA6hapeNaa1ifW1FLc8Nz6sCQX4cycSLd2dDd8Foc5P5G1XkYdeC+3ND30lO8vcD9W581FVx4RD+6ZLWNxNkQ2xchoPAnJKw38pNFDn4fPtbKtMubo3xrG0eVCfshz0aGZUALkAaYJKCqrGA7BNyz4QRqfRv+dMsltOvUBGdxtXkKDpt6BaA8O9NIdm942rLT8COXwjDqd4tsIFsw7Io2iewWI5g==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt>
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251113360966000181550010000086791884036109</chNFe>
+      <dhRecbto>2025-11-18T11:11:09-03:00</dhRecbto>
+      <nProt>135253538360448</nProt>
+      <digVal>3s4Q6vRRdfBAg1EJA0xYtZneNUg=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

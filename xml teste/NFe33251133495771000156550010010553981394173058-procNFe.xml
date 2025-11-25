@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe33251133495771000156550010010553981394173058" versao="4.00">
+      <ide>
+        <cUF>33</cUF>
+        <cNF>39417305</cNF>
+        <natOp>REMESSA DE MERCADORIA EM CONSIGNACAO MERC. OU IND.</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>1055398</nNF>
+        <dhEmi>2025-11-19T15:57:00-03:00</dhEmi>
+        <dhSaiEnt>2025-11-19T15:57:00-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>2</idDest>
+        <cMunFG>3304557</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>8</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>9</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>12.1.2410 | 3.0</verProc>
+      </ide>
+      <emit>
+        <CNPJ>33495771000156</CNPJ>
+        <xNome>DISTRIB RECORD SERV DE IMPRENSA S A</xNome>
+        <xFant>DISTR.RECORD</xFant>
+        <enderEmit>
+          <xLgr>RUA ARGENTINA</xLgr>
+          <nro>171</nro>
+          <xBairro>VASCO DA GAMA</xBairro>
+          <cMun>3304557</cMun>
+          <xMun>RIO DE JANEIRO</xMun>
+          <UF>RJ</UF>
+          <CEP>20921380</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>02125852000</fone>
+        </enderEmit>
+        <IE>81589542</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962002900</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA</xNome>
+        <enderDest>
+          <xLgr>AV DEPUTADO JAMEL CECILIO</xLgr>
+          <nro>3300</nro>
+          <xCpl>LOJA P081 ANDAR 1</xCpl>
+          <xBairro>JD GOIAS</xBairro>
+          <cMun>5208707</cMun>
+          <xMun>GOIANIA</xMun>
+          <UF>GO</UF>
+          <CEP>74810100</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1130964490</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>201279193</IE>
+        <email>fiscal@livrariadavila.com.br; ellen.mayara@record.com.br;mar</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>9788501118806</cProd>
+          <cEAN>9788501118806</cEAN>
+          <xProd>A ASCENSAO DA RAINHA (THE QUEE</xProd>
+          <NCM>49019900</NCM>
+          <cBenef>
+          </cBenef>
+          <CFOP>6917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>59.9000000000</vUnCom>
+          <vProd>59.90</vProd>
+          <cEANTrib>9788501118806</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>59.9000000000</vUnTrib>
+          <vDesc>29.95</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>9788576868392</cProd>
+          <cEAN>9788576868392</cEAN>
+          <xProd>CHAMA ENTRE AS CINZAS, UMA (CA</xProd>
+          <NCM>49019900</NCM>
+          <cBenef>
+          </cBenef>
+          <CFOP>6917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>69.9000000000</vUnCom>
+          <vProd>69.90</vProd>
+          <cEANTrib>9788576868392</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>69.9000000000</vUnTrib>
+          <vDesc>34.95</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0</vBC>
+          <vICMS>0</vICMS>
+          <vICMSDeson>0</vICMSDeson>
+          <vFCPUFDest>0</vFCPUFDest>
+          <vICMSUFDest>0</vICMSUFDest>
+          <vICMSUFRemet>0</vICMSUFRemet>
+          <vFCP>0</vFCP>
+          <vBCST>0</vBCST>
+          <vST>0</vST>
+          <vFCPST>0</vFCPST>
+          <vFCPSTRet>0</vFCPSTRet>
+          <vProd>129.80</vProd>
+          <vFrete>0</vFrete>
+          <vSeg>0</vSeg>
+          <vDesc>64.90</vDesc>
+          <vII>0</vII>
+          <vIPI>0</vIPI>
+          <vIPIDevol>0</vIPIDevol>
+          <vPIS>0</vPIS>
+          <vCOFINS>0</vCOFINS>
+          <vOutro>0</vOutro>
+          <vNF>64.90</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+        <transporta>
+          <CNPJ>71698476000358</CNPJ>
+          <xNome>TRANSPO EXPRESS TRANSPORTE E LOGISTICA L</xNome>
+          <IE>9078810677</IE>
+          <xEnder>AV MARINGA, 4155 - BRCAO F</xEnder>
+          <xMun>PINHAIS</xMun>
+          <UF>PR</UF>
+        </transporta>
+        <vol>
+          <qVol>1</qVol>
+          <esp>CAIXA</esp>
+          <pesoL>1.090</pesoL>
+          <pesoB>1.090</pesoB>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <indPag>0</indPag>
+          <tPag>15</tPag>
+          <vPag>64.90</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infAdFisco>Inf. Fisco: Nao Incidencia de ICMS e FECP conforme Inc.I, Art. 47, Titulo VII, Livro I do Decreto 27427 de 17/11/2000 RJ. IPI Imunidade tributaria conforme Inc. I , Art. 18, Titulo IV do Decreto 4.544 de 26/12/2002.(Alinea d, Inc.VI,  Art.150 da Const.Federal). PROCON: R.da Ajuda,5-Centro-CEP:20040-000 e ou Pr.Cristiano Ottoni S/N-Central do Brasil-CEP 20221-250-Rio de Janeiro-RJ FONE 151 - ALERJ R.1 de Marco S/N Palacio Tiradentes 4.andar Gabinete 409-Centro-CEP 20010-000-Rio de Janeiro-RJ FONE:(21)2588-1612 Pedidos do Cliente nr: 956449 /  956449</infAdFisco>
+      </infAdic>
+      <compra>
+        <xPed>956449</xPed>
+      </compra>
+      <infRespTec>
+        <CNPJ>53113791000122</CNPJ>
+        <xContato>Rodrigo de Almeida Sartorio</xContato>
+        <email>resp_tecnico_dfe_protheus@totvs.com.br</email>
+        <fone>1128593904</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315">
+        </CanonicalizationMethod>
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1">
+        </SignatureMethod>
+        <Reference URI="#NFe33251133495771000156550010010553981394173058">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature">
+            </Transform>
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315">
+            </Transform>
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+          </DigestMethod>
+          <DigestValue>IBbyv7STRXsKDwAKFIEEJWGpL5g=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>3GfogTx/FDFPOP3HGPiJD+jEM4ExAjWkrBvs300XOIuvRSz6xqTkiQ+25hFY98+XSjSFjXMf32AX5zn16HqBj9Gvn1g3krPngwZOvFtg9mUHmco3YBNRXh+8s7tgegDKaA1fHim1J7KFXs5Nsut58sFGaNKyaywn78+DBJ0oP2a51q6+x+m00U+RYWi/fHe28Dl+GjQpNS/T0PMsBWNrzt/dISauMpIU3b8cF1ZhZa1Gl9kDSBC98NSaeXinBcqoPrXnTmVU/2dlj9PTHS0ogVHfcWzkPVlQswTQU58cFziKT5YlLtvcFLzNq3lJBwmSBNQKowqq9UXdP/uPPE7gSg==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+    <infProt>
+      <tpAmb>1</tpAmb>
+      <verAplic>SVRS2511121006DR</verAplic>
+      <chNFe>33251133495771000156550010010553981394173058</chNFe>
+      <dhRecbto>2025-11-19T15:58:09-03:00</dhRecbto>
+      <nProt>233250456093637</nProt>
+      <digVal>IBbyv7STRXsKDwAKFIEEJWGpL5g=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

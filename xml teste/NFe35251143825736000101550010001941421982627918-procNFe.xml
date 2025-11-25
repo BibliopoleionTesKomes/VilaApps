@@ -1,0 +1,360 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe35251143825736000101550010001941421982627918" versao="4.00">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>98262791</cNF>
+        <natOp>REMESSA DE MERCADORIA EM CONSIGNAÇÃO MERCANTIL OU INDUS</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>194142</nNF>
+        <dhEmi>2025-11-19T13:02:00-03:00</dhEmi>
+        <dhSaiEnt>2025-11-19T13:02:00-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>2</idDest>
+        <cMunFG>3550308</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>8</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>0</indPres>
+        <procEmi>0</procEmi>
+        <verProc>12.1.2410 | 3.0</verProc>
+      </ide>
+      <emit>
+        <CNPJ>43825736000101</CNPJ>
+        <xNome>GLOBAL EDITORA E DISTRIBUIDORA LTDA</xNome>
+        <xFant>GLOBAL EDITORA E DISTRIBUIDORA LTDA</xFant>
+        <enderEmit>
+          <xLgr>R. PIRAPITINGUI</xLgr>
+          <nro>111</nro>
+          <xBairro>LIBERDADE</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>01508020</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1132777999</fone>
+        </enderEmit>
+        <IE>109085073112</IE>
+        <IM>80307000</IM>
+        <CNAE>5821200</CNAE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962002234</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA</xNome>
+        <enderDest>
+          <xLgr>ST SHIN CA 04,S/N</xLgr>
+          <nro>SN</nro>
+          <xBairro>SETOR DE HAB. INDIV.</xBairro>
+          <cMun>5300108</cMun>
+          <xMun>BRASILIA</xMun>
+          <UF>DF</UF>
+          <CEP>71503504</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1122311227</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>0806324600224</IE>
+        <IM>ISENTO</IM>
+        <email>ALINE@LIVRARIADAVILA.COM.BR,SIMONE@LIVRARIADAVILA.COM.BR</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>4526</cProd>
+          <cEAN>9786556121673</cEAN>
+          <xProd>NAO VERAS PAIS NENHUM  40 ANOS</xProd>
+          <NCM>49019900</NCM>
+          <cBenef />
+          <CFOP>6917</CFOP>
+          <uCom>EX</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>119.0000000000</vUnCom>
+          <vProd>119.00</vProd>
+          <cEANTrib>9786556121673</cEANTrib>
+          <uTrib>EX</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>119.0000000000</vUnTrib>
+          <vDesc>74.50</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISOutr>
+              <CST>49</CST>
+              <vBC>0</vBC>
+              <pPIS>0</pPIS>
+              <vPIS>0</vPIS>
+            </PISOutr>
+          </PIS>
+          <COFINS>
+            <COFINSOutr>
+              <CST>49</CST>
+              <vBC>0</vBC>
+              <pCOFINS>0</pCOFINS>
+              <vCOFINS>0</vCOFINS>
+            </COFINSOutr>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>3411</cProd>
+          <cEAN>9788526017108</cEAN>
+          <xProd>OU ISTO OU AQUILO - EDICAO ESPECIAL</xProd>
+          <NCM>49019900</NCM>
+          <cBenef />
+          <CFOP>6917</CFOP>
+          <uCom>EX</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>89.0000000000</vUnCom>
+          <vProd>89.00</vProd>
+          <cEANTrib>9788526017108</cEANTrib>
+          <uTrib>EX</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>89.0000000000</vUnTrib>
+          <vDesc>44.50</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISOutr>
+              <CST>49</CST>
+              <vBC>0</vBC>
+              <pPIS>0</pPIS>
+              <vPIS>0</vPIS>
+            </PISOutr>
+          </PIS>
+          <COFINS>
+            <COFINSOutr>
+              <CST>49</CST>
+              <vBC>0</vBC>
+              <pCOFINS>0</pCOFINS>
+              <vCOFINS>0</vCOFINS>
+            </COFINSOutr>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="3">
+        <prod>
+          <cProd>3651</cProd>
+          <cEAN>9788575553879</cEAN>
+          <xProd>POROROCA - A ONDA DA AMAZONIA</xProd>
+          <NCM>49019900</NCM>
+          <cBenef />
+          <CFOP>6917</CFOP>
+          <uCom>EX</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>169.0000000000</vUnCom>
+          <vProd>169.00</vProd>
+          <cEANTrib>9788575553879</cEANTrib>
+          <uTrib>EX</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>169.0000000000</vUnTrib>
+          <vDesc>84.50</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISOutr>
+              <CST>49</CST>
+              <vBC>0</vBC>
+              <pPIS>0</pPIS>
+              <vPIS>0</vPIS>
+            </PISOutr>
+          </PIS>
+          <COFINS>
+            <COFINSOutr>
+              <CST>49</CST>
+              <vBC>0</vBC>
+              <pCOFINS>0</pCOFINS>
+              <vCOFINS>0</vCOFINS>
+            </COFINSOutr>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="4">
+        <prod>
+          <cProd>4528</cProd>
+          <cEAN>9786556126685</cEAN>
+          <xProd>U507</xProd>
+          <NCM>49019900</NCM>
+          <cBenef />
+          <CFOP>6917</CFOP>
+          <uCom>EX</uCom>
+          <qCom>2.0000</qCom>
+          <vUnCom>129.0000000000</vUnCom>
+          <vProd>258.00</vProd>
+          <cEANTrib>9786556126685</cEANTrib>
+          <uTrib>EX</uTrib>
+          <qTrib>2.0000</qTrib>
+          <vUnTrib>129.0000000000</vUnTrib>
+          <vDesc>129.00</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISOutr>
+              <CST>49</CST>
+              <vBC>0</vBC>
+              <pPIS>0</pPIS>
+              <vPIS>0</vPIS>
+            </PISOutr>
+          </PIS>
+          <COFINS>
+            <COFINSOutr>
+              <CST>49</CST>
+              <vBC>0</vBC>
+              <pCOFINS>0</pCOFINS>
+              <vCOFINS>0</vCOFINS>
+            </COFINSOutr>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0</vBC>
+          <vICMS>0</vICMS>
+          <vICMSDeson>0</vICMSDeson>
+          <vFCPUFDest>0</vFCPUFDest>
+          <vICMSUFDest>0</vICMSUFDest>
+          <vICMSUFRemet>0</vICMSUFRemet>
+          <vFCP>0</vFCP>
+          <vBCST>0</vBCST>
+          <vST>0</vST>
+          <vFCPST>0</vFCPST>
+          <vFCPSTRet>0</vFCPSTRet>
+          <vProd>635.00</vProd>
+          <vFrete>0</vFrete>
+          <vSeg>0</vSeg>
+          <vDesc>332.50</vDesc>
+          <vII>0</vII>
+          <vIPI>0</vIPI>
+          <vIPIDevol>0</vIPIDevol>
+          <vPIS>0</vPIS>
+          <vCOFINS>0</vCOFINS>
+          <vOutro>0</vOutro>
+          <vNF>302.50</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+        <transporta>
+          <CNPJ>12109269000190</CNPJ>
+          <xNome>TRANSPO EXPRESS L K TRANSPORTES LTDA</xNome>
+          <IE>ISENTO</IE>
+          <xEnder>R JOAQUIM NABUCO, 25</xEnder>
+          <xMun>OSASCO</xMun>
+          <UF>SP</UF>
+        </transporta>
+        <vol>
+          <qVol>1</qVol>
+          <esp>CAIXA(S)</esp>
+          <pesoL>3.820</pesoL>
+          <pesoB>3.820</pesoB>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <indPag>0</indPag>
+          <tPag>15</tPag>
+          <vPag>302.50</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>PEDIDO 960275Num Pedido Interno: 028974 Imunidade Trib Conf Artigo 150 Inciso Vl Letra D da Costituicao FederalNao Incidencia do ICMS Conforme Artigo 7 Inc. Xlll do Decreto 45.490/2000 ( RICMS/SP)</infCpl>
+      </infAdic>
+      <infRespTec>
+        <CNPJ>53113791000122</CNPJ>
+        <xContato>Rodrigo de Almeida Sartorio</xContato>
+        <email>resp_tecnico_dfe_protheus@totvs.com.br</email>
+        <fone>1128593904</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251143825736000101550010001941421982627918">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>5zBpl3CgCVtJMheQgd73J20KHUc=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>SbYFSXQ63kbXRr4JZVco7/df1uQIczzJmG3/BF3uMwAQhm/mtgTIbZ0zKQJggtArt9LXka1dNU+XZ67g+9VNY2P7Sj2/17R0pCazyKWyEBnjtTOkLGYzzX7uPGTJ3db023NXx+By+FM/sGDGF72b3WInpTXiZd1YiEXhBalHX2X4UsBr57wBsrx2IiBpri6ubhvgMFRAkPcxSP3cvlVurr9mEAxdWz1OpQIF/3XzHHR1dkg34vPhf1Xk/TcOtOl461Mc6NU5pWU4PCGJ8y83P6/jyLOqPsYJMbsSMuFMfW2jx1em/XFaH6LYMIBSis2niR+v3JF5JKuH/b98uY90eQ==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt Id="Id135253555763821">
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251143825736000101550010001941421982627918</chNFe>
+      <dhRecbto>2025-11-19T13:05:31-03:00</dhRecbto>
+      <nProt>135253555763821</nProt>
+      <digVal>5zBpl3CgCVtJMheQgd73J20KHUc=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

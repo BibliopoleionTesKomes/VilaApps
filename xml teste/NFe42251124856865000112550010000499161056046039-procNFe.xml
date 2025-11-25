@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe42251124856865000112550010000499161056046039" versao="4.00">
+      <ide>
+        <cUF>42</cUF>
+        <cNF>05604603</cNF>
+        <natOp>REMESSA EM BONIFICACAO</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>49916</nNF>
+        <dhEmi>2025-11-11T11:52:24-03:00</dhEmi>
+        <dhSaiEnt>2025-11-11T11:52:24-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>2</idDest>
+        <cMunFG>4205902</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>9</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>3</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>4.01</verProc>
+      </ide>
+      <emit>
+        <CNPJ>24856865000112</CNPJ>
+        <xNome>Happy Books Editora Ltda</xNome>
+        <xFant>Happy Books</xFant>
+        <enderEmit>
+          <xLgr>RODOVIA JORGE LACERDA</xLgr>
+          <nro>5086</nro>
+          <xCpl>GALPAO 1</xCpl>
+          <xBairro>POCO GRANDE</xBairro>
+          <cMun>4205902</cMun>
+          <xMun>GASPAR</xMun>
+          <UF>SC</UF>
+          <CEP>89115100</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>4733083250</fone>
+        </enderEmit>
+        <IE>258145056</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962001939</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA</xNome>
+        <enderDest>
+          <xLgr>AVENIDA REG FEIJO</xLgr>
+          <nro>1739</nro>
+          <xBairro>VILA REGENTE FEIJO</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>03342900</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1137289110</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>126411310113</IE>
+        <email>fiscal@livrariadavila.com.br</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>314161</cProd>
+          <cEAN>9786555076370</cEAN>
+          <xProd>NAO ABRA ESTE LIVRO... HO! HO! HO!</xProd>
+          <NCM>49019900</NCM>
+          <cBenef>SC800001</cBenef>
+          <CFOP>6910</CFOP>
+          <uCom>UNID</uCom>
+          <qCom>2.0000</qCom>
+          <vUnCom>39.9000000000</vUnCom>
+          <vProd>79.80</vProd>
+          <cEANTrib>9786555076370</cEANTrib>
+          <uTrib>UNID</uTrib>
+          <qTrib>2.0000</qTrib>
+          <vUnTrib>39.9000000000</vUnTrib>
+          <vDesc>47.88</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>1</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+        <infAdProd>EAN 9786555076370</infAdProd>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0.00</vBC>
+          <vICMS>0.00</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>79.80</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>47.88</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>0.00</vPIS>
+          <vCOFINS>0.00</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>31.92</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+        <transporta>
+          <CNPJ>23570483000165</CNPJ>
+          <xNome>GALLOG TRANSPORTES &amp; LOGISTICA EIRELI ME</xNome>
+          <IE>257811095</IE>
+          <xEnder>RODOVIA: BR 470, 2838 - GALPAO B - SALTO DO NORTE</xEnder>
+          <xMun>BLUMENAU</xMun>
+          <UF>SC</UF>
+        </transporta>
+        <vol>
+          <qVol>1</qVol>
+          <esp>CAIXA</esp>
+          <marca>HAPPY BOOKS</marca>
+          <nVol>69644/63546</nVol>
+          <pesoL>0.804</pesoL>
+          <pesoB>1.104</pesoB>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <tPag>90</tPag>
+          <vPag>0.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infAdFisco>IPI IMUNE CONFORME ART. 18 INCISO II DECRETO N 7.212, DE 15 DE JUNHO DE 2010* NAO INCIDENCIA DE ICMS NOS TERMOS DO ARTIGO 150 INCISO VI, ALINEA D DA CONSTITUICAO FEDERAL DE 1988 E ART. 6 INCISO I DECRETO 2870/01</infAdFisco>
+        <infCpl>ENTREGAR AOS CUIDADOS DE CAROL - LOJA ANALIA FRANCO, COTACAO TABELA HB</infCpl>
+        <obsCont xCampo="CODIGO DESTINATARIO">
+          <xTexto>69644</xTexto>
+        </obsCont>
+        <obsCont xCampo="CONFERENTE">
+          <xTexto>Andreza</xTexto>
+        </obsCont>
+        <obsCont xCampo="PEDIDO">
+          <xTexto>63546</xTexto>
+        </obsCont>
+      </infAdic>
+      <infRespTec>
+        <CNPJ>04517052000190</CNPJ>
+        <xContato>FABIO AUGUSTO BRUNS</xContato>
+        <email>contato@logiware.com.br</email>
+        <fone>4733083250</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315">
+        </CanonicalizationMethod>
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1">
+        </SignatureMethod>
+        <Reference URI="#NFe42251124856865000112550010000499161056046039">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature">
+            </Transform>
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315">
+            </Transform>
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+          </DigestMethod>
+          <DigestValue>o088TtTrV55Ln7UDp/N6NZ03kV0=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>rfUIR+lpgnHXrJrWJGl4aRDcFVyOvSuGFtFQShfvUY8TedysPhf80Qb1mdGgn0HYBbW481GDsl9/5/CdFojan7/zT2gDZLX/wO+7eSMjidjz5uVE+YLOriskTPCCAmww7enM4QvNQLkxkQbpGvPTQ8mBik8Syuo7VjLgdLSm2PE99xZkXqq11ztnrR3sTIMMgNiWKNNAC03UWszC2PpU8lk/tdUPi/vV/rI+H/m/SrqUZImZQ1PzXg17+KMJBGUSmoDUEaqFem8LANk15mFgDy+13wMlu+s5pS+vROR81l0TBs1jiIFgrKuV73LT6lmuE4fCCZsKo4FUdloK2UTbqw==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt>
+      <tpAmb>1</tpAmb>
+      <verAplic>SVRS2511071706DR</verAplic>
+      <chNFe>42251124856865000112550010000499161056046039</chNFe>
+      <dhRecbto>2025-11-11T11:52:33-03:00</dhRecbto>
+      <nProt>242250448799515</nProt>
+      <digVal>o088TtTrV55Ln7UDp/N6NZ03kV0=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

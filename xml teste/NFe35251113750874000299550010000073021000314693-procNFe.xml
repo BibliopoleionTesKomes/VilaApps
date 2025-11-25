@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe35251113750874000299550010000073021000314693" versao="4.00">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>00031469</cNF>
+        <natOp>VENDA S/CONSIGNACAO</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>7302</nNF>
+        <dhEmi>2025-11-17T18:37:45-03:00</dhEmi>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3547304</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>3</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>3</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>18.15.3973</verProc>
+        <NFref>
+          <refNFe>35250713750874000299550010000069571000308354</refNFe>
+        </NFref>
+      </ide>
+      <emit>
+        <CNPJ>13750874000299</CNPJ>
+        <xNome>EDITORA PULO DO GATO LTDA</xNome>
+        <xFant>ED. PULO DO GATO FILIAL</xFant>
+        <enderEmit>
+          <xLgr>RUA FORTALEZA</xLgr>
+          <nro>143</nro>
+          <xCpl>GALPAO04 BOX 11</xCpl>
+          <xBairro>JARDIM REPRESA (FAZENDINHA)</xBairro>
+          <cMun>3547304</cMun>
+          <xMun>SANTANA DE PARNAIBA</xMun>
+          <UF>SP</UF>
+          <CEP>06529240</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1132140228</fone>
+        </enderEmit>
+        <IE>623145720119</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962000533</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA - MOEMA</xNome>
+        <enderDest>
+          <xLgr>AVENIDA MOEMA</xLgr>
+          <nro>493</nro>
+          <xBairro>PLANALTO PAULISTA</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>04077022</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>147140565119</IE>
+        <email>fiscal@livrariadavila.com.br</email>
+      </dest>
+      <autXML>
+        <CNPJ>04688953000145</CNPJ>
+      </autXML>
+      <det nItem="1">
+        <prod>
+          <cProd>0000000251</cProd>
+          <cEAN>9788564974920</cEAN>
+          <xProd>ADELIA</xProd>
+          <NCM>49019900</NCM>
+          <CEST>1400100</CEST>
+          <CFOP>5114</CFOP>
+          <uCom>UN</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>64.9000000</vUnCom>
+          <vProd>64.90</vProd>
+          <cEANTrib>9788564974920</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>64.9000000</vUnTrib>
+          <vDesc>32.45</vDesc>
+          <indTot>1</indTot>
+          <xPed>ACERTO</xPed>
+        </prod>
+        <imposto>
+          <vTotTrib>0</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>0000000362</cProd>
+          <cEAN>9786587704258</cEAN>
+          <xProd>MAIOR MUSEU DO MUNDO</xProd>
+          <NCM>49019900</NCM>
+          <CEST>1400100</CEST>
+          <CFOP>5114</CFOP>
+          <uCom>UN</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>69.0000000</vUnCom>
+          <vProd>69.00</vProd>
+          <cEANTrib>9786587704258</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>69.0000000</vUnTrib>
+          <vDesc>34.50</vDesc>
+          <indTot>1</indTot>
+          <xPed>ACERTO</xPed>
+        </prod>
+        <imposto>
+          <vTotTrib>0</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0</vBC>
+          <vICMS>0</vICMS>
+          <vICMSDeson>0</vICMSDeson>
+          <vFCP>0</vFCP>
+          <vBCST>0</vBCST>
+          <vST>0</vST>
+          <vFCPST>0</vFCPST>
+          <vFCPSTRet>0</vFCPSTRet>
+          <vProd>133.90</vProd>
+          <vFrete>0</vFrete>
+          <vSeg>0</vSeg>
+          <vDesc>66.95</vDesc>
+          <vII>0</vII>
+          <vIPI>0</vIPI>
+          <vIPIDevol>0</vIPIDevol>
+          <vPIS>0</vPIS>
+          <vCOFINS>0</vCOFINS>
+          <vOutro>0</vOutro>
+          <vNF>66.95</vNF>
+          <vTotTrib>0</vTotTrib>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>9</modFrete>
+        <vol>
+          <qVol>1</qVol>
+          <esp>CX</esp>
+          <pesoL>0.534</pesoL>
+          <pesoB>0.534</pesoB>
+        </vol>
+      </transp>
+      <cobr>
+        <fat>
+          <nFat>001</nFat>
+          <vOrig>66.95</vOrig>
+          <vLiq>66.95</vLiq>
+        </fat>
+        <dup>
+          <nDup>001</nDup>
+          <dVenc>2026-01-15</dVenc>
+          <vDup>66.95</vDup>
+        </dup>
+      </cobr>
+      <pag>
+        <detPag>
+          <indPag>1</indPag>
+          <tPag>01</tPag>
+          <vPag>66.95</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>PD Nr.: 0000031469 - Ped. do Cliente: ACERTO ACERTO DE CONSIGNACAO Ref. NF(s): 006957</infCpl>
+      </infAdic>
+      <compra>
+        <xPed>ACERTO</xPed>
+      </compra>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251113750874000299550010000073021000314693">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>JOqXcqv8w/DdAlQNVQQc6dhcxn0=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>CGo7qF3I8axj/aM6c2NmyV+KBaalaKzFqz+BYbzzd31b9xbf0t5Rgxm3CbmSDKKRvwmGAR7ugewMcwc+T2kPBLcCRgr7BOOSilFIm/tXxWni1GItsVmtLWTECizO9ej7cbu2Kwp6iBjy0jAIhftigw6viQi2KlNiiEt6h7WRynPLvHKyWPCZLzItruYZuubXa4UO6hviAOPt2vIrhxbv4yvD/fqtyiDdwm2GLBmL1kWZcblqAV+ERBk5npDIU4zKhjt9qSo5WEOCGYMQyo6cnCc30mYRG3bXOc29dPpBNQv4ROf62uLR3Islx8Vmzp6YSQfPKufvzwc26W2hp/UrDA==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+    <infProt Id="ID135253528132823">
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251113750874000299550010000073021000314693</chNFe>
+      <dhRecbto>2025-11-17T18:37:18-03:00</dhRecbto>
+      <nProt>135253528132823</nProt>
+      <digVal>JOqXcqv8w/DdAlQNVQQc6dhcxn0=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

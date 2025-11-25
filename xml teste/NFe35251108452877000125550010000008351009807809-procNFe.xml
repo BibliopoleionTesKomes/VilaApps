@@ -1,0 +1,224 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe35251108452877000125550010000008351009807809" versao="4.00">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>00980780</cNF>
+        <natOp>Venda Prod.Estab. Remetida em Consignacao Mercantil</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>835</nNF>
+        <dhEmi>2025-11-18T01:52:00-03:00</dhEmi>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3549904</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>9</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>0</indPres>
+        <procEmi>3</procEmi>
+        <verProc>4.01_sebrae_b052</verProc>
+      </ide>
+      <emit>
+        <CNPJ>08452877000125</CNPJ>
+        <xNome>OFICIO DAS PALAVRAS EDITORA LTDA</xNome>
+        <xFant>OFICIO DAS PALAVRAS</xFant>
+        <enderEmit>
+          <xLgr>RUA ALVARES DE AZEVEDO</xLgr>
+          <nro>24</nro>
+          <xBairro>VILA BETANIA</xBairro>
+          <cMun>3549904</cMun>
+          <xMun>Sao Jose dos Campos</xMun>
+          <UF>SP</UF>
+          <CEP>12245494</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+        </enderEmit>
+        <IE>645720522110</IE>
+        <CRT>1</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962002587</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA</xNome>
+        <enderDest>
+          <xLgr>AL LORENA</xLgr>
+          <nro>1501</nro>
+          <xBairro>JARDOM PAULISTA</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>Sao Paulo</xMun>
+          <UF>SP</UF>
+          <CEP>01424005</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>131900547117</IE>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>9786552010315</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <cBarra>SEM GTIN</cBarra>
+          <xProd>ATRIZES</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5113</CFOP>
+          <uCom>UN</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>70.0000000000</vUnCom>
+          <vProd>70.00</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>70.0000000000</vUnTrib>
+          <vDesc>35.00</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMSSN102>
+              <orig>0</orig>
+              <CSOSN>400</CSOSN>
+            </ICMSSN102>
+          </ICMS>
+          <PIS>
+            <PISNT>
+              <CST>07</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>07</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0.00</vBC>
+          <vICMS>0.00</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCPUFDest>0.00</vFCPUFDest>
+          <vICMSUFDest>0.00</vICMSUFDest>
+          <vICMSUFRemet>0.00</vICMSUFRemet>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <qBCMono>0.00</qBCMono>
+          <vICMSMono>0.00</vICMSMono>
+          <qBCMonoReten>0.00</qBCMonoReten>
+          <vICMSMonoReten>0.00</vICMSMonoReten>
+          <qBCMonoRet>0.00</qBCMonoRet>
+          <vICMSMonoRet>0.00</vICMSMonoRet>
+          <vProd>70.00</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>35.00</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>0.00</vPIS>
+          <vCOFINS>0.00</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>35.00</vNF>
+          <vTotTrib>0.00</vTotTrib>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>1</modFrete>
+      </transp>
+      <pag>
+        <detPag>
+          <indPag>0</indPag>
+          <tPag>18</tPag>
+          <vPag>35.00</vPag>
+          <dPag>2025-08-15</dPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>REFERENTE AO PEDIDO DE CONSIGNAÇÃO 0002604048</infCpl>
+      </infAdic>
+      <infRespTec>
+        <CNPJ>43728245000142</CNPJ>
+        <xContato>suporte</xContato>
+        <email>suporteemissores@sebraesp.com.br</email>
+        <fone>08005700800</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251108452877000125550010000008351009807809">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>5kATBtxCkXF+OX+ubM+gE6Agp54=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>WBUm6vxSXT/EifCWzEjaKkyF1ozyznZSdi3WjXabX46Mcuryr08MSAQgB/gr7Zva4qlDNx+Y0Irv
+0Ib0waBQeqLqlXgFn/p7y+mX2g+xDvOiE1g/zKSGAwu93hNe2lnRE4MRyfhbgIVEaCk2BIWTi8oX
+Q8zPZoKsJ60Je5I6UI+SrbDYFxTe9LC+a7eWqDegB/Th8ut2c8mcn3cTHCflmOeEFUlJPQxgkAgR
+5IL5l/znqpy7vIKx1lrQp/tJAqkM5IQZmCY5/kDDHUCX+D7d8IORblPF5iUDVZ8gCAvJ/RSlnl+d
+yrw1KcN0mf7odzzBbKra3wJBkxsrmAT2UDQs4w==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>MIIH6jCCBdKgAwIBAgILAMJbk9aHfogMPGAwDQYJKoZIhvcNAQELBQAwWzELMAkGA1UEBhMCQlIx
+FjAUBgNVBAsMDUFDIFN5bmd1bGFySUQxEzARBgNVBAoMCklDUC1CcmFzaWwxHzAdBgNVBAMMFkFD
+IFN5bmd1bGFySUQgTXVsdGlwbGEwHhcNMjUwNzE2MTQzMjM5WhcNMjYwNzE2MTQzMjM5WjCB1TEL
+MAkGA1UEBhMCQlIxEzARBgNVBAoMCklDUC1CcmFzaWwxIjAgBgNVBAsMGUNlcnRpZmljYWRvIERp
+Z2l0YWwgUEogQTExGTAXBgNVBAsMEFZpZGVvY29uZmVyZW5jaWExFzAVBgNVBAsMDjQxMzY3MTYx
+MDAwMTAzMR8wHQYDVQQLDBZBQyBTeW5ndWxhcklEIE11bHRpcGxhMTgwNgYDVQQDDC9PRklDSU8g
+REFTIFBBTEFWUkFTIEVESVRPUkEgTFREQTowODQ1Mjg3NzAwMDEyNTCCASIwDQYJKoZIhvcNAQEB
+BQADggEPADCCAQoCggEBALMn4cUDJEgrOKZiyKYm9MFTRpgMuLDP1Iqo5x1aEoPekv7eW/hS32O6
+oAuqggnzCSf/NlbWOWCZyTyPJrRKHzHiwY+5uzcwa6aCTN4z/LQKYdAvMUJCbHFxByvffIEXASq/
+oafO8ItNDOOoFfCPZBHqWc+lSuk7frs1jV4AOJkNZ7DX//HsnJpWvnVzEcCwpIwu/oBARWSpUXNZ
+ti4Cco9d+/sgr39l+tt7aY7+1SVtGUHI4+hKpL34K/yvuRjiUUTHb4KS7qt3CwQrv3kHTNcKrquQ
+mnpyo0V820CKfrm9VEbtagRSHP2QhMe1gwNNRahGUB6uumCH7yF+UKwTcG8CAwEAAaOCAzIwggMu
+MA4GA1UdDwEB/wQEAwIF4DAdBgNVHSUEFjAUBggrBgEFBQcDBAYIKwYBBQUHAwIwCQYDVR0TBAIw
+ADAfBgNVHSMEGDAWgBST4f9+HeX15E3hOWKLIWmV5q9yFjAdBgNVHQ4EFgQUjAvKQehXhfO+gYqc
+coSynr1VkwIwfwYIKwYBBQUHAQEEczBxMG8GCCsGAQUFBzAChmNodHRwOi8vc3luZ3VsYXJpZC5j
+b20uYnIvcmVwb3NpdG9yaW8vYWMtc3luZ3VsYXJpZC1tdWx0aXBsYS9jZXJ0aWZpY2Fkb3MvYWMt
+c3luZ3VsYXJpZC1tdWx0aXBsYS5wN2IwgYIGA1UdIAR7MHkwdwYHYEwBAgGBBTBsMGoGCCsGAQUF
+BwIBFl5odHRwOi8vc3luZ3VsYXJpZC5jb20uYnIvcmVwb3NpdG9yaW8vYWMtc3luZ3VsYXJpZC1t
+dWx0aXBsYS9kcGMvZHBjLWFjLXN5bmd1bGFySUQtbXVsdGlwbGEucGRmMIHGBgNVHREEgb4wgbug
+JQYFYEwBAwKgHAQaVGF0aWFuYSBQYXJyZWlyYSBJYWNvbmVsbGmgGQYFYEwBAwOgEAQOMDg0NTI4
+NzcwMDAxMjWgQgYFYEwBAwSgOQQ3MTEwNDE5NzQxNjM3Nzk5NTg2NTAwMDAwMDAwMDAwMDAwMDAw
+MDAwMDAwMDAwMDAwMDAwMDAwMKAXBgVgTAEDB6AOBAwwMDAwMDAwMDAwMDCBGnRhdGlfaWFjb25l
+bGxpQGhvdG1haWwuY29tMIHiBgNVHR8Egdowgdcwb6BtoGuGaWh0dHA6Ly9pY3AtYnJhc2lsLnN5
+bmd1bGFyaWQuY29tLmJyL3JlcG9zaXRvcmlvL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEvbGNyL2xj
+ci1hYy1zeW5ndWxhcmlkLW11bHRpcGxhLmNybDBkoGKgYIZeaHR0cDovL3N5bmd1bGFyaWQuY29t
+LmJyL3JlcG9zaXRvcmlvL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEvbGNyL2xjci1hYy1zeW5ndWxh
+cmlkLW11bHRpcGxhLmNybDANBgkqhkiG9w0BAQsFAAOCAgEAgnt6kUe2tt+35j1RfBNOFKX8xpxf
+RqOXfkB8FDqmes9WsVhP0xzaX96VwkafpbXCHhVZMxZB4Y4xYT8ufhv65EEnXpsfABNU2jLKtQ2b
+F5iYgFQmU64BJ8i3TPiuGU3EESI50iNc1L+zuY+Dh6xGv1G1cSo5FoY+xTdiNOCYH82zVt6Vh4gJ
+LWlCsV486zzmiy26RYkru8MaGAbTV4cUUjZkgR4vLuPFa2zya0gWf3vgkDeIU2ujZStOPKFf+vpd
+hUO+W44hqH9nys2Bdi+c9UsVF2llSSeTCWqSIrgcRM/TrWxGKmxPqaGDDQeubCrLpfpP5KwEQCuI
+u9A5m5Z7b4L4htCU/yWhPupH3f+kwAPPbDlAOkc0cXnts8dJhSOl6MIPhe96/Z1W+SxmZelzEt6P
+7agu3e5fwJ9gPNaybq0wbZv6uAIYsx1R/9R89PADf8LrrWQRxG8fikMZJ/nXS4nTNfWSgmGKMdTA
+DyDv8nlOrnbn/KNXy9JvdQvrMr+M8flLMf0SxaFadMBLN62+qKYOnZ4kTOZ97pAJmhZkvoxkAP9Y
+6LQO4z+qBjOx1T1lv7yOPdfqdq8pf71XQYmGHIpl7BnDEFBgLAfJrEPfaVOfFuIrTVi3bTrdGGPT
+BUx4p0+fjlM52iGQ9/ox1mhy/AQ2sdNyLKcbIvn7tNg0db8=</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt Id="Id135253532323142">
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251108452877000125550010000008351009807809</chNFe>
+      <dhRecbto>2025-11-18T01:56:37-03:00</dhRecbto>
+      <nProt>135253532323142</nProt>
+      <digVal>5kATBtxCkXF+OX+ubM+gE6Agp54=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

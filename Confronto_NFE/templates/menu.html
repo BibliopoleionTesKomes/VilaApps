@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Vila Apps</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Importando Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        :root { --cor-principal: #192F63; --cor-secundaria: #33508F; }
+        body { background-color: #E8EDF9; font-family: 'Montserrat', sans-serif; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+        
+        .header-bg { background-image: linear-gradient(135deg, #192F63 0%, #33508F 100%); color: white; padding: 0 2rem; height: 90px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 20px rgba(0,0,0,0.25); flex: 0 0 auto; z-index: 100; }
+        .header-logo-container { flex: 0 0 300px; display: flex; align-items: center; } .header-logo-container.right { justify-content: flex-end; }
+        .logo-vila { max-height: 50px; width: auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); } 
+        .logo-argos { max-height: 120px; width: auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+        
+        .main-content { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; overflow-y: auto; padding: 20px 0; }
+        
+        .card-menu { 
+            border: none; border-radius: 20px; transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 
+            background: white; height: 100%; min-height: 200px; /* Altura mínima reduzida */
+            box-shadow: 0 5px 20px rgba(25, 47, 99, 0.05); cursor: pointer; text-decoration: none; 
+            color: var(--cor-principal); display: flex; flex-direction: column; 
+            align-items: center; justify-content: center; padding: 30px 20px; 
+            position: relative; overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.8);
+        }
+        
+        .card-menu:hover { 
+            transform: translateY(-8px) scale(1.01); 
+            box-shadow: 0 15px 40px rgba(25, 47, 99, 0.15); 
+            background: var(--cor-principal); 
+            color: white; 
+            border-color: transparent;
+        }
+
+        /* CAIXA DO ÍCONE MAIS SUTIL */
+        .icon-box {
+            width: 55px; height: 55px; /* Reduzido de 70px para 55px */
+            background: linear-gradient(135deg, #f8faff 0%, #f0f4fa 100%);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 20px;
+            transition: all 0.4s ease;
+            box-shadow: inset 0 0 10px rgba(25, 47, 99, 0.03); /* Sombra interna bem leve */
+        }
+        
+        .card-menu:hover .icon-box {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: none;
+            transform: scale(1.1);
+        }
+
+        /* ÍCONE MENOR */
+        .custom-icon {
+            width: 26px; height: 26px; /* Reduzido de 32px para 26px */
+            stroke-width: 1.5; 
+            stroke: var(--cor-principal);
+            transition: all 0.3s ease;
+        }
+
+        .card-menu:hover .custom-icon {
+            stroke: white;
+        }
+
+        .title-menu { font-weight: 700; font-size: 1rem; text-transform: uppercase; text-align: center; margin-bottom: 4px; letter-spacing: 0.5px; }
+        .desc-menu { font-size: 0.7rem; font-weight: 500; opacity: 0.6; text-align: center; line-height: 1.3; text-transform: uppercase; }
+        .card-menu:hover .desc-menu { opacity: 0.9; }
+
+        .footer-text { padding: 20px; color: #6c757d; font-size: 0.8rem; text-align: center; flex: 0 0 auto; }
+    </style>
+</head>
+<body>
+    <header class="header-bg">
+        <div class="header-logo-container"><img src="{{ url_for('static', filename='logo.png') }}" class="logo-vila"></div>
+        <h1 class="fw-bold m-0 text-white" style="text-shadow: 0 2px 5px rgba(0,0,0,0.4); font-family: 'Montserrat', sans-serif; letter-spacing: 2px; font-size: 1.8rem;">Consig Confere</h1>
+        <div class="header-logo-container right"><img src="{{ url_for('static', filename='logo_argos.png') }}" class="logo-argos"></div>
+    </header>
+
+    <div class="main-content">
+        <h5 class="mb-4 fw-bold text-secondary" style="letter-spacing: 2px; opacity: 0.7; font-size: 0.8rem;">SELECIONE O MÓDULO OPERACIONAL</h5>
+        <div class="container">
+            
+            <!-- LINHA 1: MÓDULOS DE GESTÃO/LEITURA (3 Ícones) -->
+            <div class="row justify-content-center g-3 mb-3">
+                
+                <!-- 1. CONFERÊNCIA DE ACERTO (NOVO MÓDULO) -->
+                <div class="col-md-4 col-lg-3">
+                    <a href="{{ url_for('conferencia.index') }}" class="card-menu" style="border-bottom: 4px solid #0d6efd;">
+                        <div class="icon-box">
+                            <i data-lucide="calculator" class="custom-icon"></i>
+                        </div>
+                        <div class="title-menu">Conferência Acerto</div>
+                        <span class="desc-menu">Analise sobre Acerto/Venda</span>
+                    </a>
+                </div>
+
+                <!-- 2. WORKFLOW (GESTÃO) -->
+                <div class="col-md-4 col-lg-3">
+                    <a href="{{ url_for('workflow') }}" class="card-menu" style="border-bottom: 4px solid #ffc107;">
+                        <div class="icon-box">
+                            <i data-lucide="kanban-square" class="custom-icon"></i>
+                        </div>
+                        <div class="title-menu">Follow-up</div>
+                        <span class="desc-menu">Gestão de Pendências</span>
+                    </a>
+                </div>
+                
+                <!-- 3. LEITOR GERAL (CONSULTA) -->
+                <div class="col-md-4 col-lg-3">
+                    <a href="{{ url_for('leitor_xml') }}" class="card-menu" style="border-bottom: 4px solid #6c757d;">
+                        <div class="icon-box">
+                            <i data-lucide="scan-line" class="custom-icon"></i>
+                        </div>
+                        <div class="title-menu">Notas de Acerto</div>
+                        <span class="desc-menu">Entrada Pendente</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- LINHA 2: MÓDULOS DE CONFRONTO (2 Ícones) -->
+            <div class="row justify-content-center g-3">
+                
+                <!-- 4. ACERTO (CONFRONTO) -->
+                <div class="col-md-4 col-lg-3">
+                    <a href="{{ url_for('acerto') }}" class="card-menu" style="border-bottom: 4px solid #198754;">
+                        <div class="icon-box">
+                            <i data-lucide="badge-check" class="custom-icon"></i>
+                        </div>
+                        <div class="title-menu">Confronto NF Acerto</div>
+                        <span class="desc-menu"></span>
+                    </a>
+                </div>
+
+                <!-- 5. DEVOLUÇÃO (CONFRONTO) -->
+                <div class="col-md-4 col-lg-3">
+                    <a href="{{ url_for('devolucao') }}" class="card-menu" style="border-bottom: 4px solid #dc3545;">
+                        <div class="icon-box">
+                            <i data-lucide="file-search" class="custom-icon"></i>
+                        </div>
+                        <div class="title-menu">Confronto NF Devolução</div>
+                        <span class="desc-menu">Troca de Notas</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="footer-text">Vila Apps &copy; 2025</div>
+
+    <!-- Inicializa os ícones Lucide -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

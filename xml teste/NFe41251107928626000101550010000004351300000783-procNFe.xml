@@ -1,0 +1,277 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe41251107928626000101550010000004351300000783" versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+      <ide>
+        <cUF>41</cUF>
+        <cNF>30000078</cNF>
+        <natOp>REMESSA DE MERCADORIAS EM CONSIGNACAO</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>435</nNF>
+        <dhEmi>2025-11-18T17:41:05-03:00</dhEmi>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>4106902</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>3</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>2</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>EmissorSebrae1.00</verProc>
+      </ide>
+      <emit>
+        <CNPJ>07928626000101</CNPJ>
+        <xNome>Voar Comunicacao e Editora Ltda</xNome>
+        <enderEmit>
+          <xLgr>Rua Julia Wanderley</xLgr>
+          <nro>161</nro>
+          <xCpl>casa</xCpl>
+          <xBairro>Merces</xBairro>
+          <cMun>4106902</cMun>
+          <xMun>Curitiba</xMun>
+          <UF>PR</UF>
+          <CEP>80430030</CEP>
+          <cPais>1058</cPais>
+          <fone>4133352002</fone>
+        </enderEmit>
+        <IE>9048747369</IE>
+        <CRT>1</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962001181</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA</xNome>
+        <enderDest>
+          <xLgr>Avenida do Batel</xLgr>
+          <nro>1868</nro>
+          <xCpl>LOJA 314</xCpl>
+          <xBairro>Batel</xBairro>
+          <cMun>4106902</cMun>
+          <xMun>Curitiba</xMun>
+          <UF>PR</UF>
+          <CEP>80420090</CEP>
+          <cPais>1058</cPais>
+          <fone>4133322290</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>9063601281</IE>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>9788565935012</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>Curitiba Central</xProd>
+          <NCM>49011000</NCM>
+          <CFOP>5917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>10.0000</qCom>
+          <vUnCom>180.0000</vUnCom>
+          <vProd>1800.00</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>10.0000</qTrib>
+          <vUnTrib>180.0000</vUnTrib>
+          <vDesc>900.00</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMSSN102>
+              <orig>0</orig>
+              <CSOSN>102</CSOSN>
+            </ICMSSN102>
+          </ICMS>
+          <PIS>
+            <PISOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pPIS>0.00</pPIS>
+              <vPIS>0.00</vPIS>
+            </PISOutr>
+          </PIS>
+          <COFINS>
+            <COFINSOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pCOFINS>0.0000</pCOFINS>
+              <vCOFINS>0.00</vCOFINS>
+            </COFINSOutr>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>9786599353925</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>Curitiba do Alto</xProd>
+          <NCM>49011000</NCM>
+          <CFOP>5917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>15.0000</qCom>
+          <vUnCom>150.0000</vUnCom>
+          <vProd>2250.00</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>15.0000</qTrib>
+          <vUnTrib>150.0000</vUnTrib>
+          <vDesc>1125.00</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMSSN102>
+              <orig>0</orig>
+              <CSOSN>102</CSOSN>
+            </ICMSSN102>
+          </ICMS>
+          <PIS>
+            <PISOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pPIS>0.00</pPIS>
+              <vPIS>0.00</vPIS>
+            </PISOutr>
+          </PIS>
+          <COFINS>
+            <COFINSOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pCOFINS>0.0000</pCOFINS>
+              <vCOFINS>0.00</vCOFINS>
+            </COFINSOutr>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="3">
+        <prod>
+          <cProd>9788565935005</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>Expedicao Coracao do Brasil - Paranagua, Lagamar</xProd>
+          <NCM>49011000</NCM>
+          <CFOP>5917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>5.0000</qCom>
+          <vUnCom>150.0000</vUnCom>
+          <vProd>750.00</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>5.0000</qTrib>
+          <vUnTrib>150.0000</vUnTrib>
+          <vDesc>375.00</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMSSN102>
+              <orig>0</orig>
+              <CSOSN>102</CSOSN>
+            </ICMSSN102>
+          </ICMS>
+          <PIS>
+            <PISOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pPIS>0.00</pPIS>
+              <vPIS>0.00</vPIS>
+            </PISOutr>
+          </PIS>
+          <COFINS>
+            <COFINSOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pCOFINS>0.0000</pCOFINS>
+              <vCOFINS>0.00</vCOFINS>
+            </COFINSOutr>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0.00</vBC>
+          <vICMS>0.00</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCPUFDest>0.00</vFCPUFDest>
+          <vICMSUFDest>0.00</vICMSUFDest>
+          <vICMSUFRemet>0.00</vICMSUFRemet>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>4800.00</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>2400.00</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>0.00</vPIS>
+          <vCOFINS>0.00</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>2400.00</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>9</modFrete>
+      </transp>
+      <cobr>
+        <fat>
+          <nFat>78</nFat>
+          <vOrig>4800.00</vOrig>
+          <vDesc>2400.00</vDesc>
+          <vLiq>2400.00</vLiq>
+        </fat>
+      </cobr>
+      <pag>
+        <detPag>
+          <tPag>90</tPag>
+          <vPag>0</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>ORDEM DE FORNECIMENTO N: 960393 DOCUMENTO EMITIDO POR ME OU EPP OPTANTE PELO SIMPLES NACIONAL. NAO GERA DIREITO A CREDITO FISCAL DE ICMS, ISS E IPI.</infCpl>
+      </infAdic>
+      <infRespTec>
+        <CNPJ>00330845000145</CNPJ>
+        <xContato>Suporte</xContato>
+        <email>emissores@sebrae.com.br</email>
+        <fone>08005700800</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe41251107928626000101550010000004351300000783">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>Cdi/b2/aXmHfwSOjQZyVv6fIv3s=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>VrPC7YZtSOtAcrQ4vpSL47pP4MApm+TrnzoHWFVFKWWlkrX1OJ1P8/8U5qthb9CEPcklKrz5u5y4R9jEd8479K0X3zijHAHXhFOfYx3RA10BYHbMlHglktF39ysQZnN5gFUWqpcVeiN8xDk9MU5FS0IRtHBiTxctzqWO+ehFDbW2ZXE7r9xZNFRR4JYAejGg8IT/qlvqv0U0F4bD/AXixm7PcwK7QNUjpBC7jzR20gTSQ9Iod7A1PN3a32MiwHQcxcPxtKKD7NyqWo30+TywQE+pqU1RL9k5peLeetJ+vmyau/OGRSQRbTOtxceF9DdXXyOXiWYXaxDI7lDC81n4tw==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+    <infProt Id="ID141250393242477" xmlns="http://www.portalfiscal.inf.br/nfe">
+      <tpAmb>1</tpAmb>
+      <verAplic>PR-v4_9_45</verAplic>
+      <chNFe>41251107928626000101550010000004351300000783</chNFe>
+      <dhRecbto>2025-11-18T17:41:07-03:00</dhRecbto>
+      <nProt>141250393242477</nProt>
+      <digVal>Cdi/b2/aXmHfwSOjQZyVv6fIv3s=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

@@ -1,0 +1,346 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe35251106905943000492550030002567911600799056" versao="4.00">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>60079905</cNF>
+        <natOp>VENDA DE PRODUCAO DO ESTABELECIMENTO</natOp>
+        <mod>55</mod>
+        <serie>3</serie>
+        <nNF>256791</nNF>
+        <dhEmi>2025-11-17T14:33:00-03:00</dhEmi>
+        <dhSaiEnt>2025-11-17T14:33:00-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3522505</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>6</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>1</indFinal>
+        <indPres>9</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>12.1.2410 | 3.0</verProc>
+      </ide>
+      <emit>
+        <CNPJ>06905943000492</CNPJ>
+        <xNome>NOBELPACK EMBALAGENS E LOGISTICA LTDA</xNome>
+        <xFant>NOBELPACK EMBALAGENS FILIAL</xFant>
+        <enderEmit>
+          <xLgr>ESTRADA ANTIGA DE ITU</xLgr>
+          <nro>730</nro>
+          <xCpl>GALPAO04</xCpl>
+          <xBairro>ESTANCIA SAO FRANCISCO</xBairro>
+          <cMun>3522505</cMun>
+          <xMun>ITAPEVI</xMun>
+          <UF>SP</UF>
+          <CEP>06695570</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1178573816</fone>
+        </enderEmit>
+        <IE>373094328119</IE>
+        <IM>27303</IM>
+        <CNAE>1813001</CNAE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962001939</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA</xNome>
+        <enderDest>
+          <xLgr>AV REG FEIJO</xLgr>
+          <nro>1739</nro>
+          <xBairro>VILA REGENTE FEIJO</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>03342900</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1130964490</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>126411310113</IE>
+        <IM>63368293</IM>
+        <email>IVAN@LIVRARIADAVILA.COM.BR</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>PA3200012</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>LIVRARIA DA VILA FUNDO G PAPEL DUPLEX 250GR</xProd>
+          <NCM>48111090</NCM>
+          <cBenef />
+          <CFOP>5101</CFOP>
+          <uCom>UN</uCom>
+          <qCom>450.0000</qCom>
+          <vUnCom>0.1500000000</vUnCom>
+          <vProd>67.50</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>450.0000</qTrib>
+          <vUnTrib>0.1500000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>67.50</vBC>
+              <pICMS>18.0000</pICMS>
+              <vICMS>12.15</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPITrib>
+              <CST>50</CST>
+              <vBC>67.50</vBC>
+              <pIPI>3.2500</pIPI>
+              <vIPI>2.19</vIPI>
+            </IPITrib>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>55.35</vBC>
+              <pPIS>1.6500</pPIS>
+              <vPIS>0.91</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>55.35</vBC>
+              <pCOFINS>7.6000</pCOFINS>
+              <vCOFINS>4.21</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+        <infAdProd>REF.: 51.0285.00012</infAdProd>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>PA3200014</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>LIVRARIA DA VILA FUNDO GG PAPEL DUPLEX 250GR</xProd>
+          <NCM>48111090</NCM>
+          <cBenef />
+          <CFOP>5101</CFOP>
+          <uCom>UN</uCom>
+          <qCom>800.0000</qCom>
+          <vUnCom>0.1900000000</vUnCom>
+          <vProd>152.00</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>800.0000</qTrib>
+          <vUnTrib>0.1900000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>152.00</vBC>
+              <pICMS>18.0000</pICMS>
+              <vICMS>27.36</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPITrib>
+              <CST>50</CST>
+              <vBC>152.00</vBC>
+              <pIPI>3.2500</pIPI>
+              <vIPI>4.94</vIPI>
+            </IPITrib>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>124.64</vBC>
+              <pPIS>1.6500</pPIS>
+              <vPIS>2.06</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>124.64</vBC>
+              <pCOFINS>7.6000</pCOFINS>
+              <vCOFINS>9.47</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+        <infAdProd>REF.: 51.0285.00013</infAdProd>
+      </det>
+      <det nItem="3">
+        <prod>
+          <cProd>PA3200011</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>LIVRARIA DA VILA FUNDO DUPLEX 250GR M</xProd>
+          <NCM>48111090</NCM>
+          <cBenef />
+          <CFOP>5101</CFOP>
+          <uCom>UN</uCom>
+          <qCom>600.0000</qCom>
+          <vUnCom>0.1100000000</vUnCom>
+          <vProd>66.00</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>600.0000</qTrib>
+          <vUnTrib>0.1100000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>66.00</vBC>
+              <pICMS>18.0000</pICMS>
+              <vICMS>11.88</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPITrib>
+              <CST>50</CST>
+              <vBC>66.00</vBC>
+              <pIPI>3.2500</pIPI>
+              <vIPI>2.15</vIPI>
+            </IPITrib>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>54.12</vBC>
+              <pPIS>1.6500</pPIS>
+              <vPIS>0.89</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>54.12</vBC>
+              <pCOFINS>7.6000</pCOFINS>
+              <vCOFINS>4.11</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+        <infAdProd>REF.: 51.0285.00006</infAdProd>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>285.50</vBC>
+          <vICMS>51.39</vICMS>
+          <vICMSDeson>0</vICMSDeson>
+          <vFCPUFDest>0</vFCPUFDest>
+          <vICMSUFDest>0</vICMSUFDest>
+          <vICMSUFRemet>0</vICMSUFRemet>
+          <vFCP>0</vFCP>
+          <vBCST>0</vBCST>
+          <vST>0</vST>
+          <vFCPST>0</vFCPST>
+          <vFCPSTRet>0</vFCPSTRet>
+          <vProd>285.50</vProd>
+          <vFrete>0</vFrete>
+          <vSeg>0</vSeg>
+          <vDesc>0</vDesc>
+          <vII>0</vII>
+          <vIPI>9.28</vIPI>
+          <vIPIDevol>0</vIPIDevol>
+          <vPIS>3.86</vPIS>
+          <vCOFINS>17.79</vCOFINS>
+          <vOutro>0</vOutro>
+          <vNF>294.78</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+        <transporta>
+          <CNPJ>47577531000105</CNPJ>
+          <xNome>NOBELPLAST EMBALAGENS LTDA</xNome>
+          <IE>110554765116</IE>
+          <xEnder>RUA MARCO GIANNINI,437</xEnder>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+        </transporta>
+        <vol>
+          <qVol>30</qVol>
+          <esp>VOLUMES</esp>
+          <pesoL>15.235</pesoL>
+          <pesoB>16.060</pesoB>
+        </vol>
+      </transp>
+      <cobr>
+        <fat>
+          <nFat>003000256791</nFat>
+          <vOrig>294.78</vOrig>
+          <vDesc>0</vDesc>
+          <vLiq>294.78</vLiq>
+        </fat>
+        <dup>
+          <nDup>001</nDup>
+          <dVenc>2025-12-17</dVenc>
+          <vDup>294.78</vDup>
+        </dup>
+      </cobr>
+      <pag>
+        <detPag>
+          <indPag>1</indPag>
+          <tPag>15</tPag>
+          <vPag>294.78</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>JIT0003739060 PRODUTOS COM FSC EM SUA DESCRICAO, SAO CERTIFICADOS FSC MISTO 70% - APCER-COC-151374/NAO RECBTO BOL. BANC. NAO DESOBRIGA PAGTO NO VENCTO FAVOR CONTACTAR-NOS (11) 2147-5100 PED: VENDA 199100 PED B2B NUM: JIT000362132</infCpl>
+      </infAdic>
+      <infRespTec>
+        <CNPJ>53113791000122</CNPJ>
+        <xContato>Rodrigo de Almeida Sartorio</xContato>
+        <email>resp_tecnico_dfe_protheus@totvs.com.br</email>
+        <fone>1128593904</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251106905943000492550030002567911600799056">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>80b7HvLZkB1XuLZm34PNH5uAMNE=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>vug6FP+CcoJ8lSjTJiPk/cVgB+kYqUtDGTXbafYPvdtclFMnYet3ZyCWyV/c5Gjcis0oD2LBtbB5SpQk1RT3ob62EDYstkNQUFALsDoZTeNr4KWmykgSfxyFiRrRZ193hNI5GMYI7Ul9RNFHv4c4j+3uKuFyZds63F2edtc8DcMoQpFiJr96SBeggu04McLf2A5MWb47MC/5+hTVgOMNoH8v/FNuLaOaNDUD64bfR4Q+uG7XCtOMtTuPqeBL4hxC5Eqm3uQ7lBqkg7XKvL14QNOEOQPl4mffzabSJVGZvk8vkE4BDRlGpZXgsmH1W76JK4g1qBaQ1hOuEQ0b9VS9eA==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt Id="Id135253524612824">
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251106905943000492550030002567911600799056</chNFe>
+      <dhRecbto>2025-11-17T14:37:49-03:00</dhRecbto>
+      <nProt>135253524612824</nProt>
+      <digVal>80b7HvLZkB1XuLZm34PNH5uAMNE=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

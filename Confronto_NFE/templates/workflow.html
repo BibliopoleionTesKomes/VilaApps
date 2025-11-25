@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Vila Apps - Workflow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --cor-principal: #192F63; --cor-secundaria: #33508F; --cor-fundo-pagina: #E8EDF9; }
+        body { background-color: var(--cor-fundo-pagina); font-family: 'Montserrat', sans-serif; }
+        .header-bg { background-image: linear-gradient(135deg, #192F63 0%, #33508F 100%); color: white; padding: 0 2rem; height: 90px; display: flex; align-items: center; justify-content: space-between; }
+        .logo-img { max-height: 50px; } .logo-argos { max-height: 120px; }
+        .container-main { max-width: 1600px; margin: 30px auto; padding: 0 20px; }
+        .btn-voltar { color: rgba(255,255,255,0.8); text-decoration: none; margin-right: 15px; }
+        .table-custom th { background-color: #192F63; color: white; vertical-align: middle; font-size: 0.85rem; }
+        .filter-row { background-color: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #dee2e6; }
+        .filter-input { border-radius: 20px; border: 1px solid #ced4da; font-size: 0.9rem; }
+        
+        .select-status { border: none; border-radius: 12px; font-size: 0.75rem; font-weight: 700; padding: 6px 10px; cursor: pointer; text-transform: uppercase; width: 100%; text-align: center; transition: all 0.3s ease; }
+        /* Cores dos Status */
+        .st-pendente { background-color: #ffecb5; color: #664d03; border: 1px solid #ffecb5; display: none; } /* Oculta pendente visualmente se aparecer */
+        .st-emanalise { background-color: #cfe2ff; color: #084298; border: 1px solid #b6d4fe; }
+        .st-concluido { background-color: #d1e7dd; color: #0f5132; border: 1px solid #badbcc; }
+
+        .kpi-card { background: white; border-radius: 10px; padding: 10px 15px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-left: 5px solid #ccc; }
+        .kpi-label { font-size: 0.8rem; font-weight: 700; color: #6c757d; text-transform: uppercase; }
+        .kpi-value { font-size: 1.2rem; font-weight: 800; color: var(--cor-principal); }
+        
+        .col-motivo { min-width: 250px; font-size: 0.85rem; font-weight: 600; color: #dc3545; }
+        .txt-div-ok { color: #198754; font-weight: 700; background: #d1e7dd; padding: 2px 8px; border-radius: 8px; font-size: 0.75rem; }
+        .txt-div-erro { color: #dc3545; }
+    </style>
+</head>
+<body>
+    <header class="header-bg">
+        <div style="display:flex;align-items:center;"><a href="{{ url_for('menu') }}" class="btn-voltar">⬅ Menu</a><img src="{{ url_for('static', filename='logo.png') }}" class="logo-img"></div>
+        <h1 class="fw-bold m-0" style="font-size: 1.5rem;">Follow-up de Divergências </h1>
+        <div><img src="{{ url_for('static', filename='logo_argos.png') }}" class="logo-argos"></div>
+    </header>
+
+    <div class="container-main">
+        <div class="d-flex justify-content-between mb-4">
+            <h4 class="text-secondary fw-bold m-0">Gestão de Pendências (Em Tratativa)</h4>
+            <div>
+                {% if ultima_atualizacao %}
+                    <span class="badge bg-light text-secondary border py-2 px-3" style="font-weight:600; font-size:0.85rem;">
+                        📅 Última Leitura: {{ ultima_atualizacao }}
+                    </span>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- KPIs (Apenas Analise e Concluido) -->
+        <div class="row g-3 mb-4">
+            <div class="col-md-4"><div class="kpi-card" style="border-color: #cfe2ff;"><span class="kpi-label">Em Análise</span><span class="kpi-value text-primary" id="kpi-analise">0</span></div></div>
+            <div class="col-md-4"><div class="kpi-card" style="border-color: #d1e7dd;"><span class="kpi-label">Concluídos</span><span class="kpi-value text-success" id="kpi-concluido">0</span></div></div>
+            <div class="col-md-4"><div class="kpi-card" style="border-color: #192F63;"><span class="kpi-label">Total no Workflow</span><span class="kpi-value" id="kpi-total">0</span></div></div>
+        </div>
+
+        <div class="card p-3 border-0 shadow-sm">
+            <div class="filter-row">
+                <div class="row g-2">
+                    <div class="col-md-3"><input type="text" id="filtroFantasia" class="form-control filter-input" placeholder="Busca Rápida..."></div>
+                    <div class="col-md-3">
+                        <input type="text" id="filtroLoja" list="listaLojas" class="form-control filter-input" placeholder="Filtrar por Loja...">
+                        <datalist id="listaLojas">{% for loja in lista_lojas %}<option value="{{ loja }}">{% endfor %}</datalist>
+                    </div>
+                    <div class="col-md-3">
+                        <select id="filtroStatus" class="form-select filter-input fw-bold">
+                            <option value="">Todos os Status</option>
+                            <option value="EM ANÁLISE">🔍 Em Análise</option>
+                            <option value="CONCLUÍDO">✅ Concluídos</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-hover table-custom" id="tabela">
+                    <thead><tr>
+                        <th style="width:150px;">STATUS</th><th>Emissão</th><th>Nota</th><th>Fornecedor</th><th>Filial Destino</th><th>MOTIVO / DIVERGÊNCIA</th><th class="text-end">Valor</th>
+                    </tr></thead>
+                    <tbody>
+                        {% for row in dados %}
+                        <!-- FILTRO RÍGIDO: APENAS SE JÁ FOI TRATADO NO ACERTO -->
+                        {% if row.Status_Workflow in ['EM ANÁLISE', 'CONCLUÍDO'] %}
+                        <tr data-status="{{ row.Status_Workflow }}">
+                            <td>
+                                <select class="select-status st-{{ row.Status_Workflow|lower|replace(' ','')|replace('ê','e')|replace('í','i') }}" onchange="alterarStatus(this, '{{ row.Chave_Acesso }}')">
+                                    <option value="PENDENTE">VOLTAR PENDENTE</option>
+                                    <option value="EM ANÁLISE" {% if row.Status_Workflow == 'EM ANÁLISE' %}selected{% endif %}>EM ANÁLISE</option>
+                                    <option value="CONCLUÍDO" {% if row.Status_Workflow == 'CONCLUÍDO' %}selected{% endif %}>CONCLUÍDO</option>
+                                </select>
+                            </td>
+                            <td>{{ row.Data_Emissao }}</td><td class="fw-bold">{{ row.Numero_NF }}</td><td>{{ row.Nome_Fantasia }}</td><td>{{ row.Filial }}</td>
+                            
+                            <td class="col-motivo" title="{{ row.Divergencia_Resumo }}">
+                                {% if 'OK' in row.Divergencia_Resumo %}
+                                    <span class="txt-div-ok">{{ row.Divergencia_Resumo }}</span>
+                                {% else %}
+                                    <span class="txt-div-erro">{{ row.Divergencia_Resumo }}</span>
+                                {% endif %}
+                            </td>
+
+                            <td class="text-end fw-bold">{{ row.Valor_Total }}</td>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function alterarStatus(select, chave) {
+            const novoStatus = select.value;
+            // Se voltar para Pendente, remove da tela visualmente para organizar
+            if (novoStatus === 'PENDENTE') {
+                if(confirm("Voltar para pendente fará a nota sair deste workflow. Confirmar?")) {
+                    select.closest('tr').remove();
+                } else {
+                    // Reverte seleção se cancelar
+                    window.location.reload(); 
+                    return;
+                }
+            } else {
+                select.className = 'select-status st-' + novoStatus.toLowerCase().replace(' ','').replace('ê','e').replace('í','i');
+                select.closest('tr').setAttribute('data-status', novoStatus);
+            }
+            
+            atualizarKPIs();
+            
+            // Salva no backend silenciosamente (SEM RELOAD)
+            fetch('/api/atualizar_status', {
+                method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({ chave: chave, status: novoStatus })
+            });
+        }
+
+        function atualizarKPIs() {
+            const linhas = document.querySelectorAll('#tabela tbody tr');
+            let a=0, c=0;
+            linhas.forEach(tr => {
+                const st = tr.getAttribute('data-status');
+                if(st === 'EM ANÁLISE') a++; else if(st === 'CONCLUÍDO') c++;
+            });
+            document.getElementById('kpi-analise').innerText = a;
+            document.getElementById('kpi-concluido').innerText = c;
+            document.getElementById('kpi-total').innerText = a + c;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const fTexto = document.getElementById('filtroFantasia');
+            const fLoja = document.getElementById('filtroLoja');
+            const fStatus = document.getElementById('filtroStatus');
+
+            function filtrar() {
+                const termo = fTexto.value.toLowerCase();
+                const loja = fLoja.value.toLowerCase();
+                const status = fStatus.value;
+                const linhas = document.querySelectorAll('#tabela tbody tr');
+                linhas.forEach(tr => {
+                    const txt = tr.innerText.toLowerCase();
+                    const stRow = tr.getAttribute('data-status');
+                    const lojaRow = tr.children[4].innerText.toLowerCase(); 
+                    const matchTexto = txt.includes(termo);
+                    const matchLoja = lojaRow.includes(loja);
+                    const matchStatus = status === "" || stRow === status;
+                    if (matchTexto && matchLoja && matchStatus) tr.style.display = ''; else tr.style.display = 'none';
+                });
+                atualizarKPIs();
+            }
+            [fTexto, fLoja, fStatus].forEach(el => el.addEventListener('keyup', filtrar));
+            [fLoja, fStatus].forEach(el => el.addEventListener('change', filtrar));
+            atualizarKPIs();
+        });
+    </script>
+</body>
+</html>

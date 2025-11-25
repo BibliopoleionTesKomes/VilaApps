@@ -1,0 +1,235 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe35251123228101000110550010000003291042698364" versao="4.00">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>04269836</cNF>
+        <natOp>REMESSA DE MERCADORIA EM CONSIGNAÇÃO</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>329</nNF>
+        <dhEmi>2025-11-19T10:55:27-03:00</dhEmi>
+        <dhSaiEnt>2025-11-19T10:55:30-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3550308</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>4</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>1</indFinal>
+        <indPres>0</indPres>
+        <procEmi>0</procEmi>
+        <verProc>0.1.0</verProc>
+      </ide>
+      <emit>
+        <CNPJ>23228101000110</CNPJ>
+        <xNome>PROVÉRBIOS EDITORA LTDA</xNome>
+        <xFant>PROVÉRBIOS EDITORA</xFant>
+        <enderEmit>
+          <xLgr>ALAMEDA SANTOS</xLgr>
+          <nro>1773</nro>
+          <xCpl>SALA 503</xCpl>
+          <xBairro>CERQUEIRA CÉSAR</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SÃO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>01419100</CEP>
+          <cPais>1058</cPais>
+          <xPais>Brasil</xPais>
+          <fone>11914840920</fone>
+        </enderEmit>
+        <IE>135218458117</IE>
+        <CRT>1</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962001696</CNPJ>
+        <xNome>Livraria da Vila - Shopping Iguatemi Campinas</xNome>
+        <enderDest>
+          <xLgr>Avenida Iguatemi</xLgr>
+          <nro>777</nro>
+          <xCpl>loja 137A1</xCpl>
+          <xBairro>Vila Brandina</xBairro>
+          <cMun>3509502</cMun>
+          <xMun>CAMPINAS</xMun>
+          <UF>SP</UF>
+          <CEP>13092902</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>30964493</fone>
+        </enderDest>
+        <indIEDest>9</indIEDest>
+        <IE>122557160114</IE>
+        <email>eventos@livrariadavila.com.br</email>
+      </dest>
+      <autXML>
+        <CNPJ>17187385000140</CNPJ>
+      </autXML>
+      <det nItem="1">
+        <prod>
+          <cProd>9786583090270</cProd>
+          <cEAN>9786583090270</cEAN>
+          <xProd>Venda com propósito</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>60.0000</qCom>
+          <vUnCom>59.90</vUnCom>
+          <vProd>3594.00</vProd>
+          <cEANTrib>9786583090270</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>60.0000</qTrib>
+          <vUnTrib>59.90</vUnTrib>
+          <vDesc>1797.00</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMSSN102>
+              <orig>0</orig>
+              <CSOSN>400</CSOSN>
+            </ICMSSN102>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <II>
+            <vBC>0</vBC>
+            <vDespAdu>0</vDespAdu>
+            <vII>0</vII>
+            <vIOF>0</vIOF>
+          </II>
+          <PIS>
+            <PISNT>
+              <CST>07</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>07</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+        <infAdProd>Desconto: 50,00%  Vlr Unit. Líquido: R$ 29,95</infAdProd>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0</vBC>
+          <vICMS>0</vICMS>
+          <vICMSDeson>0</vICMSDeson>
+          <vFCP>0</vFCP>
+          <vBCST>0</vBCST>
+          <vST>0</vST>
+          <vFCPST>0</vFCPST>
+          <vFCPSTRet>0</vFCPSTRet>
+          <vProd>3594.00</vProd>
+          <vFrete>0</vFrete>
+          <vSeg>0</vSeg>
+          <vDesc>1797.00</vDesc>
+          <vII>0</vII>
+          <vIPI>0</vIPI>
+          <vIPIDevol>0</vIPIDevol>
+          <vPIS>0</vPIS>
+          <vCOFINS>0</vCOFINS>
+          <vOutro>0</vOutro>
+          <vNF>1797.00</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>1</modFrete>
+        <vol>
+          <pesoL>19.200</pesoL>
+          <pesoB>19.200</pesoB>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <tPag>01</tPag>
+          <vPag>1797.00</vPag>
+        </detPag>
+      </pag>
+      <infRespTec>
+        <CNPJ>07504505000132</CNPJ>
+        <xContato>Ricardo Acras</xContato>
+        <email>contato@focusnfe.com.br</email>
+        <fone>41991820810</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251123228101000110550010000003291042698364">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>rqu5/+b6+JbWOrsIvKanPaBg3Sc=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>Md2PTECRkrHqwyjrGgDbGiNkDQA4q7ZhFstf8snHsxqwBuXkjgFaz3YepkHfwqMtH7Lz3kIlNrRL
+dzhqZ9QtFKXzPY0RTVLXDcYZ0HFyPnL+lzPwPn+irKQB8S9Y4h5N66bcmGPHj48Nf/5bvRGPslG+
+rfmAMQAH9JKYIlDiwO+phr3eo4G6PoIjDVW35ruqKKKfW6PukidaQJu3gafTCU+kdl4igKMIMzg3
+Z+DNg1d5DBAVAYKUWPz4jI8BxJKc2xI3flIeOgwZNiSku0NCCNVIKf3gtz5cits6v/p+/8SGz3we
+9d734LWOIJTKMsqUah6YalQPniFcn3flloN4ow==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>MIIIITCCBgmgAwIBAgIIaMkgBnK2v/AwDQYJKoZIhvcNAQELBQAwdzELMAkGA1UEBhMCQlIxEzAR
+BgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFs
+IGRvIEJyYXNpbCAtIFJGQjEbMBkGA1UEAxMSQUMgQSBESUdJRk9SVEUgUkZCMB4XDTI1MDExNzIw
+NDgxMloXDTI2MDExNzIwNDgxMlowggERMQswCQYDVQQGEwJCUjELMAkGA1UECBMCU1AxEjAQBgNV
+BAcTCVNBTyBQQVVMTzETMBEGA1UEChMKSUNQLUJyYXNpbDE2MDQGA1UECxMtU2VjcmV0YXJpYSBk
+YSBSZWNlaXRhIEZlZGVyYWwgZG8gQnJhc2lsIC0gUkZCMRYwFAYDVQQLEw1SRkIgZS1DTlBKIEEx
+MRcwFQYDVQQLEw5BUiBBIERJR0lGT1JURTEZMBcGA1UECxMQVmlkZW9jb25mZXJlbmNpYTEXMBUG
+A1UECxMOMTY0NjQ3NTUwMDAxODcxLzAtBgNVBAMTJlBST1ZFUkJJT1MgRURJVE9SQSBMVERBOjIz
+MjI4MTAxMDAwMTEwMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA9F/aTFRxmY4WfbOu
+nycnuUEmCqVUbKw68+0DIIHWcPsPMi+Bs47trii2DBjd0dAnQ9Ze9pql6IznwfDDZntHXGkVETbv
+9u9SkLS3mTDjaDStMzFKU74xhu6uHxSBmlb+/Rxlkb+lEOxkGbxB/ZxleWCrTBkqm01C6OdKfti7
+VBmnSw7zxOQNWF+6uFwNhTQtWcRUlUm1jfAuIkfCtrhEuVtJArbksQ2yqqM1OoZQP8q4qiWd2MHg
+tZgDnfcmUkjKwCIALx1JDHf+t2D+TWHD6uGYTOiwHcv9FT7Xd6HUCEPeXPpoEXpqPrOI9dOpCXwr
+yyEokUVHfiV2MKQo/toYcwIDAQABo4IDEzCCAw8wgaYGCCsGAQUFBwEBBIGZMIGWMF8GCCsGAQUF
+BzAChlNodHRwOi8vaWNwLWJyYXNpbC52YWxpZGNlcnRpZmljYWRvcmEuY29tLmJyL2FjLWFkaWdp
+Zm9ydGVyZmIvYWMtYWRpZ2lmb3J0ZXJmYnY1LnA3YjAzBggrBgEFBQcwAYYnaHR0cDovL29jc3B2
+NS52YWxpZGNlcnRpZmljYWRvcmEuY29tLmJyMAkGA1UdEwQCMAAwHwYDVR0jBBgwFoAUxPe0Wwbv
+O5J8MB9l9Po/ukAZOPcwegYDVR0gBHMwcTBvBgZgTAECAUIwZTBjBggrBgEFBQcCARZXaHR0cDov
+L2ljcC1icmFzaWwudmFsaWRjZXJ0aWZpY2Fkb3JhLmNvbS5ici9hYy1hZGlnaWZvcnRlcmZiL2Rw
+Yy1hYy1hZGlnaWZvcnRlcmZidjUucGRmMIHKBgNVHR8EgcIwgb8wXaBboFmGV2h0dHA6Ly9pY3At
+YnJhc2lsLnZhbGlkY2VydGlmaWNhZG9yYS5jb20uYnIvYWMtYWRpZ2lmb3J0ZXJmYi9sY3ItYWMt
+YWRpZ2lmb3J0ZXJmYnY1LmNybDBeoFygWoZYaHR0cDovL2ljcC1icmFzaWwyLnZhbGlkY2VydGlm
+aWNhZG9yYS5jb20uYnIvYWMtYWRpZ2lmb3J0ZXJmYi9sY3ItYWMtYWRpZ2lmb3J0ZXJmYnY1LmNy
+bDAOBgNVHQ8BAf8EBAMCBeAwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMEMIG/BgNVHREE
+gbcwgbSBH3JlZ2luYUBwcm92ZXJiaW9zZWRpdG9yYS5jb20uYnKgOAYFYEwBAwSgLwQtMTgwMjE5
+NzcxODcyMjUxMzgyNTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwoCMGBWBMAQMCoBoEGFJFR0lO
+QSBEQSBST0NIQSBHUkVHT1JJT6AZBgVgTAEDA6AQBA4yMzIyODEwMTAwMDExMKAXBgVgTAEDB6AO
+BAwwMDAwMDAwMDAwMDAwDQYJKoZIhvcNAQELBQADggIBAA5EWwjgwlpqIqhpH9apqkp+7HqtTPRK
+YKxPRzKG1ppe9Kf7WyhG5j4tr2Vo0hPMKrU7FCfiFWWb+SNqa7a5bpAwhkQxjMvFM30vfrJqRK+t
+zb0LcKpCW3s2uFFUlh9t7nRNEGwD6dPh6Kuxlj6zf9WZ9ScBkOgJpe9YwCP2YF3UvsMMdzIdDFJY
+cSnU3C2/FX/1RPa1JZBpf6EOoYj26AaqyVL9CW+m7tyvF2UdmMb2KoYsYm9sIKHUawgVsO49bM8+
+gYoRBUvMYHiBQ3mh/sYpBgMdaK+u5TW+9QZBbb/vl+QQVCLSO6zr3SSvg6vgMUUealKu2q9TfEK0
+kLTC6ojVFhMocWbU1L1/5wUOi0I2qsgH5peoNYFK95msQiEEAlQGZBw8vgbunPlzi3bI88QC9jZb
+42DIoSSUB4SNRx+heBgP1X507+xSjVtBmwVwlZmUh+4gu2UL92YiXeddgL3ZKSBRD3Mib35MwGLg
+w4rQts4EZabjhdYaHeIX26QHVTbbB0fd2ipgOLQw+JenclK/paUA47HUfQmOVftT35tGyDewst9B
+XuJwuwe62m/YBE/A5Ff552KWA4rd+B5sbEMQ32X4/zubfFSkrgy33xClXaUQEslUsk1pv5WGbAjD
+K5LA6sy6+aZIoNnmfPNvlxB3NerCIsTsZqlebbKEbf3I</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt Id="Id135253553997588">
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251123228101000110550010000003291042698364</chNFe>
+      <dhRecbto>2025-11-19T10:58:41-03:00</dhRecbto>
+      <nProt>135253553997588</nProt>
+      <digVal>rqu5/+b6+JbWOrsIvKanPaBg3Sc=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

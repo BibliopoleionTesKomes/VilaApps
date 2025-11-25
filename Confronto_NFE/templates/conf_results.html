@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vila Apps - Resultado da Conferência</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --cor-fundo-pagina: #E8EDF9; 
+            --cor-principal: #192F63; 
+            --cor-secundaria: #33508F; 
+            --cor-destaque: #FFC107; 
+            --cor-borda-suave: #DDE2E7; 
+            --cor-texto-claro: #FFFFFF;
+            --cor-input-bg: #F0F2F5; 
+            --cor-tabela-fundo-claro: #F0F0F0;
+        }
+
+        body {
+            background-color: var(--cor-fundo-pagina); 
+            color: #333;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            padding-bottom: 20px; 
+            overflow-x: hidden;
+        }
+
+        /* --- CABEÇALHO COMPACTO --- */
+        .header-bg {
+            background-image: linear-gradient(135deg, #192F63 0%, #33508F 100%); 
+            color: white; 
+            padding: 0 1.5rem; 
+            height: 60px;
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo-vila { max-height: 40px; width: auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+        .logo-argos { max-height: 120px; width: auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+
+        .container-main { 
+            width: 100%; 
+            max-width: 100%; 
+            margin: 0; 
+            padding: 10px 15px; 
+            flex: 1; 
+            display: flex; 
+            flex-direction: column; 
+        }
+
+        /* --- BOTÕES COMPACTOS --- */
+        .btn-compact {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-weight: 600;
+            border: none;
+            transition: all 0.2s;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+        .btn-gradiente-azul {
+            background: linear-gradient(135deg, var(--cor-secundaria), var(--cor-principal));
+            color: white !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .btn-gradiente-azul:hover {
+            background: linear-gradient(135deg, #4a69a8, #2c4a8a);
+            transform: translateY(-1px);
+        }
+        .btn-gradiente-azul.active {
+            background: var(--cor-destaque);
+            color: var(--cor-principal) !important;
+            font-weight: 800;
+        }
+
+        /* --- PAINEL DE FILTROS E TOTAIS --- */
+        .section-card { 
+            background: white; 
+            border-radius: 6px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+            padding: 8px 12px; 
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: space-between;
+        }
+
+        .filters-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .form-select-sm {
+            border: 1px solid var(--cor-borda-suave);
+            border-radius: 8px;
+            padding: 2px 8px;
+            font-size: 0.75rem;
+            height: 28px;
+            background-color: var(--cor-input-bg);
+            color: #333;
+        }
+
+        /* --- ESTATÍSTICAS (KPIs) --- */
+        .summary-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .summary-stat { 
+            text-align: right; 
+            padding-left: 10px; 
+            border-left: 2px solid var(--cor-borda-suave); 
+            line-height: 1.1;
+        }
+        .summary-stat h5 { margin: 0; font-weight: 700; font-size: 0.9rem; white-space: nowrap; }
+        .summary-stat small { font-size: 0.65rem; color: #666; text-transform: uppercase; font-weight: 600; white-space: nowrap; }
+        
+        /* --- TABELA --- */
+        .card-tabela { 
+            background: white; 
+            border-radius: 6px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
+            overflow: hidden; 
+            flex: 1; 
+            display: flex; 
+            flex-direction: column; 
+        }
+        
+        .table-responsive { flex: 1; overflow-y: auto; max-height: 72vh; }
+        .table-sticky { width: 100%; border-collapse: collapse; table-layout: fixed; } 
+        
+        .table-sticky thead th { 
+            position: sticky; top: 0; 
+            background: var(--cor-principal); 
+            color: var(--cor-texto-claro); 
+            z-index: 10; 
+            font-size: 0.7rem; 
+            text-transform: uppercase;
+            padding: 6px 4px; 
+            border: none;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .table-sticky td { 
+            font-size: 0.75rem; 
+            vertical-align: middle; 
+            padding: 4px 6px; 
+            border-bottom: 1px solid #eee;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .table-sticky tbody tr:nth-child(even) { background-color: #f8f9fa; }
+
+        .qty-input { 
+            width: 100%; 
+            text-align: right; 
+            border-radius: 4px;
+            border: 1px solid var(--cor-secundaria); 
+            padding: 2px 4px;
+            font-size: 0.75rem;
+            height: 24px;
+        }
+
+        .text-end { text-align: right; }
+        .col-num { text-align: right; }
+        tr.divergente { background-color: #ffe4e1 !important; }
+        tr.selected-row { background-color: #fff3cd !important; }
+        td.col-destaque {
+            background-color: #fff9c4 !important; 
+            border-left: 2px solid var(--cor-destaque) !important;
+            border-right: 2px solid var(--cor-destaque) !important;
+        }
+
+        .btn-copy-isbn {
+            background: none; border: none; cursor: pointer; font-size: 0.9rem; margin-left: 4px; opacity: 0.6;
+        }
+        .btn-copy-isbn:hover { transform: scale(1.2); opacity: 1; }
+        
+        #toast-container {
+            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+            background-color: #333; color: #fff; padding: 8px 16px; border-radius: 20px;
+            font-size: 0.8rem; opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 2000;
+        }
+        #toast-container.show { opacity: 1; }
+
+        #saving-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(25, 255, 255, 0.8);
+            z-index: 200; display: none; align-items: center; justify-content: center;
+            backdrop-filter: blur(2px);
+        }
+    </style>
+</head>
+<body>
+
+<div id="toast-container">ISBN Copiado!</div>
+<div id="saving-overlay">
+    <div class="text-center">
+        <div class="spinner-border text-primary spinner-border-sm" role="status"></div>
+        <h6 class="mt-2 text-primary fw-bold" style="font-size: 0.9rem;">Salvando...</h6>
+    </div>
+</div>
+
+<header class="header-bg">
+    <div style="display: flex; align-items: center; gap: 1rem;">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Livraria da Vila" class="logo-vila">
+        <span style="font-weight: 600; font-size: 0.9rem; opacity: 0.9; border-left: 1px solid rgba(255,255,255,0.3); padding-left: 1rem;">
+            Fornecedor: {{ fornecedor }}
+        </span>
+    </div>
+    
+    <div class="d-flex gap-2">
+        <a href="{{ url_for('conferencia.index') }}" class="btn-compact btn-gradiente-azul text-decoration-none">Nova Conferência</a>
+        
+        <!-- BOTÃO DE RESUMO RESTAURADO -->
+        <button id="btn-resumo" class="btn-compact btn-gradiente-azul">Ver Resumo</button>
+        
+        <a href="{{ url_for('conferencia.show_export_list') }}" onclick="saveChanges(this.href); return false;" class="btn-compact btn-gradiente-azul text-decoration-none">Lista Import</a>
+        <a href="{{ url_for('conferencia.download_file') }}" onclick="saveChanges(this.href); return false;" class="btn-compact btn-gradiente-azul text-decoration-none">Baixar Excel</a>
+    </div>
+
+    <img src="{{ url_for('static', filename='logo_argos.png') }}" alt="Logo Argos" class="logo-argos">
+</header>
+
+<div class="container-main">
+    
+    <div class="section-card">
+        <div class="filters-container">
+            <div class="d-flex align-items-center gap-2">
+                <label class="fw-bold" style="color: var(--cor-secundaria); font-size: 0.75rem;">Filial:</label>
+                <select class="form-select form-select-sm w-auto" id="filial-select">
+                    <option value="all" {% if current_filial == 'all' %}selected{% endif %}>Todas</option>
+                    {% for f in filiais_list %}
+                    <option value="{{ f }}" {% if current_filial == f %}selected{% endif %}>{{ f }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="btn-group">
+                <a href="#" class="btn-compact btn-gradiente-azul text-decoration-none {% if current_filter == 'all' %}active{% endif %}" data-filter="all" style="border-radius: 15px 0 0 15px;">Todas</a>
+                <a href="#" class="btn-compact btn-gradiente-azul text-decoration-none {% if current_filter == 'qty' %}active{% endif %}" data-filter="qty" style="border-radius: 0;">Qtd. Div</a>
+                <a href="#" class="btn-compact btn-gradiente-azul text-decoration-none {% if current_filter == 'price' %}active{% endif %}" data-filter="price" style="border-radius: 0;">Preço Div</a>
+                <a href="#" class="btn-compact btn-gradiente-azul text-decoration-none {% if current_filter == 'acao' %}active{% endif %}" data-filter="acao" style="border-radius: 0 15px 15px 0;">Ação</a>
+            </div>
+        </div>
+
+        <div class="summary-group">
+            <!-- Reordenado: Líquido antes do Bruto -->
+            <div class="summary-stat">
+                <small>Acerto Líquido</small>
+                <h5 id="total-acerto-liquido" style="color: #0d6efd;">R$ 0,00</h5>
+            </div>
+            <div class="summary-stat">
+                <small>Acerto Bruto</small>
+                <h5 id="total-acerto-bruto" style="color: #0d6efd;">R$ 0,00</h5>
+            </div>
+
+            <div class="summary-stat">
+                <small>Venda Bruta</small>
+                <h5 style="color: #5a5a5a;">{{ venda_bruta_total }}</h5>
+            </div>
+
+            <div class="summary-stat">
+                <small>Total Divergência</small>
+                <h5 id="total-divergencia-auto" style="color: #dc3545;">R$ 0,00</h5>
+            </div>
+            <div class="summary-stat">
+                <small>Divergência Devida</small>
+                <h5 id="total-acerto-manual" style="color: #198754;">R$ 0,00</h5>
+            </div>
+
+            {% if has_quebra %}
+            <div class="summary-stat">
+                <small>Quebra Líquida</small>
+                <h5 id="total-quebra-liquida" style="color: #d63384;">R$ 0,00</h5>
+            </div>
+            {% endif %}
+            
+            <button id="btn-refresh-numeros" class="btn-compact btn-gradiente-azul" title="Recalcular">🔄</button>
+        </div>
+    </div>
+
+    <div class="card-tabela">
+        <div class="table-responsive">
+            <table class="table-sticky" id="export-table">
+                <colgroup>
+                    <col style="width: 7%;">  
+                    <col style="width: 9%;">  
+                    <col style="width: auto;"> 
+                    <col style="width: 3%;">  
+                    <col style="width: 4%;">  
+                    <col style="width: 4%;">  
+                    <col style="width: 4%;">  
+                    <col style="width: 4%;">  
+                    <col style="width: 5%;">  
+                    <col style="width: 6%;">  
+                    <col style="width: 5%;">  
+                    <col style="width: 5%;">  
+                    <col style="width: 4%;">  
+                    <col style="width: 6%;">  
+                    {% if has_quebra %}
+                    <col style="width: 4%;">  
+                    <col style="width: 5%;">  
+                    <col style="width: 5%;">  
+                    {% endif %}
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Filial</th>
+                        <th>ISBN</th> 
+                        <th>Título</th>
+                        <th>Promo</th>
+                        <th class="col-num">Ação</th>
+                        <th class="col-num">Acerto</th>
+                        <th class="col-num">Venda</th>
+                        <th class="col-num">Div.</th>
+                        <th>Situação</th>
+                        
+                        <th class="col-num" style="background-color: #1F2C63; color: #ffffff;">Qtd. a Acertar</th>
+                        
+                        <th class="col-num">Unit. Acerto</th>
+                        <th class="col-num">Unit. Venda</th>
+                        <th class="col-num">Desc.</th>
+                        <th class="col-num">Total Div.</th>
+                        
+                        {% if has_quebra %}
+                        <th class="col-num">Quebra</th>
+                        <th class="col-num">Q. Líq.</th>
+                        <th class="col-num">Q. Bruta</th>
+                        {% endif %}
+                    </tr>
+                </thead>
+                <tbody id="results-tbody">
+                    {% for row in data %}
+                    {% set is_divergencia = 'Divergência' in (row['Situação Qtd.'] | string) %}
+                    {% set is_acao_editavel = (row['Item Promocional'] == 'Sim' and row['Quant_acao']|float > 0) %}
+                    
+                    <tr class="{{ 'divergente' if is_divergencia else '' }}"
+                        data-situacao="{{ row['Situação Qtd.'] }}"
+                        data-item-promo="{{ row['Item Promocional'] }}"
+                        data-qtd-acao="{{ row['Quant_acao'] | int }}"
+                        data-qtd-acerto="{{ row['Quant'] | int }}"
+                        data-qtd-venda="{{ row['Quant_venda'] | int }}"
+                        data-vl-unit-acerto="{{ row['Vl. Unit._acerto'] | replace('R$ ', '') | replace('.', '') | replace(',', '.') }}"
+                        data-desconto="{{ row['Desconto'] }}"
+                        data-vlr-liq-divergencia="{{ row['Vlr. Liq. Qtd. Divergência'] | replace('R$ ', '') | replace('.', '') | replace(',', '.') }}"
+                        data-vlr-quebra-liq="{{ row['Vlr. Quebra Liquida'] | replace('R$ ', '') | replace('.', '') | replace(',', '.') }}"
+                        data-vlr-quebra-bruta="{{ row['Vlr. Quebra Bruta'] | replace('R$ ', '') | replace('.', '') | replace(',', '.') }}">
+                        
+                        <td title="{{ row['filial'] }}">{{ row['filial'] }}</td>
+                        <td>
+                            <span style="font-family: monospace;">{{ row['ISBN'] }}</span>
+                            <button class="btn-copy-isbn" onclick="copyToClipboard('{{ row['ISBN'] }}')" title="Copiar">📋</button>
+                        </td>
+                        <td title="{{ row['Titulo'] }}">{{ row['Titulo'] }}</td>
+                        <td>{{ row['Item Promocional'] }}</td>
+                        <td class="col-num">{{ row['Quant_acao'] if row['Item Promocional'] == 'Sim' else '-' }}</td>
+                        <td class="col-num">{{ row['Quant'] }}</td>
+                        <td class="col-num">{{ row['Quant_venda'] }}</td>
+                        <td class="col-num fw-bold {{ 'text-danger' if row['Divergência Qtd.'] > 0 else '' }}">{{ row['Divergência Qtd.'] }}</td>
+                        <td>{{ row['Situação Qtd.'] }}</td>
+                        <td class="col-num col-destaque">
+                            {% if is_divergencia or is_acao_editavel %}
+                                {% if is_acao_editavel %}
+                                    {% set max_val = (row['Quant']|int - row['Quant_acao']|int) %}
+                                    {% if max_val < 0 %}{% set max_val = 0 %}{% endif %}
+                                {% else %}
+                                    {% set max_val = row['Divergência Qtd.'] | int %}
+                                {% endif %}
+                            <input type="number" class="qty-input" min="0" max="{{ max_val }}" value="{{ row['Qtd. a Acertar'] }}" data-filial="{{ row['filial'] }}" data-isbn="{{ row['ISBN'] }}">
+                            {% else %}-{% endif %}
+                        </td>
+                        <td class="col-num">{{ row['Vl. Unit._acerto'] }}</td>
+                        <td class="col-num">{{ row['Preco_Venda_F'] }}</td>
+                        <td class="col-num">{{ (row['Desconto'] * 100)|round(0) }}%</td>
+                        <td class="col-num">{{ row['Vlr. Liq. Qtd. Divergência'] }}</td>
+                        {% if has_quebra %}
+                        <td class="col-num text-danger fw-bold">{{ row['Quebra_Inv'] | int }}</td>
+                        <td class="col-num">{{ row['Vlr. Quebra Liquida'] }}</td>
+                        <td class="col-num">{{ row['Vlr. Quebra Bruta'] }}</td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    const API_URLS = {
+        updateManual: "{{ url_for('conferencia.update_manual_acerto') }}",
+        summary: "{{ url_for('conferencia.show_summary') }}",
+        results: "{{ url_for('conferencia.show_results') }}",
+        exportList: "{{ url_for('conferencia.show_export_list') }}",
+        downloadFile: "{{ url_for('conferencia.download_file') }}",
+        newConf: "{{ url_for('conferencia.index') }}"
+    };
+
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            const toast = document.getElementById('toast-container');
+            toast.innerText = `ISBN ${text} Copiado!`;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2000);
+        }).catch(err => { console.error('Erro ao copiar', err); });
+    }
+    
+    function copyData() {
+        let text = "";
+        document.querySelectorAll("#results-tbody tr").forEach(tr => {
+            if (tr.style.display !== 'none') {
+                const cols = tr.querySelectorAll("td");
+                if(cols.length > 5) {
+                    const isbn = cols[1].innerText.replace('📋','').trim();
+                    const qtdAcertar = tr.querySelector('.qty-input') ? tr.querySelector('.qty-input').value : '0';
+                    text += `${cols[0].innerText}\t${isbn}\t${cols[2].innerText}\t${qtdAcertar}\n`;
+                }
+            }
+        });
+        navigator.clipboard.writeText(text).then(() => { alert("Tabela copiada!"); });
+    }
+
+    function formatCurrency(val) { 
+        return val.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}); 
+    }
+
+    function calculateTotals() {
+        let totDiv = 0;
+        let totAcertoDevido = 0; 
+        let totAcertoBruto = 0; 
+        let totAcertoLiq = 0; 
+        let totQuebraLiq = 0;
+
+        document.querySelectorAll('#results-tbody tr').forEach(row => {
+            if(row.style.display === 'none') return;
+
+            const situacao = row.dataset.situacao;
+            const itemPromo = row.dataset.itemPromo;
+            
+            const vlUnit = parseFloat(row.dataset.vlUnitAcerto) || 0;
+            const desc = parseFloat(row.dataset.desconto) || 0;
+            const vlLiqDiv = parseFloat(row.dataset.vlrLiqDivergencia) || 0;
+            const vlrQuebraLiqRow = parseFloat(row.dataset.vlrQuebraLiq) || 0;
+            
+            const qtdAcerto = parseInt(row.dataset.qtdAcerto) || 0; 
+            const qtdAcao = parseInt(row.dataset.qtdAcao) || 0;
+            const qtdVenda = parseInt(row.dataset.qtdVenda) || 0;
+
+            // Totais de Entrada
+            totAcertoBruto += qtdAcerto * vlUnit;
+            totAcertoLiq += (qtdAcerto * vlUnit) * (1 - desc);
+
+            let qtdManual = 0;
+            const input = row.querySelector('.qty-input');
+            if (input) qtdManual = parseInt(input.value) || 0;
+
+            if (situacao.includes('Divergência')) {
+                totAcertoDevido += (qtdManual * vlUnit) * (1 - desc);
+            } else if (itemPromo === 'Sim') {
+                if (qtdAcao > 0) {
+                    totAcertoDevido += (qtdManual * vlUnit) * (1 - desc);
+                }
+            }
+
+            totDiv += vlLiqDiv; 
+            totQuebraLiq += vlrQuebraLiqRow;
+        });
+
+        document.getElementById('total-acerto-bruto').textContent = formatCurrency(totAcertoBruto);
+        document.getElementById('total-acerto-liquido').textContent = formatCurrency(totAcertoLiq);
+        document.getElementById('total-divergencia-auto').textContent = formatCurrency(totDiv);
+        document.getElementById('total-acerto-manual').textContent = formatCurrency(totAcertoDevido);
+        
+        const elQuebraLiq = document.getElementById('total-quebra-liquida');
+        if (elQuebraLiq) elQuebraLiq.textContent = formatCurrency(totQuebraLiq);
+    }
+
+    async function saveChanges(redirectUrl = null) {
+        if(redirectUrl) document.getElementById('saving-overlay').style.display = 'flex';
+        const updates = [];
+        document.querySelectorAll('.qty-input').forEach(inp => {
+            updates.push({ filial: inp.dataset.filial, isbn: inp.dataset.isbn, qtd: inp.value });
+        });
+        try {
+            const res = await fetch(API_URLS.updateManual, {
+                method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(updates)
+            });
+            if(res.ok) {
+                if (redirectUrl) window.location.href = redirectUrl; 
+                else calculateTotals(); 
+            } else {
+                alert('Erro ao salvar.');
+                if(redirectUrl) document.getElementById('saving-overlay').style.display = 'none';
+            }
+        } catch(e) { alert('Erro de conexão.'); if(redirectUrl) document.getElementById('saving-overlay').style.display = 'none'; }
+    }
+
+    document.getElementById('btn-resumo').onclick = function() {
+        saveChanges(API_URLS.summary);
+    };
+
+    document.getElementById('btn-refresh-numeros').onclick = () => calculateTotals();
+    
+    document.querySelectorAll('.qty-input').forEach(inp => {
+        inp.addEventListener('input', function() {
+            const max = parseInt(this.getAttribute('max')) || 0;
+            let val = parseInt(this.value);
+            if (!isNaN(val) && val > max) this.value = max;
+            calculateTotals();
+        });
+    });
+
+    document.getElementById('filial-select').onchange = function() {
+        const url = new URL(API_URLS.results, window.location.origin);
+        url.searchParams.set('filial', this.value);
+        const currentFilter = new URLSearchParams(window.location.search).get('filter');
+        if(currentFilter) url.searchParams.set('filter', currentFilter);
+        saveChanges(url.toString());
+    };
+    
+    document.querySelectorAll('[data-filter]').forEach(a => {
+        a.onclick = function(e) {
+            e.preventDefault();
+            const url = new URL(window.location);
+            url.searchParams.set('filter', this.dataset.filter);
+            saveChanges(url.toString());
+        }
+    });
+
+    document.querySelectorAll('tbody tr').forEach(tr => {
+        tr.onclick = (e) => {
+            if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'BUTTON') {
+                document.querySelectorAll('tr').forEach(x => x.classList.remove('selected-row'));
+                tr.classList.add('selected-row');
+            }
+        }
+    });
+
+    calculateTotals();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

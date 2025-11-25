@@ -1,0 +1,205 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe41251107030689000146550010000090351078051472" versao="4.00">
+      <ide>
+        <cUF>41</cUF>
+        <cNF>07805147</cNF>
+        <natOp>VENDA ACERTO DE CONSIGNACAO</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>9035</nNF>
+        <dhEmi>2025-11-19T14:19:10-03:00</dhEmi>
+        <dhSaiEnt>2025-11-19T14:19:10-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>2</idDest>
+        <cMunFG>4106902</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>2</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>1</indPres>
+        <procEmi>0</procEmi>
+        <verProc>4.3.9.0</verProc>
+      </ide>
+      <emit>
+        <CNPJ>07030689000146</CNPJ>
+        <xNome>MARES TIZZOT EDITORA LTDA</xNome>
+        <xFant>ARTE E LETRA EDITORA E LIVRARIA</xFant>
+        <enderEmit>
+          <xLgr>Rua Desembargador Motta</xLgr>
+          <nro>2011</nro>
+          <xBairro>BATEL</xBairro>
+          <cMun>4106902</cMun>
+          <xMun>CURITIBA</xMun>
+          <UF>PR</UF>
+          <CEP>80420162</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+        </enderEmit>
+        <IE>9032050325</IE>
+        <CRT>1</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962002072</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA - PATIO PAULISTA</xNome>
+        <enderDest>
+          <xLgr>TREZE DE MAIO</xLgr>
+          <nro>1933</nro>
+          <xCpl>LOJA 422</xCpl>
+          <xBairro>BELA VISTA</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>01327000</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>131405253111</IE>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>9786587603582</cProd>
+          <cEAN>9786587603582</cEAN>
+          <xProd>STONER -BC/BF - Arte Letra</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>6114</CFOP>
+          <uCom>UN</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>79.0000000000</vUnCom>
+          <vProd>79.00</vProd>
+          <cEANTrib>9786587603582</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>79.0000000000</vUnTrib>
+          <vDesc>39.50</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <vTotTrib>13.01</vTotTrib>
+          <ICMS>
+            <ICMSSN102>
+              <orig>0</orig>
+              <CSOSN>300</CSOSN>
+            </ICMSSN102>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPITrib>
+              <CST>99</CST>
+              <vBC>0.00</vBC>
+              <pIPI>0.0000</pIPI>
+              <vIPI>0.00</vIPI>
+            </IPITrib>
+          </IPI>
+          <PIS>
+            <PISOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pPIS>0.0000</pPIS>
+              <vPIS>0.00</vPIS>
+            </PISOutr>
+          </PIS>
+          <COFINS>
+            <COFINSOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pCOFINS>0.0000</pCOFINS>
+              <vCOFINS>0.00</vCOFINS>
+            </COFINSOutr>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0.00</vBC>
+          <vICMS>0.00</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>79.00</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>39.50</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>0.00</vPIS>
+          <vCOFINS>0.00</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>39.50</vNF>
+          <vTotTrib>13.01</vTotTrib>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+      </transp>
+      <cobr>
+        <fat>
+          <nFat>9035/1</nFat>
+          <vOrig>39.50</vOrig>
+          <vDesc>0.00</vDesc>
+          <vLiq>39.50</vLiq>
+        </fat>
+        <dup>
+          <nDup>001</nDup>
+          <dVenc>2026-01-18</dVenc>
+          <vDup>39.50</vDup>
+        </dup>
+      </cobr>
+      <pag>
+        <detPag>
+          <indPag>1</indPag>
+          <tPag>15</tPag>
+          <vPag>39.50</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>Todos os itens com 50% de desconto. Referente a NFe de Dev. Simbolica n 25829. Pagamento por Deposito Bancario Identificado: BANCO DO BRASIL: AG: 1869-4 C/C: 106678-1. PIX: contato arteeletra.com.br. Prazo de Pagamento: 18/01/2026. | SIMPLES FATURAMENTO DE MERCADORIA EM CONSIGNACAO - NF N 6769 DE 15/08/2022 | NF N 6777 DE 17/08/2022 | NF N 7655 DE 29/11/2023 | NF N 7839 DE 23/02/2024 | |Trib aprox R$: 5,31 Federal e 7,70 Estadual Fonte: IBPT/FECOMERCIO PR 81AAFF ;FORMA DE PAGTO: BOLETO VALOR: R$ 39,50 VENCTO.: 18/01/2026 |End. Entrega: TREZE DE MAIO, N 1933 LOJA 422 BELA VISTA SAO PAULO - SP CEP:01327000; Nro. Pedido: 20329; Resp.: 4 - Amanda;</infCpl>
+      </infAdic>
+      <infRespTec>
+        <CNPJ>04528398000194</CNPJ>
+        <xContato>FABIANO FRANCO</xContato>
+        <email>ffranco@fmz.com.br</email>
+        <fone>1735217309</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe41251107030689000146550010000090351078051472">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>Q//Ouud/0CdsfekqtvIMwpS/4lM=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>pKl+e4xKG+WvhjO8q4X7LvisEj/GcI5Pyi9olzd+umi/dgqws+nkPsWKwixhFCAVw0VnIAUiab/nO+dShwyqBQbz91jPOAZWsJzvSuUq5f8tWT8g0u7btWwJkhoNDQhAj5WOZzMKVte9YPsc9i7SL/eLnwRWC/roEEh83sGOYaXcSLmaU1xsvXLrsjEj8oECyaIXTDelWe258bYkHV4Eey1IK6RKZq3bqBSL2JecsjQiXQHrowWsCUNH6m0grn0PjwvL9YJMrr9J5/ctodVlT+vBp9aWPHp6ohuAL9qvAvpW8Q1U+V27iyIaMpAkK7mWbvYy0B2CJfbmFEogus+tEA==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt Id="ID141250394553279">
+      <tpAmb>1</tpAmb>
+      <verAplic>PR-v4_9_46</verAplic>
+      <chNFe>41251107030689000146550010000090351078051472</chNFe>
+      <dhRecbto>2025-11-19T14:19:11-03:00</dhRecbto>
+      <nProt>141250394553279</nProt>
+      <digVal>Q//Ouud/0CdsfekqtvIMwpS/4lM=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

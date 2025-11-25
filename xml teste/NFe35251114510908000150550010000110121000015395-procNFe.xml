@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe versao="4.00" Id="NFe35251114510908000150550010000110121000015395">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>00001539</cNF>
+        <natOp>Remessa de Mercadoria em Consignacao Mercantil/Industrial</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>11012</nNF>
+        <dhEmi>2025-11-12T10:04:15-03:00</dhEmi>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3550308</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>5</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>1</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>NF - eletronica.com</verProc>
+      </ide>
+      <emit>
+        <CNPJ>14510908000150</CNPJ>
+        <xNome>EDITORA INSTANTE LTDA</xNome>
+        <enderEmit>
+          <xLgr>RUA PIRACUAMA, 280</xLgr>
+          <nro>280</nro>
+          <xCpl>SALA 91 LETRA A</xCpl>
+          <xBairro>PERDIZ</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>05017040</CEP>
+          <fone>5511912013150</fone>
+        </enderEmit>
+        <IE>146647550112</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962002587</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA</xNome>
+        <enderDest>
+          <xLgr>ALAMEDA LORENA</xLgr>
+          <nro>1501</nro>
+          <xBairro>JARDIM PAULISTA</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>01424005</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>131900547117</IE>
+        <email>fiscal@livrariadavila.com.br</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>9788552994268</cProd>
+          <cEAN>9788552994268</cEAN>
+          <xProd>A biblioteca do censor de livros</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>15.0000</qCom>
+          <vUnCom>79.900000</vUnCom>
+          <vProd>1198.50</vProd>
+          <cEANTrib>9788552994268</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>15.0000</qTrib>
+          <vUnTrib>79.900000</vUnTrib>
+          <vDesc>599.25</vDesc>
+          <indTot>1</indTot>
+          <xPed>954673</xPed>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>9788552994237</cProd>
+          <cEAN>9788552994237</cEAN>
+          <xProd>A muralha</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>94.900000</vUnCom>
+          <vProd>94.90</vProd>
+          <cEANTrib>9788552994237</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>94.900000</vUnTrib>
+          <vDesc>47.45</vDesc>
+          <indTot>1</indTot>
+          <xPed>954673</xPed>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="3">
+        <prod>
+          <cProd>9788552994404</cProd>
+          <cEAN>9788552994404</cEAN>
+          <xProd>Guida, carissima Guida</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>3.0000</qCom>
+          <vUnCom>84.900000</vUnCom>
+          <vProd>254.70</vProd>
+          <cEANTrib>9788552994404</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>3.0000</qTrib>
+          <vUnTrib>84.900000</vUnTrib>
+          <vDesc>127.35</vDesc>
+          <indTot>1</indTot>
+          <xPed>954673</xPed>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="4">
+        <prod>
+          <cProd>9788552994152</cProd>
+          <cEAN>9788552994152</cEAN>
+          <xProd>Morra, amor</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>18.0000</qCom>
+          <vUnCom>69.900000</vUnCom>
+          <vProd>1258.20</vProd>
+          <cEANTrib>9788552994152</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>18.0000</qTrib>
+          <vUnTrib>69.900000</vUnTrib>
+          <vDesc>629.10</vDesc>
+          <indTot>1</indTot>
+          <xPed>954673</xPed>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0.00</vBC>
+          <vICMS>0.00</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>2806.30</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>1403.15</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>0.00</vPIS>
+          <vCOFINS>0.00</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>1403.15</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+        <transporta>
+          <xNome>TRANSPO EXPRESS TRANSPORTE E LOGISTICA LTDA</xNome>
+        </transporta>
+        <vol>
+          <qVol>1</qVol>
+          <pesoL>10.390</pesoL>
+          <pesoB>10.390</pesoB>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <tPag>90</tPag>
+          <vPag>0.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>Qtde Produtos: 37  Pedido cliente: 954673  Inf. Contribuinte: Art. 150 Inciso VI, letra D da constituicao ICMS Nao Incidencia, Art.7o Inciso III Decreto 45-490200. IPI Imunidade Tributaria Art. 18, Inciso I Decreto 7.2122010.</infCpl>
+      </infAdic>
+      <compra>
+        <xPed>954673</xPed>
+      </compra>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251114510908000150550010000110121000015395">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>mlBm88cheWyoMhbelgs+t4VzyaY=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>uYLlj3q+pEbo06yS0M92kWapzD2lJmTkT9NTP2/aK+X/m40LTTqpUM3NTKdPlh1sUtu0KjYGSSYtVQnlb/4V3LXmHtqEGN76stwsiNfEj3Tyi0IF+fcV7jhuwofYaixB97MP/r6nHBzXM7pIFK8LK6zlJBcpdSe2/umWhCP6kuw4Zv8fRPRp+IVdCf41byawTf+1pCSEB82ZDr3c2DUHwixwBJQayqVqwAfXM0Ri6lEgfMXxxUW0RaHQMn08RmivYirp2kAT0gfbA5TyH/Sh9gxeIZgsnVmTyqbdKcyAh/kNYC19aQCtsQpq1chrSJqB9ps32fhTzSM7d9jyLqPfPQ==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt Id="ID135253455332992">
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251114510908000150550010000110121000015395</chNFe>
+      <dhRecbto>2025-11-12T10:04:18-03:00</dhRecbto>
+      <nProt>135253455332992</nProt>
+      <digVal>mlBm88cheWyoMhbelgs+t4VzyaY=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

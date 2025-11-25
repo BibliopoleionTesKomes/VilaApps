@@ -1,0 +1,530 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe versao="4.00" Id="NFe35251113576123000117550010000152321432772727">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>43277272</cNF>
+        <natOp>ACERTO DE CONSIGNAÇÃO DE VENDA</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>15232</nNF>
+        <dhEmi>2025-11-19T10:47:54-03:00</dhEmi>
+        <tpNF>1</tpNF>
+        <idDest>2</idDest>
+        <cMunFG>3513009</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>7</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>1</indFinal>
+        <indPres>1</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>0.1.0</verProc>
+      </ide>
+      <emit>
+        <CNPJ>13576123000117</CNPJ>
+        <xNome>EDITORA AYINE LTDA</xNome>
+        <xFant>EDITORA AYINE</xFant>
+        <enderEmit>
+          <xLgr>RUA CURUPA</xLgr>
+          <nro>428</nro>
+          <xBairro>FORMOSA</xBairro>
+          <cMun>3513009</cMun>
+          <xMun>SÃO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>03355010</CEP>
+          <cPais>1058</cPais>
+          <xPais>Brasil</xPais>
+        </enderEmit>
+        <IE>156248203110</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962001181</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA - BATEL</xNome>
+        <enderDest>
+          <xLgr>Avenida DO BATEL</xLgr>
+          <nro>1868</nro>
+          <xCpl>LOJA 314</xCpl>
+          <xBairro>BATEL</xBairro>
+          <cMun>4106902</cMun>
+          <xMun>CURITIBA</xMun>
+          <UF>PR</UF>
+          <CEP>80420090</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+        </enderDest>
+        <indIEDest>9</indIEDest>
+        <IE>9063601281</IE>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>797</cProd>
+          <cEAN>9786559981724</cEAN>
+          <xProd>COISAS QUE NAO SE DIZEM</xProd>
+          <NCM>49011000</NCM>
+          <cBenef>PR800001</cBenef>
+          <CFOP>6113</CFOP>
+          <uCom>EX</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>119.90</vUnCom>
+          <vProd>119.90</vProd>
+          <cEANTrib>9786559981724</cEANTrib>
+          <uTrib>EX</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>119.90</vUnTrib>
+          <vDesc>53.95</vDesc>
+          <indTot>1</indTot>
+          <xPed>1184622</xPed>
+          <nItemPed>1</nItemPed>
+        </prod>
+        <imposto>
+          <vTotTrib>37.71</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+        <infAdProd>Desconto: 45,00%  Vlr Unit. Líquido: R$ 65,95</infAdProd>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>179</cProd>
+          <cEAN>9786559980956</cEAN>
+          <xProd>A FRONTEIRA: UMA VIAGEM EM TORNO DA RUSSIA   PELA COREIA DO NORTE, CHINA, MONGOLIA, CAZAQUISTAO, AZERBAIJAO, GEORGIA, UC</xProd>
+          <NCM>49019900</NCM>
+          <cBenef>PR800001</cBenef>
+          <CFOP>6113</CFOP>
+          <uCom>EX</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>159.90</vUnCom>
+          <vProd>159.90</vProd>
+          <cEANTrib>9786559980956</cEANTrib>
+          <uTrib>EX</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>159.90</vUnTrib>
+          <vDesc>71.95</vDesc>
+          <indTot>1</indTot>
+          <xPed>1184622</xPed>
+          <nItemPed>2</nItemPed>
+        </prod>
+        <imposto>
+          <vTotTrib>50.29</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+        <infAdProd>Desconto: 45,00%  Vlr Unit. Líquido: R$ 87,95</infAdProd>
+      </det>
+      <det nItem="3">
+        <prod>
+          <cProd>782</cProd>
+          <cEAN>9786559981267</cEAN>
+          <xProd>UM APATRIDA METAFISICO</xProd>
+          <NCM>49019900</NCM>
+          <cBenef>PR800001</cBenef>
+          <CFOP>6113</CFOP>
+          <uCom>EX</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>129.90</vUnCom>
+          <vProd>129.90</vProd>
+          <cEANTrib>9786559981267</cEANTrib>
+          <uTrib>EX</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>129.90</vUnTrib>
+          <vDesc>58.45</vDesc>
+          <indTot>1</indTot>
+          <xPed>1184622</xPed>
+          <nItemPed>3</nItemPed>
+        </prod>
+        <imposto>
+          <vTotTrib>40.85</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+        <infAdProd>Desconto: 45,00%  Vlr Unit. Líquido: R$ 71,45</infAdProd>
+      </det>
+      <det nItem="4">
+        <prod>
+          <cProd>439</cProd>
+          <cEAN>9786586683936</cEAN>
+          <xProd>O COMPLEXO DE TELEMACO</xProd>
+          <NCM>49019900</NCM>
+          <cBenef>PR800001</cBenef>
+          <CFOP>6113</CFOP>
+          <uCom>EX</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>65.90</vUnCom>
+          <vProd>65.90</vProd>
+          <cEANTrib>9786586683936</cEANTrib>
+          <uTrib>EX</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>65.90</vUnTrib>
+          <vDesc>29.66</vDesc>
+          <indTot>1</indTot>
+          <xPed>1184622</xPed>
+          <nItemPed>4</nItemPed>
+        </prod>
+        <imposto>
+          <vTotTrib>20.73</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+        <infAdProd>Desconto: 45,00%  Vlr Unit. Líquido: R$ 36,24</infAdProd>
+      </det>
+      <det nItem="5">
+        <prod>
+          <cProd>761</cProd>
+          <cEAN>9786559980949</cEAN>
+          <xProd>O IRREALIZAVEL: POR UMA POLITICA DA ONTOLOGIA</xProd>
+          <NCM>49011000</NCM>
+          <cBenef>PR800001</cBenef>
+          <CFOP>6113</CFOP>
+          <uCom>EX</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>119.90</vUnCom>
+          <vProd>119.90</vProd>
+          <cEANTrib>9786559980949</cEANTrib>
+          <uTrib>EX</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>119.90</vUnTrib>
+          <vDesc>53.95</vDesc>
+          <indTot>1</indTot>
+          <xPed>1184622</xPed>
+          <nItemPed>5</nItemPed>
+        </prod>
+        <imposto>
+          <vTotTrib>37.71</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+        <infAdProd>Desconto: 45,00%  Vlr Unit. Líquido: R$ 65,95</infAdProd>
+      </det>
+      <det nItem="6">
+        <prod>
+          <cProd>770</cProd>
+          <cEAN>9786559981632</cEAN>
+          <xProd>A ULTIMA MAO AO INEBRIAMENTO</xProd>
+          <NCM>49019900</NCM>
+          <cBenef>PR800001</cBenef>
+          <CFOP>6113</CFOP>
+          <uCom>EX</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>99.90</vUnCom>
+          <vProd>99.90</vProd>
+          <cEANTrib>9786559981632</cEANTrib>
+          <uTrib>EX</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>99.90</vUnTrib>
+          <vDesc>44.96</vDesc>
+          <indTot>1</indTot>
+          <xPed>1184622</xPed>
+          <nItemPed>6</nItemPed>
+        </prod>
+        <imposto>
+          <vTotTrib>31.42</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+        <infAdProd>Desconto: 45,00%  Vlr Unit. Líquido: R$ 54,94</infAdProd>
+      </det>
+      <det nItem="7">
+        <prod>
+          <cProd>788</cProd>
+          <cEAN>9786559980901</cEAN>
+          <xProd>INDIA   THE PASSENGER</xProd>
+          <NCM>49019900</NCM>
+          <cBenef>PR800001</cBenef>
+          <CFOP>6113</CFOP>
+          <uCom>EX</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>149.90</vUnCom>
+          <vProd>149.90</vProd>
+          <cEANTrib>9786559980901</cEANTrib>
+          <uTrib>EX</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>149.90</vUnTrib>
+          <vDesc>67.45</vDesc>
+          <indTot>1</indTot>
+          <xPed>1184622</xPed>
+          <nItemPed>7</nItemPed>
+        </prod>
+        <imposto>
+          <vTotTrib>47.14</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+        <infAdProd>Desconto: 45,00%  Vlr Unit. Líquido: R$ 82,45</infAdProd>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0</vBC>
+          <vICMS>0</vICMS>
+          <vICMSDeson>0</vICMSDeson>
+          <vFCP>0</vFCP>
+          <vBCST>0</vBCST>
+          <vST>0</vST>
+          <vFCPST>0</vFCPST>
+          <vFCPSTRet>0</vFCPSTRet>
+          <vProd>845.30</vProd>
+          <vFrete>0</vFrete>
+          <vSeg>0</vSeg>
+          <vDesc>380.37</vDesc>
+          <vII>0</vII>
+          <vIPI>0</vIPI>
+          <vIPIDevol>0</vIPIDevol>
+          <vPIS>0</vPIS>
+          <vCOFINS>0</vCOFINS>
+          <vOutro>0</vOutro>
+          <vNF>464.93</vNF>
+          <vTotTrib>265.85</vTotTrib>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>9</modFrete>
+        <vol>
+          <qVol>0</qVol>
+        </vol>
+      </transp>
+      <cobr>
+        <fat>
+          <nFat>15232</nFat>
+          <vOrig>464.93</vOrig>
+          <vDesc>0</vDesc>
+          <vLiq>464.93</vLiq>
+        </fat>
+        <dup>
+          <nDup>001</nDup>
+          <dVenc>2026-01-18</dVenc>
+          <vDup>464.93</vDup>
+        </dup>
+      </cobr>
+      <pag>
+        <detPag>
+          <tPag>15</tPag>
+          <vPag>464.93</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>Trib. aprox. R$: 113,70 Federal,  152,14 Estadual Fonte: IBPT/empresometro.com.br B0591B</infCpl>
+      </infAdic>
+      <infRespTec>
+        <CNPJ>07504505000132</CNPJ>
+        <xContato>Ricardo Acras</xContato>
+        <email>contato@focusnfe.com.br</email>
+        <fone>41991820810</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251113576123000117550010000152321432772727">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>7EUWW5ZPfBiYKJuss67i05ZOof8=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>ukHEs4Z771x2P800YXsR8DgQt4XG4WYUK10R1FRVPwje1hi7d68ZyDRVN4/VU56Yu9OOtQCvYrDM
+64iFY3zfyA6rfE/1+8vdN9zgRnaP0sJBlatIBYJi+iSHW0C7XE/j53f7VIE2lXhPPuKb3GudgllD
+DwFidgL4qujVkfmy4Ll85zyi9mJ6krHcBSAjl1F1IrmU8TBSTsT5fWikf9tQtBNJN2eingO+USmm
+19pokIvYRzUd2hfB3F2y6FPK7jdKJXIXWPOWm3ZcsUcVu30LZDpk07MMillIJ7SrHXJbunUX4Ptk
+Mif+KCS0FIEfbRiPsn7Zjq3DaRK4GZJNnkv9XA==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>MIIH2zCCBcOgAwIBAgIIdjo7V4f0zU0wDQYJKoZIhvcNAQELBQAwdjELMAkGA1UEBhMCQlIxEzAR
+BgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFs
+IGRvIEJyYXNpbCAtIFJGQjEaMBgGA1UEAxMRQUMgU0FGRVdFQiBSRkIgdjUwHhcNMjQxMjA1MTkz
+NTIxWhcNMjUxMjA1MTkzNTIxWjCB7zELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwx
+CzAJBgNVBAgTAlNQMQ4wDAYDVQQHEwVDT1RJQTE2MDQGA1UECxMtU2VjcmV0YXJpYSBkYSBSZWNl
+aXRhIEZlZGVyYWwgZG8gQnJhc2lsIC0gUkZCMRYwFAYDVQQLEw1SRkIgZS1DTlBKIEExMRcwFQYD
+VQQLEw4yMjM5MDM5OTAwMDEwNTEZMBcGA1UECxMQdmlkZW9jb25mZXJlbmNpYTEqMCgGA1UEAxMh
+RURJVE9SQSBBWUlORSBMVERBOjEzNTc2MTIzMDAwMTE3MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8A
+MIIBCgKCAQEA5WmJUIhRIv4uF3ij70xmj+ByADZ+h2NbFP2N1JqTf6Dt4AyP9JJ+0niK9A6VyCCp
+F4j2fssFsuPLnV78fjypcemWkJrnIsX7m0hgFpjoYR5EDiw76scPad1NptK8QcCbC/ENclnwdaZI
+vHsThxN3jsvJmJIQzLdLRzth/NCBVSvC2tJDDhDx0w80U3TYurpcwUXn6k3HPojwfcapwpy9IYJ2
+2zNwuHXr/GdXowIZNd6oIRdiK7NsrUBFbvd545+Wm9liWmCcIwrgdxztj9j/hyjI4Ok6dvH06A5G
+Ji1+4tSLv4UqSjjk+pCYoFXBQ2PETvSnyb4+XZKQIzD7divRNQIDAQABo4IC8TCCAu0wHwYDVR0j
+BBgwFoAUKV5L1UZMu/4Wp2PBHcQm8t3Y8wUwDgYDVR0PAQH/BAQDAgXgMGkGA1UdIARiMGAwXgYG
+YEwBAgEzMFQwUgYIKwYBBQUHAgEWRmh0dHA6Ly9yZXBvc2l0b3Jpby5hY3NhZmV3ZWIuY29tLmJy
+L2FjLXNhZmV3ZWJyZmIvZHBjLWFjc2FmZXdlYnJmYi5wZGYwga4GA1UdHwSBpjCBozBPoE2gS4ZJ
+aHR0cDovL3JlcG9zaXRvcmlvLmFjc2FmZXdlYi5jb20uYnIvYWMtc2FmZXdlYnJmYi9sY3ItYWMt
+c2FmZXdlYnJmYnY1LmNybDBQoE6gTIZKaHR0cDovL3JlcG9zaXRvcmlvMi5hY3NhZmV3ZWIuY29t
+LmJyL2FjLXNhZmV3ZWJyZmIvbGNyLWFjLXNhZmV3ZWJyZmJ2NS5jcmwwgbcGCCsGAQUFBwEBBIGq
+MIGnMFEGCCsGAQUFBzAChkVodHRwOi8vcmVwb3NpdG9yaW8uYWNzYWZld2ViLmNvbS5ici9hYy1z
+YWZld2VicmZiL2FjLXNhZmV3ZWJyZmJ2NS5wN2IwUgYIKwYBBQUHMAKGRmh0dHA6Ly9yZXBvc2l0
+b3JpbzIuYWNzYWZld2ViLmNvbS5ici9hYy1zYWZld2VicmZiL2FjLXNhZmV3ZWJyZmJ2NS5wN2Iw
+gbkGA1UdEQSBsTCBroEUUERNRk9OU0VDQUBHTUFJTC5DT02gKAYFYEwBAwKgHxMdUEVEUk8gREFO
+SUVMIERFIE1PVVJBIEZPTlNFQ0GgGQYFYEwBAwOgEBMOMTM1NzYxMjMwMDAxMTegOAYFYEwBAwSg
+LxMtMjAwOTE5ODYwODI2ODEyNTYyNDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwoBcGBWBMAQMH
+oA4TDDAwMDAwMDAwMDAwMDAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwQwCQYDVR0TBAIw
+ADANBgkqhkiG9w0BAQsFAAOCAgEAeJgFoxc5ExBcZ1N7MVRXkEt1dzHQu/F7//Uh2FulVwKmTRZW
+xwAj5TZW5RWiX+60M5hsKDNzkc7Wa4sFniDHvrwZRrx7+oZI9hape22VYxNK17o87vWqMhP9cXKP
+0NmanF546l6RJTWDKF+/EY7CU1ySvnz7wMfDkXAnptAxUhLGORx/YffUX7XPuzrOLlhx/duoD068
+fX+xfd+bcMPzgxUJ8zbSLAOs6BelfZ3R8oKhdVbFJArU2dMinKDaeSn5IhfGxo1DTOi2z9UJ844+
+Z2WY5epfyCKYyT7N9L1xj4/EGfpi5esoBb0bH6uHO/VszvJCSE7Jm+AMzpREpHA1BOARe98KBcNd
+b4hunPQe3CLpb7gjZRL2pt3Qz+G3TryD96irkmQmiHdjBdpXCkBmjea2JYEXIdVvLAVJHjScogOQ
+qkbZy0IjJBY+6hHdcuamnJZ9rtbhZtT2N4LLMBFYDHJvIzq4ZY10KQFe8DORu6ZiiHiSR7mX6PQz
++jYRxupKCViW24rUpJu5Lq51LXZvM2OUFuMN21zHd3VvDVKKPEcjh0xmLQxCBFf223fSiw3S5D5l
+BhdSyL2L4njSw0piekzC5jhn3AkT2+lLEcDmM8tWXAmYu2UJOmFhyxM05pXkOwD8ImMIbums0dAE
+zg4Qi+8v4ACr7llp+quWNR20M2g=</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt>
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251113576123000117550010000152321432772727</chNFe>
+      <dhRecbto>2025-11-19T10:48:39-03:00</dhRecbto>
+      <nProt>135253553841570</nProt>
+      <digVal>7EUWW5ZPfBiYKJuss67i05ZOof8=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

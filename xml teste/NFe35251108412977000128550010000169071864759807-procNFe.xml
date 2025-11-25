@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe35251108412977000128550010000169071864759807" versao="4.00">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>86475980</cNF>
+        <natOp>REMESSA DE CONSIGNACAO</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>16907</nNF>
+        <dhEmi>2025-11-11T09:55:20-03:00</dhEmi>
+        <dhSaiEnt>2025-11-11T09:55:20-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>2</idDest>
+        <cMunFG>3550308</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>7</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>1</indFinal>
+        <indPres>0</indPres>
+        <procEmi>0</procEmi>
+        <verProc>Liter: 3.0.0.446</verProc>
+      </ide>
+      <emit>
+        <CNPJ>08412977000128</CNPJ>
+        <xNome>Giostri Editora Ltda</xNome>
+        <xFant>GIOSTRI EDITORA</xFant>
+        <enderEmit>
+          <xLgr>RUA SAO SAMUEL</xLgr>
+          <nro>141</nro>
+          <xBairro>VILA MARIANA</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>04120030</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1123094102</fone>
+        </enderEmit>
+        <IE>701050648110</IE>
+        <CRT>1</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962001343</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA - AURORA SHOPPING LONDRINA PR</xNome>
+        <enderDest>
+          <xLgr>AVENIDA AYRTON SENNA DA SILVA</xLgr>
+          <nro>400</nro>
+          <xCpl>2 PISO</xCpl>
+          <xBairro>GLEBA FAZENDA PALHANO</xBairro>
+          <cMun>4113700</cMun>
+          <xMun>LONDRINA</xMun>
+          <UF>PR</UF>
+          <CEP>86050460</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>4333296703</fone>
+        </enderDest>
+        <indIEDest>9</indIEDest>
+        <IE>9071497493</IE>
+        <email>fiscal@livrariadavila.com.br</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>6553</cProd>
+          <cEAN>9786559276530</cEAN>
+          <xProd>RE/DES CONSTRUCAO</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>6917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>100.0000</qCom>
+          <vUnCom>69.0000000000</vUnCom>
+          <vProd>6900.00</vProd>
+          <cEANTrib>9786559276530</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>100.0000</qTrib>
+          <vUnTrib>69.0000000000</vUnTrib>
+          <vDesc>3450.00</vDesc>
+          <indTot>1</indTot>
+          <nItemPed>000000</nItemPed>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMSSN102>
+              <orig>0</orig>
+              <CSOSN>102</CSOSN>
+            </ICMSSN102>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>07</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>07</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0.00</vBC>
+          <vICMS>0.00</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>6900.00</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>3450.00</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>0.00</vPIS>
+          <vCOFINS>0.00</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>3450.00</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+        <transporta>
+          <CNPJ>12109269000190</CNPJ>
+          <xNome>TRANSPO EXPRESS LK TRANSPORTES LTDA.</xNome>
+          <IE>492633996112</IE>
+          <xEnder>AV DAS COMUNICACOES, 265</xEnder>
+          <xMun>OSASCO</xMun>
+          <UF>SP</UF>
+        </transporta>
+        <vol>
+          <qVol>1</qVol>
+          <esp>VOLUME</esp>
+          <pesoL>17.200</pesoL>
+          <pesoB>17.200</pesoB>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <tPag>90</tPag>
+          <vPag>0.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infAdFisco>Pedido Numero: MATERIAL PARA EVENTO DIA 28/11|;</infAdFisco>
+        <infCpl>REFERENTE A MATERIAL PARA EVENTO DIA 28/11 COM A AUTORA GISA CAMPOS - DEVOLUCAO 2 DIAS - ACERTO 30 DIAS - PAGAMENTO EM ATE 30 DIAS APOS O ACERTO.</infCpl>
+        <obsCont xCampo="TipoNota">
+          <xTexto>2</xTexto>
+        </obsCont>
+        <obsCont xCampo="OperacaoFiscal">
+          <xTexto>2</xTexto>
+        </obsCont>
+        <obsCont xCampo="Vendedor">
+          <xTexto>8017</xTexto>
+        </obsCont>
+        <obsCont xCampo="EnderecoEntrega">
+          <xTexto>1</xTexto>
+        </obsCont>
+        <obsCont xCampo="Setor">
+          <xTexto>1</xTexto>
+        </obsCont>
+        <obsCont xCampo="Consignacao">
+          <xTexto>132</xTexto>
+        </obsCont>
+        <obsCont xCampo="NumeroPedido">
+          <xTexto>0</xTexto>
+        </obsCont>
+      </infAdic>
+      <compra>
+        <xPed>MATERIAL PARA EVENTO DIA 28/11</xPed>
+      </compra>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315">
+        </CanonicalizationMethod>
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1">
+        </SignatureMethod>
+        <Reference URI="#NFe35251108412977000128550010000169071864759807">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature">
+            </Transform>
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315">
+            </Transform>
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+          </DigestMethod>
+          <DigestValue>LAJ0gFGQNJwyblAXwDZY4lDsqWE=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>Yg/TZavW1fu+11Btbqd/yitGG9SHPzrAkMVmE5ght5KGshrkjxS3NwAXxgu6pSyTi5DBE5k6i8SbLcOTa1Moem97WGCkxyrmipoya4gXz/i/o2p0EmM1RiTvLD/O3U3WbgGFst2VQpjuCjbx4FfqaJiDqVmX7S949y1TAaSDgH3QwwcpDA1z1oVHCFxPCr2iQuWT6V+B/HOgLPEPLx++b9fuTO2j7ty80WPIJl4lu6K+YB7qwg4Efb0ZZeAFY7mFcsvcDoRnX7L6tKNXEST6Bt4Q05iA4tZd95k3jBOPWejZbp2w1Wtl70/KQo9tCabrj4zwxSi/Or2ON/XBkafDRQ==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt>
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251108412977000128550010000169071864759807</chNFe>
+      <dhRecbto>2025-11-13T09:55:21-03:00</dhRecbto>
+      <nProt>135253471984625</nProt>
+      <digVal>LAJ0gFGQNJwyblAXwDZY4lDsqWE=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

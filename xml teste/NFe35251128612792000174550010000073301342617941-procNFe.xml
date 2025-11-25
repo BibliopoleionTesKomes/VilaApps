@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe versao="4.00" Id="NFe35251128612792000174550010000073301342617941">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>34261794</cNF>
+        <natOp>Venda de mercadoria apos devolucao Simbolica</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>7330</nNF>
+        <dhEmi>2025-11-14T13:21:12-03:00</dhEmi>
+        <dhSaiEnt>2025-11-14T13:21:12-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3550308</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>1</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>0</indPres>
+        <procEmi>0</procEmi>
+        <verProc>Bling 1.1</verProc>
+      </ide>
+      <emit>
+        <CNPJ>28612792000174</CNPJ>
+        <xNome>Aller Psicologia e Editoracao Ltda</xNome>
+        <xFant>Aller Editora</xFant>
+        <enderEmit>
+          <xLgr>Rua Havai</xLgr>
+          <nro>499</nro>
+          <xBairro>Sumare</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>Sao Paulo</xMun>
+          <UF>SP</UF>
+          <CEP>01259000</CEP>
+          <cPais>1058</cPais>
+          <xPais>Brasil</xPais>
+          <fone>11930150106</fone>
+        </enderEmit>
+        <IE>118503557118</IE>
+        <IM>118503557118</IM>
+        <CNAE>5811500</CNAE>
+        <CRT>1</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962000100</CNPJ>
+        <xNome>Livraria Da Vila Ltda. - Fradique</xNome>
+        <enderDest>
+          <xLgr>Rua Fradique Coutinho</xLgr>
+          <nro>915</nro>
+          <xBairro>Pinheiros</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>Sao Paulo</xMun>
+          <UF>SP</UF>
+          <CEP>05416011</CEP>
+          <cPais>1058</cPais>
+          <xPais>Brasil</xPais>
+          <fone>1138145811</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>111092339110</IE>
+        <email>fiscal@livrariadavila.com.br</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>9786587399669</cProd>
+          <cEAN>9786587399669</cEAN>
+          <xProd>Comentario a Nota italiana de Jacques Lacan</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5113</CFOP>
+          <uCom>Un</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>108.00</vUnCom>
+          <vProd>108.00</vProd>
+          <cEANTrib>9786587399669</cEANTrib>
+          <uTrib>Un</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>108.00</vUnTrib>
+          <vDesc>54.00</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <vTotTrib>16.98</vTotTrib>
+          <ICMS>
+            <ICMSSN102>
+              <orig>0</orig>
+              <CSOSN>400</CSOSN>
+            </ICMSSN102>
+          </ICMS>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>108.00</vBC>
+              <pPIS>0.00</pPIS>
+              <vPIS>0.00</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>108.00</vBC>
+              <pCOFINS>0.00</pCOFINS>
+              <vCOFINS>0.00</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0.00</vBC>
+          <vICMS>0.00</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>108.00</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>54.00</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>0.00</vPIS>
+          <vCOFINS>0.00</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>54.00</vNF>
+          <vTotTrib>16.98</vTotTrib>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>9</modFrete>
+      </transp>
+      <cobr>
+        <fat>
+          <nFat>007330</nFat>
+          <vOrig>108.00</vOrig>
+          <vDesc>54.00</vDesc>
+          <vLiq>54.00</vLiq>
+        </fat>
+        <dup>
+          <nDup>001</nDup>
+          <dVenc>2025-12-14</dVenc>
+          <vDup>54.00</vDup>
+        </dup>
+      </cobr>
+      <pag>
+        <detPag>
+          <indPag>1</indPag>
+          <tPag>18</tPag>
+          <vPag>54.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>Total aproximado de tributos: R$ 16,98 (31,44%)  Federais R$ 7,26 (13,45%)  Estaduais R$ 9,72 (18,00%) . Fonte IBPT.Acerto de consignacao referente a nota fiscal simbolica n. 200211&lt;br /&gt;Forma de pagamento: CHAVE PIX - CNPJ 28.612.792/0001-74</infCpl>
+      </infAdic>
+      <infRespTec>
+        <CNPJ>02351877001124</CNPJ>
+        <xContato>LWSA SA</xContato>
+        <email>fiscal@bling.com.br</email>
+        <fone>05430579470</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251128612792000174550010000073301342617941">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>cWEOBjtSAuuSdR7MmeJoQsksrmU=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>O0XreajXibS6k6S/3TNMOD45Mj0Zr1JXRpG7aKmQ265H5pBjcTNVYtCJhmvOAin2iKYADMl+KgpGc3YcCOGOYblOUjghwnjqBcezyfU/1OmRgQTI9AgTp/cv0fd724HDKqkCeSMcps0MTkjmaBRtQedIooVFYYl/gcgsLVcnlR1IU4pHtmGCK63gGTg50k3S35RUVUgqhCB4fKsKXWwm7v7dT4v73HN5w1XsFvemwgVazmLcr08wp7f/nL9xG05qcYsd/dol2VYLbhKxHIM+4UqywUFwC6ZGrgepQZs/h0d6gU8+KGnSIgAMHcVNtBBNLbLVRPFVrWA3ZSpiHFp9uw==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt>
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251128612792000174550010000073301342617941</chNFe>
+      <dhRecbto>2025-11-14T13:21:13-03:00</dhRecbto>
+      <nProt>135253489858889</nProt>
+      <digVal>cWEOBjtSAuuSdR7MmeJoQsksrmU=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

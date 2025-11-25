@@ -1,0 +1,220 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe35251117929588000165550050001409781753657939" versao="4.00">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>75365793</cNF>
+        <natOp>Venda de mercadorias</natOp>
+        <mod>55</mod>
+        <serie>5</serie>
+        <nNF>140978</nNF>
+        <dhEmi>2025-11-19T14:07:57-03:00</dhEmi>
+        <dhSaiEnt>2025-11-19T14:07:57-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3521903</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>9</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>1</indFinal>
+        <indPres>2</indPres>
+        <indIntermed>1</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>mercadolivre.invoice</verProc>
+        <NFref>
+          <refNFe>35251117929588000165550050001409771735322303</refNFe>
+        </NFref>
+      </ide>
+      <emit>
+        <CNPJ>17929588000165</CNPJ>
+        <xNome>UTILAR SHOP INDUSTRIA E COMERCIO DE UTENSILIOS DOMESTICOS LT</xNome>
+        <enderEmit>
+          <xLgr>Rua Nazareno Volpiani</xLgr>
+          <nro>305</nro>
+          <xCpl>Nao consta</xCpl>
+          <xBairro>Parque Industrial</xBairro>
+          <cMun>3521903</cMun>
+          <xMun>Itajobi</xMun>
+          <UF>SP</UF>
+          <CEP>15840000</CEP>
+          <cPais>1058</cPais>
+          <xPais>Brasil</xPais>
+          <fone>1735461943</fone>
+        </enderEmit>
+        <IE>367017334114</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962000703</CNPJ>
+        <xNome>Livraria da vila ltda.</xNome>
+        <enderDest>
+          <xLgr>Avenida Paulista</xLgr>
+          <nro>1063</nro>
+          <xCpl>Terreo Referencia: EDIF. J.SAFRA</xCpl>
+          <xBairro>Bela Vista</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>Sao Paulo</xMun>
+          <UF>SP</UF>
+          <CEP>01311200</CEP>
+          <cPais>1058</cPais>
+          <xPais>Brasil</xPais>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>147427864116</IE>
+      </dest>
+      <autXML>
+        <CNPJ>24061086000120</CNPJ>
+      </autXML>
+      <det nItem="1">
+        <prod>
+          <cProd>022208-70TDk2</cProd>
+          <cEAN>17908699810996</cEAN>
+          <xProd>Banq cyber preto-junco preto-assento preto 70 Toda Desmontada</xProd>
+          <NCM>94032090</NCM>
+          <CEST>2806100</CEST>
+          <CFOP>5106</CFOP>
+          <uCom>UNID</uCom>
+          <qCom>1</qCom>
+          <vUnCom>270.50000000</vUnCom>
+          <vProd>270.50</vProd>
+          <cEANTrib>17908699810996</cEANTrib>
+          <uTrib>UNID</uTrib>
+          <qTrib>1</qTrib>
+          <vUnTrib>270.50000000</vUnTrib>
+          <indTot>1</indTot>
+          <xPed>200001390093692</xPed>
+        </prod>
+        <imposto>
+          <vTotTrib>86.13</vTotTrib>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>279.29</vBC>
+              <pICMS>12.0000</pICMS>
+              <vICMS>33.51</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPITrib>
+              <CST>50</CST>
+              <vBC>270.50</vBC>
+              <pIPI>3.2500</pIPI>
+              <vIPI>8.79</vIPI>
+            </IPITrib>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>270.50</vBC>
+              <pPIS>1.6500</pPIS>
+              <vPIS>4.46</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>270.50</vBC>
+              <pCOFINS>7.6000</pCOFINS>
+              <vCOFINS>20.56</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+        <infAdProd>xPed:2000013900936928 Total aproximado de tributos federais, estaduais e municipais: R$86,13</infAdProd>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>279.29</vBC>
+          <vICMS>33.51</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>270.50</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>0.00</vDesc>
+          <vII>0.00</vII>
+          <vIPI>8.79</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>4.46</vPIS>
+          <vCOFINS>20.56</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>279.29</vNF>
+          <vTotTrib>86.13</vTotTrib>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>2</modFrete>
+        <transporta>
+          <CNPJ>03007331012239</CNPJ>
+          <xNome>EBAZAR.COM.BR LTDA</xNome>
+          <IE>120519234116</IE>
+          <xEnder>AVENIDA DAS NACOES UNIDAS 3000 3003</xEnder>
+          <xMun>OSASCO</xMun>
+          <UF>SP</UF>
+        </transporta>
+        <vol>
+          <qVol>1</qVol>
+          <pesoL>3.370</pesoL>
+          <pesoB>3.370</pesoB>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <indPag>0</indPag>
+          <tPag>15</tPag>
+          <vPag>279.29</vPag>
+        </detPag>
+      </pag>
+      <infIntermed>
+        <CNPJ>03007331000141</CNPJ>
+        <idCadIntTran>189537188</idCadIntTran>
+      </infIntermed>
+      <infAdic>
+        <infCpl>Enviado diretamente do deposito temporario - operador logistico: EBAZAR.COM.BR LTDA, Cnpj: 03007331012158, Inscricao Estadual: 312210513110 saindo do endereco: Rod. Pres. Tancredo de Almeida Neves, Numero: 45, Complemento: , Bairro: Parque Santa Delfa, Cidade: Franco da Rocha, Cep: 07809105, Estado: SP, Pais: BR. Nota fiscal de retorno simbolico n 140977, emitida em 19/11/2025, serie 5, nos termos da Portaria CAT 31/2019 Valor aproximado dos tributos (IBPT) R$86,13.</infCpl>
+        <obsCont xCampo="external_id">
+          <xTexto>SALE-sale-45906281060-1-OLSS-189537188</xTexto>
+        </obsCont>
+      </infAdic>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251117929588000165550050001409781753657939">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>QHrO8CeN/fchIhB2SmzOmbs43x4=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>V04tTn6jyLhY51JysHi9nv9Y7pTQX5O4AYjQsHCjAzHvZVBJTVYxa0nt9sy/k6mWxwdakrcPRTvIRktBI4g25whB4aLatg8z276/wb9rtxEzHbxuak7kJNGwnqe/O5inu70LcPPrytSRZ/gzrcGrKW8DDhDRwc9hTa2TVF0/Cu+YklFg68kRQiE06fYPR8v1s02ywWPxQyoEusJBW8aKHaOfQZSKhn0uwrVgagXeBGLo2EnXwUrlTaH+g94e5lEsG2uSzPJa0gifzaXwAg6DxSWwUoCncrde19EXPPyF7FujR1wF5dk6lILR9PuAbw3hd/BZHvY9nr1OqihyGlzHHA==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt Id="Id135253556612777">
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251117929588000165550050001409781753657939</chNFe>
+      <dhRecbto>2025-11-19T14:08:11-03:00</dhRecbto>
+      <nProt>135253556612777</nProt>
+      <digVal>QHrO8CeN/fchIhB2SmzOmbs43x4=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

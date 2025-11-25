@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe35251106905943000492550030002562681542989751" versao="4.00">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>54298975</cNF>
+        <natOp>PRESTACAO DE SERVICO TRIBUTADO PELO ISSQN</natOp>
+        <mod>55</mod>
+        <serie>3</serie>
+        <nNF>256268</nNF>
+        <dhEmi>2025-11-14T09:05:00-03:00</dhEmi>
+        <dhSaiEnt>2025-11-14T09:05:00-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>2</idDest>
+        <cMunFG>3522505</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>1</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>1</indFinal>
+        <indPres>9</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>12.1.2310 | 3.0</verProc>
+      </ide>
+      <emit>
+        <CNPJ>06905943000492</CNPJ>
+        <xNome>NOBELPACK EMBALAGENS E LOGISTICA LTDA</xNome>
+        <xFant>NOBELPACK EMBALAGENS FILIAL</xFant>
+        <enderEmit>
+          <xLgr>ESTRADA ANTIGA DE ITU</xLgr>
+          <nro>730</nro>
+          <xCpl>GALPAO04</xCpl>
+          <xBairro>ESTANCIA SAO FRANCISCO</xBairro>
+          <cMun>3522505</cMun>
+          <xMun>ITAPEVI</xMun>
+          <UF>SP</UF>
+          <CEP>06695570</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1178573816</fone>
+        </enderEmit>
+        <IE>373094328119</IE>
+        <IM>27303</IM>
+        <CNAE>1813001</CNAE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962002820</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA</xNome>
+        <enderDest>
+          <xLgr>Setor Comercial Norte, S/N</xLgr>
+          <nro>SN</nro>
+          <xCpl>Quadra5 Bloco a Loja 28s 32s 38s</xCpl>
+          <xBairro>Asa Norte</xBairro>
+          <cMun>5300108</cMun>
+          <xMun>Brasilia</xMun>
+          <UF>DF</UF>
+          <CEP>70715900</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1130964490</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>0806324600305</IE>
+        <email>fiscal@livrariadavila.com.br; jean.faria@livrariadavila.com</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>PA0100327</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>LIVRARIA DA VILA 2022 SCL M PAPEL FSC</xProd>
+          <NCM>48194000</NCM>
+          <cBenef>
+          </cBenef>
+          <CFOP>6933</CFOP>
+          <uCom>UN</uCom>
+          <qCom>6800.0000</qCom>
+          <vUnCom>0.5200000000</vUnCom>
+          <vProd>3536.00</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>6800.0000</qTrib>
+          <vUnTrib>0.5200000000</vUnTrib>
+          <indTot>0</indTot>
+        </prod>
+        <imposto>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <ISSQN>
+            <vBC>3536.00</vBC>
+            <vAliq>2.0000</vAliq>
+            <vISSQN>70.72</vISSQN>
+            <cMunFG>3522505</cMunFG>
+            <cListServ>13.05</cListServ>
+            <indISS>1</indISS>
+            <cServico>06940</cServico>
+            <cMun>5300108</cMun>
+            <indIncentivo>2</indIncentivo>
+          </ISSQN>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>3536.00</vBC>
+              <pPIS>1.6500</pPIS>
+              <vPIS>58.34</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>3536.00</vBC>
+              <pCOFINS>7.6000</pCOFINS>
+              <vCOFINS>268.74</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+        <infAdProd>REF.: 51.0285.00009</infAdProd>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>PA0100325</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>LIVRARIA DA VILA 2022 SCL G PAPEL FSC</xProd>
+          <NCM>48194000</NCM>
+          <cBenef>
+          </cBenef>
+          <CFOP>6933</CFOP>
+          <uCom>UN</uCom>
+          <qCom>3600.0000</qCom>
+          <vUnCom>0.8100000000</vUnCom>
+          <vProd>2916.00</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>3600.0000</qTrib>
+          <vUnTrib>0.8100000000</vUnTrib>
+          <indTot>0</indTot>
+        </prod>
+        <imposto>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <ISSQN>
+            <vBC>2916.00</vBC>
+            <vAliq>2.0000</vAliq>
+            <vISSQN>58.32</vISSQN>
+            <cMunFG>3522505</cMunFG>
+            <cListServ>13.05</cListServ>
+            <indISS>1</indISS>
+            <cServico>06940</cServico>
+            <cMun>5300108</cMun>
+            <indIncentivo>2</indIncentivo>
+          </ISSQN>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>2916.00</vBC>
+              <pPIS>1.6500</pPIS>
+              <vPIS>48.12</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>2916.00</vBC>
+              <pCOFINS>7.6000</pCOFINS>
+              <vCOFINS>221.61</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+        <infAdProd>REF.: 51.0285.00010</infAdProd>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0</vBC>
+          <vICMS>0</vICMS>
+          <vICMSDeson>0</vICMSDeson>
+          <vFCPUFDest>0</vFCPUFDest>
+          <vICMSUFDest>0</vICMSUFDest>
+          <vICMSUFRemet>0</vICMSUFRemet>
+          <vFCP>0</vFCP>
+          <vBCST>0</vBCST>
+          <vST>0</vST>
+          <vFCPST>0</vFCPST>
+          <vFCPSTRet>0</vFCPSTRet>
+          <vProd>0</vProd>
+          <vFrete>0</vFrete>
+          <vSeg>0</vSeg>
+          <vDesc>0</vDesc>
+          <vII>0</vII>
+          <vIPI>0</vIPI>
+          <vIPIDevol>0</vIPIDevol>
+          <vPIS>0</vPIS>
+          <vCOFINS>0</vCOFINS>
+          <vOutro>0</vOutro>
+          <vNF>6452.00</vNF>
+        </ICMSTot>
+        <ISSQNtot>
+          <vServ>6452.00</vServ>
+          <vBC>6452.00</vBC>
+          <vISS>129.04</vISS>
+          <vPIS>106.46</vPIS>
+          <vCOFINS>490.35</vCOFINS>
+          <dCompet>2025-11-14</dCompet>
+        </ISSQNtot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+        <transporta>
+          <CNPJ>07655407000287</CNPJ>
+          <xNome>EXPRESSO RIO VERMELHO TRANSPORTES LTDA</xNome>
+          <IE>148587554116</IE>
+          <xEnder>RUA NESTOR DE HOLANDA,140</xEnder>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+        </transporta>
+        <vol>
+          <qVol>46</qVol>
+          <esp>VOLUMES</esp>
+          <pesoL>343.960</pesoL>
+          <pesoB>367.320</pesoB>
+        </vol>
+      </transp>
+      <cobr>
+        <fat>
+          <nFat>003000256268</nFat>
+          <vOrig>6452.00</vOrig>
+          <vDesc>0</vDesc>
+          <vLiq>6452.00</vLiq>
+        </fat>
+        <dup>
+          <nDup>001</nDup>
+          <dVenc>2025-12-14</dVenc>
+          <vDup>6452.00</vDup>
+        </dup>
+      </cobr>
+      <pag>
+        <detPag>
+          <indPag>1</indPag>
+          <tPag>15</tPag>
+          <vPag>6452.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>JIT000373696 NOTA EMITIDA CONFORME PROCESSO PMI 060020/2024 - PREFEITURA DE ITAPEVI. INC. APENAS DO ISS CONF. SUMULA 156/STJ - PRDS C/ FSC EM SUA DESCR, SAO CERTIFICADOS FSC MISTO 70%-APCER-COC-151374-NAO REC. BOL. BANC. NAO DESOBRIGA PAGTO NO VENCTO FAVOR CONTACTAR-NOS (11) 2147-5100 PEDIDO 198281 PED. B2B JIT000362132</infCpl>
+      </infAdic>
+      <infRespTec>
+        <CNPJ>53113791000122</CNPJ>
+        <xContato>Rodrigo de Almeida Sartorio</xContato>
+        <email>resp_tecnico_dfe_protheus@totvs.com.br</email>
+        <fone>1128593904</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315">
+        </CanonicalizationMethod>
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1">
+        </SignatureMethod>
+        <Reference URI="#NFe35251106905943000492550030002562681542989751">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature">
+            </Transform>
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315">
+            </Transform>
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+          </DigestMethod>
+          <DigestValue>oYGWZzC1IanN2p1Gc8zNKIje3M8=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>Jer9nKCCPhl/RB5bM7lDqlp76TJY2MGJAYZWIyJN/djcha38lQbYZn8DWUTDxvUHTFCB7tSaWXjYTPZi9l9EHtlkToX0WFteerpUc0AyzpSZoeHSqQK4ElocCCbErutCK8HOBHwoaMki/LWzf6WE2jVzLXZKmLfTdLGPyO/YpCjJASViKF9mtnNXz93P0vgkcNwoGmuwWAaVqJS6wh+SJJGOxFocelQa4QQt/9T1cB7F/JhTnWUiGgGNNiEPpjNUoDc6P4paPxFe7ploSVzyO6Esd1DD5d2Vp5Xn4UZtUP5CbNWOXshjroL3Kp43HRd8amKCR0JBeoxGf697+9RqKw==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+    <infProt>
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251106905943000492550030002562681542989751</chNFe>
+      <dhRecbto>2025-11-14T09:09:25-03:00</dhRecbto>
+      <nProt>135253486115596</nProt>
+      <digVal>oYGWZzC1IanN2p1Gc8zNKIje3M8=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

@@ -1,0 +1,280 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe versao="4.00" Id="NFe35251161101671000133550010000871441001669543">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>00166954</cNF>
+        <natOp>REMESSA DE MERCADORIA EM CONSIGNACAO MERC/INDUSTRIAL</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>87144</nNF>
+        <dhEmi>2025-11-19T13:47:41-03:00</dhEmi>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3550308</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>3</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>9</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>NF - eletronica.com</verProc>
+      </ide>
+      <emit>
+        <CNPJ>61101671000133</CNPJ>
+        <xNome>COMPANHIA EDITORA NACIONAL</xNome>
+        <enderEmit>
+          <xLgr>RUA AGOSTINHO DE AZEVEDO</xLgr>
+          <nro>S/N</nro>
+          <xBairro>JARDIM BOA VISTA(ZONA OESTE)</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>05583140</CEP>
+          <fone>1127997799</fone>
+        </enderEmit>
+        <IE>136149469114</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962000886</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA</xNome>
+        <enderDest>
+          <xLgr>AVENIDA JUCELINO KUBISTCHECK</xLgr>
+          <nro>2041</nro>
+          <xCpl>LOJA 307 308</xCpl>
+          <xBairro>VILA NOVA CONCEICAO</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>04543011</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1130935815</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>146005488119</IE>
+        <email>FISCAL@LIVRARIADAVILA.COM.BR</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>9786558812784</cProd>
+          <cEAN>9786558812784</cEAN>
+          <xProd>Paris 6: Invadiram minha cozinha</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>10.0000</qCom>
+          <vUnCom>199.900000</vUnCom>
+          <vProd>1999.00</vProd>
+          <cEANTrib>9786558812784</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>10.0000</qTrib>
+          <vUnTrib>199.900000</vUnTrib>
+          <vDesc>999.50</vDesc>
+          <indTot>1</indTot>
+          <xPed>949274</xPed>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>9786558812814</cProd>
+          <cEAN>9786558812814</cEAN>
+          <xProd>Se nao tiver, a gente faz</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>10.0000</qCom>
+          <vUnCom>99.900000</vUnCom>
+          <vProd>999.00</vProd>
+          <cEANTrib>9786558812814</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>10.0000</qTrib>
+          <vUnTrib>99.900000</vUnTrib>
+          <vDesc>499.50</vDesc>
+          <indTot>1</indTot>
+          <xPed>949274</xPed>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="3">
+        <prod>
+          <cProd>9786558812739</cProd>
+          <cEAN>9786558812739</cEAN>
+          <xProd>Sindrome da Impostora</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>5.0000</qCom>
+          <vUnCom>69.900000</vUnCom>
+          <vProd>349.50</vProd>
+          <cEANTrib>9786558812739</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>5.0000</qTrib>
+          <vUnTrib>69.900000</vUnTrib>
+          <vDesc>174.75</vDesc>
+          <indTot>1</indTot>
+          <xPed>949274</xPed>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0.00</vBC>
+          <vICMS>0.00</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>3347.50</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>1673.75</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>0.00</vPIS>
+          <vCOFINS>0.00</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>1673.75</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+        <transporta>
+          <CNPJ>00314451000101</CNPJ>
+          <xNome>SCANDURA &amp; LUNA LTDA</xNome>
+          <IE>145893751115</IE>
+          <xEnder>AVENIDA VALDEMAR CARLOS PEREIRA 1650</xEnder>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+        </transporta>
+        <vol>
+          <qVol>1</qVol>
+          <esp>VOL</esp>
+          <pesoL>13.590</pesoL>
+          <pesoB>14.026</pesoB>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <tPag>90</tPag>
+          <vPag>0.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>Cod Nota: 166954 Qtde Produtos: 25 IMUNIDADE DE ICMS ARTIGO 150 INCISO VI ALINEA D CF DE 88 Pedido cliente: 949274 CIF - ATENCAO: Prazo para reclamacao e de 3 dias uteis apos o recebimento ITENS: 3  QTDE TOTAL LIVROS: 25 DESCONTO:50%</infCpl>
+      </infAdic>
+      <compra>
+        <xPed>949274</xPed>
+      </compra>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251161101671000133550010000871441001669543">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>1SDrS2q10rePyO8jKeuPbm8y9vo=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>xAovOJG6pnma2M0k3f37b0UDwSbwkyQZsJxyF+hMtZXVXaok9CHzJVZy1MO/NiGD2DH7/d9rHc36dGwPLsNsXgCYInbU00pwI4mqUzKjJj9n4rmafi4VssJ0qd2RcIjl6JEW4e/PEZfyit4tIukDAv+9xZa9+lpOKXhHrObqYKcnkh2Dz1vsJhceoJBFjyia7Dmbt7Y19p61mWK2ubJelZClheffVdCSUBEsKg5T9EO/Z0PHPkLUC9JRNhXGA0wZeESBYjMGlRKEbXkbS/ZHcN49k+BwgdOnYvuDgrNZlyc7MOOsJeAjzSKdUz4iYiPlUlUQkCmpmf/y014flroO8Q==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt Id="Id135253556340567">
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251161101671000133550010000871441001669543</chNFe>
+      <dhRecbto>2025-11-19T13:47:52-03:00</dhRecbto>
+      <nProt>135253556340567</nProt>
+      <digVal>1SDrS2q10rePyO8jKeuPbm8y9vo=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

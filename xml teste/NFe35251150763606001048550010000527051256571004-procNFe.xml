@@ -1,0 +1,754 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe35251150763606001048550010000527051256571004" versao="4.00">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>25657100</cNF>
+        <natOp>Venda Merc. Adq/Rec Terc. no Estado</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>52705</nNF>
+        <dhEmi>2025-11-18T17:28:25-03:00</dhEmi>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3549904</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>4</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>9</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>5.0.403</verProc>
+      </ide>
+      <emit>
+        <CNPJ>50763606001048</CNPJ>
+        <xNome>RAMUTH e RAMUTH LTDA-CD 2</xNome>
+        <xFant>RAMUTH - CD 2</xFant>
+        <enderEmit>
+          <xLgr>RUA VALDIR GURATTI</xLgr>
+          <nro>271</nro>
+          <xCpl>EDFI H</xCpl>
+          <xBairro>JARDIM LIMOEIRO</xBairro>
+          <cMun>3549904</cMun>
+          <xMun>Sao Jose dos Campos</xMun>
+          <UF>SP</UF>
+          <CEP>12241330</CEP>
+          <cPais>1058</cPais>
+          <xPais>Brasil</xPais>
+        </enderEmit>
+        <IE>137508356110</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962003125</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA</xNome>
+        <enderDest>
+          <xLgr>AV. PAULISTA</xLgr>
+          <nro>1063</nro>
+          <xBairro>B VISTA</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>Sao Paulo</xMun>
+          <UF>SP</UF>
+          <CEP>01311200</CEP>
+          <cPais>1058</cPais>
+          <xPais>Brasil</xPais>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>153188645110</IE>
+        <email>ADM1@PRATIKLINE.COM.BR</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>130416</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>MDF BP TX BRANCO RUC 2F 275X185X18MM (GUA)</xProd>
+          <NCM>44111490</NCM>
+          <CFOP>5102</CFOP>
+          <uCom>CH</uCom>
+          <qCom>15.0000</qCom>
+          <vUnCom>493.13</vUnCom>
+          <vProd>7396.95</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>CH</uTrib>
+          <qTrib>15.0000</qTrib>
+          <vUnTrib>493.13</vUnTrib>
+          <vDesc>2213.57</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>5183.38</vBC>
+              <pICMS>12.00</pICMS>
+              <vICMS>622.01</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>4561.37</vBC>
+              <pPIS>1.65</pPIS>
+              <vPIS>75.26</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>4561.37</vBC>
+              <pCOFINS>7.60</pCOFINS>
+              <vCOFINS>346.66</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>137074</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>MDF CRU 2,75 X 1,85 06MM (GUA)</xProd>
+          <NCM>44111310</NCM>
+          <CFOP>5102</CFOP>
+          <uCom>CH</uCom>
+          <qCom>5.0000</qCom>
+          <vUnCom>135.79</vUnCom>
+          <vProd>678.95</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>CH</uTrib>
+          <qTrib>5.0000</qTrib>
+          <vUnTrib>135.79</vUnTrib>
+          <vDesc>203.18</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>475.77</vBC>
+              <pICMS>12.00</pICMS>
+              <vICMS>57.09</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>418.68</vBC>
+              <pPIS>1.65</pPIS>
+              <vPIS>6.91</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>418.68</vBC>
+              <pCOFINS>7.60</pCOFINS>
+              <vCOFINS>31.82</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="3">
+        <prod>
+          <cProd>136927</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>MDF BP TX BRANCO PLUS 2F 275X185X09MM (BE)</xProd>
+          <NCM>44111399</NCM>
+          <CFOP>5102</CFOP>
+          <uCom>CH</uCom>
+          <qCom>5.0000</qCom>
+          <vUnCom>374.02</vUnCom>
+          <vProd>1870.10</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>CH</uTrib>
+          <qTrib>5.0000</qTrib>
+          <vUnTrib>374.02</vUnTrib>
+          <vDesc>559.64</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>1310.46</vBC>
+              <pICMS>12.00</pICMS>
+              <vICMS>157.26</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>1153.20</vBC>
+              <pPIS>1.65</pPIS>
+              <vPIS>19.03</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>1153.20</vBC>
+              <pCOFINS>7.60</pCOFINS>
+              <vCOFINS>87.64</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="4">
+        <prod>
+          <cProd>139182</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>MDF BP TX BRANCO RUC 2F 275X185X06MM (GUA)</xProd>
+          <NCM>44111399</NCM>
+          <CFOP>5102</CFOP>
+          <uCom>CH</uCom>
+          <qCom>5.0000</qCom>
+          <vUnCom>326.37</vUnCom>
+          <vProd>1631.85</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>CH</uTrib>
+          <qTrib>5.0000</qTrib>
+          <vUnTrib>326.37</vUnTrib>
+          <vDesc>488.34</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>1143.51</vBC>
+              <pICMS>12.00</pICMS>
+              <vICMS>137.22</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>1006.29</vBC>
+              <pPIS>1.65</pPIS>
+              <vPIS>16.60</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>1006.29</vBC>
+              <pCOFINS>7.60</pCOFINS>
+              <vCOFINS>76.48</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="5">
+        <prod>
+          <cProd>138664</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>MDF CRU RUC 275X185X18MM (GUA)</xProd>
+          <NCM>44111410</NCM>
+          <CFOP>5102</CFOP>
+          <uCom>CH</uCom>
+          <qCom>10.0000</qCom>
+          <vUnCom>388.312</vUnCom>
+          <vProd>3883.12</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>CH</uTrib>
+          <qTrib>10.0000</qTrib>
+          <vUnTrib>388.312</vUnTrib>
+          <vDesc>1162.04</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>2721.08</vBC>
+              <pICMS>12.00</pICMS>
+              <vICMS>326.53</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>2394.55</vBC>
+              <pPIS>1.65</pPIS>
+              <vPIS>39.51</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>2394.55</vBC>
+              <pCOFINS>7.60</pCOFINS>
+              <vCOFINS>181.99</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="6">
+        <prod>
+          <cProd>139918</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>MDF BP TX BRANCO 2F 275X185X18MM (GUA)</xProd>
+          <NCM>44111490</NCM>
+          <CFOP>5102</CFOP>
+          <uCom>CH</uCom>
+          <qCom>10.0000</qCom>
+          <vUnCom>332.981</vUnCom>
+          <vProd>3329.81</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>CH</uTrib>
+          <qTrib>10.0000</qTrib>
+          <vUnTrib>332.981</vUnTrib>
+          <vDesc>996.46</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>2333.35</vBC>
+              <pICMS>12.00</pICMS>
+              <vICMS>280.00</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>2053.35</vBC>
+              <pPIS>1.65</pPIS>
+              <vPIS>33.88</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>2053.35</vBC>
+              <pCOFINS>7.60</pCOFINS>
+              <vCOFINS>156.05</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="7">
+        <prod>
+          <cProd>131650</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>MDF BP TX BRANCO 2F 275X185X09MM (GUA)</xProd>
+          <NCM>44111399</NCM>
+          <CFOP>5102</CFOP>
+          <uCom>CH</uCom>
+          <qCom>5.0000</qCom>
+          <vUnCom>259.612</vUnCom>
+          <vProd>1298.06</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>CH</uTrib>
+          <qTrib>5.0000</qTrib>
+          <vUnTrib>259.612</vUnTrib>
+          <vDesc>388.45</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>909.61</vBC>
+              <pICMS>12.00</pICMS>
+              <vICMS>109.15</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>800.46</vBC>
+              <pPIS>1.65</pPIS>
+              <vPIS>13.21</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>800.46</vBC>
+              <pCOFINS>7.60</pCOFINS>
+              <vCOFINS>60.83</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="8">
+        <prod>
+          <cProd>134500</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>MDF CRU 2,75 X 1,85 25MM (GUA)</xProd>
+          <NCM>44111410</NCM>
+          <CFOP>5102</CFOP>
+          <uCom>CH</uCom>
+          <qCom>5.0000</qCom>
+          <vUnCom>422.848</vUnCom>
+          <vProd>2114.24</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>CH</uTrib>
+          <qTrib>5.0000</qTrib>
+          <vUnTrib>422.848</vUnTrib>
+          <vDesc>632.70</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>1481.54</vBC>
+              <pICMS>12.00</pICMS>
+              <vICMS>177.78</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>1303.76</vBC>
+              <pPIS>1.65</pPIS>
+              <vPIS>21.51</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>1303.76</vBC>
+              <pCOFINS>7.60</pCOFINS>
+              <vCOFINS>99.09</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="9">
+        <prod>
+          <cProd>131612</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>MDF CRU 2,75 X 1,85 18MM (GUA)</xProd>
+          <NCM>44111410</NCM>
+          <CFOP>5102</CFOP>
+          <uCom>CH</uCom>
+          <qCom>10.0000</qCom>
+          <vUnCom>297.786</vUnCom>
+          <vProd>2977.86</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>CH</uTrib>
+          <qTrib>10.0000</qTrib>
+          <vUnTrib>297.786</vUnTrib>
+          <vDesc>891.14</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>2086.72</vBC>
+              <pICMS>12.00</pICMS>
+              <vICMS>250.41</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>1836.31</vBC>
+              <pPIS>1.65</pPIS>
+              <vPIS>30.30</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>1836.31</vBC>
+              <pCOFINS>7.60</pCOFINS>
+              <vCOFINS>139.56</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="10">
+        <prod>
+          <cProd>137075</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>MDF CRU 2,75X1,85X15MM (GUA)</xProd>
+          <NCM>44111410</NCM>
+          <CEST>2805700</CEST>
+          <CFOP>5102</CFOP>
+          <uCom>CH</uCom>
+          <qCom>5.0000</qCom>
+          <vUnCom>223.928</vUnCom>
+          <vProd>1119.64</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>CH</uTrib>
+          <qTrib>5.0000</qTrib>
+          <vUnTrib>223.928</vUnTrib>
+          <vDesc>335.06</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>784.58</vBC>
+              <pICMS>12.00</pICMS>
+              <vICMS>94.15</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>690.43</vBC>
+              <pPIS>1.65</pPIS>
+              <vPIS>11.39</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>690.43</vBC>
+              <pCOFINS>7.60</pCOFINS>
+              <vCOFINS>52.47</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>18430.00</vBC>
+          <vICMS>2211.60</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCPUFDest>0.00</vFCPUFDest>
+          <vICMSUFDest>0.00</vICMSUFDest>
+          <vICMSUFRemet>0.00</vICMSUFRemet>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <qBCMono>0.00</qBCMono>
+          <vICMSMono>0.00</vICMSMono>
+          <qBCMonoReten>0.00</qBCMonoReten>
+          <vICMSMonoReten>0.00</vICMSMonoReten>
+          <qBCMonoRet>0.00</qBCMonoRet>
+          <vICMSMonoRet>0.00</vICMSMonoRet>
+          <vProd>26300.58</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>7870.58</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>267.60</vPIS>
+          <vCOFINS>1232.59</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>18430.00</vNF>
+        </ICMSTot>
+        <retTrib />
+      </total>
+      <transp>
+        <modFrete>1</modFrete>
+        <vol>
+          <pesoL>4525.000</pesoL>
+          <pesoB>4746.500</pesoB>
+        </vol>
+      </transp>
+      <cobr>
+        <fat>
+          <nFat>052705</nFat>
+          <vOrig>18430.00</vOrig>
+          <vDesc>0.00</vDesc>
+          <vLiq>18430.00</vLiq>
+        </fat>
+        <dup>
+          <nDup>001</nDup>
+          <dVenc>2025-12-16</dVenc>
+          <vDup>4607.50</vDup>
+        </dup>
+        <dup>
+          <nDup>002</nDup>
+          <dVenc>2026-01-13</dVenc>
+          <vDup>4607.50</vDup>
+        </dup>
+        <dup>
+          <nDup>003</nDup>
+          <dVenc>2026-02-10</dVenc>
+          <vDup>4607.50</vDup>
+        </dup>
+        <dup>
+          <nDup>004</nDup>
+          <dVenc>2026-03-10</dVenc>
+          <vDup>4607.50</vDup>
+        </dup>
+      </cobr>
+      <pag>
+        <detPag>
+          <indPag>1</indPag>
+          <tPag>14</tPag>
+          <vPag>18430.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>Gasometro.................................................................................... A Gasometro do Vale ........................................................................... PEDIDO:0 Valor Aprox. dos Trib. Federais/Estaduais 28,33% Fonte IBPT - Instituto Brasileiro de Planejamento e Tributacao Atendente:DANILO FERREIRA DA SILVA T1</infCpl>
+      </infAdic>
+      <compra>
+        <xPed>0</xPed>
+      </compra>
+      <infRespTec>
+        <CNPJ>90774654000165</CNPJ>
+        <xContato>Lurdes Elena Manosso</xContato>
+        <email>ger_adm_financeiro@nl.com.br</email>
+        <fone>5432902100</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251150763606001048550010000527051256571004">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>KtJGb7PSnojgtydzmruTIzT97XU=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>BQE/4kHqVoZJlp9rZkjsUbKoIfFxpG/P2bvpNQ3l/wByVsPJNk8/c/FY6MDcGA5io/2Od7oWJD/z
+aLxHpkIydWETNWNr4w6xXEqFa4MCZ1RCUC9tzOYHTXkDs3FY9ezziDx09AAl4ZKxVsEIk2+ZY6N0
+VcrGSHtL4keMi3AO+tQW8vtjaq1fqP4LxUDVTJzyf7hVE0SgD2SWSNX3PqpS2qQ7mbVvREx45/tE
+fxlahuAnr+pdJiwlnFISHBn4da2GFxgbEMqX+JballqkkZnGeIZV8tfu9x1b26aJDQlaioMHUVl0
+/sIUnbXkHj9jPxFP2vGaVNDL5o1Mnou4okJo2Q==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>MIIH3jCCBcagAwIBAgILALbToaaEl8XA78swDQYJKoZIhvcNAQELBQAwWzELMAkGA1UEBhMCQlIx
+FjAUBgNVBAsMDUFDIFN5bmd1bGFySUQxEzARBgNVBAoMCklDUC1CcmFzaWwxHzAdBgNVBAMMFkFD
+IFN5bmd1bGFySUQgTXVsdGlwbGEwHhcNMjUwNjExMTI0OTUxWhcNMjYwNjExMTI0OTUxWjCByTEL
+MAkGA1UEBhMCQlIxEzARBgNVBAoMCklDUC1CcmFzaWwxIjAgBgNVBAsMGUNlcnRpZmljYWRvIERp
+Z2l0YWwgUEogQTExGTAXBgNVBAsMEFZpZGVvY29uZmVyZW5jaWExFzAVBgNVBAsMDjE4NTMwOTE3
+MDAwMTYzMR8wHQYDVQQLDBZBQyBTeW5ndWxhcklEIE11bHRpcGxhMSwwKgYDVQQDDCNSQU1VVEgg
+RSBSQU1VVEggTFREQTo1MDc2MzYwNjAwMTA0ODCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoC
+ggEBAMQqaP0eMcIqkmfhyh/lLltgB2KoXkRkG5qp7tTICmO1lsD82mVpzI3ekiQWXq0DrsKQjZTw
+Aiec6L6jU8/ShUGYgwAIGpL06Lw7+anSVTpDVZLNmDF2AtqKNgWbs8riPrYSXvWY4ZZZ48eJpvds
+XvbmTgXWpY/ZQmEEGZlmy/nk8AVWCLxJ87Nfe6ga/bhK/W1+adXWrVsttlqvQP/5KerKZWJzJwZ6
+nJ2IxpgFuALzoI3yI+lMZS8WKSxxU6SgMQtgeF27BDqxfs7vuCr4sU9U5QvdjhVzZs9HlimBDNsV
+E+oRBE1jPidHjvDeszGGNLZZH2sg0v8fZepKDSi8IR8CAwEAAaOCAzIwggMuMA4GA1UdDwEB/wQE
+AwIF4DAdBgNVHSUEFjAUBggrBgEFBQcDBAYIKwYBBQUHAwIwCQYDVR0TBAIwADAfBgNVHSMEGDAW
+gBST4f9+HeX15E3hOWKLIWmV5q9yFjAdBgNVHQ4EFgQUe4YUiu7teED3EStVdeWZUD7qutEwfwYI
+KwYBBQUHAQEEczBxMG8GCCsGAQUFBzAChmNodHRwOi8vc3luZ3VsYXJpZC5jb20uYnIvcmVwb3Np
+dG9yaW8vYWMtc3luZ3VsYXJpZC1tdWx0aXBsYS9jZXJ0aWZpY2Fkb3MvYWMtc3luZ3VsYXJpZC1t
+dWx0aXBsYS5wN2IwgYIGA1UdIAR7MHkwdwYHYEwBAgGBBTBsMGoGCCsGAQUFBwIBFl5odHRwOi8v
+c3luZ3VsYXJpZC5jb20uYnIvcmVwb3NpdG9yaW8vYWMtc3luZ3VsYXJpZC1tdWx0aXBsYS9kcGMv
+ZHBjLWFjLXN5bmd1bGFySUQtbXVsdGlwbGEucGRmMIHGBgNVHREEgb4wgbugHQYFYEwBAwKgFAQS
+U0FNWSBTSElNT04gUkFNVVRIoBkGBWBMAQMDoBAEDjUwNzYzNjA2MDAxMDQ4oEIGBWBMAQMEoDkE
+NzA2MDQxOTY0MDc3NTQ4MDQ4NzUwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDCg
+FwYFYEwBAwegDgQMMDAwMDAwMDAwMDAwgSJ3YW5kZXJsZXlAbWFkZWlyYXNnYXNvbWV0cm8uY29t
+LmJyMIHiBgNVHR8Egdowgdcwb6BtoGuGaWh0dHA6Ly9pY3AtYnJhc2lsLnN5bmd1bGFyaWQuY29t
+LmJyL3JlcG9zaXRvcmlvL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEvbGNyL2xjci1hYy1zeW5ndWxh
+cmlkLW11bHRpcGxhLmNybDBkoGKgYIZeaHR0cDovL3N5bmd1bGFyaWQuY29tLmJyL3JlcG9zaXRv
+cmlvL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEvbGNyL2xjci1hYy1zeW5ndWxhcmlkLW11bHRpcGxh
+LmNybDANBgkqhkiG9w0BAQsFAAOCAgEAMboQ3ex57nlu5822jecmr22JBkaQ/5e1FRK1WOjMmMtk
+7jiHfZ8TjkHOXC0T4PgzWBM3hpPSbJuNL9YHUqTvPW4JPGwgXQ4rEBs9Im6K6FaM1hKn1U3ToRiT
+R8mWT8vi0NTaFEoO6xiCvGW2ojTkrUCeM9jNBf6AjgGfmUGwmrxUGZG9lMBYjIJ6dHLii5nCmaXk
+7pi9/MaE8cWsabfzwYN/Iq03sT7L8ViW8gxTKxfdZEPIMNY9+kVQ0mOPtJqkzNYrzHostpdaLlAi
+LoTsorFgW3D7GVIOzWNnVggK2+d+vRSSbZcFgVMT6hJvOkaareeWa7MG7RCvn6u7kFg2Svp4dXMp
+jM7yU+xEJ4HhJhnWuc0aOy6afQ1HIZ9BlIkh5dKADOjOgiMsTjp9dpbYqp89gzMTE5ew8+OumV/8
+ZrS7ksje4J7I4eKbIAqk9pc+3PGNbpxajiZHPvIfXxs0kCNSVwML1PCBT03c4l+2TATN1w9nfvM7
+cR7ASaFcaywnhiB2irz59aWAFAx12gdyGsJQ7m/MBpX9SfgNE0IEqskBddgf5K4DR9MgTWvFyqcr
+HTQB43MT1Pu/w5pMcJID+GdoKtPwdN9CRNLamK54lT4KxAkukTSLCZX7fPtKvg2Pztip1uASG15U
+IhZqdogHN4sNuzwmF3f8444v4MJhEbU=</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt Id="Id135253543944970">
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251150763606001048550010000527051256571004</chNFe>
+      <dhRecbto>2025-11-18T17:28:30-03:00</dhRecbto>
+      <nProt>135253543944970</nProt>
+      <digVal>KtJGb7PSnojgtydzmruTIzT97XU=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

@@ -1,0 +1,433 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe35251126399236000136550010000181631830125766" versao="4.00">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>83012576</cNF>
+        <natOp>VENDA DE MERCADORIA/ VD MERC. C/SUB.TRIB.</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>18163</nNF>
+        <dhEmi>2025-11-12T17:17:00-03:00</dhEmi>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3550308</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>6</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>1</indFinal>
+        <indPres>9</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>12.1.2410 | 3.0</verProc>
+      </ide>
+      <emit>
+        <CNPJ>26399236000136</CNPJ>
+        <xNome>FORT CORPORATIVO COMERCIAL LTDA</xNome>
+        <xFant>FORT CORPORATIVO</xFant>
+        <enderEmit>
+          <xLgr>AVENIDA SANTO AMARO</xLgr>
+          <nro>3432</nro>
+          <xCpl>CJ 32,35 E 36</xCpl>
+          <xBairro>BROOKLIN PAULISTA</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>04556300</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1138186830</fone>
+        </enderEmit>
+        <IE>118491744118</IE>
+        <IM>01512600040</IM>
+        <CNAE>4755501</CNAE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962003125</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA</xNome>
+        <enderDest>
+          <xLgr>AV. PAULISTA</xLgr>
+          <nro>1063</nro>
+          <xBairro>SAO PAULO</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>01311200</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>0110000000000</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>153188645110</IE>
+        <email>catia.novais@larconstrutora.com.br</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>05.178-001</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>PERFIL DE TRANSICAO 5MM CHAMPAGNE</xProd>
+          <NCM>76041029</NCM>
+          <cBenef />
+          <CFOP>5102</CFOP>
+          <uCom>BR</uCom>
+          <qCom>8.0000</qCom>
+          <vUnCom>170.0000000000</vUnCom>
+          <vProd>1360.00</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>BR</uTrib>
+          <qTrib>8.0000</qTrib>
+          <vUnTrib>170.0000000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>1360.00</vBC>
+              <pICMS>18.0000</pICMS>
+              <vICMS>244.80</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>1115.20</vBC>
+              <pPIS>1.6500</pPIS>
+              <vPIS>18.40</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>1115.20</vBC>
+              <pCOFINS>7.6000</pCOFINS>
+              <vCOFINS>84.76</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>00.502-014</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>PISO VIN XL PU 2MM 014 BLUE ZIRCON LRV 1 - LI:2025116219 LF:5Z465</xProd>
+          <NCM>57033100</NCM>
+          <cBenef />
+          <CFOP>5102</CFOP>
+          <uCom>M2</uCom>
+          <qCom>30.0000</qCom>
+          <vUnCom>130.0000000000</vUnCom>
+          <vProd>3900.00</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>M2</uTrib>
+          <qTrib>30.0000</qTrib>
+          <vUnTrib>130.0000000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>3900.00</vBC>
+              <pICMS>18.0000</pICMS>
+              <vICMS>702.00</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>3198.00</vBC>
+              <pPIS>1.6500</pPIS>
+              <vPIS>52.77</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>3198.00</vBC>
+              <pCOFINS>7.6000</pCOFINS>
+              <vCOFINS>243.04</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="3">
+        <prod>
+          <cProd>05.037-114</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>CORDAO DE SOLDA 014 BLUE ZIRCON</xProd>
+          <NCM>39162000</NCM>
+          <cBenef />
+          <CFOP>5405</CFOP>
+          <uCom>ML</uCom>
+          <qCom>10.0000</qCom>
+          <vUnCom>1151.5280000000</vUnCom>
+          <vProd>11515.28</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>ML</uTrib>
+          <qTrib>10.0000</qTrib>
+          <vUnTrib>1151.5280000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS60>
+              <orig>0</orig>
+              <CST>60</CST>
+              <vBCSTRet>0</vBCSTRet>
+              <pST>0.0000</pST>
+              <vICMSSubstituto>0</vICMSSubstituto>
+              <vICMSSTRet>0</vICMSSTRet>
+              <pRedBCEfet>0.0000</pRedBCEfet>
+              <vBCEfet>11515.28</vBCEfet>
+              <pICMSEfet>18.0000</pICMSEfet>
+              <vICMSEfet>2072.75</vICMSEfet>
+            </ICMS60>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>11515.28</vBC>
+              <pPIS>1.6500</pPIS>
+              <vPIS>190.00</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>11515.28</vBC>
+              <pCOFINS>7.6000</pCOFINS>
+              <vCOFINS>875.16</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="4">
+        <prod>
+          <cProd>01.445-654</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>PISO SQUARE FLOW 4MM 20,8X123CM 24268654 - LI:2025116199 LF:21102025</xProd>
+          <NCM>39181000</NCM>
+          <cBenef />
+          <CFOP>5405</CFOP>
+          <uCom>M2</uCom>
+          <qCom>20.4800</qCom>
+          <vUnCom>199.5468750000</vUnCom>
+          <vProd>4086.72</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>M2</uTrib>
+          <qTrib>20.4800</qTrib>
+          <vUnTrib>199.5468750000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS60>
+              <orig>2</orig>
+              <CST>60</CST>
+              <vBCSTRet>0</vBCSTRet>
+              <pST>0.0000</pST>
+              <vICMSSubstituto>0</vICMSSubstituto>
+              <vICMSSTRet>0</vICMSSTRet>
+              <pRedBCEfet>0.0000</pRedBCEfet>
+              <vBCEfet>4086.72</vBCEfet>
+              <pICMSEfet>12.0000</pICMSEfet>
+              <vICMSEfet>490.41</vICMSEfet>
+            </ICMS60>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>4086.72</vBC>
+              <pPIS>1.6500</pPIS>
+              <vPIS>67.43</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>4086.72</vBC>
+              <pCOFINS>7.6000</pCOFINS>
+              <vCOFINS>310.59</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="5">
+        <prod>
+          <cProd>05.143-003</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>CANTONEIRA ALUMINIO 5CMX2,5CM NATURAL</xProd>
+          <NCM>76041029</NCM>
+          <cBenef />
+          <CFOP>5102</CFOP>
+          <uCom>BR</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>175.0000000000</vUnCom>
+          <vProd>175.00</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>BR</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>175.0000000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>175.00</vBC>
+              <pICMS>18.0000</pICMS>
+              <vICMS>31.50</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>143.50</vBC>
+              <pPIS>1.6500</pPIS>
+              <vPIS>2.37</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>143.50</vBC>
+              <pCOFINS>7.6000</pCOFINS>
+              <vCOFINS>10.91</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>5435.00</vBC>
+          <vICMS>978.30</vICMS>
+          <vICMSDeson>0</vICMSDeson>
+          <vFCPUFDest>0</vFCPUFDest>
+          <vICMSUFDest>0</vICMSUFDest>
+          <vICMSUFRemet>0</vICMSUFRemet>
+          <vFCP>0</vFCP>
+          <vBCST>0</vBCST>
+          <vST>0</vST>
+          <vFCPST>0</vFCPST>
+          <vFCPSTRet>0</vFCPSTRet>
+          <vProd>21037.00</vProd>
+          <vFrete>0</vFrete>
+          <vSeg>0</vSeg>
+          <vDesc>0</vDesc>
+          <vII>0</vII>
+          <vIPI>0</vIPI>
+          <vIPIDevol>0</vIPIDevol>
+          <vPIS>330.97</vPIS>
+          <vCOFINS>1524.46</vCOFINS>
+          <vOutro>0</vOutro>
+          <vNF>21037.00</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>3</modFrete>
+        <transporta>
+          <xNome>NOSSO CARRO</xNome>
+          <IE>116541178117</IE>
+          <xEnder>RUA NOSSA SENHORA DO SOCORRO, 110</xEnder>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+        </transporta>
+        <vol>
+          <qVol>12</qVol>
+          <esp>VOLUMES</esp>
+          <pesoL>268.600</pesoL>
+          <pesoB>105.000</pesoB>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <indPag>0</indPag>
+          <tPag>15</tPag>
+          <vPag>21037.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infAdFisco>MD-5:94DBB831B0F3C67A412EAC4010EC561F</infAdFisco>
+        <infCpl>SFOBRA 20250007757-9 AV PAULISTA 1063 TERREO JD PAULISTA SAO PAULO 01311200END. ENTREGA: AV. PAULISTA, 1063 / SAO PAULO / SAO PAULO       CEP: 01311200   UF: SP    Nro.Ped.: 020051 Esse credito foi regularmente cedido ao VIAINVEST FUNDO DE INVESTIMENTO ref. Nota Fiscal emitida pelo sacador avalista citado. Maiores informacoes (11)3737-4700 ou cobrancafidc@viainvest.com.br</infCpl>
+      </infAdic>
+      <infRespTec>
+        <CNPJ>53113791000122</CNPJ>
+        <xContato>Rodrigo de Almeida Sartorio</xContato>
+        <email>resp_tecnico_dfe_protheus@totvs.com.br</email>
+        <fone>1128593904</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251126399236000136550010000181631830125766">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>sxWBQs+CsLBOjQMYARvlWfsktu0=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>k8HACtglLT1J20AqDS8PBDbg4iKkecVOug0e/5WWjllbtRtfB1yxYbkJ/5QuinDbQmUQzvOwNsFjT4VGmegiW4EJ4XjM0fDbeat2HHR3+CXWqCPxMjOrU+8c41hNZow2UYvBaxJle782gNqXLcLfOuvBllIy3C39Q2N1B5RrtTFNanENDkLQGkziWeq4yVHwF48tqVP1iMobTKsDV01R9QRAouVC3hOd9+o0YHKOoO5rVDqgRIWIwgAJP2UlykRVmqKYG2lEJ42y1gRMnf1Iasv1ITigb0XfN2MMq1mSsLD198Xh7uMzgXmaQinmd76a6CcZevaZ884Krk48QTOtfA==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt Id="Id135253462238378">
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251126399236000136550010000181631830125766</chNFe>
+      <dhRecbto>2025-11-12T17:21:13-03:00</dhRecbto>
+      <nProt>135253462238378</nProt>
+      <digVal>sxWBQs+CsLBOjQMYARvlWfsktu0=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

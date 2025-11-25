@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe35251121775235000125550010000340181000376788" versao="4.00">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>00037678</cNF>
+        <natOp>CONSIGNACAO</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>34018</nNF>
+        <dhEmi>2025-11-14T15:21:28-03:00</dhEmi>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3550308</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>8</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>3</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>18.15.3973</verProc>
+      </ide>
+      <emit>
+        <CNPJ>21775235000125</CNPJ>
+        <xNome>BREAK MEDIA BRASIL COM. MIDIA E ED. LTDA</xNome>
+        <xFant>IPE DAS LETRAS</xFant>
+        <enderEmit>
+          <xLgr>AVENIDA PAULISTA</xLgr>
+          <nro>2073</nro>
+          <xCpl>CJ 205/206 HORSA I</xCpl>
+          <xBairro>BELA VISTA</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>01311300</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1131790085</fone>
+        </enderEmit>
+        <IE>144230990110</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962001262</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA - MAIA</xNome>
+        <enderDest>
+          <xLgr>AVENIDA BARTHOLOMEU DE CARLOS</xLgr>
+          <nro>230</nro>
+          <xBairro>JARDIM FLOR DA MONTANHA</xBairro>
+          <cMun>3518800</cMun>
+          <xMun>GUARULHOS</xMun>
+          <UF>SP</UF>
+          <CEP>07097420</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>00000000000</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>796319436111</IE>
+        <email>fiscal@livrariadavila.com.br</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>9786528601028</cProd>
+          <cEAN>9786528601028</cEAN>
+          <xProd>EL-HARAM: MIL PAGINAS PARA MIL ANOS DE CONDENACA01</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>50.0000</qCom>
+          <vUnCom>63.0000000</vUnCom>
+          <vProd>3150.00</vProd>
+          <cEANTrib>9786528601028</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>50.0000</qTrib>
+          <vUnTrib>63.0000000</vUnTrib>
+          <vDesc>1575.00</vDesc>
+          <indTot>1</indTot>
+          <xPed>lote 14/11</xPed>
+        </prod>
+        <imposto>
+          <vTotTrib>435.33</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>07</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>07</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0</vBC>
+          <vICMS>0</vICMS>
+          <vICMSDeson>0</vICMSDeson>
+          <vFCP>0</vFCP>
+          <vBCST>0</vBCST>
+          <vST>0</vST>
+          <vFCPST>0</vFCPST>
+          <vFCPSTRet>0</vFCPSTRet>
+          <vProd>3150.00</vProd>
+          <vFrete>0</vFrete>
+          <vSeg>0</vSeg>
+          <vDesc>1575.00</vDesc>
+          <vII>0</vII>
+          <vIPI>0</vIPI>
+          <vIPIDevol>0</vIPIDevol>
+          <vPIS>0</vPIS>
+          <vCOFINS>0</vCOFINS>
+          <vOutro>0</vOutro>
+          <vNF>1575.00</vNF>
+          <vTotTrib>435.33</vTotTrib>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>9</modFrete>
+        <vol>
+          <qVol>1</qVol>
+          <esp>CX/PCTE</esp>
+          <pesoL>20.000</pesoL>
+          <pesoB>20.000</pesoB>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <tPag>90</tPag>
+          <vPag>0.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>PD Nr.: 0000037678 - Ped. do Cliente: lote 14/11  NOTA FISCAL EVENTO - EVENTO - 06 12 2025 - EL-HARAM: MIL PAGINAS PARA MIL ANOS DE CONDENACAO</infCpl>
+      </infAdic>
+      <compra>
+        <xPed>lote 14/11</xPed>
+      </compra>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251121775235000125550010000340181000376788">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>yHXIKdGGNywBWoQuf6T9zTA53xk=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>EJ2uKNGuxxxMcESOnCPugjDjkO82RNPia3lvEoIzKOvM050DVTV1FD4j9w0cEq3Uq8fO1nKUxCjZrfkOavrspxc3M+ixpAWzzjhwvCvROonADNqqPPYtu6KM1MJy/M2hBMQFKOlAMxo0BZ0Z/XmL9H8pDrgPZvGF8Znc39gbAxTZfW6/qdo1zcdrzd+cnHHF6VGMP7KYDXLs2nfdSulecvsglfDUJbiASdWvy2Vl580Uv46giue5TyIZPQYLaEHAJuwTTq7VyP08T9xPM2iXU7zu8fOOa/nnEUzDFUFlhXoGDDXWJV682mGffRxOvMCGYTxNfz9U33bCpCwcc+1cfA==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+    <infProt Id="ID135253491452969">
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251121775235000125550010000340181000376788</chNFe>
+      <dhRecbto>2025-11-14T15:22:04-03:00</dhRecbto>
+      <nProt>135253491452969</nProt>
+      <digVal>yHXIKdGGNywBWoQuf6T9zTA53xk=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

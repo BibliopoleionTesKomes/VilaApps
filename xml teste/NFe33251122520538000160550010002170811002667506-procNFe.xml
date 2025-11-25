@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe33251122520538000160550010002170811002667506" versao="4.00">
+      <ide>
+        <cUF>33</cUF>
+        <cNF>00266750</cNF>
+        <natOp>REMESSA CONSIGNACAO MERCANTIL</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>217081</nNF>
+        <dhEmi>2025-11-17T09:56:40-03:00</dhEmi>
+        <dhSaiEnt>2025-11-17T09:56:40-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>2</idDest>
+        <cMunFG>3301702</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>6</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>9</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>21123</verProc>
+      </ide>
+      <emit>
+        <CNPJ>22520538000160</CNPJ>
+        <xNome>CASA DOS LIVROS EDITORA LTDA</xNome>
+        <xFant>CASA DOS LIVROS - MATRIZ CAXIAS</xFant>
+        <enderEmit>
+          <xLgr>AV SN 1</xLgr>
+          <nro>122</nro>
+          <xCpl>Q D L 01 PARTE INTERNAC. BUSINESS PARK</xCpl>
+          <xBairro>PARQUE DUQUE</xBairro>
+          <cMun>3301702</cMun>
+          <xMun>DUQUE DE CAXIAS</xMun>
+          <UF>RJ</UF>
+          <CEP>25085378</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>2131751031</fone>
+        </enderEmit>
+        <IE>86936518</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962000967</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA</xNome>
+        <enderDest>
+          <xLgr>AV HIGIENOPOLIS</xLgr>
+          <nro>618</nro>
+          <xBairro>HIGIENOPOLIS</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>01238000</CEP>
+          <cPais>1058</cPais>
+          <xPais>Brasil</xPais>
+          <fone>1136600230</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>146021127110</IE>
+      </dest>
+      <entrega>
+        <CNPJ>54430962000967</CNPJ>
+        <xLgr>AV HIGIENOPOLIS</xLgr>
+        <nro>618</nro>
+        <xBairro>HIGIENOPOLIS</xBairro>
+        <cMun>3550308</cMun>
+        <xMun>SAO PAULO</xMun>
+        <UF>SP</UF>
+        <IE>146021127110</IE>
+      </entrega>
+      <det nItem="1">
+        <prod>
+          <cProd>9786555110609</cProd>
+          <cEAN>9786555110609</cEAN>
+          <xProd>Como cuidar do seu dinheiro Thiago NigroMauricio de Sousa</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>6917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>49.9000000000</vUnCom>
+          <vProd>49.90</vProd>
+          <cEANTrib>9786555110609</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>49.9000000000</vUnTrib>
+          <vDesc>24.95</vDesc>
+          <indTot>1</indTot>
+          <nItemPed>1</nItemPed>
+        </prod>
+        <imposto>
+          <vTotTrib>0</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pPIS>0.0000</pPIS>
+              <vPIS>0.00</vPIS>
+            </PISOutr>
+          </PIS>
+          <COFINS>
+            <COFINSOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pCOFINS>0.0000</pCOFINS>
+              <vCOFINS>0.00</vCOFINS>
+            </COFINSOutr>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0.00</vBC>
+          <vICMS>0.00</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>49.90</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>24.95</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>0.00</vPIS>
+          <vCOFINS>0.00</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>24.95</vNF>
+          <vTotTrib>0.00</vTotTrib>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+        <vol>
+          <qVol>0</qVol>
+          <pesoL>0.145</pesoL>
+          <pesoB>0.145</pesoB>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <tPag>90</tPag>
+          <vPag>0.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>NAO INCIDENCIA DO ICMS, NOS TERMOS DO ARTIGO 47, I DO LIVRO I DO DECRETO 27.427/2000 (RICMS/RJ) E, IPI IMUNE, NOS TERMOS DO ARTIGO 18, I DO DECRETO 7.212/2010 (RIPI). Cod.Fatura: 1262091 - S7 Re: Item a mais - NF 213213 - 1 und. 9786555110609 - Como cuidar do seu dinheiroCliente 200140 LIVRARIA DA VILA LTDA</infCpl>
+      </infAdic>
+      <infRespTec>
+        <CNPJ>20319833000127</CNPJ>
+        <xContato>Daniel Alfredo dos Santos</xContato>
+        <email>bpo@compliancesolucoes.com.br</email>
+        <fone>1635169600</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe33251122520538000160550010002170811002667506">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>ikYhyJ/Pi1bxVI+tWbWOZgwDmFE=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>MSUWdx1dd1/1IB4AYqbdp4hV5HdgiRtNIdQRpjemOmC64G82E2lbDngQtlzNQWKqODWXIbguQeCo
+k8jb95TgwJD+r4dIV7oM7YmeWzzlJydgeF5R/+prKgeUUVHIlZSLaTF4DYBK3iz3P6NLN942pRg6
+ilme7tyZ8aJ3I4NpUsGaqpVySIrsSW4qC6F9ap5Awcj9b/liBj8ceXUje4DlTYTNcaA4YZ0wE73C
++ilJ03DM6Q3NHbme4sZBevJZfFUKMOOOzW1sh5Rt5y0O5sje9wCfrXKc/Pl9pnD2/rj3mqgWMs7D
+JiagzzTn3qNIhYtV0E5MIcHwgeftc6Dym/b4rw==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>MIIH5zCCBc+gAwIBAgILAKNIgDaGQixhbu0wDQYJKoZIhvcNAQELBQAwWzELMAkGA1UEBhMCQlIx
+FjAUBgNVBAsMDUFDIFN5bmd1bGFySUQxEzARBgNVBAoMCklDUC1CcmFzaWwxHzAdBgNVBAMMFkFD
+IFN5bmd1bGFySUQgTXVsdGlwbGEwHhcNMjUwNjE4MTMyMjE1WhcNMjYwNjE4MTMyMjE1WjCByzEL
+MAkGA1UEBhMCQlIxEzARBgNVBAoMCklDUC1CcmFzaWwxIjAgBgNVBAsMGUNlcnRpZmljYWRvIERp
+Z2l0YWwgUEogQTExEzARBgNVBAsMClByZXNlbmNpYWwxFzAVBgNVBAsMDjE4MTc4OTQ1MDAwMTYz
+MR8wHQYDVQQLDBZBQyBTeW5ndWxhcklEIE11bHRpcGxhMTQwMgYDVQQDDCtDQVNBIERPUyBMSVZS
+T1MgRURJVE9SQSBMVERBOjIyNTIwNTM4MDAwMTYwMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIB
+CgKCAQEA4SU+q0SiAwxkIvMqHhmbXET1py7boXwVdAn5LtFWbfpziXSsRv3y6dkK8OmKy42iSaTh
+WrzErb1n9YH+BHPez9E17QzUwVQr54bZ63x/9dDZN28Efp9B0RjvmW0A71ZbBg4xRxPlvE6SyM9r
+Y64j9WO8lIu84NfjAvzzQj9/58JSQmoR0VzqGewPqKasvqs2aqnwNfGQoRZ29fL1dpjJ04AlYJBs
+litE/wqLt9/xROC4F0Tp4y6JaBPsb5mMjsPol9deT79WB0kUWmWIfcOs0FSztGMewShUn7a7j8sy
+1H4OADaTzPk9WwZQMiaV8jFouhlFyvdSme5FmtppE6MfpwIDAQABo4IDOTCCAzUwDgYDVR0PAQH/
+BAQDAgXgMB0GA1UdJQQWMBQGCCsGAQUFBwMEBggrBgEFBQcDAjAJBgNVHRMEAjAAMB8GA1UdIwQY
+MBaAFJPh/34d5fXkTeE5YoshaZXmr3IWMB0GA1UdDgQWBBSTB4wa/R6NnKkCiLHNRdXlFOna1DB/
+BggrBgEFBQcBAQRzMHEwbwYIKwYBBQUHMAKGY2h0dHA6Ly9zeW5ndWxhcmlkLmNvbS5ici9yZXBv
+c2l0b3Jpby9hYy1zeW5ndWxhcmlkLW11bHRpcGxhL2NlcnRpZmljYWRvcy9hYy1zeW5ndWxhcmlk
+LW11bHRpcGxhLnA3YjCBggYDVR0gBHsweTB3BgdgTAECAYEFMGwwagYIKwYBBQUHAgEWXmh0dHA6
+Ly9zeW5ndWxhcmlkLmNvbS5ici9yZXBvc2l0b3Jpby9hYy1zeW5ndWxhcmlkLW11bHRpcGxhL2Rw
+Yy9kcGMtYWMtc3luZ3VsYXJJRC1tdWx0aXBsYS5wZGYwgc0GA1UdEQSBxTCBwqAlBgVgTAEDAqAc
+BBpMRU9OT1JBIFJPRFJJR1VFUyBNT05ORVJBVKAZBgVgTAEDA6AQBA4yMjUyMDUzODAwMDE2MKBC
+BgVgTAEDBKA5BDcxMjA0MTk3NzA0MTIzNTg4NzUxMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAw
+MDAwMDAwMDAwoBcGBWBMAQMHoA4EDDAwMDAwMDAwMDAwMIEhUm9ic29uLnNpbHZhQGhhcnBlcmNv
+bGxpbnMuY29tLmJyMIHiBgNVHR8Egdowgdcwb6BtoGuGaWh0dHA6Ly9pY3AtYnJhc2lsLnN5bmd1
+bGFyaWQuY29tLmJyL3JlcG9zaXRvcmlvL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEvbGNyL2xjci1h
+Yy1zeW5ndWxhcmlkLW11bHRpcGxhLmNybDBkoGKgYIZeaHR0cDovL3N5bmd1bGFyaWQuY29tLmJy
+L3JlcG9zaXRvcmlvL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEvbGNyL2xjci1hYy1zeW5ndWxhcmlk
+LW11bHRpcGxhLmNybDANBgkqhkiG9w0BAQsFAAOCAgEATldnorKXM2Xc02xDdufRTNP5ShULe1nl
+nua/y4YTzir8+ojtT8CHoNrwv56bEDWjCUk2T3TYrjdYdYg3KcJLNp2t3bbVR0k5Buz3SqJ41pUL
+J9GH/300Tv/rPA0qXn8FmEUuAn4iOD+VbRth+/X85Noj4w3LoTfUL22S+lSFuAcCw26+4J+WIpWJ
+DQ/QapquoUV7e4K6wlEaxn/gwBp8nO+10z/3KV2L5uk8zg2KCGt8C7buE+dGPu1FVaUYJE371RYF
+pK15Rr1pNJAQiVwNr6YHzQkcT2hiVc14I0JtCe9KxTedDRxZ7AKJR4qxXSnxviJb1C8k8LkCM8ws
+oxivy9SvNNx+Ov+M2erKMZXhvm9D01l6z9xpT+bfrnnUNK/ItLYB6Z5KJh9PjHhDo26Ndp30tMmf
+pPI44w6xungjpFqz288PUaDgvvqGAv7j/pRYsaLbfTEsM5AYm3bhZlPZJZ92usv0kSEIAeZaa840
+K8X2D4/aRspHUFwrZqUdPG4o6XlmkH3MwpY/+EZXz2sjGkJZkug5uMjDSk1KZaJr91qOFKXXJf+o
+acsUHEds4Gl9r6sZ0LXqKvaAekFR8+Tkb4visR5YQFEVJhDc/gPz/BEpr76CFTq+DfRBE1xSl5pH
+/LbeAiRmhxvfFSAJ+Pn54Wvr78RbU1ya2VADE07QWxg=</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+    <infProt>
+      <tpAmb>1</tpAmb>
+      <verAplic>SVRS2511121006DR</verAplic>
+      <chNFe>33251122520538000160550010002170811002667506</chNFe>
+      <dhRecbto>2025-11-17T09:56:42-03:00</dhRecbto>
+      <nProt>233250451129861</nProt>
+      <digVal>ikYhyJ/Pi1bxVI+tWbWOZgwDmFE=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

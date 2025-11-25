@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe35251154430962001424550010000241401408230453" versao="4.00">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>40823045</cNF>
+        <natOp>TRANSFERENCIA DE MERCADORIA</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>24140</nNF>
+        <dhEmi>2025-11-17T00:00:00-03:00</dhEmi>
+        <dhSaiEnt>2025-11-17T18:29:07-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3550308</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>3</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>1</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>6.0.583-5.00</verProc>
+      </ide>
+      <emit>
+        <CNPJ>54430962001424</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA - PAMPLONA</xNome>
+        <xFant>Pamplona</xFant>
+        <enderEmit>
+          <xLgr>RUA PAMPLONA</xLgr>
+          <nro>1704</nro>
+          <xCpl>LJ 2.14</xCpl>
+          <xBairro>JARDIM PAULISTA</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>01405000</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+        </enderEmit>
+        <IE>118897350117</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962002072</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA - PATIO PAULISTA</xNome>
+        <enderDest>
+          <xLgr>RUA TREZE DE MAIO</xLgr>
+          <nro>1933</nro>
+          <xCpl>LOJA 422</xCpl>
+          <xBairro>BELA VISTA</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>131405253111</IE>
+        <email>fiscal@livrariadavila.com.br</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>875115</cProd>
+          <cEAN>9786585348164</cEAN>
+          <xProd>DIVINOS RIVAIS (SUCESSO NO TIKTOK)</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5152</CFOP>
+          <uCom>EX</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>31.9748</vUnCom>
+          <vProd>31.97</vProd>
+          <cEANTrib>9786585348164</cEANTrib>
+          <uTrib>EX</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>31.9748</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>08</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>08</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0</vBC>
+          <vICMS>0</vICMS>
+          <vICMSDeson>0</vICMSDeson>
+          <vFCP>0</vFCP>
+          <vBCST>0</vBCST>
+          <vST>0</vST>
+          <vFCPST>0</vFCPST>
+          <vFCPSTRet>0</vFCPSTRet>
+          <vProd>31.97</vProd>
+          <vFrete>0</vFrete>
+          <vSeg>0</vSeg>
+          <vDesc>0</vDesc>
+          <vII>0</vII>
+          <vIPI>0</vIPI>
+          <vIPIDevol>0</vIPIDevol>
+          <vPIS>0</vPIS>
+          <vCOFINS>0</vCOFINS>
+          <vOutro>0</vOutro>
+          <vNF>31.97</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+      </transp>
+      <pag>
+        <detPag>
+          <tPag>90</tPag>
+          <vPag>0</vPag>
+        </detPag>
+      </pag>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251154430962001424550010000241401408230453">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>ezbQ2HbVBnp914UhXOjT+K0iuPM=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>Dv/1de8Hwh7SmTdnSGtlKFNjprAEXt2on8w2okHLKqww4P0xpJtUxWoUCreHuxhomxlXy+BKgvJvEtgmSzE+33XkNNjZQ6AEn2nr9z7uTRxZOMHcxlaF+vHEQ75ckl9pwmxr8F1ZbvmsuYlFzub074XuZGsRxjhu7Xo8AlquCV5g0UCo7XcDFNCFiLL+bt4TfkfSDmcAl0pKsTF0yMzrpip1D86nSEz70GFN1a/2KeeJFhyxeFtEOu1/M6W+3fJAnNsVNMo7PuI8gBi5kGk6MJyxgLrh6oWIPi84rsDKpdH4NanFKxcurG50mrMy10Xfocy4MY+9i61jys/sQmV6eA==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt>
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251154430962001424550010000241401408230453</chNFe>
+      <dhRecbto>2025-11-17T18:29:12-03:00</dhRecbto>
+      <nProt>135253528047975</nProt>
+      <digVal>ezbQ2HbVBnp914UhXOjT+K0iuPM=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

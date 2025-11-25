@@ -1,0 +1,215 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe35251106179157000374550030007794881710818916" versao="4.00">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>71081891</cNF>
+        <natOp>VENDA DE MERCADORIAS</natOp>
+        <mod>55</mod>
+        <serie>3</serie>
+        <nNF>779488</nNF>
+        <dhEmi>2025-11-18T16:52:00-03:00</dhEmi>
+        <dhSaiEnt>2025-11-18T16:52:00-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3547304</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>6</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>9</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>12.1.2410 | 3.0</verProc>
+      </ide>
+      <emit>
+        <CNPJ>06179157000374</CNPJ>
+        <xNome>EDITORA JURIDICA DA BAHIA LTDA</xNome>
+        <xFant>EDITORA JURIDICA DA BAHIA LTDA</xFant>
+        <enderEmit>
+          <xLgr>RUA FORTALEZA</xLgr>
+          <nro>143</nro>
+          <xCpl>GALPAO 4A BOX 29</xCpl>
+          <xBairro>JARDIM REPRESA (FAZENDINHA)</xBairro>
+          <cMun>3547304</cMun>
+          <xMun>SANTANA DE PARNAIBA</xMun>
+          <UF>SP</UF>
+          <CEP>06529240</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1135825757</fone>
+        </enderEmit>
+        <IE>623183621113</IE>
+        <IM>81662</IM>
+        <CNAE>5811500</CNAE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962002668</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA</xNome>
+        <enderDest>
+          <xLgr>AV ROQUE PETRONI JUNIOR</xLgr>
+          <nro>1089</nro>
+          <xCpl>NIVEL SUPERIOR LOJA 103/104S</xCpl>
+          <xBairro>JARDIM DAS ACACIAS</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>04707900</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1130964490</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>131900556118</IE>
+        <email>FISCAL@LIVRARIADAVILA.COM.BR</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>9788544259061</cProd>
+          <cEAN>9788544259061</cEAN>
+          <xProd>MANUAL DE MEDIDAS PROTETIVAS DE URGENCIA AVALIACAO E GESTO DE RISCO 2025</xProd>
+          <NCM>49019900</NCM>
+          <cBenef />
+          <CFOP>5102</CFOP>
+          <uCom>UN</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>109.90000000</vUnCom>
+          <vProd>109.90</vProd>
+          <cEANTrib>9788544259061</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>109.90000000</vUnTrib>
+          <vDesc>54.95</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>51</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0</vBC>
+          <vICMS>0</vICMS>
+          <vICMSDeson>0</vICMSDeson>
+          <vFCPUFDest>0</vFCPUFDest>
+          <vICMSUFDest>0</vICMSUFDest>
+          <vICMSUFRemet>0</vICMSUFRemet>
+          <vFCP>0</vFCP>
+          <vBCST>0</vBCST>
+          <vST>0</vST>
+          <vFCPST>0</vFCPST>
+          <vFCPSTRet>0</vFCPSTRet>
+          <vProd>109.90</vProd>
+          <vFrete>0</vFrete>
+          <vSeg>0</vSeg>
+          <vDesc>54.95</vDesc>
+          <vII>0</vII>
+          <vIPI>0</vIPI>
+          <vIPIDevol>0</vIPIDevol>
+          <vPIS>0</vPIS>
+          <vCOFINS>0</vCOFINS>
+          <vOutro>0</vOutro>
+          <vNF>54.95</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+        <transporta>
+          <xNome>ENTREGA PROPRIA</xNome>
+          <IE>ISENTO</IE>
+        </transporta>
+        <vol>
+          <qVol>1</qVol>
+          <esp>CAIXA</esp>
+          <pesoL>0.450</pesoL>
+          <pesoB>0.450</pesoB>
+        </vol>
+      </transp>
+      <cobr>
+        <fat>
+          <nFat>003000779488</nFat>
+          <vOrig>54.95</vOrig>
+          <vDesc>0</vDesc>
+          <vLiq>54.95</vLiq>
+        </fat>
+        <dup>
+          <nDup>001</nDup>
+          <dVenc>2026-01-17</dVenc>
+          <vDup>54.95</vDup>
+        </dup>
+      </cobr>
+      <pag>
+        <detPag>
+          <indPag>1</indPag>
+          <tPag>15</tPag>
+          <vPag>54.95</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>LIVRO FALTANTE NA DEVOLUCAO NF 27374 NUM. PEDIDO DO CLIENTE: AAZYIP                                             LOCAL DE ENTREGA: LIVRARIA DA VILA LTDA               ENDERECO: AV ROQUE PETRONI JUNIOR 1089 NIVEL SUPERIOR LOJA 103/104S           JARDIM DAS ACACIAS  SAO PAULO  SP           04707900</infCpl>
+      </infAdic>
+      <infRespTec>
+        <CNPJ>53113791000122</CNPJ>
+        <xContato>Rodrigo de Almeida Sartorio</xContato>
+        <email>resp_tecnico_dfe_protheus@totvs.com.br</email>
+        <fone>1128593904</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251106179157000374550030007794881710818916">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>ti+wuQKf4XqkYPOdSJIsU5lvRtI=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>UdIbcZpt9oYPAVO5ds7QWJbZ0DNXja889+D5nbC3jlTkD92FJDHxDAf8SJtdRWPykMs1rEET7cwpSHF+ZIRUQSrLAPbKGACajcUI/WWRTfO/B+ZN4ddghlC63dKz224ympZ0afq46+kZuzw0EIENRxwancHYs3e68RocE9zu839xlLFX9+XroDdxE8luLfYEabjX74iU3xE0OCDdUKy0/3+fgG+ixFz2WYTFpdsoyPbbPbsKxsDixMVJNTaKLlGKtA+epGjlc+ah8Q61CkxFHFF1rUNbkrVAjLdxyu1xr4DXiXmDpbFwrtM4trVp/vWHmrO+xoOg1HHvmmPW5IM0lQ==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt Id="Id135253543381386">
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251106179157000374550030007794881710818916</chNFe>
+      <dhRecbto>2025-11-18T16:48:21-03:00</dhRecbto>
+      <nProt>135253543381386</nProt>
+      <digVal>ti+wuQKf4XqkYPOdSJIsU5lvRtI=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

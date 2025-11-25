@@ -1,0 +1,727 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe33251122520538000160550010002173361002675135" versao="4.00">
+      <ide>
+        <cUF>33</cUF>
+        <cNF>00267513</cNF>
+        <natOp>REMESSA CONSIGNACAO MERCANTIL</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>217336</nNF>
+        <dhEmi>2025-11-19T10:45:18-03:00</dhEmi>
+        <dhSaiEnt>2025-11-19T10:45:18-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>2</idDest>
+        <cMunFG>3301702</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>5</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>9</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>21123</verProc>
+      </ide>
+      <emit>
+        <CNPJ>22520538000160</CNPJ>
+        <xNome>CASA DOS LIVROS EDITORA LTDA</xNome>
+        <xFant>CASA DOS LIVROS - MATRIZ CAXIAS</xFant>
+        <enderEmit>
+          <xLgr>AV SN 1</xLgr>
+          <nro>122</nro>
+          <xCpl>Q D L 01 PARTE INTERNAC. BUSINESS PARK</xCpl>
+          <xBairro>PARQUE DUQUE</xBairro>
+          <cMun>3301702</cMun>
+          <xMun>DUQUE DE CAXIAS</xMun>
+          <UF>RJ</UF>
+          <CEP>25085378</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>2131751031</fone>
+        </enderEmit>
+        <IE>86936518</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962002315</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA</xNome>
+        <enderDest>
+          <xLgr>AV LUIZ EDUARDO TOLEDO PRADO</xLgr>
+          <nro>900</nro>
+          <xCpl>LOJA 2030/2031/2032/2033</xCpl>
+          <xBairro>VILA DO GOLF</xBairro>
+          <cMun>3543402</cMun>
+          <xMun>RIBEIRAO PRETO</xMun>
+          <UF>SP</UF>
+          <CEP>14027250</CEP>
+          <cPais>1058</cPais>
+          <xPais>Brasil</xPais>
+          <fone>1130964490</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>797747501116</IE>
+      </dest>
+      <entrega>
+        <CNPJ>54430962002315</CNPJ>
+        <xLgr>AV LUIZ EDUARDO TOLEDO PRADO</xLgr>
+        <nro>900</nro>
+        <xCpl>LOJA 2030/2031/2032/2033</xCpl>
+        <xBairro>VILA DO GOLF</xBairro>
+        <cMun>3543402</cMun>
+        <xMun>RIBEIRAO PRETO</xMun>
+        <UF>SP</UF>
+        <IE>797747501116</IE>
+      </entrega>
+      <det nItem="1">
+        <prod>
+          <cProd>9786555117516</cProd>
+          <cEAN>9786555117516</cEAN>
+          <xProd>A DOSE certa Otimize seu cer TJ Power</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>6917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>3.0000</qCom>
+          <vUnCom>64.9000000000</vUnCom>
+          <vProd>194.70</vProd>
+          <cEANTrib>9786555117516</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>3.0000</qTrib>
+          <vUnTrib>64.9000000000</vUnTrib>
+          <vDesc>97.35</vDesc>
+          <indTot>1</indTot>
+          <xPed>957738</xPed>
+          <nItemPed>1</nItemPed>
+        </prod>
+        <imposto>
+          <vTotTrib>0</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pPIS>0.0000</pPIS>
+              <vPIS>0.00</vPIS>
+            </PISOutr>
+          </PIS>
+          <COFINS>
+            <COFINSOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pCOFINS>0.0000</pCOFINS>
+              <vCOFINS>0.00</vCOFINS>
+            </COFINSOutr>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>9786555111101</cProd>
+          <cEAN>9786555111101</cEAN>
+          <xProd>A psicologia financeira Morgan Housel</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>6917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>30.0000</qCom>
+          <vUnCom>49.9000000000</vUnCom>
+          <vProd>1497.00</vProd>
+          <cEANTrib>9786555111101</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>30.0000</qTrib>
+          <vUnTrib>49.9000000000</vUnTrib>
+          <vDesc>748.50</vDesc>
+          <indTot>1</indTot>
+          <xPed>957738</xPed>
+          <nItemPed>1</nItemPed>
+        </prod>
+        <imposto>
+          <vTotTrib>0</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pPIS>0.0000</pPIS>
+              <vPIS>0.00</vPIS>
+            </PISOutr>
+          </PIS>
+          <COFINS>
+            <COFINSOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pCOFINS>0.0000</pCOFINS>
+              <vCOFINS>0.00</vCOFINS>
+            </COFINSOutr>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="3">
+        <prod>
+          <cProd>9786559704491</cProd>
+          <cEAN>9786559704491</cEAN>
+          <xProd>Como arruinar um casamento U Alison Espach</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>6917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>4.0000</qCom>
+          <vUnCom>59.9000000000</vUnCom>
+          <vProd>239.60</vProd>
+          <cEANTrib>9786559704491</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>4.0000</qTrib>
+          <vUnTrib>59.9000000000</vUnTrib>
+          <vDesc>119.80</vDesc>
+          <indTot>1</indTot>
+          <xPed>957738</xPed>
+          <nItemPed>1</nItemPed>
+        </prod>
+        <imposto>
+          <vTotTrib>0</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pPIS>0.0000</pPIS>
+              <vPIS>0.00</vPIS>
+            </PISOutr>
+          </PIS>
+          <COFINS>
+            <COFINSOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pCOFINS>0.0000</pCOFINS>
+              <vCOFINS>0.00</vCOFINS>
+            </COFINSOutr>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="4">
+        <prod>
+          <cProd>9786555117615</cProd>
+          <cEAN>9786555117615</cEAN>
+          <xProd>Contagem regressiva para a riq Rhonda Byrne</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>6917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>10.0000</qCom>
+          <vUnCom>69.9000000000</vUnCom>
+          <vProd>699.00</vProd>
+          <cEANTrib>9786555117615</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>10.0000</qTrib>
+          <vUnTrib>69.9000000000</vUnTrib>
+          <vDesc>349.50</vDesc>
+          <indTot>1</indTot>
+          <xPed>957738</xPed>
+          <nItemPed>1</nItemPed>
+        </prod>
+        <imposto>
+          <vTotTrib>0</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pPIS>0.0000</pPIS>
+              <vPIS>0.00</vPIS>
+            </PISOutr>
+          </PIS>
+          <COFINS>
+            <COFINSOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pCOFINS>0.0000</pCOFINS>
+              <vCOFINS>0.00</vCOFINS>
+            </COFINSOutr>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="5">
+        <prod>
+          <cProd>9786583175502</cProd>
+          <cEAN>9786583175502</cEAN>
+          <xProd>Dates &amp; Dragons Um romance d Kristy Boyce</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>6917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>2.0000</qCom>
+          <vUnCom>59.9000000000</vUnCom>
+          <vProd>119.80</vProd>
+          <cEANTrib>9786583175502</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>2.0000</qTrib>
+          <vUnTrib>59.9000000000</vUnTrib>
+          <vDesc>59.90</vDesc>
+          <indTot>1</indTot>
+          <xPed>957738</xPed>
+          <nItemPed>1</nItemPed>
+        </prod>
+        <imposto>
+          <vTotTrib>0</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pPIS>0.0000</pPIS>
+              <vPIS>0.00</vPIS>
+            </PISOutr>
+          </PIS>
+          <COFINS>
+            <COFINSOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pCOFINS>0.0000</pCOFINS>
+              <vCOFINS>0.00</vCOFINS>
+            </COFINSOutr>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="6">
+        <prod>
+          <cProd>9786583175007</cProd>
+          <cEAN>9786583175007</cEAN>
+          <xProd>Dungeons &amp; Drama Kristy Boyce</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>6917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>5.0000</qCom>
+          <vUnCom>59.9000000000</vUnCom>
+          <vProd>299.50</vProd>
+          <cEANTrib>9786583175007</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>5.0000</qTrib>
+          <vUnTrib>59.9000000000</vUnTrib>
+          <vDesc>149.75</vDesc>
+          <indTot>1</indTot>
+          <xPed>957738</xPed>
+          <nItemPed>1</nItemPed>
+        </prod>
+        <imposto>
+          <vTotTrib>0</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pPIS>0.0000</pPIS>
+              <vPIS>0.00</vPIS>
+            </PISOutr>
+          </PIS>
+          <COFINS>
+            <COFINSOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pCOFINS>0.0000</pCOFINS>
+              <vCOFINS>0.00</vCOFINS>
+            </COFINSOutr>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="7">
+        <prod>
+          <cProd>9786555114188</cProd>
+          <cEAN>9786555114188</cEAN>
+          <xProd>O Hobbit Edicao de Luxo com J.R.R Tolkien</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>6917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>5.0000</qCom>
+          <vUnCom>99.9000000000</vUnCom>
+          <vProd>499.50</vProd>
+          <cEANTrib>9786555114188</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>5.0000</qTrib>
+          <vUnTrib>99.9000000000</vUnTrib>
+          <vDesc>249.75</vDesc>
+          <indTot>1</indTot>
+          <xPed>957738</xPed>
+          <nItemPed>1</nItemPed>
+        </prod>
+        <imposto>
+          <vTotTrib>0</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pPIS>0.0000</pPIS>
+              <vPIS>0.00</vPIS>
+            </PISOutr>
+          </PIS>
+          <COFINS>
+            <COFINSOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pCOFINS>0.0000</pCOFINS>
+              <vCOFINS>0.00</vCOFINS>
+            </COFINSOutr>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="8">
+        <prod>
+          <cProd>9788595084742</cProd>
+          <cEAN>9788595084742</cEAN>
+          <xProd>O Hobbit J.R.R Tolkien</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>6917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>5.0000</qCom>
+          <vUnCom>69.9000000000</vUnCom>
+          <vProd>349.50</vProd>
+          <cEANTrib>9788595084742</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>5.0000</qTrib>
+          <vUnTrib>69.9000000000</vUnTrib>
+          <vDesc>174.75</vDesc>
+          <indTot>1</indTot>
+          <xPed>957738</xPed>
+          <nItemPed>1</nItemPed>
+        </prod>
+        <imposto>
+          <vTotTrib>0</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pPIS>0.0000</pPIS>
+              <vPIS>0.00</vPIS>
+            </PISOutr>
+          </PIS>
+          <COFINS>
+            <COFINSOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pCOFINS>0.0000</pCOFINS>
+              <vCOFINS>0.00</vCOFINS>
+            </COFINSOutr>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="9">
+        <prod>
+          <cProd>9786555111545</cProd>
+          <cEAN>9786555111545</cEAN>
+          <xProd>O homem mais rico da Babilonia George S. ClasonThiago Nigro</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>6917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>2.0000</qCom>
+          <vUnCom>49.9000000000</vUnCom>
+          <vProd>99.80</vProd>
+          <cEANTrib>9786555111545</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>2.0000</qTrib>
+          <vUnTrib>49.9000000000</vUnTrib>
+          <vDesc>49.90</vDesc>
+          <indTot>1</indTot>
+          <xPed>957738</xPed>
+          <nItemPed>1</nItemPed>
+        </prod>
+        <imposto>
+          <vTotTrib>0</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pPIS>0.0000</pPIS>
+              <vPIS>0.00</vPIS>
+            </PISOutr>
+          </PIS>
+          <COFINS>
+            <COFINSOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pCOFINS>0.0000</pCOFINS>
+              <vCOFINS>0.00</vCOFINS>
+            </COFINSOutr>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="10">
+        <prod>
+          <cProd>9788595084377</cProd>
+          <cEAN>9788595084377</cEAN>
+          <xProd>O Silmarillion J.R.R Tolkien</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>6917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>69.9000000000</vUnCom>
+          <vProd>69.90</vProd>
+          <cEANTrib>9788595084377</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>69.9000000000</vUnTrib>
+          <vDesc>34.95</vDesc>
+          <indTot>1</indTot>
+          <xPed>957738</xPed>
+          <nItemPed>1</nItemPed>
+        </prod>
+        <imposto>
+          <vTotTrib>0</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pPIS>0.0000</pPIS>
+              <vPIS>0.00</vPIS>
+            </PISOutr>
+          </PIS>
+          <COFINS>
+            <COFINSOutr>
+              <CST>49</CST>
+              <vBC>0.00</vBC>
+              <pCOFINS>0.0000</pCOFINS>
+              <vCOFINS>0.00</vCOFINS>
+            </COFINSOutr>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0.00</vBC>
+          <vICMS>0.00</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>4068.30</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>2034.15</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>0.00</vPIS>
+          <vCOFINS>0.00</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>2034.15</vNF>
+          <vTotTrib>0.00</vTotTrib>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+        <transporta>
+          <CNPJ>48740351000408</CNPJ>
+          <xNome>BRASPRESS TRANSPORTES URGENTES LTDA</xNome>
+          <IE>77730729</IE>
+          <xEnder>AV ARTHUR ANTONIO SENDAS 1200</xEnder>
+          <xMun>SAO JOAO DE MERITI</xMun>
+          <UF>RJ</UF>
+        </transporta>
+        <vol>
+          <qVol>3</qVol>
+          <esp>Caixa</esp>
+          <pesoL>26.770</pesoL>
+          <pesoB>26.770</pesoB>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <tPag>90</tPag>
+          <vPag>0.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>NAO INCIDENCIA DO ICMS, NOS TERMOS DO ARTIGO 47, I DO LIVRO I DO DECRETO 27.427/2000 (RICMS/RJ) E, IPI IMUNE, NOS TERMOS DO ARTIGO 18, I DO DECRETO 7.212/2010 (RIPI). Cod.Fatura: 1263287 - S7 OC:957738 - Ribeirao Preto/SP - Iguatemi</infCpl>
+      </infAdic>
+      <infRespTec>
+        <CNPJ>20319833000127</CNPJ>
+        <xContato>Daniel Alfredo dos Santos</xContato>
+        <email>bpo@compliancesolucoes.com.br</email>
+        <fone>1635169600</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe33251122520538000160550010002173361002675135">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>qIV/cwkSl0uRjhB4QdQzwgNyWHM=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>oeFXFhWdMUBU97nCrI1R4ybYym76yArpOXssscmCTRqxTnYQw7WAfrzaDUrJcja8YvpDf3DDBAB+
+hvFyk564wz/frXFzoWeJM8gMvwZP8vnoLwaBHN6dKk3ithr/0BJEzriHrpJOCjaJxm/K/Vu3DHOH
+oyl31GoPIyfaO0KxFkZhKaCrfWND5QQx51+2B99V+kiEKiVCs8sVUfGs1sT6oO8M9ZI/Uy5Uz6xC
+cNwfV4x4WE2VZohRpl6rk7qjqSGffdpW7ankiV/q4eVUAihrOMTnmNTtySGXd2Ee/Yf4iUqmFJ+5
+JV3uFa9md5CPFv79pX8HXO4LOhGeSL0ieSzTcg==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>MIIH5zCCBc+gAwIBAgILAKNIgDaGQixhbu0wDQYJKoZIhvcNAQELBQAwWzELMAkGA1UEBhMCQlIx
+FjAUBgNVBAsMDUFDIFN5bmd1bGFySUQxEzARBgNVBAoMCklDUC1CcmFzaWwxHzAdBgNVBAMMFkFD
+IFN5bmd1bGFySUQgTXVsdGlwbGEwHhcNMjUwNjE4MTMyMjE1WhcNMjYwNjE4MTMyMjE1WjCByzEL
+MAkGA1UEBhMCQlIxEzARBgNVBAoMCklDUC1CcmFzaWwxIjAgBgNVBAsMGUNlcnRpZmljYWRvIERp
+Z2l0YWwgUEogQTExEzARBgNVBAsMClByZXNlbmNpYWwxFzAVBgNVBAsMDjE4MTc4OTQ1MDAwMTYz
+MR8wHQYDVQQLDBZBQyBTeW5ndWxhcklEIE11bHRpcGxhMTQwMgYDVQQDDCtDQVNBIERPUyBMSVZS
+T1MgRURJVE9SQSBMVERBOjIyNTIwNTM4MDAwMTYwMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIB
+CgKCAQEA4SU+q0SiAwxkIvMqHhmbXET1py7boXwVdAn5LtFWbfpziXSsRv3y6dkK8OmKy42iSaTh
+WrzErb1n9YH+BHPez9E17QzUwVQr54bZ63x/9dDZN28Efp9B0RjvmW0A71ZbBg4xRxPlvE6SyM9r
+Y64j9WO8lIu84NfjAvzzQj9/58JSQmoR0VzqGewPqKasvqs2aqnwNfGQoRZ29fL1dpjJ04AlYJBs
+litE/wqLt9/xROC4F0Tp4y6JaBPsb5mMjsPol9deT79WB0kUWmWIfcOs0FSztGMewShUn7a7j8sy
+1H4OADaTzPk9WwZQMiaV8jFouhlFyvdSme5FmtppE6MfpwIDAQABo4IDOTCCAzUwDgYDVR0PAQH/
+BAQDAgXgMB0GA1UdJQQWMBQGCCsGAQUFBwMEBggrBgEFBQcDAjAJBgNVHRMEAjAAMB8GA1UdIwQY
+MBaAFJPh/34d5fXkTeE5YoshaZXmr3IWMB0GA1UdDgQWBBSTB4wa/R6NnKkCiLHNRdXlFOna1DB/
+BggrBgEFBQcBAQRzMHEwbwYIKwYBBQUHMAKGY2h0dHA6Ly9zeW5ndWxhcmlkLmNvbS5ici9yZXBv
+c2l0b3Jpby9hYy1zeW5ndWxhcmlkLW11bHRpcGxhL2NlcnRpZmljYWRvcy9hYy1zeW5ndWxhcmlk
+LW11bHRpcGxhLnA3YjCBggYDVR0gBHsweTB3BgdgTAECAYEFMGwwagYIKwYBBQUHAgEWXmh0dHA6
+Ly9zeW5ndWxhcmlkLmNvbS5ici9yZXBvc2l0b3Jpby9hYy1zeW5ndWxhcmlkLW11bHRpcGxhL2Rw
+Yy9kcGMtYWMtc3luZ3VsYXJJRC1tdWx0aXBsYS5wZGYwgc0GA1UdEQSBxTCBwqAlBgVgTAEDAqAc
+BBpMRU9OT1JBIFJPRFJJR1VFUyBNT05ORVJBVKAZBgVgTAEDA6AQBA4yMjUyMDUzODAwMDE2MKBC
+BgVgTAEDBKA5BDcxMjA0MTk3NzA0MTIzNTg4NzUxMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAw
+MDAwMDAwMDAwoBcGBWBMAQMHoA4EDDAwMDAwMDAwMDAwMIEhUm9ic29uLnNpbHZhQGhhcnBlcmNv
+bGxpbnMuY29tLmJyMIHiBgNVHR8Egdowgdcwb6BtoGuGaWh0dHA6Ly9pY3AtYnJhc2lsLnN5bmd1
+bGFyaWQuY29tLmJyL3JlcG9zaXRvcmlvL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEvbGNyL2xjci1h
+Yy1zeW5ndWxhcmlkLW11bHRpcGxhLmNybDBkoGKgYIZeaHR0cDovL3N5bmd1bGFyaWQuY29tLmJy
+L3JlcG9zaXRvcmlvL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEvbGNyL2xjci1hYy1zeW5ndWxhcmlk
+LW11bHRpcGxhLmNybDANBgkqhkiG9w0BAQsFAAOCAgEATldnorKXM2Xc02xDdufRTNP5ShULe1nl
+nua/y4YTzir8+ojtT8CHoNrwv56bEDWjCUk2T3TYrjdYdYg3KcJLNp2t3bbVR0k5Buz3SqJ41pUL
+J9GH/300Tv/rPA0qXn8FmEUuAn4iOD+VbRth+/X85Noj4w3LoTfUL22S+lSFuAcCw26+4J+WIpWJ
+DQ/QapquoUV7e4K6wlEaxn/gwBp8nO+10z/3KV2L5uk8zg2KCGt8C7buE+dGPu1FVaUYJE371RYF
+pK15Rr1pNJAQiVwNr6YHzQkcT2hiVc14I0JtCe9KxTedDRxZ7AKJR4qxXSnxviJb1C8k8LkCM8ws
+oxivy9SvNNx+Ov+M2erKMZXhvm9D01l6z9xpT+bfrnnUNK/ItLYB6Z5KJh9PjHhDo26Ndp30tMmf
+pPI44w6xungjpFqz288PUaDgvvqGAv7j/pRYsaLbfTEsM5AYm3bhZlPZJZ92usv0kSEIAeZaa840
+K8X2D4/aRspHUFwrZqUdPG4o6XlmkH3MwpY/+EZXz2sjGkJZkug5uMjDSk1KZaJr91qOFKXXJf+o
+acsUHEds4Gl9r6sZ0LXqKvaAekFR8+Tkb4visR5YQFEVJhDc/gPz/BEpr76CFTq+DfRBE1xSl5pH
+/LbeAiRmhxvfFSAJ+Pn54Wvr78RbU1ya2VADE07QWxg=</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+    <infProt>
+      <tpAmb>1</tpAmb>
+      <verAplic>SVRS2511121006DR</verAplic>
+      <chNFe>33251122520538000160550010002173361002675135</chNFe>
+      <dhRecbto>2025-11-19T10:45:23-03:00</dhRecbto>
+      <nProt>233250455532427</nProt>
+      <digVal>qIV/cwkSl0uRjhB4QdQzwgNyWHM=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

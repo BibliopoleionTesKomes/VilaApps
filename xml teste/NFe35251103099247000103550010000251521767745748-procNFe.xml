@@ -1,0 +1,373 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe versao="4.00" Id="NFe35251103099247000103550010000251521767745748">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>76774574</cNF>
+        <natOp>CONSIGNACAO</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>25152</nNF>
+        <dhEmi>2025-11-19T12:19:57-02:00</dhEmi>
+        <dhSaiEnt>2025-11-19T12:19:57-02:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3550308</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>8</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>1</indPres>
+        <procEmi>3</procEmi>
+        <verProc>5.0.1.33</verProc>
+      </ide>
+      <emit>
+        <CNPJ>03099247000103</CNPJ>
+        <xNome>BOOKMIX COM. DE LIVROS EIRELI</xNome>
+        <enderEmit>
+          <xLgr>R ENEIAS LUIS CARLOS BARBANTI</xLgr>
+          <nro>00553</nro>
+          <xBairro>FREGUESIA DO O</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>02911000</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1133310536</fone>
+        </enderEmit>
+        <IE>115536524117</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962001939</CNPJ>
+        <xNome>LIVRARIA DA VILA/ ANALIA FRANCO</xNome>
+        <enderDest>
+          <xLgr>AV. REG. FEIJO, 1739</xLgr>
+          <nro>1739</nro>
+          <xBairro>VILA REGENTE FE</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>03342900</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>126411310113</IE>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>9788560918133</cProd>
+          <cEAN>9788560918133</cEAN>
+          <xProd>GUIA DO BARISTA - 6 EDICAO/ CAFE EDITORA</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5917</CFOP>
+          <uCom>PC</uCom>
+          <qCom>2.0000</qCom>
+          <vUnCom>85.0000</vUnCom>
+          <vProd>170.00</vProd>
+          <cEANTrib>9788560918133</cEANTrib>
+          <uTrib>PC</uTrib>
+          <qTrib>2.0000</qTrib>
+          <vUnTrib>85.000000</vUnTrib>
+          <vDesc>68.00</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <vTotTrib>53.46</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>9786599205811</cProd>
+          <cEAN>9786599205811</cEAN>
+          <xProd>MAES QUE FAZEM MAL SEM PERCEBER/ BOOKMIX</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5917</CFOP>
+          <uCom>PC</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>72.0000</vUnCom>
+          <vProd>72.00</vProd>
+          <cEANTrib>9786599205811</cEANTrib>
+          <uTrib>PC</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>72.000000</vUnTrib>
+          <vDesc>28.80</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <vTotTrib>22.64</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="3">
+        <prod>
+          <cProd>9788561914004</cProd>
+          <cEAN>9788561914004</cEAN>
+          <xProd>MAOS PRECIOSAS O ARTESANATO DO CEARA / LUSTE</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5917</CFOP>
+          <uCom>PC</uCom>
+          <qCom>2.0000</qCom>
+          <vUnCom>90.0000</vUnCom>
+          <vProd>180.00</vProd>
+          <cEANTrib>9788561914004</cEANTrib>
+          <uTrib>PC</uTrib>
+          <qTrib>2.0000</qTrib>
+          <vUnTrib>90.000000</vUnTrib>
+          <vDesc>72.00</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <vTotTrib>56.61</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="4">
+        <prod>
+          <cProd>9786500351194</cProd>
+          <cEAN>9786500351194</cEAN>
+          <xProd>RELIQUIAS / BOOKMIX</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5917</CFOP>
+          <uCom>PC</uCom>
+          <qCom>2.0000</qCom>
+          <vUnCom>139.0000</vUnCom>
+          <vProd>278.00</vProd>
+          <cEANTrib>9786500351194</cEANTrib>
+          <uTrib>PC</uTrib>
+          <qTrib>2.0000</qTrib>
+          <vUnTrib>139.000000</vUnTrib>
+          <vDesc>111.20</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <vTotTrib>87.43</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="5">
+        <prod>
+          <cProd>9786589044086</cProd>
+          <cEAN>9786589044086</cEAN>
+          <xProd>SABORES DE UMA VIDA MAIS LEVE/ LUSTE</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5917</CFOP>
+          <uCom>PC</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>98.0000</vUnCom>
+          <vProd>98.00</vProd>
+          <cEANTrib>9786589044086</cEANTrib>
+          <uTrib>PC</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>98.000000</vUnTrib>
+          <vDesc>39.20</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <vTotTrib>30.82</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="6">
+        <prod>
+          <cProd>9788591308255</cProd>
+          <cEAN>9788591308255</cEAN>
+          <xProd>TERRA A VISTA / BOOKMIX</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5917</CFOP>
+          <uCom>PC</uCom>
+          <qCom>2.0000</qCom>
+          <vUnCom>139.0000</vUnCom>
+          <vProd>278.00</vProd>
+          <cEANTrib>9788591308255</cEANTrib>
+          <uTrib>PC</uTrib>
+          <qTrib>2.0000</qTrib>
+          <vUnTrib>139.000000</vUnTrib>
+          <vDesc>111.20</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <vTotTrib>87.43</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0.00</vBC>
+          <vICMS>0.00</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>1076.00</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>430.40</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>0.00</vPIS>
+          <vCOFINS>0.00</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>645.60</vNF>
+          <vTotTrib>338.39</vTotTrib>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+        <transporta>
+          <xNome>TRANSPO EXPRESS</xNome>
+        </transporta>
+        <vol>
+          <qVol>2</qVol>
+          <esp>CX</esp>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <indPag>0</indPag>
+          <tPag>01</tPag>
+          <vPag>645.60</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>VALOR APROXIMADO DOS TRIBUTOS: R$ 338.39 (31,45%) - FONTE IBPT; 40% 960201</infCpl>
+      </infAdic>
+      <infRespTec>
+        <CNPJ>04311983000138</CNPJ>
+        <xContato>Alvaro</xContato>
+        <email>desenvolvimento@atmainfo.com.br</email>
+        <fone>1150952422</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251103099247000103550010000251521767745748">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>/ch6mCIJXMczmDK4P1Cmvdcj6mg=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>Vjb52JWS2nXZwKekKD1+1KrHzqelLohaTF0LwvBNgAJpWjsGn/S/XZ7XbN+/GN5WQaOjpiR5Hf7zsaA1ZDas0WHT4Jkne0H20EvjSwOgji75Q3Lt9DZHNJCWv0pNJmMcCGRMsbgs0PZjxUTQvcXKFpiyqeU5rspxrjc7eXECdS8HoYZ20TyOeILKnF8gA6ymuTSfMEsxUI4/3sw8AQQirEE3lgCUAIpv8331hg8XO/sLBx3DPP9t1CtpdQDov6GPRjgWr4K80vYLPM+YmAq4sULbfSzEXufpl+C902LOwoylWj9EO0QTFBXQSAUYOBEZ9aLy26Y7PCCKW6l6iDgZDA==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt Id="Id135253555221715">
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251103099247000103550010000251521767745748</chNFe>
+      <dhRecbto>2025-11-19T12:21:38-03:00</dhRecbto>
+      <nProt>135253555221715</nProt>
+      <digVal>/ch6mCIJXMczmDK4P1Cmvdcj6mg=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

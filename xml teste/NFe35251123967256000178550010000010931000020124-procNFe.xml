@@ -1,0 +1,204 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe35251123967256000178550010000010931000020124" versao="4.00">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>00002012</cNF>
+        <natOp>VENDA DE CONSIGNACAO</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>1093</nNF>
+        <dhEmi>2025-11-14T14:05:00-03:00</dhEmi>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3550308</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>4</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>3</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>18.15.3973</verProc>
+        <NFref>
+          <refNFe>35230923967256000178550010000007571000013918</refNFe>
+        </NFref>
+      </ide>
+      <emit>
+        <CNPJ>23967256000178</CNPJ>
+        <xNome>TRIOLECA CASA EDITORIAL LTDA</xNome>
+        <xFant>TRIOLECA CASA EDITORIAL</xFant>
+        <enderEmit>
+          <xLgr>RUA PEREIRA LEITE</xLgr>
+          <nro>442</nro>
+          <xBairro>VL. MADALENA</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>05442000</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1123684814</fone>
+        </enderEmit>
+        <IE>140405660110</IE>
+        <IM>53994965</IM>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962002587</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA - LORENA</xNome>
+        <enderDest>
+          <xLgr>ALAMEDA LORENA</xLgr>
+          <nro>1501</nro>
+          <xBairro>JARDIM PAULISTA</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>01424005</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>11999999999</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>131900547117</IE>
+        <email>fiscal@livrariadavila.com.br</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>9786586836004</cProd>
+          <cEAN>9786586836004</cEAN>
+          <xProd>PROIBIDO AOS ELEFANTES BROCHURA</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5114</CFOP>
+          <uCom>UN</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>49.5000000</vUnCom>
+          <vProd>49.50</vProd>
+          <cEANTrib>9786586836004</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>49.5000000</vUnTrib>
+          <vDesc>24.75</vDesc>
+          <indTot>1</indTot>
+          <xPed>14112025</xPed>
+        </prod>
+        <imposto>
+          <vTotTrib>0</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>07</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>07</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0</vBC>
+          <vICMS>0</vICMS>
+          <vICMSDeson>0</vICMSDeson>
+          <vFCP>0</vFCP>
+          <vBCST>0</vBCST>
+          <vST>0</vST>
+          <vFCPST>0</vFCPST>
+          <vFCPSTRet>0</vFCPSTRet>
+          <vProd>49.50</vProd>
+          <vFrete>0</vFrete>
+          <vSeg>0</vSeg>
+          <vDesc>24.75</vDesc>
+          <vII>0</vII>
+          <vIPI>0</vIPI>
+          <vIPIDevol>0</vIPIDevol>
+          <vPIS>0</vPIS>
+          <vCOFINS>0</vCOFINS>
+          <vOutro>0</vOutro>
+          <vNF>24.75</vNF>
+          <vTotTrib>0</vTotTrib>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>9</modFrete>
+        <vol>
+          <qVol>1</qVol>
+          <pesoL>0.172</pesoL>
+          <pesoB>0.172</pesoB>
+        </vol>
+      </transp>
+      <cobr>
+        <fat>
+          <nFat>001</nFat>
+          <vOrig>24.75</vOrig>
+          <vLiq>24.75</vLiq>
+        </fat>
+        <dup>
+          <nDup>001</nDup>
+          <dVenc>2025-12-14</dVenc>
+          <vDup>24.75</vDup>
+        </dup>
+      </cobr>
+      <pag>
+        <detPag>
+          <indPag>1</indPag>
+          <tPag>01</tPag>
+          <vPag>24.75</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>PD Nr.: 0000002012 - Ped. do Cliente: 14112025 ACERTO DE CONSIGNACAO Ref. NF(s): 000757 TRIOLECA CASA EDITORIAL BANCO ITAU AG: 8135    C/C: 17094-5 PIX: 23.967.256/0001-78</infCpl>
+      </infAdic>
+      <compra>
+        <xPed>14112025</xPed>
+      </compra>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251123967256000178550010000010931000020124">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>mQL/uISiAQlZp6TXUgwUF1g+vNg=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>wZ59wYipZ/RqTi9FsWF3Ek/d0QBDft1jp1SNWYyL+3Pu90wSHuEoZ+zhzqSnrSo1NXEdPUn/soXBBv9FwBw1/Ikbx8u4nPnWVq/Jh23cVVTe/VdiNY0imjghSoxbqzN6yJSB7FcGv++F+VYn1czGrMxnRPcBbCBY6hqrO/+lsI0hEirzNL91z5AYKxCAy+76whg8XwlQF7FfFzm48nRJreMg0Ea9n9aJOMzZPgp6+nxt4k1o0+Y6GDxchla1hJGuzUFPdV4ZAp/b9Lt1NShwXaEAFZGIovrXWOvrwmwFZIAalnZ5ASo6W6jsAl/lUqZtn0f4GTx0zTmeXW2CZpQiqQ==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt Id="Id135253490385970">
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251123967256000178550010000010931000020124</chNFe>
+      <dhRecbto>2025-11-14T14:04:53-03:00</dhRecbto>
+      <nProt>135253490385970</nProt>
+      <digVal>mQL/uISiAQlZp6TXUgwUF1g+vNg=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

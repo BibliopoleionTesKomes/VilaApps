@@ -1,0 +1,241 @@
+<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe35251154430962002668550010000288101403094860" versao="4.00">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>40309486</cNF>
+        <natOp>TRANSFERENCIA DE MERCADORIA</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>28810</nNF>
+        <dhEmi>2025-11-12T00:00:00-03:00</dhEmi>
+        <dhSaiEnt>2025-11-12T17:58:40-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3550308</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>0</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>1</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>6.0.470-5.00</verProc>
+      </ide>
+      <emit>
+        <CNPJ>54430962002668</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA - MORUMBI SHOPPING</xNome>
+        <xFant>Morumbi Shopping</xFant>
+        <enderEmit>
+          <xLgr>Av. Roque Petroni Junior</xLgr>
+          <nro>1089</nro>
+          <xCpl>Nivel Superior Loja 103/104S</xCpl>
+          <xBairro>Jardim das Acacias</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>04707900</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+        </enderEmit>
+        <IE>131900556118</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962003125</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA - AVENIDA PAULISTA</xNome>
+        <enderDest>
+          <xLgr>AVENIDA PAULISTA</xLgr>
+          <nro>1063</nro>
+          <xBairro>BELA VISTA</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>01311200</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>153188645110</IE>
+        <email>fiscal@livrariadavila.com.br</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>804068</cProd>
+          <cEAN>7896054028830</cEAN>
+          <xProd>QUEBRA-CABECA 1000 PECAS VINCENT VAN GOGH - A NOITE ESTRELADA</xProd>
+          <NCM>95030070</NCM>
+          <CFOP>5152</CFOP>
+          <uCom>UNI</uCom>
+          <qCom>6.0000</qCom>
+          <vUnCom>39.13</vUnCom>
+          <vProd>234.78</vProd>
+          <cEANTrib>7896054028830</cEANTrib>
+          <uTrib>UNI</uTrib>
+          <qTrib>6.0000</qTrib>
+          <vUnTrib>39.13</vUnTrib>
+          <indTot>1</indTot>
+          <xPed>956833</xPed>
+          <nItemPed>1</nItemPed>
+        </prod>
+        <imposto>
+          <vTotTrib>76.58</vTotTrib>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>234.78</vBC>
+              <pICMS>18.00</pICMS>
+              <vICMS>42.26</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>08</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>08</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>855366</cProd>
+          <cEAN>7896054030482</cEAN>
+          <xProd>QUEBRA-CABECA 2000 PECAS O JARDIM DAS DELICIAS TERRENAS - HIERONYMUS BOSCH</xProd>
+          <NCM>95030070</NCM>
+          <CFOP>5152</CFOP>
+          <uCom>UNI</uCom>
+          <qCom>2.0000</qCom>
+          <vUnCom>81.29</vUnCom>
+          <vProd>162.58</vProd>
+          <cEANTrib>7896054030482</cEANTrib>
+          <uTrib>UNI</uTrib>
+          <qTrib>2.0000</qTrib>
+          <vUnTrib>81.29</vUnTrib>
+          <indTot>1</indTot>
+          <xPed>956833</xPed>
+          <nItemPed>2</nItemPed>
+        </prod>
+        <imposto>
+          <vTotTrib>53.03</vTotTrib>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>162.58</vBC>
+              <pICMS>18.00</pICMS>
+              <vICMS>29.26</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>08</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>08</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>397.36</vBC>
+          <vICMS>71.52</vICMS>
+          <vICMSDeson>0</vICMSDeson>
+          <vFCP>0</vFCP>
+          <vBCST>0</vBCST>
+          <vST>0</vST>
+          <vFCPST>0</vFCPST>
+          <vFCPSTRet>0</vFCPSTRet>
+          <vProd>397.36</vProd>
+          <vFrete>0</vFrete>
+          <vSeg>0</vSeg>
+          <vDesc>0</vDesc>
+          <vII>0</vII>
+          <vIPI>0</vIPI>
+          <vIPIDevol>0</vIPIDevol>
+          <vPIS>0</vPIS>
+          <vCOFINS>0</vCOFINS>
+          <vOutro>0</vOutro>
+          <vNF>397.36</vNF>
+          <vTotTrib>129.61</vTotTrib>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>1</modFrete>
+        <vol>
+          <qVol>1</qVol>
+          <esp>VOLUME</esp>
+          <pesoL>2.520</pesoL>
+          <pesoB>2.520</pesoB>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <tPag>90</tPag>
+          <vPag>0</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>Trib aprox R$: 58,09 Fed,  R$: 71,52 Est  Fonte: IBPT 5oi7eW</infCpl>
+      </infAdic>
+      <compra>
+        <xPed>956833</xPed>
+      </compra>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251154430962002668550010000288101403094860">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>Uqv0sh/laibZnKAgVpfo0wq8lFs=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>hi+Wzul/YHBKldfDqm+AjGVLIcrOPHlKhYyPsuTLb+Lgsjz1GbfepQdcu4CQuTFx6p7mGsuGCO+o+3FYHFhxYbfygEWdZoENLkdA1o/0hWo4hJQMJQOf488b2BfV5UURtyeNk5XZ173EHeYWISFPA3ygOnkEfP7BG+w5GzK5Y43PleYbTFWv1S122A8lpQixz3lkrMR/4bspmGz7cUx0wAqV2pFybFDl0BBBZhcDtdsw0SS2R1NuKzXim9kRKbI6ICOrPayFekltczccrNXbuF/WkzjWHy92euD1FXQNp+Ha4Xbt+lmU6rCIhNOVmdmKv/MUT1Yvt/QjayMeiz4bYQ==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt>
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251154430962002668550010000288101403094860</chNFe>
+      <dhRecbto>2025-11-12T17:58:42-03:00</dhRecbto>
+      <nProt>135253462775771</nProt>
+      <digVal>Uqv0sh/laibZnKAgVpfo0wq8lFs=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

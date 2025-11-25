@@ -1,0 +1,196 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe35251127507766000113550000000153151000281663" versao="4.00">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>00028166</cNF>
+        <natOp>CONSIGNACAO</natOp>
+        <mod>55</mod>
+        <serie>0</serie>
+        <nNF>15315</nNF>
+        <dhEmi>2025-11-11T13:12:58-03:00</dhEmi>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3550308</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>3</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>3</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>18.15.3973</verProc>
+      </ide>
+      <emit>
+        <CNPJ>27507766000113</CNPJ>
+        <xNome>ASSOCIACAO QUATRO CINCO UM</xNome>
+        <xFant>QUATRO CINCO UM</xFant>
+        <enderEmit>
+          <xLgr>RUA LARGO DO AROUCHE</xLgr>
+          <nro>161</nro>
+          <xCpl>SL 2</xCpl>
+          <xBairro>REPUBLICA</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>01219010</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1132216735</fone>
+        </enderEmit>
+        <IE>141996430117</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962000886</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA.</xNome>
+        <enderDest>
+          <xLgr>AVENIDA PRES JUSCELINO KUBITSCHEK</xLgr>
+          <nro>2041</nro>
+          <xBairro>VILA NOVA CONCEICAO</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>04543011</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>146005488119</IE>
+        <email>consignacao3@livrariadavila.com.br;aline@livrariadavila.com.</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>0000001860</cProd>
+          <cEAN>9772526558006</cEAN>
+          <xProd>REVISTA 451 ED 99 NOVEMBRO 2025</xProd>
+          <NCM>49029000</NCM>
+          <CFOP>5917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>5.0000</qCom>
+          <vUnCom>37.9000000</vUnCom>
+          <vProd>189.50</vProd>
+          <cEANTrib>9772526558006</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>5.0000</qTrib>
+          <vUnTrib>37.9000000</vUnTrib>
+          <vDesc>94.75</vDesc>
+          <indTot>1</indTot>
+          <xPed>950662</xPed>
+        </prod>
+        <imposto>
+          <vTotTrib>0</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>07</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0</vBC>
+          <vICMS>0</vICMS>
+          <vICMSDeson>0</vICMSDeson>
+          <vFCP>0</vFCP>
+          <vBCST>0</vBCST>
+          <vST>0</vST>
+          <vFCPST>0</vFCPST>
+          <vFCPSTRet>0</vFCPSTRet>
+          <vProd>189.50</vProd>
+          <vFrete>0</vFrete>
+          <vSeg>0</vSeg>
+          <vDesc>94.75</vDesc>
+          <vII>0</vII>
+          <vIPI>0</vIPI>
+          <vIPIDevol>0</vIPIDevol>
+          <vPIS>0</vPIS>
+          <vCOFINS>0</vCOFINS>
+          <vOutro>0</vOutro>
+          <vNF>94.75</vNF>
+          <vTotTrib>0</vTotTrib>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+        <transporta>
+          <CNPJ>71698476000510</CNPJ>
+          <xNome>TRANSPO EXPRESS TRANSPORTE E LOGISTICA LTDA</xNome>
+          <IE>141996430117</IE>
+          <xEnder>AV. DAS COMUNICACOES</xEnder>
+          <xMun>OSASCO</xMun>
+          <UF>SP</UF>
+        </transporta>
+        <vol>
+          <qVol>1</qVol>
+          <esp>CAIXA/PACOTE</esp>
+          <pesoL>1.250</pesoL>
+          <pesoB>1.250</pesoB>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <tPag>90</tPag>
+          <vPag>0.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>PD Nr.: 0000028166 - Ped. do Cliente: 950662 PEDIDO 950662</infCpl>
+      </infAdic>
+      <compra>
+        <xPed>950662</xPed>
+      </compra>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251127507766000113550000000153151000281663">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>IdCo6MdUUOCNXzG/yxITWi0Pe7c=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>XV8Ne7F9ZwgxP8MGly6XLp9wZklcBFaEG7ANlVARmq12CQpyM/n7cvZxTMiqvTwxgEvv+cyH0ikYfGTJ5nvUzFiBOJFHAsUbIKdUB9nxC6T54IvsS09iD12hpfpD7tIbZOy14uZFnWc5UGDmA7ARzgbDs3s5Y2NTyPvLcz6ZiORHxrJLZ2iypi3UlKcQDfQbB5qctqTtYraXrBHEbTrORPJX3ksbMbcY2HUf1y2EBXkZEuFrnquFv/CznIPUQcBngYMYfKUGaeUZPxwCM6vTJr0DWS8lIsFVw+hC+2M3IHer70KEF8mEDYI2Rg/qGc05pjjI/a5AKrBAHJyDL6NfBA==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt Id="Id135253436710125">
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251127507766000113550000000153151000281663</chNFe>
+      <dhRecbto>2025-11-11T13:12:27-03:00</dhRecbto>
+      <nProt>135253436710125</nProt>
+      <digVal>IdCo6MdUUOCNXzG/yxITWi0Pe7c=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

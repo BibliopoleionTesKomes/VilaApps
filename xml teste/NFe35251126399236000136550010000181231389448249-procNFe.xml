@@ -1,0 +1,377 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe35251126399236000136550010000181231389448249" versao="4.00">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>38944824</cNF>
+        <natOp>REMESSA ENTR. FUTURA</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>18123</nNF>
+        <dhEmi>2025-11-11T18:34:00-03:00</dhEmi>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3550308</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>9</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>1</indFinal>
+        <indPres>9</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>12.1.2410 | 3.0</verProc>
+      </ide>
+      <emit>
+        <CNPJ>26399236000136</CNPJ>
+        <xNome>FORT CORPORATIVO COMERCIAL LTDA</xNome>
+        <xFant>FORT CORPORATIVO</xFant>
+        <enderEmit>
+          <xLgr>AVENIDA SANTO AMARO</xLgr>
+          <nro>3432</nro>
+          <xCpl>CJ 32,35 E 36</xCpl>
+          <xBairro>BROOKLIN PAULISTA</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>04556300</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1138186830</fone>
+        </enderEmit>
+        <IE>118491744118</IE>
+        <IM>01512600040</IM>
+        <CNAE>4755501</CNAE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962003125</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA</xNome>
+        <enderDest>
+          <xLgr>AV. PAULISTA</xLgr>
+          <nro>1063</nro>
+          <xBairro>SAO PAULO</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>01311200</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>0110000000000</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>153188645110</IE>
+        <email>catia.novais@larconstrutora.com.br</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>01.445-654</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>PISO SQUARE FLOW 4MM 20,8X123CM 24268654 - LI:2025106118 LF:18102025</xProd>
+          <NCM>39181000</NCM>
+          <cBenef />
+          <CFOP>5117</CFOP>
+          <uCom>M2</uCom>
+          <qCom>486.4000</qCom>
+          <vUnCom>195.3599917763</vUnCom>
+          <vProd>95023.10</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>M2</uTrib>
+          <qTrib>486.4000</qTrib>
+          <vUnTrib>195.3599917763</vUnTrib>
+          <vDesc>1.61</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>2</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>95021.49</vBC>
+              <pICMS>12.0000</pICMS>
+              <vICMS>11402.58</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>83618.91</vBC>
+              <pPIS>1.6500</pPIS>
+              <vPIS>1379.71</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>83618.91</vBC>
+              <pCOFINS>7.6000</pCOFINS>
+              <vCOFINS>6355.04</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>02.390-103</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>PISO PAVIF THRU 2MM 30,5X30,5CM 24179103 - LI:2025106010 LF:4576EL</xProd>
+          <NCM>39181000</NCM>
+          <cBenef />
+          <CFOP>5117</CFOP>
+          <uCom>M2</uCom>
+          <qCom>32.7200</qCom>
+          <vUnCom>110.0898533007</vUnCom>
+          <vProd>3602.14</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>M2</uTrib>
+          <qTrib>32.7200</qTrib>
+          <vUnTrib>110.0898533007</vUnTrib>
+          <vDesc>0.06</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>3602.08</vBC>
+              <pICMS>12.0000</pICMS>
+              <vICMS>432.25</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>3169.83</vBC>
+              <pPIS>1.6500</pPIS>
+              <vPIS>52.30</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>3169.83</vBC>
+              <pCOFINS>7.6000</pCOFINS>
+              <vCOFINS>240.90</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="3">
+        <prod>
+          <cProd>01.529-001</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>RODAPE BRANCO REF 3690 - 30 X 13MM</xProd>
+          <NCM>39252000</NCM>
+          <cBenef />
+          <CFOP>5117</CFOP>
+          <uCom>ML</uCom>
+          <qCom>31.2000</qCom>
+          <vUnCom>12.0000000000</vUnCom>
+          <vProd>374.40</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>ML</uTrib>
+          <qTrib>31.2000</qTrib>
+          <vUnTrib>12.0000000000</vUnTrib>
+          <vDesc>0.01</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>0</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>374.39</vBC>
+              <pICMS>18.0000</pICMS>
+              <vICMS>67.39</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>307.00</vBC>
+              <pPIS>1.6500</pPIS>
+              <vPIS>5.07</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>307.00</vBC>
+              <pCOFINS>7.6000</pCOFINS>
+              <vCOFINS>23.34</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="4">
+        <prod>
+          <cProd>01.445-654</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>PISO SQUARE FLOW 4MM 20,8X123CM 24268654 - LI:2025106117 LF:201025</xProd>
+          <NCM>39181000</NCM>
+          <cBenef />
+          <CFOP>5117</CFOP>
+          <uCom>M2</uCom>
+          <qCom>46.0800</qCom>
+          <vUnCom>195.3600260417</vUnCom>
+          <vProd>9002.19</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>M2</uTrib>
+          <qTrib>46.0800</qTrib>
+          <vUnTrib>195.3600260417</vUnTrib>
+          <vDesc>0.15</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>2</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>9002.04</vBC>
+              <pICMS>12.0000</pICMS>
+              <vICMS>1080.24</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>7921.80</vBC>
+              <pPIS>1.6500</pPIS>
+              <vPIS>130.71</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>7921.80</vBC>
+              <pCOFINS>7.6000</pCOFINS>
+              <vCOFINS>602.05</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>108000.00</vBC>
+          <vICMS>12982.46</vICMS>
+          <vICMSDeson>0</vICMSDeson>
+          <vFCPUFDest>0</vFCPUFDest>
+          <vICMSUFDest>0</vICMSUFDest>
+          <vICMSUFRemet>0</vICMSUFRemet>
+          <vFCP>0</vFCP>
+          <vBCST>0</vBCST>
+          <vST>0</vST>
+          <vFCPST>0</vFCPST>
+          <vFCPSTRet>0</vFCPSTRet>
+          <vProd>108001.83</vProd>
+          <vFrete>0</vFrete>
+          <vSeg>0</vSeg>
+          <vDesc>1.83</vDesc>
+          <vII>0</vII>
+          <vIPI>0</vIPI>
+          <vIPIDevol>0</vIPIDevol>
+          <vPIS>1567.79</vPIS>
+          <vCOFINS>7221.33</vCOFINS>
+          <vOutro>0</vOutro>
+          <vNF>108000.00</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>3</modFrete>
+        <transporta>
+          <xNome>NOSSO CARRO</xNome>
+          <IE>116541178117</IE>
+          <xEnder>RUA NOSSA SENHORA DO SOCORRO, 110</xEnder>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+        </transporta>
+        <vol>
+          <qVol>217</qVol>
+          <esp>VOLUMES</esp>
+          <pesoL>4144.059</pesoL>
+          <pesoB>150.459</pesoB>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <indPag>0</indPag>
+          <tPag>99</tPag>
+          <xPag>Negociação Futura</xPag>
+          <vPag>108000.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infAdFisco>MD-5:94DBB831B0F3C67A412EAC4010EC561F</infAdFisco>
+        <infCpl>20250007757-9  Obra: Livraria da Vila - Paulista  situada Av. Paulista, 1063 - Jardim Paulista, Sao Paulo - SP, 01311-200 | Loja TerreoEND. ENTREGA: AV. PAULISTA, 1063 / SAO PAULO / SAO PAULO       CEP: 01311200   UF: SP    Nro.Ped.: 019517 Nota de Remmesa referente a nota de Simples Faturamento No. 000017647</infCpl>
+      </infAdic>
+      <infRespTec>
+        <CNPJ>53113791000122</CNPJ>
+        <xContato>Rodrigo de Almeida Sartorio</xContato>
+        <email>resp_tecnico_dfe_protheus@totvs.com.br</email>
+        <fone>1128593904</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251126399236000136550010000181231389448249">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>s3OXiYqpcLKod6fG+6cCWZnjug0=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>lm4QX7mPGtHXwVr2+snQQZmT2g/j9PdzZPqShlwZM/2Ev2Yf7AgdL838Dbx2+D9BvsSt+7LGO7JwvjPMG0ItaCYsRITJNQC4dOZ6uget0gnZLCtwDEd5kBYOcEkgDGMQAy/sMjsSGt1xI+kSx+uD7rERQUA51t9Cc9MuNdloXhiAUh9uctlxvT9ecvJVLT29cdc3B9nv9BIOB6G1S9hDBv9y3gUr2xsnuPzEv2ZsiGsgmH/bUGEgT2b98KJujBPGOwFdrmricBuWHe8RGeJnf0eOL02VhrDOHrx4OcyGmfpZRj5U1KgaxrjAS/Uk53n3FwwojWADwNpfTwYOYhleWw==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt Id="Id135253443076719">
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251126399236000136550010000181231389448249</chNFe>
+      <dhRecbto>2025-11-11T18:37:31-03:00</dhRecbto>
+      <nProt>135253443076719</nProt>
+      <digVal>s3OXiYqpcLKod6fG+6cCWZnjug0=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

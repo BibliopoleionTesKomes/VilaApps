@@ -1,0 +1,368 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe versao="4.00" Id="NFe31251103447983000105550040008411841858867536">
+      <ide>
+        <cUF>31</cUF>
+        <cNF>85886753</cNF>
+        <natOp>CONTA E ORDEM ENTREP</natOp>
+        <mod>55</mod>
+        <serie>4</serie>
+        <nNF>841184</nNF>
+        <dhEmi>2025-11-18T05:51:00-03:00</dhEmi>
+        <dhSaiEnt>2025-11-18T05:51:00-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>2</idDest>
+        <cMunFG>3170206</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>6</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>0</indPres>
+        <procEmi>0</procEmi>
+        <verProc>12.1.2410 | 3.0</verProc>
+      </ide>
+      <emit>
+        <CNPJ>03447983000105</CNPJ>
+        <xNome>SUPPORTE ARMAZ VENDAS E LOG LTDA</xNome>
+        <xFant>SUPPORTE LOGISTICA - MG MATRIZ</xFant>
+        <enderEmit>
+          <xLgr>RODOVIA BR</xLgr>
+          <nro>365</nro>
+          <xCpl>KM 622</xCpl>
+          <xBairro>ALVORADA</xBairro>
+          <cMun>3170206</cMun>
+          <xMun>UBERLANDIA</xMun>
+          <UF>MG</UF>
+          <CEP>38407180</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>3432289510</fone>
+        </enderEmit>
+        <IE>7020533260060</IE>
+        <IM>13176000</IM>
+        <CNAE>5211701</CNAE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962001777</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA</xNome>
+        <enderDest>
+          <xLgr>AL TERRACOTA</xLgr>
+          <nro>545</nro>
+          <xCpl>LOJA 1082 ANDAR PISO 1</xCpl>
+          <xBairro>CERAMICA</xBairro>
+          <cMun>3548807</cMun>
+          <xMun>SAO CAETANO DO SUL</xMun>
+          <UF>SP</UF>
+          <CEP>09531190</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>3432222222</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>636436426117</IE>
+        <email>cleiton.campos@supplog.com;</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>TERCFK33</cProd>
+          <cEAN>7896192356741</cEAN>
+          <xProd>JGS BRINQ CARTON  POKEMON ME02  BLISTER UNITARIO FOGO FANTASMAGORICO</xProd>
+          <NCM>95030039</NCM>
+          <cBenef />
+          <CFOP>6923</CFOP>
+          <uCom>CX</uCom>
+          <qCom>2.0000</qCom>
+          <vUnCom>180.0000000000</vUnCom>
+          <vProd>360.00</vProd>
+          <cEANTrib>7896192356741</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>2.0000</qTrib>
+          <vUnTrib>180.0000000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>4</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPITrib>
+              <CST>49</CST>
+              <vBC>0</vBC>
+              <pIPI>0</pIPI>
+              <vIPI>0</vIPI>
+            </IPITrib>
+          </IPI>
+          <PIS>
+            <PISOutr>
+              <CST>99</CST>
+              <vBC>0</vBC>
+              <pPIS>0</pPIS>
+              <vPIS>0</vPIS>
+            </PISOutr>
+          </PIS>
+          <COFINS>
+            <COFINSOutr>
+              <CST>99</CST>
+              <vBC>0</vBC>
+              <pCOFINS>0</pCOFINS>
+              <vCOFINS>0</vCOFINS>
+            </COFINSOutr>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>TERCFK32</cProd>
+          <cEAN>7896192356710</cEAN>
+          <xProd>JGS BRINQ CARTON POKEMON ME02  BOOSTER (CX COM 144 UN) FOGO FANTASMAGORICO</xProd>
+          <NCM>95030039</NCM>
+          <cBenef />
+          <CFOP>6923</CFOP>
+          <uCom>CX</uCom>
+          <qCom>2.0000</qCom>
+          <vUnCom>1080.0000000000</vUnCom>
+          <vProd>2160.00</vProd>
+          <cEANTrib>7896192356710</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>2.0000</qTrib>
+          <vUnTrib>1080.0000000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>4</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPITrib>
+              <CST>49</CST>
+              <vBC>0</vBC>
+              <pIPI>0</pIPI>
+              <vIPI>0</vIPI>
+            </IPITrib>
+          </IPI>
+          <PIS>
+            <PISOutr>
+              <CST>99</CST>
+              <vBC>0</vBC>
+              <pPIS>0</pPIS>
+              <vPIS>0</vPIS>
+            </PISOutr>
+          </PIS>
+          <COFINS>
+            <COFINSOutr>
+              <CST>99</CST>
+              <vBC>0</vBC>
+              <pCOFINS>0</pCOFINS>
+              <vCOFINS>0</vCOFINS>
+            </COFINSOutr>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="3">
+        <prod>
+          <cProd>TERCFJX8</cProd>
+          <cEAN>7896192356789</cEAN>
+          <xProd>JGS BRINQ CARTON  POKEMON ME02 BLISTER QUADRUPLO  FOGO FANTASMAGORICO</xProd>
+          <NCM>95030039</NCM>
+          <cBenef />
+          <CFOP>6923</CFOP>
+          <uCom>CX</uCom>
+          <qCom>3.0000</qCom>
+          <vUnCom>360.6000000000</vUnCom>
+          <vProd>1081.80</vProd>
+          <cEANTrib>7896192356789</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>3.0000</qTrib>
+          <vUnTrib>360.6000000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>4</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPITrib>
+              <CST>49</CST>
+              <vBC>0</vBC>
+              <pIPI>0</pIPI>
+              <vIPI>0</vIPI>
+            </IPITrib>
+          </IPI>
+          <PIS>
+            <PISOutr>
+              <CST>99</CST>
+              <vBC>0</vBC>
+              <pPIS>0</pPIS>
+              <vPIS>0</vPIS>
+            </PISOutr>
+          </PIS>
+          <COFINS>
+            <COFINSOutr>
+              <CST>99</CST>
+              <vBC>0</vBC>
+              <pCOFINS>0</pCOFINS>
+              <vCOFINS>0</vCOFINS>
+            </COFINSOutr>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="4">
+        <prod>
+          <cProd>TERCFJXB</cProd>
+          <cEAN>7896192356765</cEAN>
+          <xProd>JGS BRINQ CARTON - POKEMON ME02 - BLISTER TRIPLO - FOGO FANTASMAGORICO</xProd>
+          <NCM>95030039</NCM>
+          <cBenef />
+          <CFOP>6923</CFOP>
+          <uCom>CX</uCom>
+          <qCom>6.0000</qCom>
+          <vUnCom>276.8400000000</vUnCom>
+          <vProd>1661.04</vProd>
+          <cEANTrib>7896192356765</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>6.0000</qTrib>
+          <vUnTrib>276.8400000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>4</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPITrib>
+              <CST>49</CST>
+              <vBC>0</vBC>
+              <pIPI>0</pIPI>
+              <vIPI>0</vIPI>
+            </IPITrib>
+          </IPI>
+          <PIS>
+            <PISOutr>
+              <CST>99</CST>
+              <vBC>0</vBC>
+              <pPIS>0</pPIS>
+              <vPIS>0</vPIS>
+            </PISOutr>
+          </PIS>
+          <COFINS>
+            <COFINSOutr>
+              <CST>99</CST>
+              <vBC>0</vBC>
+              <pCOFINS>0</pCOFINS>
+              <vCOFINS>0</vCOFINS>
+            </COFINSOutr>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0</vBC>
+          <vICMS>0</vICMS>
+          <vICMSDeson>0</vICMSDeson>
+          <vFCPUFDest>0</vFCPUFDest>
+          <vICMSUFDest>0</vICMSUFDest>
+          <vICMSUFRemet>0</vICMSUFRemet>
+          <vFCP>0</vFCP>
+          <vBCST>0</vBCST>
+          <vST>0</vST>
+          <vFCPST>0</vFCPST>
+          <vFCPSTRet>0</vFCPSTRet>
+          <vProd>5262.84</vProd>
+          <vFrete>0</vFrete>
+          <vSeg>0</vSeg>
+          <vDesc>0</vDesc>
+          <vII>0</vII>
+          <vIPI>0</vIPI>
+          <vIPIDevol>0</vIPIDevol>
+          <vPIS>0</vPIS>
+          <vCOFINS>0</vCOFINS>
+          <vOutro>0</vOutro>
+          <vNF>5262.84</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+        <transporta>
+          <CNPJ>26295146000448</CNPJ>
+          <xNome>SUPPLOG ARMAZENS GERAIS E ENT DA ZFM LTDA</xNome>
+          <IE>0035215590028</IE>
+          <xEnder>RODOVIA BR 365 (SAIDA PATROCINIO),SN</xEnder>
+          <xMun>UBERLANDIA</xMun>
+          <UF>MG</UF>
+        </transporta>
+        <vol>
+          <qVol>13</qVol>
+          <pesoL>14.180</pesoL>
+          <pesoB>17.770</pesoB>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <indPag>0</indPag>
+          <tPag>15</tPag>
+          <vPag>5262.84</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>PAGAMENTO DO ICMS SERA DE RESPONSABILIDADE DO ARMAZEM GERAL | REMESSA POR CONTA E ORDEM REFERENTE A NF: 261710 SERIE: 10 EMISSAO:17/11/2025 * NOTA FISCAL SEM VALOR COMERCIAL * |</infCpl>
+      </infAdic>
+      <infRespTec>
+        <CNPJ>53113791000122</CNPJ>
+        <xContato>Rodrigo de Almeida Sartorio</xContato>
+        <email>resp_tecnico_dfe_protheus@totvs.com.br</email>
+        <fone>1128593904</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe31251103447983000105550040008411841858867536">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>0UZrXD2vQVuO9ggSpjSf+b+GMLs=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>UvOqlKQZ52ioLVG75AEL3IGEZD5EAQIxgnkxetaTI6b5+Rr/vsDJu9MSbWxqO+9u+RdWAnbr+zi/An3tNJguJr4s09nwlQm/sAEqzeanYS76+F5KCmEU3Cnzr0RUFIQEfEZqbxcU+FVIG5EW+rA7FyjRKzDW1BHiJRLonU8z9bMngjgTl0AFy09qNPuya8m8+MTAkL4xlLasQC82t1LdFF1Mp20fWd5OeKzONScBCiMyCmRLW1Le15xgMMqS81Pl5oBie1hQSuzXSOXNWWm+Qcjsu3uURg346ltVZ/9vAt6qjcgBNdnRP8+n0khhfEZ6jXDo3qr4b9in8HyqVexbLQ==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt>
+      <tpAmb>1</tpAmb>
+      <verAplic>J-3.3.18</verAplic>
+      <chNFe>31251103447983000105550040008411841858867536</chNFe>
+      <dhRecbto>2025-11-18T06:14:02-03:00</dhRecbto>
+      <nProt>131257084743968</nProt>
+      <digVal>0UZrXD2vQVuO9ggSpjSf+b+GMLs=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

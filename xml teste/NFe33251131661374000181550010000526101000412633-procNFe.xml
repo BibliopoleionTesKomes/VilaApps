@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe versao="4.00" Id="NFe33251131661374000181550010000526101000412633">
+      <ide>
+        <cUF>33</cUF>
+        <cNF>00041263</cNF>
+        <natOp>Consignacao - Saida</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>52610</nNF>
+        <dhEmi>2025-11-12T10:19:50-03:00</dhEmi>
+        <tpNF>1</tpNF>
+        <idDest>2</idDest>
+        <cMunFG>3304557</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>3</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>9</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>NF - eletronica.com</verProc>
+      </ide>
+      <emit>
+        <CNPJ>31661374000181</CNPJ>
+        <xNome>LIVRARIA E EDITORA LUMEN JURIS LTDA EPP</xNome>
+        <enderEmit>
+          <xLgr>RUA NEWTON PRADO</xLgr>
+          <nro>43</nro>
+          <xBairro>VASCO DA GAMA</xBairro>
+          <cMun>3304557</cMun>
+          <xMun>RIO DE JANEIRO</xMun>
+          <UF>RJ</UF>
+          <CEP>20930445</CEP>
+          <fone>2139334004</fone>
+        </enderEmit>
+        <IE>77297936</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962002072</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA - PATIO PAULISTA</xNome>
+        <enderDest>
+          <xLgr>RUA TREZE DE MAIO</xLgr>
+          <nro>1933</nro>
+          <xCpl>LOJA 422</xCpl>
+          <xBairro>BELA VISTA</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>01327001</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1142106902</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>131405253111</IE>
+        <email>fiscal@livrariadavila.com.br.</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>9788551937266</cProd>
+          <cEAN>9788551937266</cEAN>
+          <xProd>Abusos e Arbitrariedades da Tributacao Federal - 2026</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>6917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>80.0000</qCom>
+          <vUnCom>155.000000</vUnCom>
+          <vProd>12400.00</vProd>
+          <cEANTrib>9788551937266</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>80.0000</qTrib>
+          <vUnTrib>155.000000</vUnTrib>
+          <vDesc>6200.00</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0.00</vBC>
+          <vICMS>0.00</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>12400.00</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>6200.00</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>0.00</vPIS>
+          <vCOFINS>0.00</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>6200.00</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+        <transporta>
+          <CNPJ>71698476000277</CNPJ>
+          <xNome>TRANSPO EXPRESS</xNome>
+          <IE>ISENTO</IE>
+        </transporta>
+        <vol>
+          <qVol>3</qVol>
+          <esp>CXS</esp>
+          <pesoL>53.600</pesoL>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <tPag>90</tPag>
+          <vPag>0.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>Qtde Produtos: 80  EVENTO DIA 28/11/2025 PROCON-RJ:Tel. 151,  end. Av. Rio Branco, 25 - 5 andar, Centro-RJ. CODECON: Tel. 0800 282 7060, end. R. da Alfandega, 8 - Centro-RJ.</infCpl>
+      </infAdic>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe33251131661374000181550010000526101000412633">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>gitmarEDzd9/smhnCTuTsncXmxY=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>O/rt/pPSWIH+ttTMFUp30QLseBzydvmp0ICAUtd86lLbKPYNz5ebjRipcuO5aydQAeqhhqOVXIbyJiQs1YQiln5Q6Bb1L4b0/3ZpDriCL8Hy8VdKqpXqCkuqqNUElHW6QFEoYu9jGtZridNcbEPrELg0g7TjzTbnJC/m3FB8T0XPZwAH1tQiSC6jraaeC5nvLO/DWLaN8c1C1Gx+V+ylz18xceuwdakEdAo9IrLub60GCcuDTRoKw+MZFZkUPHp1zCoLEpEDFAL9dg+yc+bHNuFGQLNrNnli/mYP2cMyzUeAHFqb4MtfNozZlFwmcMl6G84CXgCKWG9cwXKIO7e4Zw==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt Id="ID233250443147903">
+      <tpAmb>1</tpAmb>
+      <verAplic>SVRS2511071706DR</verAplic>
+      <chNFe>33251131661374000181550010000526101000412633</chNFe>
+      <dhRecbto>2025-11-12T10:20:04-03:00</dhRecbto>
+      <nProt>233250443147903</nProt>
+      <digVal>gitmarEDzd9/smhnCTuTsncXmxY=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

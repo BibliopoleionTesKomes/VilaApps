@@ -1,0 +1,206 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe33251146696036000152550010000077521719296715" versao="4.00">
+      <ide>
+        <cUF>33</cUF>
+        <cNF>71929671</cNF>
+        <natOp>Venda Merc.Adq/Rec.de Terceiros, Remet. em Consig.Mercantil</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>7752</nNF>
+        <dhEmi>2025-11-18T10:50:29-03:00</dhEmi>
+        <dhSaiEnt>2025-11-18T10:50:29-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>2</idDest>
+        <cMunFG>3303302</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>5</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>9</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>Omie-4.0.181115110</verProc>
+      </ide>
+      <emit>
+        <CNPJ>46696036000152</CNPJ>
+        <xNome>BKJ1611 - BIBLIA KING JAMES LTDA</xNome>
+        <xFant>BV - BIBLIA E LIVROS</xFant>
+        <enderEmit>
+          <xLgr>R VISCONDE DE ITABORAI</xLgr>
+          <nro>347</nro>
+          <xCpl>LOJA 01 BLOCO A</xCpl>
+          <xBairro>CENTRO</xBairro>
+          <cMun>3303302</cMun>
+          <xMun>Niteroi</xMun>
+          <UF>RJ</UF>
+          <CEP>24030094</CEP>
+          <cPais>1058</cPais>
+          <fone>21988894341</fone>
+        </enderEmit>
+        <IE>12496656</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962000967</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA</xNome>
+        <enderDest>
+          <xLgr>AVENIDA HIGIENOPOLIS</xLgr>
+          <nro>698</nro>
+          <xCpl>LOJA 2009/2010 / 2011</xCpl>
+          <xBairro>HIGIENOPOLIS</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>Sao Paulo</xMun>
+          <UF>SP</UF>
+          <CEP>01238000</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1130964491</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>146021127110</IE>
+        <email>ivan@livrariadavila.com.br, fiscal@livrariadavila.com.br</email>
+      </dest>
+      <autXML>
+        <CNPJ>03969328000109</CNPJ>
+      </autXML>
+      <det nItem="1">
+        <prod>
+          <cProd>BL-057</cProd>
+          <cEAN>9788581581880</cEAN>
+          <xProd>BIBLIA KING JAMES COM ESTUDO HOLMAN PRETO/MARROM (ISBN:9788581581880)</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>6114</CFOP>
+          <uCom>UN</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>424.00</vUnCom>
+          <vProd>424.00</vProd>
+          <cEANTrib>9788581581880</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>424.00</vUnTrib>
+          <vDesc>212.00</vDesc>
+          <indTot>1</indTot>
+          <xPed>95712</xPed>
+          <nItemPed>0</nItemPed>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0.00</vBC>
+          <vICMS>0.00</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>424.00</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>212.00</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>0.00</vPIS>
+          <vCOFINS>0.00</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>212.00</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>9</modFrete>
+      </transp>
+      <cobr>
+        <fat>
+          <nFat>7752</nFat>
+          <vOrig>212.00</vOrig>
+          <vDesc>0.00</vDesc>
+          <vLiq>212.00</vLiq>
+        </fat>
+        <dup>
+          <nDup>001</nDup>
+          <dVenc>2026-02-16</dVenc>
+          <vDup>212.00</vDup>
+        </dup>
+      </cobr>
+      <pag>
+        <detPag>
+          <indPag>1</indPag>
+          <tPag>15</tPag>
+          <vPag>212.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>Email do Destinatario: ivan@livrariadavila.com.br; Inf. Contribuinte: PEDIDO: 954712 SIMPLES FATURAMENTO MERCADORIAS EM CONSIGNACAO REFERENTE NF 6661 N/S No: 125903</infCpl>
+      </infAdic>
+      <compra>
+        <xPed>954712</xPed>
+      </compra>
+      <infRespTec>
+        <CNPJ>18511742000147</CNPJ>
+        <xContato>Rodrigo Angeline</xContato>
+        <email>nfe@omie.com.br</email>
+        <fone>1151718888</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe33251146696036000152550010000077521719296715">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>1/E+6qf95RZaapaHzPH5iyybkNM=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>NY6y9aDpQUD7fdk8S4cvLnuwkJuM6bmZ6g1EeiM3bu7qp/j6Wwjyva1rDjgX7kpCgKgsqNrycOpURZhWn3kZpSYTIhq/vQhkaeM2vUXWHYevloTvSJal9HeUPCm8E+kbrjSP4CJXdHNi6mIpKa43sJJQcObMCp95IwjW64pTuKf3VYr4YuFpFs/N3dqnt7l9K9A8JX1Dyg0/xIgZfnfgposKg/fMjLoxpthirvB9XdaivYHjTs1iep9AXASiOXjaVt1eacXHh8GbDPlR/fVeb417x18twhS+2Ptxda6Y0KknLdVyMcaYdSVBREKubeFnluIK++VFXdVr40YEMdhMqA==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infProt>
+      <tpAmb>1</tpAmb>
+      <verAplic>SVRS2511121006DR</verAplic>
+      <chNFe>33251146696036000152550010000077521719296715</chNFe>
+      <dhRecbto>2025-11-18T10:51:02-03:00</dhRecbto>
+      <nProt>233250453435945</nProt>
+      <digVal>1/E+6qf95RZaapaHzPH5iyybkNM=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

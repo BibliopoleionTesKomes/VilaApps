@@ -1,0 +1,641 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe versao="4.00" Id="NFe35251117837562000197550010000013461000021108">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>00002110</cNF>
+        <natOp>Venda p/ entrega futura</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>1346</nNF>
+        <dhEmi>2025-11-17T13:22:01-03:00</dhEmi>
+        <dhSaiEnt>2025-11-17T13:34:31-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3550308</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>8</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>9</indPres>
+        <procEmi>0</procEmi>
+        <verProc>07/10/2021 09:48</verProc>
+      </ide>
+      <emit>
+        <CNPJ>17837562000197</CNPJ>
+        <xNome>NPL MARCENARIA LTDA EPP</xNome>
+        <xFant>NPL MARCENARIA 1569</xFant>
+        <enderEmit>
+          <xLgr>AVENIDA CARLOS KLEIN, 269</xLgr>
+          <nro>269</nro>
+          <xBairro>J SOCORRO</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>04766020</CEP>
+          <cPais>1058</cPais>
+          <xPais>Brasil</xPais>
+          <fone>55483057</fone>
+        </enderEmit>
+        <IE>142237765110</IE>
+        <CRT>1</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962003125</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA</xNome>
+        <enderDest>
+          <xLgr>AV PAULISTA</xLgr>
+          <nro>1063</nro>
+          <xCpl>TERREO ED J SAFRA</xCpl>
+          <xBairro>BELA VISTA</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>Sao Paulo</xMun>
+          <UF>SP</UF>
+          <CEP>01311200</CEP>
+          <cPais>1058</cPais>
+          <xPais>Brasil</xPais>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>153188645110</IE>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>789018</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>MAR01A - ESTANTE ALTA</xProd>
+          <NCM>94036000</NCM>
+          <CFOP>5116</CFOP>
+          <uCom>CJ</uCom>
+          <qCom>4.4000</qCom>
+          <vUnCom>3720.4000000000</vUnCom>
+          <vProd>16369.76</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>CJ</uTrib>
+          <qTrib>4.4000</qTrib>
+          <vUnTrib>3720.4000000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMSSN102>
+              <orig>0</orig>
+              <CSOSN>102</CSOSN>
+            </ICMSSN102>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>08</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>08</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>789018</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>MAR01B - ESTANTE ALTA</xProd>
+          <NCM>94036000</NCM>
+          <CFOP>5116</CFOP>
+          <uCom>CJ</uCom>
+          <qCom>1.2000</qCom>
+          <vUnCom>4141.8000000000</vUnCom>
+          <vProd>4970.16</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>CJ</uTrib>
+          <qTrib>1.2000</qTrib>
+          <vUnTrib>4141.8000000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMSSN102>
+              <orig>0</orig>
+              <CSOSN>102</CSOSN>
+            </ICMSSN102>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>08</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>08</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="3">
+        <prod>
+          <cProd>789018</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>MAR01F - HIDRANTE</xProd>
+          <NCM>94036000</NCM>
+          <CFOP>5116</CFOP>
+          <uCom>CJ</uCom>
+          <qCom>0.1000</qCom>
+          <vUnCom>4038.9200000000</vUnCom>
+          <vProd>403.89</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>CJ</uTrib>
+          <qTrib>0.1000</qTrib>
+          <vUnTrib>4038.9200000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMSSN102>
+              <orig>0</orig>
+              <CSOSN>102</CSOSN>
+            </ICMSSN102>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>08</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>08</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="4">
+        <prod>
+          <cProd>789018</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>MAR02A - ESTANTE ALTA</xProd>
+          <NCM>94036000</NCM>
+          <CFOP>5116</CFOP>
+          <uCom>CJ</uCom>
+          <qCom>1.2000</qCom>
+          <vUnCom>3430.3400000000</vUnCom>
+          <vProd>4116.41</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>CJ</uTrib>
+          <qTrib>1.2000</qTrib>
+          <vUnTrib>3430.3400000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMSSN102>
+              <orig>0</orig>
+              <CSOSN>102</CSOSN>
+            </ICMSSN102>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>08</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>08</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="5">
+        <prod>
+          <cProd>789018</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>MAR02B - ESTANTE ALTA</xProd>
+          <NCM>94036000</NCM>
+          <CFOP>5116</CFOP>
+          <uCom>CJ</uCom>
+          <qCom>0.4000</qCom>
+          <vUnCom>3660.2000000000</vUnCom>
+          <vProd>1464.08</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>CJ</uTrib>
+          <qTrib>0.4000</qTrib>
+          <vUnTrib>3660.2000000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMSSN102>
+              <orig>0</orig>
+              <CSOSN>102</CSOSN>
+            </ICMSSN102>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>08</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>08</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="6">
+        <prod>
+          <cProd>789018</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>MAR03A - ESTANTE ALTA</xProd>
+          <NCM>94036000</NCM>
+          <CFOP>5116</CFOP>
+          <uCom>CJ</uCom>
+          <qCom>0.2000</qCom>
+          <vUnCom>4151.6500000000</vUnCom>
+          <vProd>830.33</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>CJ</uTrib>
+          <qTrib>0.2000</qTrib>
+          <vUnTrib>4151.6500000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMSSN102>
+              <orig>0</orig>
+              <CSOSN>102</CSOSN>
+            </ICMSSN102>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>08</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>08</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="7">
+        <prod>
+          <cProd>789018</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>MAR04A CANTO</xProd>
+          <NCM>94036000</NCM>
+          <CFOP>5116</CFOP>
+          <uCom>CJ</uCom>
+          <qCom>0.1000</qCom>
+          <vUnCom>7140.8900000000</vUnCom>
+          <vProd>714.09</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>CJ</uTrib>
+          <qTrib>0.1000</qTrib>
+          <vUnTrib>7140.8900000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMSSN102>
+              <orig>0</orig>
+              <CSOSN>102</CSOSN>
+            </ICMSSN102>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>08</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>08</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="8">
+        <prod>
+          <cProd>789018</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>MAR04B CANTO</xProd>
+          <NCM>94036000</NCM>
+          <CFOP>5116</CFOP>
+          <uCom>CJ</uCom>
+          <qCom>0.1000</qCom>
+          <vUnCom>8482.8200000000</vUnCom>
+          <vProd>848.28</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>CJ</uTrib>
+          <qTrib>0.1000</qTrib>
+          <vUnTrib>8482.8200000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMSSN102>
+              <orig>0</orig>
+              <CSOSN>102</CSOSN>
+            </ICMSSN102>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>08</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>08</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="9">
+        <prod>
+          <cProd>789018</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>MAR04C CANTO</xProd>
+          <NCM>94036000</NCM>
+          <CFOP>5116</CFOP>
+          <uCom>CJ</uCom>
+          <qCom>0.1000</qCom>
+          <vUnCom>7402.4900000000</vUnCom>
+          <vProd>740.25</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>CJ</uTrib>
+          <qTrib>0.1000</qTrib>
+          <vUnTrib>7402.4900000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMSSN102>
+              <orig>0</orig>
+              <CSOSN>102</CSOSN>
+            </ICMSSN102>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>08</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>08</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="10">
+        <prod>
+          <cProd>789018</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>MAR04D CANTO</xProd>
+          <NCM>94036000</NCM>
+          <CFOP>5116</CFOP>
+          <uCom>CJ</uCom>
+          <qCom>0.1000</qCom>
+          <vUnCom>6371.4200000000</vUnCom>
+          <vProd>637.14</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>CJ</uTrib>
+          <qTrib>0.1000</qTrib>
+          <vUnTrib>6371.4200000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMSSN102>
+              <orig>0</orig>
+              <CSOSN>102</CSOSN>
+            </ICMSSN102>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>08</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>08</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="11">
+        <prod>
+          <cProd>789018</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>MAR04E CANTO</xProd>
+          <NCM>94036000</NCM>
+          <CFOP>5116</CFOP>
+          <uCom>CJ</uCom>
+          <qCom>0.1000</qCom>
+          <vUnCom>6960.2900000000</vUnCom>
+          <vProd>696.03</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>CJ</uTrib>
+          <qTrib>0.1000</qTrib>
+          <vUnTrib>6960.2900000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMSSN102>
+              <orig>0</orig>
+              <CSOSN>102</CSOSN>
+            </ICMSSN102>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>08</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>08</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="12">
+        <prod>
+          <cProd>789018</cProd>
+          <cEAN>SEM GTIN</cEAN>
+          <xProd>MAR04F CANTO</xProd>
+          <NCM>94036000</NCM>
+          <CFOP>5116</CFOP>
+          <uCom>CJ</uCom>
+          <qCom>0.1000</qCom>
+          <vUnCom>7765.8900000000</vUnCom>
+          <vProd>776.59</vProd>
+          <cEANTrib>SEM GTIN</cEANTrib>
+          <uTrib>CJ</uTrib>
+          <qTrib>0.1000</qTrib>
+          <vUnTrib>7765.8900000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMSSN102>
+              <orig>0</orig>
+              <CSOSN>102</CSOSN>
+            </ICMSSN102>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>08</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>08</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0.00</vBC>
+          <vICMS>0.00</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>32567.01</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>0.00</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>0.00</vPIS>
+          <vCOFINS>0.00</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>32567.01</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>9</modFrete>
+        <vol>
+          <qVol>8</qVol>
+          <esp>VOLUME</esp>
+          <marca>-o-</marca>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <tPag>90</tPag>
+          <vPag>0.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>EMPRESA OPTANTE PELO SIMPLES NACIONAL CONF LEI COMPL 123/2006NF DE SIMPLES FATURAMENTO N 1333 DE 02/10/25 NO VALORDE r$ 107.000,00</infCpl>
+      </infAdic>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251117837562000197550010000013461000021108">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>ZDeArxfIU2J0BzomXWp0/uF9WuI=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>Sdf1yjBvogl8owajCaVqP3ne7b1SkNmRlyAa/GO0cnFBeMj3lNA4p7QndMKuODtQWCU46UYdLBchZAEt0n1qd4SbVqhEGtN5kHt6mNlOxjRXWheK8/FLfqPcrKB2FWCji+PNo6X0M4ySZ7nKMPCGRhlxZpn8qDI69RuIwa7Xklaiy+bwHg+AkG2AeRPjWyT1tpjfChuCUaSs5ULT1CzsQKb29ehr2G1BBho5SuraQtQUPOqm2pSUJR4UGwY/73NIkf8b9WfFFYdB/7Y8I2t7+cpKN4Az1Nuv0y+iKfaspu+Wf1HdB7f9go0So7l++2/TaCTCeEXtSu87VGl/0mJ8fA==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt Id="Id135253523555520">
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251117837562000197550010000013461000021108</chNFe>
+      <dhRecbto>2025-11-17T13:34:33-03:00</dhRecbto>
+      <nProt>135253523555520</nProt>
+      <digVal>ZDeArxfIU2J0BzomXWp0/uF9WuI=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

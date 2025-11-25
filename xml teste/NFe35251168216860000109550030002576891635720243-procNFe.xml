@@ -1,0 +1,241 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe35251168216860000109550030002576891635720243" versao="4.00">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>63572024</cNF>
+        <natOp>REMESSA DE MERC. EM CONSIGNACAO MERCANTIL OU INDUSTRIAL</natOp>
+        <mod>55</mod>
+        <serie>3</serie>
+        <nNF>257689</nNF>
+        <dhEmi>2025-11-19T09:34:00-03:00</dhEmi>
+        <dhSaiEnt>2025-11-19T09:34:00-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3525003</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>3</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>0</indPres>
+        <procEmi>0</procEmi>
+        <verProc>12.1.2410 | 3.0</verProc>
+      </ide>
+      <emit>
+        <CNPJ>68216860000109</CNPJ>
+        <xNome>Ciranda Cultural Editora e Distribuidora Ltda.</xNome>
+        <xFant>Ciranda Cultural</xFant>
+        <enderEmit>
+          <xLgr>Rua Jose Albino Pereira</xLgr>
+          <nro>54</nro>
+          <xBairro>Jardim Alvorada</xBairro>
+          <cMun>3525003</cMun>
+          <xMun>Jandira</xMun>
+          <UF>SP</UF>
+          <CEP>06612001</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>01137619500</fone>
+        </enderEmit>
+        <IE>398136177113</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962000886</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA</xNome>
+        <enderDest>
+          <xLgr>AV JUSCELINO KUBITSCHEK</xLgr>
+          <nro>2041</nro>
+          <xBairro>VILA NOVA CONCEICAO</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>04543011</CEP>
+          <xPais>BRASIL</xPais>
+          <fone>01131526220</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>146005488119</IE>
+        <email>fiscal@livrariadavila.com.br</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>9786526127698</cProd>
+          <cEAN>9786526127698</cEAN>
+          <xProd>Monkakitos - Raeko e a pipa</xProd>
+          <NCM>49030000</NCM>
+          <cBenef />
+          <CFOP>5917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>3.0000</qCom>
+          <vUnCom>29.90000000</vUnCom>
+          <vProd>89.70</vProd>
+          <cEANTrib>9786526127698</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>3.0000</qTrib>
+          <vUnTrib>29.90000000</vUnTrib>
+          <vDesc>44.85</vDesc>
+          <indTot>1</indTot>
+          <xPed>REF ITENS A MAI</xPed>
+          <nItemPed>1</nItemPed>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>9786526127674</cProd>
+          <cEAN>9786526127674</cEAN>
+          <xProd>Monkakitos - Quero-Quero</xProd>
+          <NCM>49030000</NCM>
+          <cBenef />
+          <CFOP>5917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>3.0000</qCom>
+          <vUnCom>29.90000000</vUnCom>
+          <vProd>89.70</vProd>
+          <cEANTrib>9786526127674</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>3.0000</qTrib>
+          <vUnTrib>29.90000000</vUnTrib>
+          <vDesc>44.85</vDesc>
+          <indTot>1</indTot>
+          <xPed>REF ITENS A MAI</xPed>
+          <nItemPed>2</nItemPed>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0</vBC>
+          <vICMS>0</vICMS>
+          <vICMSDeson>0</vICMSDeson>
+          <vFCPUFDest>0</vFCPUFDest>
+          <vICMSUFDest>0</vICMSUFDest>
+          <vICMSUFRemet>0</vICMSUFRemet>
+          <vFCP>0</vFCP>
+          <vBCST>0</vBCST>
+          <vST>0</vST>
+          <vFCPST>0</vFCPST>
+          <vFCPSTRet>0</vFCPSTRet>
+          <vProd>179.40</vProd>
+          <vFrete>0</vFrete>
+          <vSeg>0</vSeg>
+          <vDesc>89.70</vDesc>
+          <vII>0</vII>
+          <vIPI>0</vIPI>
+          <vIPIDevol>0</vIPIDevol>
+          <vPIS>0</vPIS>
+          <vCOFINS>0</vCOFINS>
+          <vOutro>0</vOutro>
+          <vNF>89.70</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>9</modFrete>
+        <vol>
+          <qVol>1</qVol>
+          <esp>CAIXAS</esp>
+          <pesoL>1.182</pesoL>
+          <pesoB>1.582</pesoB>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <indPag>0</indPag>
+          <tPag>99</tPag>
+          <xPag>Negociação Futura</xPag>
+          <vPag>89.70</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>Ped. Cliente: REF ITENS A MAIS NA NF 257071 APENAS EMISSAO #CiCloud: 727430 REF ITENS A MAIS NA NF 257071 - APENAS EMISSAOAos Cuidados de: LIVRARIA DA VILA LTDA Endereco:  -  -  -  -  -  Pedido(s): AABMW5/ IPI Imune conf. Art.18 do RIPI. ICMS nao incidente conf. Art.7 inciso XIII do RICMS/SP.</infCpl>
+      </infAdic>
+      <infRespTec>
+        <CNPJ>53113791000122</CNPJ>
+        <xContato>Rodrigo de Almeida Sartorio</xContato>
+        <email>resp_tecnico_dfe_protheus@totvs.com.br</email>
+        <fone>1128593904</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251168216860000109550030002576891635720243">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>Xmav1a6lZ8FGBObcGUjgCGKpRn0=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>iifDxf9PgpARfBSk/q0hmD1eJA3VapmMnaJGaUp1iezIBSudIWsKUcxiPSJ2I3dGkHWPmHUw0ipBQW3xGyLUcTRJ109mjwakwHzyke8go2pRLBa21Yvj7SMMLx/qo79TGE6qT6mJxqf2gDJPKo115iR4VpGJpvTAvRVcTEPol6q26Tx8sTbqm4OulBGyiqnnlsRLfutXgU/0qbSmMoMj00Yeevm0D/lbd+ezcej5gdQZnAh38xxfsuPdRxeG38kOMEb3NjlT6gIO0g5MeaT4MMQsKS6mp+Q7F2OMjMat9srzXveqsbEdEAvKDTH1G+p/P+T+TJo9Zd6N6/myWagdgg==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt Id="Id135253552665019">
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251168216860000109550030002576891635720243</chNFe>
+      <dhRecbto>2025-11-19T09:35:04-03:00</dhRecbto>
+      <nProt>135253552665019</nProt>
+      <digVal>Xmav1a6lZ8FGBObcGUjgCGKpRn0=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

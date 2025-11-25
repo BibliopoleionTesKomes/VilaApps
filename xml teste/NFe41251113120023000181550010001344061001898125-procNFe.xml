@@ -1,0 +1,235 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe41251113120023000181550010001344061001898125" versao="4.00">
+      <ide>
+        <cUF>41</cUF>
+        <cNF>00189812</cNF>
+        <natOp>REMESSA EM CONSIGNACAO</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>134406</nNF>
+        <dhEmi>2025-11-18T13:26:35-03:00</dhEmi>
+        <dhSaiEnt>2025-11-18T13:26:35-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>2</idDest>
+        <cMunFG>4106902</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>5</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>9</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>1</verProc>
+      </ide>
+      <emit>
+        <CNPJ>13120023000181</CNPJ>
+        <xNome>APPRIS EDITORA E LIVRARIA - EIRELI -ME</xNome>
+        <enderEmit>
+          <xLgr>Av. Manoel Ribas</xLgr>
+          <nro>2265</nro>
+          <xCpl>S/C</xCpl>
+          <xBairro>Merces</xBairro>
+          <cMun>4106902</cMun>
+          <xMun>CURITIBA</xMun>
+          <UF>PR</UF>
+          <CEP>80810002</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>4131564731</fone>
+        </enderEmit>
+        <IE>9054865004</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962001505</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA</xNome>
+        <enderDest>
+          <xLgr>AV REBOUCAS</xLgr>
+          <nro>3970</nro>
+          <xCpl>LOJA 263</xCpl>
+          <xBairro>PINHEIROS</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>05402918</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1130964490</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>123198759117</IE>
+        <email>ivan@livrariadavila.com.br</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>0018511</cProd>
+          <cEAN>9786525063201</cEAN>
+          <xProd>DUAS VEZES AMOR</xProd>
+          <NCM>49019900</NCM>
+          <cBenef>PR800001</cBenef>
+          <CFOP>6917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>92.000000</vUnCom>
+          <vProd>92.00</vProd>
+          <cEANTrib>9786525063201</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>92.000000</vUnTrib>
+          <vDesc>46.00</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+        <infAdProd>ISBN 9786525063201 Desconto: 46.00</infAdProd>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>0021520</cProd>
+          <cEAN>9786525086095</cEAN>
+          <xProd>SCRIPTS CULTURAIS, GENERO E EMOCOES - PROBLEMATIZANDO GENERO TOMO I</xProd>
+          <NCM>49019900</NCM>
+          <cBenef>PR800001</cBenef>
+          <CFOP>6917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>7.0000</qCom>
+          <vUnCom>76.000000</vUnCom>
+          <vProd>532.00</vProd>
+          <cEANTrib>9786525086095</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>7.0000</qTrib>
+          <vUnTrib>76.000000</vUnTrib>
+          <vDesc>266.00</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+        <infAdProd>ISBN 9786525086095 Desconto: 266.00</infAdProd>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0.00</vBC>
+          <vICMS>0.00</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>624.00</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>312.00</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>0.00</vPIS>
+          <vCOFINS>0.00</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>312.00</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+        <transporta>
+          <CNPJ>71698476000358</CNPJ>
+          <xNome>TRANSPO EXPRESS TRANSPORTES E LOGISTICA LTDA</xNome>
+          <IE>9078810677</IE>
+          <xEnder>MARINGA, 4155 BRCAO F, S/N - ATUBA</xEnder>
+          <xMun>Pinhais</xMun>
+          <UF>PR</UF>
+        </transporta>
+        <vol>
+          <qVol>1</qVol>
+          <esp>VOLUME</esp>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <indPag>0</indPag>
+          <tPag>90</tPag>
+          <vPag>0.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>CONSIGNACAO 954005|PEDIDO DE CONSIGNACAO, PAGTO: 1o ACERTO 30 DIAS, 2o ACERTO 60 DIAS, 3o ACERTO FINAL 90 DIAS. PEDIDO APPRIS NR.: 123033 Natureza de Receita: 903 - Livros, conforme definido no art. 2o da lei no 10.753/03</infCpl>
+      </infAdic>
+      <compra>
+        <xPed>954005</xPed>
+      </compra>
+      <infRespTec>
+        <CNPJ>12674667000159</CNPJ>
+        <xContato>Cristiano Sá Dos Santos</xContato>
+        <email>cristiano@crmtec.com.br</email>
+        <fone>4130793037</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe41251113120023000181550010001344061001898125">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>RfuwxU09+XF6fazoylNVyOTJcxI=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>FQGSxXmGCQtttsectlLgLOVAhiuZ6UGj1TmSZoJLev+ZiLGjOdhSv4gbpmF1ek2Exa/YsGd9fU0OAfRUyz2FYKeeOpTc0vIbbVX6rcWSQ6SIn1Szw7dM4qDyY5DSxGUxcuseSBxT29CmX2Vg/O32epSLmVjcQj8Jiw4yD2RZwOtMk6Q84nH8hhnLgIzbpYeJmYnAOeq8yyDLk4RtFe35hUdEu8rMOR4K+4ZCDQk604aSfY8X+uDcfDA8BaBxv7PM+bR7yqFIf1jxVl2gQ/C3KL9ed4UuXBqoi2V8SKzwEy0ldHsV5Rj6jb3Z+VpcPpCrFK2Bj3tq2Vpn86/c0W4koA==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt Id="ID141250392704300">
+      <tpAmb>1</tpAmb>
+      <verAplic>PR-v4_9_45</verAplic>
+      <chNFe>41251113120023000181550010001344061001898125</chNFe>
+      <dhRecbto>2025-11-18T13:26:51-03:00</dhRecbto>
+      <nProt>141250392704300</nProt>
+      <digVal>RfuwxU09+XF6fazoylNVyOTJcxI=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

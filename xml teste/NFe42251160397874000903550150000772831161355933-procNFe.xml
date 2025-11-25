@@ -1,0 +1,436 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe versao="4.00" Id="NFe42251160397874000903550150000772831161355933">
+      <ide>
+        <cUF>42</cUF>
+        <cNF>16135593</cNF>
+        <natOp>Venda merc.adq.receb.de terceiros</natOp>
+        <mod>55</mod>
+        <serie>15</serie>
+        <nNF>77283</nNF>
+        <dhEmi>2025-11-19T10:18:50-03:00</dhEmi>
+        <dhSaiEnt>2025-11-19T10:18:50-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>2</idDest>
+        <cMunFG>4209102</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>3</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>3</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>Sign@ture EDX</verProc>
+      </ide>
+      <emit>
+        <CNPJ>60397874000903</CNPJ>
+        <xNome>FUJIFILM do Brasil - Joinville</xNome>
+        <xFant>FUJIFILM do Brasil - Joinville</xFant>
+        <enderEmit>
+          <xLgr>AV PLACIDO HUGO DE OLIVEIRA</xLgr>
+          <nro>2398</nro>
+          <xCpl>SETOR FUJI</xCpl>
+          <xBairro>ITINGA</xBairro>
+          <cMun>4209102</cMun>
+          <xMun>JOINVILLE</xMun>
+          <UF>SC</UF>
+          <CEP>89233580</CEP>
+          <cPais>1058</cPais>
+          <xPais>Brasil</xPais>
+          <fone>1141935008</fone>
+        </enderEmit>
+        <IE>260472395</IE>
+        <IEST>824018811117</IEST>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962003044</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA</xNome>
+        <enderDest>
+          <xLgr>AV PAULISTA</xLgr>
+          <nro>1230</nro>
+          <xCpl>L3206/3208</xCpl>
+          <xBairro>BELA VISTA</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>01310901</CEP>
+          <cPais>1058</cPais>
+          <xPais>Brasil</xPais>
+          <fone>1130964496</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>135523827111</IE>
+      </dest>
+      <retirada>
+        <CNPJ>60397874000903</CNPJ>
+        <xNome>Fujifilm do Brasil - Joinville</xNome>
+        <xLgr>AV PLACIDO HUGO DE OLIVEIRA</xLgr>
+        <nro>2398</nro>
+        <xCpl>SETOR FUJI</xCpl>
+        <xBairro>ITINGA</xBairro>
+        <cMun>4209102</cMun>
+        <xMun>JOINVILLE</xMun>
+        <UF>SC</UF>
+        <CEP>89233580</CEP>
+        <cPais>1058</cPais>
+        <xPais>Brasil</xPais>
+        <fone>1150914968</fone>
+        <email>wellington.esteves@fujifilm.com.br</email>
+        <IE>260472395</IE>
+      </retirada>
+      <entrega>
+        <CNPJ>54430962003044</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA</xNome>
+        <xLgr>AV PAULISTA</xLgr>
+        <nro>1230</nro>
+        <xCpl>L3206/3208</xCpl>
+        <xBairro>BELA VISTA</xBairro>
+        <cMun>3550308</cMun>
+        <xMun>SAO PAULO</xMun>
+        <UF>SP</UF>
+        <CEP>01310901</CEP>
+        <cPais>1058</cPais>
+        <xPais>Brasil</xPais>
+        <fone>1130964496</fone>
+        <IE>135523827111</IE>
+      </entrega>
+      <det nItem="1">
+        <prod>
+          <cProd>705060212</cProd>
+          <cEAN>4547410173796</cEAN>
+          <xProd>FILME INSTAX MINI - 10 fotos</xProd>
+          <NCM>37012010</NCM>
+          <CFOP>6102</CFOP>
+          <uCom>UN</uCom>
+          <qCom>10.0000</qCom>
+          <vUnCom>35.1360000000</vUnCom>
+          <vProd>351.36</vProd>
+          <cEANTrib>4547410173796</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>10.0000</qTrib>
+          <vUnTrib>35.1360000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>6</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>351.36</vBC>
+              <pICMS>12.00</pICMS>
+              <vICMS>42.16</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPITrib>
+              <CST>50</CST>
+              <vBC>351.36</vBC>
+              <pIPI>9.75</pIPI>
+              <vIPI>34.26</vIPI>
+            </IPITrib>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>309.20</vBC>
+              <pPIS>1.65</pPIS>
+              <vPIS>5.10</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>309.20</vBC>
+              <pCOFINS>7.60</pCOFINS>
+              <vCOFINS>23.50</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+        <infAdProd>Lote(s): 2K04061 ( 10 ) Validade 31/08/2026</infAdProd>
+        <obsItem />
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>705072620</cProd>
+          <cEAN>7892520000027</cEAN>
+          <xProd>KIT CAMERA INSTAX MINI 12 ROSA MERMAID</xProd>
+          <NCM>90064000</NCM>
+          <CEST>2107500</CEST>
+          <CFOP>6102</CFOP>
+          <uCom>PEC</uCom>
+          <qCom>2.0000</qCom>
+          <vUnCom>444.6150000000</vUnCom>
+          <vProd>889.23</vProd>
+          <cEANTrib>7892520000027</cEANTrib>
+          <uTrib>PEC</uTrib>
+          <qTrib>2.0000</qTrib>
+          <vUnTrib>444.6150000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>6</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>889.23</vBC>
+              <pICMS>12.00</pICMS>
+              <vICMS>106.71</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPITrib>
+              <CST>50</CST>
+              <vBC>889.23</vBC>
+              <pIPI>9.75</pIPI>
+              <vIPI>86.70</vIPI>
+            </IPITrib>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>782.52</vBC>
+              <pPIS>1.65</pPIS>
+              <vPIS>12.91</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>782.52</vBC>
+              <pCOFINS>7.60</pCOFINS>
+              <vCOFINS>59.47</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+        <infAdProd>.</infAdProd>
+        <obsItem />
+      </det>
+      <det nItem="3">
+        <prod>
+          <cProd>705072622</cProd>
+          <cEAN>7892520000058</cEAN>
+          <xProd>KIT CAMERA INSTAX MINI 12 BRANCO MERMAID</xProd>
+          <NCM>90064000</NCM>
+          <CEST>2107500</CEST>
+          <CFOP>6102</CFOP>
+          <uCom>PEC</uCom>
+          <qCom>2.0000</qCom>
+          <vUnCom>444.6150000000</vUnCom>
+          <vProd>889.23</vProd>
+          <cEANTrib>7892520000058</cEANTrib>
+          <uTrib>PEC</uTrib>
+          <qTrib>2.0000</qTrib>
+          <vUnTrib>444.6150000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>6</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>889.23</vBC>
+              <pICMS>12.00</pICMS>
+              <vICMS>106.71</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPITrib>
+              <CST>50</CST>
+              <vBC>889.23</vBC>
+              <pIPI>9.75</pIPI>
+              <vIPI>86.70</vIPI>
+            </IPITrib>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>782.52</vBC>
+              <pPIS>1.65</pPIS>
+              <vPIS>12.91</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>782.52</vBC>
+              <pCOFINS>7.60</pCOFINS>
+              <vCOFINS>59.47</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+        <infAdProd>.</infAdProd>
+        <obsItem />
+      </det>
+      <det nItem="4">
+        <prod>
+          <cProd>705072623</cProd>
+          <cEAN>7892520000041</cEAN>
+          <xProd>KIT CAMERA INSTAX MINI 12 LILAS MERMAID</xProd>
+          <NCM>90064000</NCM>
+          <CEST>2107500</CEST>
+          <CFOP>6102</CFOP>
+          <uCom>PEC</uCom>
+          <qCom>2.0000</qCom>
+          <vUnCom>444.6150000000</vUnCom>
+          <vProd>889.23</vProd>
+          <cEANTrib>7892520000041</cEANTrib>
+          <uTrib>PEC</uTrib>
+          <qTrib>2.0000</qTrib>
+          <vUnTrib>444.6150000000</vUnTrib>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS00>
+              <orig>6</orig>
+              <CST>00</CST>
+              <modBC>3</modBC>
+              <vBC>889.23</vBC>
+              <pICMS>12.00</pICMS>
+              <vICMS>106.71</vICMS>
+            </ICMS00>
+          </ICMS>
+          <IPI>
+            <cEnq>999</cEnq>
+            <IPITrib>
+              <CST>50</CST>
+              <vBC>889.23</vBC>
+              <pIPI>9.75</pIPI>
+              <vIPI>86.70</vIPI>
+            </IPITrib>
+          </IPI>
+          <PIS>
+            <PISAliq>
+              <CST>01</CST>
+              <vBC>782.52</vBC>
+              <pPIS>1.65</pPIS>
+              <vPIS>12.91</vPIS>
+            </PISAliq>
+          </PIS>
+          <COFINS>
+            <COFINSAliq>
+              <CST>01</CST>
+              <vBC>782.52</vBC>
+              <pCOFINS>7.60</pCOFINS>
+              <vCOFINS>59.47</vCOFINS>
+            </COFINSAliq>
+          </COFINS>
+        </imposto>
+        <infAdProd>.</infAdProd>
+        <obsItem />
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>3019.05</vBC>
+          <vICMS>362.29</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCPUFDest>0.00</vFCPUFDest>
+          <vICMSUFDest>0.00</vICMSUFDest>
+          <vICMSUFRemet>0.00</vICMSUFRemet>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>3019.05</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>0.00</vDesc>
+          <vII>0.00</vII>
+          <vIPI>294.36</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>43.83</vPIS>
+          <vCOFINS>201.91</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>3313.41</vNF>
+          <vTotTrib>0.00</vTotTrib>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+        <transporta>
+          <CNPJ>18233211002698</CNPJ>
+          <xNome>FL BRASIL HOLDING LOGISTICA E TRANS LTDA</xNome>
+          <IE>258421878</IE>
+          <xEnder>AVENIDA PLACIDO HUGO DE OLIVEI 2398</xEnder>
+          <xMun>JOINVILLE</xMun>
+          <UF>SC</UF>
+        </transporta>
+        <vol>
+          <qVol>2</qVol>
+          <pesoL>3.518</pesoL>
+          <pesoB>4.800</pesoB>
+        </vol>
+      </transp>
+      <cobr>
+        <fat>
+          <nFat>0091963116</nFat>
+          <vOrig>3313.41</vOrig>
+          <vDesc>0.00</vDesc>
+          <vLiq>3313.41</vLiq>
+        </fat>
+        <dup>
+          <nDup>001</nDup>
+          <dVenc>2026-01-18</dVenc>
+          <vDup>3313.41</vDup>
+        </dup>
+      </cobr>
+      <pag>
+        <detPag>
+          <tPag>15</tPag>
+          <vPag>3313.41</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>RICMS/SC-01, Anexo 2, Art. 246#Nr CLIENTE: 0000889995#Nr. Nosso Pedido: 0002056563#Nr.Doc.Fatur: 0091963116#Nr.Doc.Fornec: 0081497935#PED. CLIENTE: 956023#CONFERIR AS MERCADORIAS ANTES DO RECEBIMENTO, NAO ACEITAREMOS#RECLAMACOE#||S/DEVOLUCOES DE MERCADORIAS FALTANTES/DANIFICADAS.#Para impressao do BOLETO BANCARIO acesse WWW.FUJIFILM.COM.BR</infCpl>
+      </infAdic>
+      <infRespTec>
+        <CNPJ>11643219000125</CNPJ>
+        <xContato>Horacio Menin</xContato>
+        <email>Suporte.br@gosocket.net</email>
+        <fone>1155552012</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe42251160397874000903550150000772831161355933">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>KoWY0GApWSh8N+YE4rM/kTZzaHM=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>cXxm0C7DyexfWrGgicfoojyuazGggoqGlbQqGH6uBFyHm46fSxtz60MrIQZoc/AkicTkUxwh+FDf7bKfWkJVbb/GebSK9KsnCMOafl1vS3TLSRBOTSw/IBlbxSwDIjDw+mtAD5zDxVKZbFsio8mnNUMKeAidXJrX1K2YkiouwA1PJgdP+yeuLYnVYMBbqC40CF5TJdBn5DlI+bxrNoOM4Kzk66x56Rsca2OCXSBYwFoquBiWZ5M2TZk0YQ8SudsW8JdlxYv4jjIYdXPNYMrT/fBDJnXUJ82qn5NsXMGgDXHlEMkscavJCcsS1vUfnmLTAJ9z0ErEyiBjZ6/Yg30HFA==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infProt>
+      <tpAmb>1</tpAmb>
+      <verAplic>SVRS2511121006DR</verAplic>
+      <chNFe>42251160397874000903550150000772831161355933</chNFe>
+      <dhRecbto>2025-11-19T10:19:33-03:00</dhRecbto>
+      <nProt>242250463049985</nProt>
+      <digVal>KoWY0GApWSh8N+YE4rM/kTZzaHM=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

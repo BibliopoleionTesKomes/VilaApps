@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe35251104946820000202550030000187931002396962" versao="4.00">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>00239696</cNF>
+        <natOp>VENDA DE CONSIGNACAO</natOp>
+        <mod>55</mod>
+        <serie>3</serie>
+        <nNF>18793</nNF>
+        <dhEmi>2025-11-19T15:55:23-03:00</dhEmi>
+        <tpNF>1</tpNF>
+        <idDest>2</idDest>
+        <cMunFG>3513009</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>2</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>3</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>18.15.3973</verProc>
+        <NFref>
+          <refNFe>35250404946820000202550030000174881002366084</refNFe>
+        </NFref>
+      </ide>
+      <emit>
+        <CNPJ>04946820000202</CNPJ>
+        <xNome>EDITORA ORIGINAL LTDA. - EPP</xNome>
+        <xFant>2 - PANDA BOOKS MACUNAIMA</xFant>
+        <enderEmit>
+          <xLgr>ESTRADA DO CAPUAVA</xLgr>
+          <nro>1</nro>
+          <xCpl>.325</xCpl>
+          <xBairro>JARDIM IPES</xBairro>
+          <cMun>3513009</cMun>
+          <xMun>COTIA</xMun>
+          <UF>SP</UF>
+          <CEP>06715685</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1130888444</fone>
+        </enderEmit>
+        <IE>278328878110</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962002900</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA</xNome>
+        <enderDest>
+          <xLgr>AVENIDA DEPUTADO JAMEL CECILIO</xLgr>
+          <nro>3300</nro>
+          <xCpl>LOJA P081 ANDAR 1</xCpl>
+          <xBairro>JARDIM GOIAS</xBairro>
+          <cMun>5208707</cMun>
+          <xMun>GOIANIA</xMun>
+          <UF>GO</UF>
+          <CEP>74810100</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>201279193</IE>
+        <email>tandara@livrariadavila.com.br; fiscal@livrariadavila.com.br;</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>0000136164</cProd>
+          <cEAN>9786556973609</cEAN>
+          <xProd>ALICE NO PAIS DAS MARAVILHAS</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>6113</CFOP>
+          <uCom>EX</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>59.9000000</vUnCom>
+          <vProd>59.90</vProd>
+          <cEANTrib>9786556973609</cEANTrib>
+          <uTrib>EX</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>59.9000000</vUnTrib>
+          <vDesc>29.95</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <vTotTrib>0</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>53</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0</vBC>
+          <vICMS>0</vICMS>
+          <vICMSDeson>0</vICMSDeson>
+          <vFCP>0</vFCP>
+          <vBCST>0</vBCST>
+          <vST>0</vST>
+          <vFCPST>0</vFCPST>
+          <vFCPSTRet>0</vFCPSTRet>
+          <vProd>59.90</vProd>
+          <vFrete>0</vFrete>
+          <vSeg>0</vSeg>
+          <vDesc>29.95</vDesc>
+          <vII>0</vII>
+          <vIPI>0</vIPI>
+          <vIPIDevol>0</vIPIDevol>
+          <vPIS>0</vPIS>
+          <vCOFINS>0</vCOFINS>
+          <vOutro>0</vOutro>
+          <vNF>29.95</vNF>
+          <vTotTrib>0</vTotTrib>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>9</modFrete>
+        <vol>
+          <pesoL>0.378</pesoL>
+          <pesoB>0.378</pesoB>
+        </vol>
+      </transp>
+      <cobr>
+        <fat>
+          <nFat>001</nFat>
+          <vOrig>29.95</vOrig>
+          <vLiq>29.95</vLiq>
+        </fat>
+        <dup>
+          <nDup>001</nDup>
+          <dVenc>2025-12-19</dVenc>
+          <vDup>29.95</vDup>
+        </dup>
+      </cobr>
+      <pag>
+        <detPag>
+          <indPag>1</indPag>
+          <tPag>99</tPag>
+          <xPag>BOLETO</xPag>
+          <vPag>29.95</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>PD Nr.: 0000239696 ACERTO DE CONSIG REF 11/2025 COM S/ NF 5241</infCpl>
+      </infAdic>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251104946820000202550030000187931002396962">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>UK9WLo5iBejuX8mNytmLmjRZezU=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>RrCOm3eOoIMcjJvBgd8zirSKzGvO/uSOFmnNBDcQDlP4DbSotNqKFmrPFTeOl1m9iwQvWRTreOEZT93oJF7pbAId0uCQaDy/2VQIsW2T38iG7HpkvsfDaBlAiCuaixseyUqHBH4kkY2qOx/c7C6Icprgoj88pChCZQ+aIl3opoIPasl/6sj0cBiGgd3S3/jfSLZyQsdO7Q+dqqM9EsWVgrCbpRHPDEbZzfO6Z4EpzTUvmAUpB6L+9RgQQW8k/6Wyk59i0H8wb+EXa8qwnZg4F5v9RLs/0f7tBED6Kfkb1x+2Dtx02lQYnFw4KINw4bhjVEhDiOhTqVcoeP9tNJdRng==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+    <infProt Id="ID135253558148670">
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251104946820000202550030000187931002396962</chNFe>
+      <dhRecbto>2025-11-19T15:55:41-03:00</dhRecbto>
+      <nProt>135253558148670</nProt>
+      <digVal>UK9WLo5iBejuX8mNytmLmjRZezU=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

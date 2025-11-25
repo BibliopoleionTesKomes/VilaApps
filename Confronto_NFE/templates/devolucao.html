@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Vila Apps - Devolução</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        /* Reutilizando estilos do Acerto para consistência */
+        :root { --cor-principal: #192F63; --cor-secundaria: #33508F; --cor-fundo-pagina: #E8EDF9; }
+        body { background-color: var(--cor-fundo-pagina); font-family: 'Montserrat', sans-serif; min-height: 100vh; display: flex; flex-direction: column; padding-bottom: 20px; overflow-x: hidden; }
+        
+        .header-bg { background-image: linear-gradient(135deg, #192F63 0%, #33508F 100%); color: white; padding: 0 1rem; height: 50px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        .header-title { font-weight: 700; font-size: 1rem; margin: 0; text-shadow: 0 1px 3px rgba(0,0,0,0.4); text-transform: uppercase; letter-spacing: 1px; }
+        .logo-img { max-height: 25px; width: auto; }
+        .logo-argos { max-height: 60px; width: auto; }
+        .btn-voltar { color: rgba(255,255,255,0.9); text-decoration: none; margin-right: 15px; font-size: 0.8rem; } .btn-voltar:hover { color: #fff; }
+        
+        .container-main { width: 100%; max-width: 100%; margin: 0; padding: 10px 15px; flex: 1; display: flex; flex-direction: column; }
+        
+        .card-painel { background: white; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border: none; margin-bottom: 0; height: 100%; }
+        .painel-body { padding: 8px; }
+        .painel-header { padding: 5px 10px; font-weight: 700; color: white; border-radius: 6px 6px 0 0; font-size: 0.7rem; display: flex; justify-content: space-between; align-items: center; }
+        
+        /* Diferenciação visual: Header XML verde para devolução (opcional, mantendo padrão do acerto por enquanto ou mudando se preferir) */
+        .header-xml { background-color: #28a745; } 
+        .header-erp { background-color: #5a6268; }
+        
+        .input-busca { border-radius: 15px; border: 1px solid #ced4da; font-size: 0.75rem; padding: 2px 8px; height: 28px; }
+        .form-select-sm { height: 28px; padding-top: 2px; padding-bottom: 2px; font-size: 0.75rem; }
+        .label-manual { font-size: 0.65rem; font-weight: 700; color: #6c757d; margin-bottom: 0px; display: block; text-transform: uppercase; letter-spacing: 0.5px; }
+        
+        .card-tabela { background: white; border-radius: 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; flex: 1; display: flex; flex-direction: column; }
+        .table-responsive { flex: 1; overflow-y: auto; max-height: 70vh; } 
+        .table-confronto { font-size: 0.75rem; width: 100%; border-collapse: collapse; }
+        .table-confronto th { background-color: #f1f3f5; color: #495057; font-weight: 700; text-transform: uppercase; font-size: 0.7rem; padding: 6px 4px; border-bottom: 2px solid #dee2e6; vertical-align: middle; position: sticky; top: 0; z-index: 10; }
+        .table-confronto td { padding: 4px 6px; border-bottom: 1px solid #eee; vertical-align: middle; }
+        
+        .col-xml { background-color: #f8f9fa; border-left: 2px solid #dee2e6; }
+        .col-erp { background-color: #fff; border-left: 1px solid #eee; }
+        .col-dif { background-color: #fff3cd; font-weight: bold; text-align: center; width: 50px; }
+        
+        .row-divergente { background-color: #fff8e1; } .row-sobra-xml { background-color: #fff0f0; } .row-sobra-erp { background-color: #f0f7ff; }
+        
+        .badge-status { padding: 3px 6px; border-radius: 8px; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; }
+        .bg-ok { background-color: #d1e7dd; color: #0f5132; } .bg-div { background-color: #ffecb5; color: #664d03; }
+        .bg-only-xml { background-color: #f8d7da; color: #842029; } .bg-only-erp { background-color: #cff4fc; color: #055160; }
+        .text-danger-bold { color: #dc3545; font-weight: 800; }
+        
+        .select-status { border: none; border-radius: 10px; font-size: 0.8rem; font-weight: 800; padding: 4px 10px; cursor: pointer; text-transform: uppercase; width: 200px; text-align: center; transition: all 0.3s ease; box-shadow: 0 1px 3px rgba(0,0,0,0.1); height: 28px; }
+        .st-pendente { background-color: #ffecb5; color: #664d03; border: 2px solid #ffecb5; }
+        .st-emanalise { background-color: #cfe2ff; color: #084298; border: 2px solid #b6d4fe; }
+        .st-concluido { background-color: #d1e7dd; color: #0f5132; border: 2px solid #badbcc; }
+
+        #progress-overlay { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(25, 47, 99, 0.95); z-index:9999; flex-direction:column; justify-content:center; align-items:center; color:white; }
+        .loader-content { width: 400px; text-align: center; }
+        
+        .modal-header { background-color: var(--cor-principal); color: white; padding: 8px 12px; }
+        .modal-title { font-weight: 700; font-size: 0.9rem; }
+        .btn-close { filter: invert(1); }
+        .texto-email { font-family: 'Courier New', Courier, monospace; font-size: 0.85rem; background: #f8f9fa; border: 1px solid #dee2e6; padding: 10px; border-radius: 6px; width: 100%; height: 300px; resize: none; color: #333; }
+        
+        .btn-compact { font-size: 0.7rem; padding: 3px 10px; border-radius: 12px; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <!-- LOADER -->
+    <div id="progress-overlay">
+        <div class="loader-content">
+            <h5 class="fw-bold mb-2 text-white" id="pg-titulo">Processando...</h5>
+            <div class="progress" style="height: 10px; border-radius: 5px; background-color: rgba(255,255,255,0.2);">
+                <div id="pg-bar" class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 0%;"></div>
+            </div>
+            <p class="mt-2 small text-white-50" id="pg-msg">Iniciando...</p>
+            <p class="small text-white-50" id="pg-detalhe">...</p>
+        </div>
+    </div>
+
+    <header class="header-bg">
+        <div style="display:flex;align-items:center;">
+            <a href="{{ url_for('menu') }}" class="btn-voltar">⬅ Menu</a>
+            <img src="{{ url_for('static', filename='logo.png') }}" class="logo-img ms-2">
+        </div>
+        <h1 class="header-title">Confronto de Devolução</h1>
+        <div style="width: 80px;"></div>
+    </header>
+    <img src="{{ url_for('static', filename='logo_argos.png') }}" class="logo-argos" style="position: absolute; top: 0; right: 5px;">
+
+    <div class="container-main">
+        <div class="d-flex justify-content-between align-items-center mb-2 px-1">
+            <!-- Painel de Status (No Topo, Lado Esquerdo) -->
+            <div id="painelStatus" style="display:none;">
+                <div class="d-flex align-items-center">
+                    <span class="me-2 fw-bold text-secondary" style="font-size:0.75rem;">STATUS:</span>
+                    <select id="selectStatusAtual" class="select-status" onchange="salvarStatusNota()">
+                        <option value="PENDENTE">PENDENTE</option>
+                        <option value="EM ANÁLISE">EM ANÁLISE</option>
+                        <option value="CONCLUÍDO">CONCLUÍDO</option>
+                    </select>
+                </div>
+            </div>
+            <div id="statusPlaceholder" class="text-muted small fst-italic" style="font-size:0.75rem;">Selecione uma nota para ver o status</div>
+
+            <div class="d-flex align-items-center">
+                <!-- BOTÃO LIMPAR -->
+                <button class="btn btn-secondary btn-compact shadow-sm me-2" onclick="limparTela()">
+                    ✨ Nova Conferência
+                </button>
+
+                {% if ultima_atualizacao %}
+                    <span class="me-2 badge bg-light text-secondary border" style="font-weight:500; font-size:0.7rem;">📅 {{ ultima_atualizacao }}</span>
+                {% endif %}
+                <button class="btn btn-outline-success btn-compact shadow-sm" style="background:white; border:1px solid #28a745; color:#28a745;" onclick="iniciarAtualizacao('devolucao')">
+                    🔄 Atualizar Dados
+                </button>
+            </div>
+        </div>
+
+        <div class="row g-2 mb-2">
+            <!-- COLUNA XML -->
+            <div class="col-md-5">
+                <div class="card-painel">
+                    <div class="painel-header header-xml"><span>1. NOTA FISCAL (XML - DEVOLUÇÃO)</span><span id="infoNota" class="fw-light">...</span></div>
+                    <div class="painel-body">
+                        <div class="row g-1">
+                            <div class="col-12">
+                                <label class="label-manual">Selecione a Nota</label>
+                                <input type="text" id="inputNota" class="form-control input-busca" list="sugestoes_notas" placeholder="Digite nº nota ou fornecedor..." autofocus>
+                                <datalist id="sugestoes_notas">
+                                    {% for row in dados %}
+                                        <option value="{{ row.Numero_NF }} - {{ row.Nome_Fantasia if row.Nome_Fantasia and row.Nome_Fantasia != '-' else row.Nome_Emitente }} - {{ row.Valor_Total }} - {{ row.Filial }} - [{{ row.Chave_Acesso }}]">
+                                    {% endfor %}
+                                </datalist>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUNA ERP -->
+            <div class="col-md-7">
+                <div class="card-painel">
+                    <div class="painel-header header-erp"><span>2. PROPOSTA (ERP - TIPO 4)</span><span id="infoPedido" class="fw-light">...</span></div>
+                    <div class="painel-body">
+                        <div class="row g-1">
+                            <div class="col-md-6"><label class="label-manual">Fornecedor</label><input type="text" id="inputFornecedor" class="form-control input-busca" list="listaFornecedores" placeholder="Nome..."><datalist id="listaFornecedores"></datalist></div>
+                            <div class="col-md-6"><label class="label-manual">Filial</label><select id="selectFilial" class="form-select input-busca form-select-sm" disabled><option value="">Aguardando...</option></select></div>
+                            <div class="col-md-2"><label class="label-manual">Início</label><input type="date" id="dataIni" class="form-control input-busca"></div>
+                            <div class="col-md-2"><label class="label-manual">Fim</label><input type="date" id="dataFim" class="form-control input-busca"></div>
+                            <div class="col-md-5"><label class="label-manual">Pedido</label><select id="selectPedido" class="form-select input-busca form-select-sm" disabled><option value="">Aguardando...</option></select></div>
+                            <div class="col-md-3 d-flex align-items-end"><button class="btn btn-dark btn-compact w-100" style="height:28px; border-radius:15px;" onclick="buscarPedido()">🔎 Confrontar</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ÁREA DE CONFRONTO -->
+        <div id="areaConfronto" style="display:none; flex:1; display:flex; flex-direction:column;">
+            <div class="card-tabela">
+                <div class="p-2 bg-light border-bottom d-flex justify-content-between align-items-center" style="height: 35px;">
+                    <div class="d-flex align-items-center gap-2">
+                        <h6 class="m-0 fw-bold text-secondary me-2" style="font-size:0.8rem;">📊 DIVERGÊNCIAS</h6>
+                        <button class="btn btn-warning btn-compact text-dark shadow-sm" style="font-size:0.65rem;" onclick="gerarEmail()">📧 Texto E-mail</button>
+                        <button class="btn btn-info btn-compact text-white shadow-sm" style="font-size:0.65rem; background-color: #0dcaf0; border:none;" onclick="abrirContatoFornecedor()">📞 Contato</button>
+                    </div>
+                    <div style="font-size:0.75rem;">
+                        <span class="badge bg-ok me-1">OK: <span id="cntOk">0</span></span>
+                        <span class="badge bg-div me-1">Div: <span id="cntDiv">0</span></span>
+                        <span class="badge bg-only-xml me-1">XML: <span id="cntXml">0</span></span>
+                        <span class="badge bg-only-erp">ERP: <span id="cntErp">0</span></span>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table-confronto">
+                        <thead><tr><th style="width:5%">St</th><th style="width:10%">ISBN</th><th style="width:35%">Produto</th><th class="col-xml text-center">Qtd XML</th><th class="col-xml text-end">Unit. XML</th><th class="col-dif text-center">Dif</th><th class="col-erp text-center">Qtd ERP</th><th class="col-erp text-end">Unit. ERP</th><th class="col-dif text-end">Dif Unit.</th></tr></thead>
+                        <tbody id="tbodyConfronto"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE EMAIL -->
+    <div class="modal fade" id="modalEmail" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">📧 Texto para E-mail</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" style="filter: invert(1);"></button>
+                </div>
+                <div class="modal-body p-2">
+                    <p class="small text-muted mb-1">Copie o texto abaixo e cole no seu e-mail.</p>
+                    <textarea id="areaTextoEmail" class="texto-email"></textarea>
+                </div>
+                <div class="modal-footer p-1">
+                    <button type="button" class="btn btn-secondary btn-compact" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-success btn-compact" onclick="copiarTexto()">📋 Copiar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE CONTATO -->
+    <div class="modal fade" id="modalContato" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-info text-white">
+                    <h5 class="modal-title">📞 Dados do Fornecedor</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" style="filter: invert(1);"></button>
+                </div>
+                <div class="modal-body p-3">
+                    <div id="infoContatoContent" class="text-center">
+                        <div class="spinner-border text-info" role="status"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script id="dados-json" type="application/json">{{ dados | tojson }}</script>
+    <script>
+        const TIPO_APP = 4; // DEVOLUÇÃO
+        const dadosNotas = JSON.parse(document.getElementById('dados-json').textContent);
+        let chaveAtual = ''; 
+
+        const els = {
+            nota: document.getElementById('inputNota'), forn: document.getElementById('inputFornecedor'), filial: document.getElementById('selectFilial'), ped: document.getElementById('selectPedido'), listForn: document.getElementById('listaFornecedores'), ini: document.getElementById('dataIni'), fim: document.getElementById('dataFim'), infoN: document.getElementById('infoNota'), infoP: document.getElementById('infoPedido'), tbody: document.getElementById('tbodyConfronto'), area: document.getElementById('areaConfronto'), 
+            modal: new bootstrap.Modal(document.getElementById('modalEmail')),
+            modalContato: new bootstrap.Modal(document.getElementById('modalContato')),
+            painelSt: document.getElementById('painelStatus'), phSt: document.getElementById('statusPlaceholder'), selSt: document.getElementById('selectStatusAtual')
+        };
+
+        let estado = { xml: [], erp: [] };
+        let mapaForn = {};
+        const fmtMoeda = v => v ? v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}) : 'R$ 0,00';
+        const fmtNum = v => v ? v.toLocaleString('pt-BR') : '0';
+
+        window.onload = () => {
+            const h = new Date(); const p = new Date(); p.setDate(h.getDate()-30);
+            els.fim.value = h.toISOString().split('T')[0]; els.ini.value = p.toISOString().split('T')[0];
+            fetch(`/api/fornecedores?tipo=${TIPO_APP}`).then(r=>r.json()).then(list => {
+                list.forEach(f => { const opt = document.createElement('option'); opt.value = `${f.CODECLI} - ${f.FANTASIA}`; els.listForn.appendChild(opt); mapaForn[opt.value] = f.CODECLI; });
+            });
+        };
+
+        function iniciarAtualizacao(modulo) {
+            document.getElementById('progress-overlay').style.display = 'flex';
+            fetch('/api/iniciar_processamento', {
+                method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({ modulo: modulo })
+            }).then(r => r.json()).then(resp => {
+                if(resp.status === 'iniciado' || resp.status === 'ocupado') monitorarProgresso();
+            });
+        }
+
+        function monitorarProgresso() {
+            const interval = setInterval(() => {
+                fetch('/api/progresso').then(r => r.json()).then(dados => {
+                    const bar = document.getElementById('pg-bar');
+                    bar.style.width = dados.percentual + '%';
+                    document.getElementById('pg-msg').innerText = dados.msg;
+                    document.getElementById('pg-detalhe').innerText = `${dados.atual} / ${dados.total}`;
+                    if(dados.status === 'concluido') {
+                        clearInterval(interval);
+                        document.getElementById('pg-msg').innerText = "Recarregando...";
+                        setTimeout(() => window.location.reload(), 500);
+                    }
+                });
+            }, 500);
+        }
+
+        // FUNÇÃO PARA BUSCAR CONTATO
+        function abrirContatoFornecedor() {
+            const val = els.forn.value;
+            let cod = mapaForn[val];
+            if(!cod && val.includes('-')) cod = val.split('-')[0].trim();
+
+            if(!cod) {
+                alert("Selecione um fornecedor no campo 'Fornecedor' (Painel ERP) primeiro.");
+                return;
+            }
+
+            const contentDiv = document.getElementById('infoContatoContent');
+            contentDiv.innerHTML = '<div class="spinner-border text-info" role="status"></div><p>Buscando dados...</p>';
+            els.modalContato.show();
+
+            fetch(`/api/dados_fornecedor?cod_cli=${cod}`)
+                .then(r => r.json())
+                .then(data => {
+                    if(data.length > 0) {
+                        const f = data[0];
+                        contentDiv.innerHTML = `
+                            <h5 class="fw-bold mb-3 text-primary">${f.NOME}</h5>
+                            <div class="text-start px-4">
+                                <p><strong>CNPJ:</strong> ${f.CNPJ}</p>
+                                <p><strong>Telefone:</strong> ${f.TELEFONE || 'Não cadastrado'}</p>
+                                <p><strong>E-mail:</strong> <a href="mailto:${f.EMAIL}">${f.EMAIL || 'Não cadastrado'}</a></p>
+                            </div>
+                        `;
+                    } else { contentDiv.innerHTML = '<p class="text-danger">Fornecedor não encontrado.</p>'; }
+                })
+                .catch(() => { contentDiv.innerHTML = '<p class="text-danger">Erro ao buscar dados.</p>'; });
+        }
+
+        function limparTela() {
+            els.nota.value = ''; els.forn.value = ''; els.filial.innerHTML = '<option value="">Aguardando...</option>';
+            els.filial.disabled = true; els.ped.innerHTML = '<option value="">Aguardando...</option>'; els.ped.disabled = true;
+            const h = new Date(); const p = new Date(); p.setDate(h.getDate()-30);
+            els.fim.value = h.toISOString().split('T')[0]; els.ini.value = p.toISOString().split('T')[0];
+            els.infoN.innerText = '...'; els.infoP.innerText = '...';
+            els.painelSt.style.display = 'none'; els.phSt.style.display = 'block';
+            els.area.style.display = 'none'; els.tbody.innerHTML = '';
+            estado = { xml: [], erp: [] }; chaveAtual = ''; els.nota.focus();
+        }
+
+        els.nota.addEventListener('change', function() {
+            const val = this.value.trim(); if(!val) return;
+            let match = val.match(/\[(.*?)\]/);
+            let num = val.split(' - ')[0].trim();
+            const nota = dadosNotas.find(n => String(n.Numero_NF) === num);
+            if(nota) { 
+                els.infoN.innerText = `Nota ${nota.Numero_NF} (${nota.Itens ? nota.Itens.length : 0} itens)`; 
+                estado.xml = nota.Itens || []; 
+                chaveAtual = nota.Chave_Acesso;
+                const st = nota.Status_Workflow || 'PENDENTE';
+                els.selSt.value = st;
+                atualizarCorSelect(st);
+                els.painelSt.style.display = 'block';
+                els.phSt.style.display = 'none';
+                els.area.style.display = 'flex'; 
+                renderizar(); 
+            }
+        });
+
+        function atualizarCorSelect(status) {
+            els.selSt.className = 'select-status st-' + status.toLowerCase().replace(' ','').replace('ê','e').replace('í','i');
+        }
+
+        function salvarStatusNota() {
+            if(!chaveAtual) return;
+            const novoSt = els.selSt.value;
+            atualizarCorSelect(novoSt);
+            fetch('/api/atualizar_status', {
+                method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({ chave: chaveAtual, status: novoSt })
+            });
+        }
+
+        els.forn.addEventListener('change', function() {
+            const val = this.value; let cod = mapaForn[val] || (val.includes('-') ? val.split('-')[0].trim() : null);
+            if(cod) {
+                els.filial.disabled = false; els.filial.innerHTML = '<option>Carregando...</option>'; els.ped.disabled = true;
+                fetch(`/api/filiais?cod_cli=${cod}&tipo=${TIPO_APP}`).then(r=>r.json()).then(list => {
+                    els.filial.innerHTML = '<option value="" selected>Selecione...</option>';
+                    list.forEach(f => { const o = document.createElement('option'); o.value = f.CODECLI; o.text = f.FANTASIA; els.filial.appendChild(o); });
+                });
+            }
+        });
+
+        function loadPeds() {
+            const valF = els.forn.value; const codFil = els.filial.value;
+            let codCli = mapaForn[valF] || (valF.includes('-') ? valF.split('-')[0].trim() : null);
+            if(codCli && codFil) {
+                els.ped.disabled = false; els.ped.innerHTML = '<option>Carregando...</option>';
+                let url = `/api/pedidos?cod_cli=${codCli}&cod_filial=${codFil}&data_ini=${els.ini.value}&data_fim=${els.fim.value}&tipo=${TIPO_APP}`;
+                fetch(url).then(r=>r.json()).then(list => {
+                    els.ped.innerHTML = '<option value="">Selecione...</option>';
+                    if(list.length === 0) els.ped.innerHTML = '<option>Nenhum pedido</option>';
+                    list.forEach(p => {
+                        const o = document.createElement('option'); 
+                        let dtStr = p.Data_Emissao; try { dtStr = new Date(p.Data_Emissao).toLocaleDateString('pt-BR'); } catch(e){}
+                        o.value = p.PEDIDO; o.text = `${p.PEDIDO} - ${p.Filial} - ${dtStr}`; els.ped.appendChild(o);
+                    });
+                });
+            }
+        }
+        els.filial.addEventListener('change', loadPeds);
+        els.ini.addEventListener('change', loadPeds);
+        els.fim.addEventListener('change', loadPeds);
+
+        function buscarPedido() {
+            const ped = els.ped.value; if(!ped) return alert("Selecione");
+            fetch(`/api/buscar_pedido?pedido=${ped}&tipo=${TIPO_APP}`).then(r=>r.json()).then(itens => {
+                if(itens.length > 0) { els.infoP.innerText = `Pedido ${ped} (${itens.length} itens)`; estado.erp = itens; renderizar(); }
+                else alert("Pedido vazio");
+            });
+        }
+
+        function renderizar() {
+            if(estado.xml.length === 0 && estado.erp.length === 0) return;
+            els.tbody.innerHTML = '';
+            const isbns = new Set([...estado.xml.map(i=>String(i.ISBN).trim()), ...estado.erp.map(i=>String(i.ISBN).trim())]);
+            const lista = Array.from(isbns).sort();
+            let s = {ok:0, div:0, xml:0, erp:0};
+
+            lista.forEach(isbn => {
+                const x = estado.xml.find(i => String(i.ISBN).trim() === isbn);
+                const e = estado.erp.find(i => String(i.ISBN).trim() === isbn);
+                let cls='', bdg='', dq=0, dv=0;
+
+                let qtdX=0, valX=0, unitX=0;
+                let qtdE=0, valE=0, unitE=0;
+
+                if(x) {
+                    qtdX = x.Quantidade;
+                    valX = x.Valor_Liquido;
+                    unitX = qtdX > 0 ? (valX / qtdX) : 0;
+                }
+                if(e) {
+                    qtdE = e.Quant;
+                    unitE = e.VlLiqUnit || 0;
+                    valE = unitE * qtdE;
+                }
+
+                if(x && e) {
+                    dq = qtdX - qtdE;
+                    dv = unitX - unitE; // Compara unitário
+                    
+                    if(dq!==0 || Math.abs(dv)>0.01) { 
+                        cls='row-divergente'; bdg='<span class="badge-status bg-div">Div</span>'; s.div++; 
+                    } else { 
+                        cls='row-ok'; bdg='<span class="badge-status bg-ok">OK</span>'; s.ok++; 
+                    }
+                } else if(x) { cls='row-sobra-xml'; bdg='<span class="badge-status bg-only-xml">XML</span>'; dq=qtdX; dv=unitX; s.xml++; }
+                else { cls='row-sobra-erp'; bdg='<span class="badge-status bg-only-erp">ERP</span>'; dq=-qtdE; dv=-unitE; s.erp++; }
+
+                const cdq = dq!==0 ? 'text-danger-bold' : 'text-muted';
+                const cdv = Math.abs(dv)>0.01 ? 'text-danger-bold' : 'text-muted';
+                const tit = x ? x.Titulo : e.Titulo;
+
+                els.tbody.innerHTML += `<tr class="${cls}"><td class="text-center">${bdg}</td><td class="font-monospace small">${isbn}</td><td title="${tit}" style="max-width:250px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">${tit}</td>
+                <td class="col-xml text-center fw-bold">${x?fmtNum(qtdX):'-'}</td><td class="col-xml text-end">${fmtMoeda(unitX)}</td>
+                <td class="col-dif ${cdq}">${dq!==0?(dq>0?'+'+fmtNum(dq):fmtNum(dq)):'-'}</td>
+                <td class="col-erp text-center fw-bold">${e?fmtNum(qtdE):'-'}</td><td class="col-erp text-end">${fmtMoeda(unitE)}</td>
+                <td class="col-dif text-end ${cdv}">${Math.abs(dv)>0.01?fmtMoeda(dv):'-'}</td></tr>`;
+            });
+            document.getElementById('cntOk').innerText = s.ok; document.getElementById('cntDiv').innerText = s.div;
+            document.getElementById('cntXml').innerText = s.xml; document.getElementById('cntErp').innerText = s.erp;
+        }
+
+        function gerarEmail() {
+            if(estado.xml.length === 0 && estado.erp.length === 0) return alert("Faça o confronto primeiro.");
+            const numNF = els.nota.value.split('-')[0].trim();
+            const numPed = els.ped.value;
+            const nomeForn = els.forn.value.split('-')[1] ? els.forn.value.split('-')[1].trim() : els.forn.value;
+            let texto = `Olá equipe ${nomeForn}, tudo bem?\n\nEstou conferindo a Nota Fiscal ${numNF} referente ao Pedido ${numPed} e encontrei divergências.\n\n`;
+            const isbns = new Set([...estado.xml.map(i=>String(i.ISBN).trim()), ...estado.erp.map(i=>String(i.ISBN).trim())]);
+            const lista = Array.from(isbns).sort();
+            let temDivergencia = false;
+
+            lista.forEach(isbn => {
+                const x = estado.xml.find(i => String(i.ISBN).trim() === isbn);
+                const e = estado.erp.find(i => String(i.ISBN).trim() === isbn);
+                const tit = x ? x.Titulo : (e ? e.Titulo : 'Desconhecido');
+                
+                let qtdX=0, unitX=0;
+                let qtdE=0, unitE=0;
+
+                if(x) { qtdX = x.Quantidade; unitX = qtdX > 0 ? (x.Valor_Liquido / qtdX) : 0; }
+                if(e) { qtdE = e.Quant; unitE = e.VlLiqUnit || 0; }
+
+                let probs = [];
+                if(x && e) {
+                    let dq = qtdX - qtdE;
+                    let dv = unitX - unitE;
+                    if(dq !== 0) probs.push(`• Diferença Qtde: NF ${fmtNum(qtdX)} un | Pedido ${fmtNum(qtdE)} un`);
+                    if(Math.abs(dv) > 0.01) probs.push(`• Diferença Preço Unitário: NF ${fmtMoeda(unitX)} | Pedido ${fmtMoeda(unitE)}`);
+                } else if(x && !e) {
+                    probs.push(`• Item consta na Nota mas NÃO no Pedido (Sobra). Qtde: ${fmtNum(qtdX)}`);
+                }
+
+                if(probs.length > 0) {
+                    temDivergencia = true;
+                    texto += `LIVRO: ${tit} (ISBN: ${isbn})\n`;
+                    probs.forEach(p => texto += `${p}\n`);
+                    texto += `--------------------------------------------------\n`;
+                }
+            });
+
+            if(!temDivergencia) texto += "Conferi tudo e não encontrei divergências relevantes.\n";
+            else texto += `\nFavor verificar e nos dar um retorno.\n\nAtenciosamente,`;
+            
+            document.getElementById('areaTextoEmail').value = texto;
+            els.modal.show();
+        }
+
+        function copiarTexto() {
+            const txt = document.getElementById('areaTextoEmail');
+            txt.select();
+            document.execCommand('copy');
+            if (navigator.clipboard) { navigator.clipboard.writeText(txt.value).then(() => { alert("Texto copiado!"); }); } else { alert("Texto copiado!"); }
+        }
+    </script>
+</body>
+</html>

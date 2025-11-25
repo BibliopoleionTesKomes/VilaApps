@@ -1,0 +1,195 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe35251123284876000102550010003912351772866237" versao="4.00">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>77286623</cNF>
+        <natOp>Remessa de mercadoria por conta e ordem de terceiros, em ven</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>391235</nNF>
+        <dhEmi>2025-11-19T00:00:00-03:00</dhEmi>
+        <dhSaiEnt>2025-11-19T00:00:00-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3513009</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>7</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>1</indFinal>
+        <indPres>9</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>4.0.0455.02</verProc>
+      </ide>
+      <emit>
+        <CNPJ>23284876000102</CNPJ>
+        <xNome>Meta Impressao e Solucoes Digitais LTDA</xNome>
+        <xFant>Meta Impressao</xFant>
+        <enderEmit>
+          <xLgr>Avenida Lee Wun Hsiang</xLgr>
+          <nro>874</nro>
+          <xBairro>Parque Ind. San Jose</xBairro>
+          <cMun>3513009</cMun>
+          <xMun>COTIA</xMun>
+          <UF>SP</UF>
+          <CEP>06715862</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1135004770</fone>
+        </enderEmit>
+        <IE>278254234113</IE>
+        <IM>6011712</IM>
+        <CNAE>1811302</CNAE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962001262</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA - MAIA</xNome>
+        <enderDest>
+          <xLgr>AV BARTHOLOMEU DE CARLOS . 230LOJA 3054/3055</xLgr>
+          <nro>N/D</nro>
+          <xBairro>JARDIM FLOR DA MONTANHA</xBairro>
+          <cMun>3518800</cMun>
+          <xMun>GUARULHOS</xMun>
+          <UF>SP</UF>
+          <CEP>07097420</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>796319436111</IE>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>9786528601028</cProd>
+          <cEAN>9786528601028</cEAN>
+          <xProd>El-Haram: Mil Paginas Para Mil Anos De Condenacao</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5923</CFOP>
+          <uCom>UN</uCom>
+          <qCom>30.0000</qCom>
+          <vUnCom>50.0000000000</vUnCom>
+          <vProd>1500.00</vProd>
+          <cEANTrib>9786528601028</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>30.0000</qTrib>
+          <vUnTrib>50.0000000000</vUnTrib>
+          <indTot>1</indTot>
+          <xPed>2018969</xPed>
+          <nItemPed>673413</nItemPed>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>40</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0.00</vBC>
+          <vICMS>0.00</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>1500.00</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>0.00</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>0.00</vPIS>
+          <vCOFINS>0.00</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>1500.00</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+        <transporta>
+          <CNPJ>71698476000196</CNPJ>
+          <xNome>TRANSPO EXPRESS TRANSPORTE E LOGISTICA LTDA - EPP</xNome>
+          <IE>492744228111</IE>
+          <xEnder>AV DAS COMUNICACOES, INDUSTRIAL ANHANGUERA</xEnder>
+          <xMun>OSASCO</xMun>
+          <UF>SP</UF>
+        </transporta>
+        <vol>
+          <qVol>2</qVol>
+          <esp>CAIXA</esp>
+          <nVol>0</nVol>
+          <pesoB>11.220</pesoB>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <tPag>90</tPag>
+          <vPag>0.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>Valor Aproximado dos Tributos: Federal R$ 0,00 / Estadual R$ 0,00 / Municipal R$ 0,00 / Fonte: IBPT. // Dispositivos Legais: RECOPI - Nao Incidencia de ICMS conforme Artigo 7 Inciso XIII Decreto 45490/00 RICMS/SP; Imunidade do IPI Registro Especial de Controle de Papel IMUNE n 23.284.876/0001-02 Art. 150, VI, d, da CF/1988 Lei n 11.945/2009; || Aliquota zero PIS e COFINS, conforme Art.28, inciso VI da Lei n 10.865-2.004; Impressao de Mercadoria com papel IMUNE; // MERCADORIA IMPRESSA COM PAPEL IMUNE - Evento - 06/12/2025 - El-Haram: Mil Paginas Para Mil Anos De Condenacao|PED: 2018969 / Evento - 06/12/2025 - El-Haram: Mil Paginas Para Mil Anos De Condenacao|Remessa por Conta e Ordem de propriedade do (Comprador: BREAK MEDIA BRASIL - COMUNICACAO.MIDIA E EDICOES LTDA; 21.775.235/0001-25; Endereco: Av. Paulista. 2073 - Cj. 2113.2114 e 2115 N/D Sao Paulo/SP) atraves da NF Venda No. 391222</infCpl>
+      </infAdic>
+      <compra>
+        <xPed>2018969</xPed>
+      </compra>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251123284876000102550010003912351772866237">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>KrDryT/v0mqMOwGVKIZwDDar7Mo=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>nL42S/nQLSgvslvjlo5gJz4o547jl7qc1CooriNjCPxnkaam54TB9u04qXFXyTBQzOM9bDfRVuaBchh4NyQL8DCl6LSPuahc2cD4r5RF6qyYCMrSJBPR0KuLw1QQSKonyI3ZOl7Gwz4sYgBSpUJhQBsPavG9Wmc98x0DZFRrbZKwL81surQaSsIiCB+mZRO++49XvM8GS4cIqYeBWMeTrqGeXkjcMmXQhY9/HM2VjJ4aSqMqYPykPnaOqh9YV3JmIsRmJzZJKO70I9uuctomNlLqziuVURZo53Q8CE083KvMhHi6DECFnV3qP6rdlcfTjECoX3s5nvE8W/QmGIJJ4w==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt Id="Id135253557565194">
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251123284876000102550010003912351772866237</chNFe>
+      <dhRecbto>2025-11-19T15:10:50-03:00</dhRecbto>
+      <nProt>135253557565194</nProt>
+      <digVal>KrDryT/v0mqMOwGVKIZwDDar7Mo=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

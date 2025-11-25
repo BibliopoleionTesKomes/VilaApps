@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe versao="4.00" Id="NFe35251140338416000139550010000021481364033980">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>36403398</cNF>
+        <natOp>Remessa de Mercadoria em Consignacao</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>2148</nNF>
+        <dhEmi>2025-11-14T17:02:27-03:00</dhEmi>
+        <dhSaiEnt>2025-11-14T17:02:27-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3550308</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>0</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>0</indPres>
+        <procEmi>0</procEmi>
+        <verProc>Bling 1.1</verProc>
+      </ide>
+      <emit>
+        <CNPJ>40338416000139</CNPJ>
+        <xNome>INSTITUTO NEBULOSA MARGINAL CURSOS E EDITORACAO LTDA</xNome>
+        <xFant>INSTITUTO NEBULOSA MARGINAL</xFant>
+        <enderEmit>
+          <xLgr>Avenida Paulista, 326</xLgr>
+          <nro>326</nro>
+          <xCpl>Conjunto 41</xCpl>
+          <xBairro>Bela Vista</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>Sao Paulo</xMun>
+          <UF>SP</UF>
+          <CEP>01310902</CEP>
+          <cPais>1058</cPais>
+          <xPais>Brasil</xPais>
+          <fone>1150267748</fone>
+        </enderEmit>
+        <IE>132787043110</IE>
+        <IM>7.949.995-3</IM>
+        <CNAE>8650003</CNAE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962000100</CNPJ>
+        <xNome>Livraria da Vila LTDA - Fradique Coutinho</xNome>
+        <enderDest>
+          <xLgr>Rua Fradique Coutinho</xLgr>
+          <nro>915</nro>
+          <xBairro>Pinheiros</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>Sao Paulo</xMun>
+          <UF>SP</UF>
+          <CEP>05416011</CEP>
+          <cPais>1058</cPais>
+          <xPais>Brasil</xPais>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>111092339110</IE>
+        <email>ana@livrariadavila.com.br</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>9786585823340</cProd>
+          <cEAN>9786585823340</cEAN>
+          <xProd>O corpo que diz nao ao sexo: Uma visao psicanalitica do vaginismo</xProd>
+          <NCM>49019900</NCM>
+          <CEST>2806400</CEST>
+          <indEscala>S</indEscala>
+          <CFOP>5917</CFOP>
+          <uCom>UN</uCom>
+          <qCom>100.0000</qCom>
+          <vUnCom>71.00</vUnCom>
+          <vProd>7100.00</vProd>
+          <cEANTrib>9786585823340</cEANTrib>
+          <uTrib>UN</uTrib>
+          <qTrib>100.0000</qTrib>
+          <vUnTrib>71.00</vUnTrib>
+          <vDesc>3550.00</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <vTotTrib>1116.48</vTotTrib>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>40</CST>
+            </ICMS40>
+          </ICMS>
+          <PIS>
+            <PISNT>
+              <CST>07</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>07</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0.00</vBC>
+          <vICMS>0.00</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>7100.00</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>3550.00</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>0.00</vPIS>
+          <vCOFINS>0.00</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>3550.00</vNF>
+          <vTotTrib>1116.48</vTotTrib>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>1</modFrete>
+        <vol>
+          <qVol>2</qVol>
+          <pesoL>0.000</pesoL>
+          <pesoB>0.000</pesoB>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <tPag>90</tPag>
+          <vPag>0.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>Total aproximado de tributos: R$ 1.116,48 (31,45%)  Federais R$ 477,48 (13,45%)  Estaduais R$ 639,00 (18,00%) . Fonte IBPT.Remessa em consignacao lancamento dia 30/11/2025&lt;br /&gt;OC:958039</infCpl>
+      </infAdic>
+      <infRespTec>
+        <CNPJ>02351877001124</CNPJ>
+        <xContato>LWSA SA</xContato>
+        <email>fiscal@bling.com.br</email>
+        <fone>05430579470</fone>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251140338416000139550010000021481364033980">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>s9FZwogLG+ff0IxIIbP5GkJNVnc=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>I0wzAZyqxmd3ZianRCW+E0w8SnQSc5Ob88CFhSIIkGV4++n+Ycl3JE+bMDi4o5o5lloTlihDmgcl7cArUTGVbV9eIxjhS8LwCnnTDaKPjK98BBM0LZc9u8drFLsiWp5jTK4AcbR7wx/MZ1/H8BT8PmfaB7JbHWYdMQAx5CtfOpiw7BDCWRmwZOoa15vt4ASm2kuII6Ay+SXNZ2r5oEwAHiZN2CemSwtL4pjvGFqOXSeLnpO6EplTOefnV1EtscE7Hjt6x037JvWgqCJ2hlp24RNtegr3Y5NsX99TArZ3eGue61fQKrH29nuNq5FrJBdtrsGE7x6yvREBmSe7yqkleQ==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt>
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251140338416000139550010000021481364033980</chNFe>
+      <dhRecbto>2025-11-14T17:02:29-03:00</dhRecbto>
+      <nProt>135253492645157</nProt>
+      <digVal>s9FZwogLG+ff0IxIIbP5GkJNVnc=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

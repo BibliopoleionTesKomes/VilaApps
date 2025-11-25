@@ -1,0 +1,258 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe35251104207648000194550010007153071432545945" versao="4.00">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>43254594</cNF>
+        <natOp>REMESSA DE MERCADORIA EM CONSIGNACAO</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>715307</nNF>
+        <dhEmi>2025-11-19T11:04:06-03:00</dhEmi>
+        <dhSaiEnt>2025-11-19T11:04:06-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>3505708</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>5</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>9</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>Liter: 3.0.0.448</verProc>
+      </ide>
+      <emit>
+        <CNPJ>04207648000194</CNPJ>
+        <xNome>IBC - INSTITUTO BRASILEIRO DE CULTURA LTDA</xNome>
+        <xFant>ONLINE EDITORA</xFant>
+        <enderEmit>
+          <xLgr>AVENIDA JURUA</xLgr>
+          <nro>762</nro>
+          <xBairro>ALPHAVILLE INDUSTRIAL</xBairro>
+          <cMun>3505708</cMun>
+          <xMun>BARUERI</xMun>
+          <UF>SP</UF>
+          <CEP>06455010</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1133937737</fone>
+        </enderEmit>
+        <IE>206402877111</IE>
+        <CRT>3</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962002668</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA</xNome>
+        <enderDest>
+          <xLgr>AVENIDA ROQUE PETRONI JUNIOR</xLgr>
+          <nro>1089</nro>
+          <xCpl>NIVEL SUPERIOR LOJA 103/104S</xCpl>
+          <xBairro>JARDIM DAS ACACIAS</xBairro>
+          <cMun>3550308</cMun>
+          <xMun>SAO PAULO</xMun>
+          <UF>SP</UF>
+          <CEP>04707900</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>1152424985</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>131900556118</IE>
+        <email>fiscal@livrariadavila.com.br; comercial@livrariadavila.com.b</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>9786561264136</cProd>
+          <cEAN>9786561264136</cEAN>
+          <xProd>Livro Educativo Montessori: Meu Livrinho Sensorial Maleta Educativa - Fundo do Mar</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5917</CFOP>
+          <uCom>EX</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>129.9000000000</vUnCom>
+          <vProd>129.90</vProd>
+          <cEANTrib>9786561264136</cEANTrib>
+          <uTrib>EX</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>129.9000000000</vUnTrib>
+          <vDesc>77.94</vDesc>
+          <indTot>1</indTot>
+          <nItemPed>000000</nItemPed>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>9786561264082</cProd>
+          <cEAN>9786561264082</cEAN>
+          <xProd>Livro Educativo Montessori: Meu Livrinho Sensorial Maleta Educatival - Veiculos</xProd>
+          <NCM>49019900</NCM>
+          <CFOP>5917</CFOP>
+          <uCom>EX</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>99.9000000000</vUnCom>
+          <vProd>99.90</vProd>
+          <cEANTrib>9786561264082</cEANTrib>
+          <uTrib>EX</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>99.9000000000</vUnTrib>
+          <vDesc>59.94</vDesc>
+          <indTot>1</indTot>
+          <nItemPed>000000</nItemPed>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMS40>
+              <orig>0</orig>
+              <CST>41</CST>
+            </ICMS40>
+          </ICMS>
+          <IPI>
+            <cEnq>001</cEnq>
+            <IPINT>
+              <CST>54</CST>
+            </IPINT>
+          </IPI>
+          <PIS>
+            <PISNT>
+              <CST>06</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0.00</vBC>
+          <vICMS>0.00</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>229.80</vProd>
+          <vFrete>0.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>137.88</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>0.00</vPIS>
+          <vCOFINS>0.00</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>91.92</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+        <transporta>
+          <CNPJ>71698476000196</CNPJ>
+          <xNome>TRANSPO EXPRESS TRANSPORTE E LOGISTICA LTDA</xNome>
+          <IE>492744228111</IE>
+          <xEnder>AVENIDA DAS COMUNICACOES, 265</xEnder>
+          <xMun>OSASCO</xMun>
+          <UF>SP</UF>
+        </transporta>
+        <vol>
+          <qVol>0</qVol>
+          <pesoL>0.700</pesoL>
+          <pesoB>0.700</pesoB>
+        </vol>
+      </transp>
+      <pag>
+        <detPag>
+          <tPag>90</tPag>
+          <vPag>0.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infAdFisco>NAO INCIDENCIA DE ICMS CONFORME ARTIGO 150, INCISO VI , D DA CONSTITUICAO FEDERAL E DO ARTIGO 7, INCISO XIII DO DECRETO 45.490/00 RICMS SP;;</infAdFisco>
+        <infCpl>NOTA FISCAL COMPLEMENTAR DA NF: 677451</infCpl>
+        <obsCont xCampo="TipoNota">
+          <xTexto>2</xTexto>
+        </obsCont>
+        <obsCont xCampo="OperacaoFiscal">
+          <xTexto>3</xTexto>
+        </obsCont>
+        <obsCont xCampo="Vendedor">
+          <xTexto>680105</xTexto>
+        </obsCont>
+        <obsCont xCampo="EnderecoEntrega">
+          <xTexto>1</xTexto>
+        </obsCont>
+        <obsCont xCampo="Setor">
+          <xTexto>99</xTexto>
+        </obsCont>
+        <obsCont xCampo="Consignacao">
+          <xTexto>451</xTexto>
+        </obsCont>
+        <obsCont xCampo="NumeroPedido">
+          <xTexto>0</xTexto>
+        </obsCont>
+      </infAdic>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe35251104207648000194550010007153071432545945">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>QPGL+RN8jN1YL6yK4u3f8HE7H3w=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>O61A1/spHy28RHIf3MwVTy19vSwpZNbBKyy4fBfRWHS2a1CWfLZdpTAF0OFDAfEg6//ao+3doD0Jljj7ZR8Iycnwf0MG36WFILe1xCS6ESFNosxJ5Nwrm7Wg8/7Ki0YnAtIGJO8iB0apyN3I8WQqns6xjbyKTkZbo5XseNp8ZVvcIaj8MYwKwia2dQsqHXwT3GG+YvgYM1C75xe3b+d4Lwu+zpZhZ8xS2pClniMSz1RkwiU1vxYwKkfgTsIaU5iFi1hqKTFmNNfdtqgxBOuXFgCGe3B11B3ZXH8ulm3Ynzmn6pOt2RpArNi0kv2aCvvLwKrjaYTzIJF+L7MwzD4gUQ==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt Id="Id135253554089035">
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009_V4</verAplic>
+      <chNFe>35251104207648000194550010007153071432545945</chNFe>
+      <dhRecbto>2025-11-19T11:04:10-03:00</dhRecbto>
+      <nProt>135253554089035</nProt>
+      <digVal>QPGL+RN8jN1YL6yK4u3f8HE7H3w=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>

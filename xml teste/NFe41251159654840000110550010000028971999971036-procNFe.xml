@@ -1,0 +1,305 @@
+<nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe41251159654840000110550010000028971999971036" versao="4.00">
+      <ide>
+        <cUF>41</cUF>
+        <cNF>99997103</cNF>
+        <natOp>VENDAS MERCADORIAS ADQUIRIDAS DE TERCEIROS</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>2897</nNF>
+        <dhEmi>2025-11-11T17:33:22-03:00</dhEmi>
+        <dhSaiEnt>2025-11-11T17:33:22-03:00</dhSaiEnt>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <cMunFG>4113700</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>6</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <indFinal>0</indFinal>
+        <indPres>3</indPres>
+        <indIntermed>0</indIntermed>
+        <procEmi>0</procEmi>
+        <verProc>VERSAO 1.0.774</verProc>
+      </ide>
+      <emit>
+        <CNPJ>59654840000110</CNPJ>
+        <xNome>DNOVA COMERCIO E DISTRIBUICAO LTDA</xNome>
+        <enderEmit>
+          <xLgr>AV CELSO GARCIA CID</xLgr>
+          <nro>1419</nro>
+          <xCpl>LOJA 1 E 2</xCpl>
+          <xBairro>CENTRO</xBairro>
+          <cMun>4113700</cMun>
+          <xMun>LONDRINA</xMun>
+          <UF>PR</UF>
+          <CEP>86010490</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>4333789996</fone>
+        </enderEmit>
+        <IE>9113051601</IE>
+        <CRT>1</CRT>
+      </emit>
+      <dest>
+        <CNPJ>54430962001343</CNPJ>
+        <xNome>LIVRARIA DA VILA LTDA</xNome>
+        <enderDest>
+          <xLgr>Avenida Ayrton Senna da Silva</xLgr>
+          <nro>400</nro>
+          <xBairro>Gleba Fazenda Palhano</xBairro>
+          <cMun>4113700</cMun>
+          <xMun>LONDRINA</xMun>
+          <UF>PR</UF>
+          <CEP>86050460</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+          <fone>4333296776</fone>
+        </enderDest>
+        <indIEDest>1</indIEDest>
+        <IE>9071497493</IE>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>39713</cProd>
+          <cEAN>7898316521141</cEAN>
+          <xProd>Fita Empacotamento Transparente 45mm x 100m Alltape pct c/6 Unid SK270 (7898316521141)</xProd>
+          <NCM>48114110</NCM>
+          <CFOP>5102</CFOP>
+          <uCom>PCT</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>40.500000</vUnCom>
+          <vProd>40.50</vProd>
+          <cEANTrib>7898316521141</cEANTrib>
+          <uTrib>PCT</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>40.500000</vUnTrib>
+          <vFrete>3.03</vFrete>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <vTotTrib>13.29</vTotTrib>
+          <ICMS>
+            <ICMSSN101>
+              <orig>0</orig>
+              <CSOSN>101</CSOSN>
+              <pCredSN>3.0000</pCredSN>
+              <vCredICMSSN>1.22</vCredICMSSN>
+            </ICMSSN101>
+          </ICMS>
+          <PIS>
+            <PISOutr>
+              <CST>99</CST>
+              <qBCProd>0</qBCProd>
+              <vAliqProd>0</vAliqProd>
+              <vPIS>0.00</vPIS>
+            </PISOutr>
+          </PIS>
+          <COFINS>
+            <COFINSOutr>
+              <CST>99</CST>
+              <qBCProd>0</qBCProd>
+              <vAliqProd>0</vAliqProd>
+              <vCOFINS>0.00</vCOFINS>
+            </COFINSOutr>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="2">
+        <prod>
+          <cProd>48143</cProd>
+          <cEAN>7898380920017</cEAN>
+          <xProd>Sulfite 75g A4 210 x 297mm pct c/500 Fls Ink Premium (7898380920017)</xProd>
+          <NCM>48025610</NCM>
+          <CEST>1903100</CEST>
+          <CFOP>5102</CFOP>
+          <uCom>PCT</uCom>
+          <qCom>2.0000</qCom>
+          <vUnCom>28.900000</vUnCom>
+          <vProd>57.80</vProd>
+          <cEANTrib>7898380920017</cEANTrib>
+          <uTrib>PCT</uTrib>
+          <qTrib>2.0000</qTrib>
+          <vUnTrib>28.900000</vUnTrib>
+          <vFrete>4.34</vFrete>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <vTotTrib>20.24</vTotTrib>
+          <ICMS>
+            <ICMSSN101>
+              <orig>0</orig>
+              <CSOSN>101</CSOSN>
+              <pCredSN>3.0000</pCredSN>
+              <vCredICMSSN>1.73</vCredICMSSN>
+            </ICMSSN101>
+          </ICMS>
+          <PIS>
+            <PISOutr>
+              <CST>99</CST>
+              <qBCProd>0</qBCProd>
+              <vAliqProd>0</vAliqProd>
+              <vPIS>0.00</vPIS>
+            </PISOutr>
+          </PIS>
+          <COFINS>
+            <COFINSOutr>
+              <CST>99</CST>
+              <qBCProd>0</qBCProd>
+              <vAliqProd>0</vAliqProd>
+              <vCOFINS>0.00</vCOFINS>
+            </COFINSOutr>
+          </COFINS>
+        </imposto>
+      </det>
+      <det nItem="3">
+        <prod>
+          <cProd>16240</cProd>
+          <cEAN>7898119102097</cEAN>
+          <xProd>Toner Compatível Brother Preto TN1000 / TN1060 - DCP1512 HL1112 DCP1617NW HL1202 DCP1602 HL1212W (7898119107283)</xProd>
+          <NCM>84439933</NCM>
+          <CEST>2101800</CEST>
+          <CFOP>5405</CFOP>
+          <uCom>UND</uCom>
+          <qCom>3.0000</qCom>
+          <vUnCom>33.900000</vUnCom>
+          <vProd>101.70</vProd>
+          <cEANTrib>7898119102097</cEANTrib>
+          <uTrib>UND</uTrib>
+          <qTrib>3.0000</qTrib>
+          <vUnTrib>33.900000</vUnTrib>
+          <vFrete>7.63</vFrete>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <vTotTrib>29.28</vTotTrib>
+          <ICMS>
+            <ICMSSN500>
+              <orig>7</orig>
+              <CSOSN>500</CSOSN>
+              <vBCSTRet>52.95</vBCSTRet>
+              <pST>18.0000</pST>
+              <vICMSSubstituto>0.00</vICMSSubstituto>
+              <vICMSSTRet>6.00</vICMSSTRet>
+            </ICMSSN500>
+          </ICMS>
+          <PIS>
+            <PISOutr>
+              <CST>99</CST>
+              <qBCProd>0</qBCProd>
+              <vAliqProd>0</vAliqProd>
+              <vPIS>0.00</vPIS>
+            </PISOutr>
+          </PIS>
+          <COFINS>
+            <COFINSOutr>
+              <CST>99</CST>
+              <qBCProd>0</qBCProd>
+              <vAliqProd>0</vAliqProd>
+              <vCOFINS>0.00</vCOFINS>
+            </COFINSOutr>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0.00</vBC>
+          <vICMS>0.00</vICMS>
+          <vICMSDeson>0.00</vICMSDeson>
+          <vFCP>0.00</vFCP>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vFCPST>0.00</vFCPST>
+          <vFCPSTRet>0.00</vFCPSTRet>
+          <vProd>200.00</vProd>
+          <vFrete>15.00</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>0.00</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vIPIDevol>0.00</vIPIDevol>
+          <vPIS>0.00</vPIS>
+          <vCOFINS>0.00</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>215.00</vNF>
+          <vTotTrib>62.81</vTotTrib>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+        <transporta>
+          <CNPJ>53565512000161</CNPJ>
+          <xNome>ART NOVA</xNome>
+          <IE>9104802009</IE>
+          <xEnder>AV CELSO GARCIA CID, 1419</xEnder>
+          <xMun>LONDRINA</xMun>
+          <UF>PR</UF>
+        </transporta>
+      </transp>
+      <cobr>
+        <fat>
+          <nFat>2897</nFat>
+          <vOrig>215.00</vOrig>
+          <vDesc>0.00</vDesc>
+          <vLiq>215.00</vLiq>
+        </fat>
+        <dup>
+          <nDup>001</nDup>
+          <dVenc>2025-11-27</dVenc>
+          <vDup>215.00</vDup>
+        </dup>
+      </cobr>
+      <pag>
+        <detPag>
+          <tPag>15</tPag>
+          <vPag>215.00</vPag>
+        </detPag>
+      </pag>
+      <infAdic>
+        <infCpl>DOCUMENTO EMITIDO POR ME OU EPP OPTANTE SIMPLES NACIONAL;PERMITE O APROVEITAMENTO DO CREDITO DO ICMS NO VALOR DE 3,17;CORRESPONDENTE A ALIQUOTA DE 3,00 NOS TERMOS DO ARTIGO 23 DA LC 123;SOL. FILIPI;Vendedor: 198 - Corp. Camila Marques;Trib aprox:  R$ 32.92 Federal R$ 29.89 Estadual - FONTE: IBPT;</infCpl>
+      </infAdic>
+      <infRespTec>
+        <CNPJ>00512358000101</CNPJ>
+        <xContato>evandro</xContato>
+        <email>evandro@hdtec.com.br</email>
+        <fone>4330254028</fone>
+        <idCSRT>03</idCSRT>
+        <hashCSRT>3vNa+oqhqNLSiqxy1wl7L3ISXrE=</hashCSRT>
+      </infRespTec>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#NFe41251159654840000110550010000028971999971036">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>NvBb8KtH2exIY/ae+72LuZf7EXo=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>QCjUDncinUeiEBX43MK1Rc21XEr1W3yIr/FHVciXD+hhbnj012EKWeouWhrB1l5uE7qiLkWMvZTIy3ynQXWf1+4pFQ1qUM3VnxIn3I/ep/wOWtcgZweGOhp5bCcw3N2VrXzfn5aqmOZOh1heUBQ1m39gEFkbB500/MFJBlqe9tywR39MvzDsdb2qdRiE9TThYiaTmPZkdqot7z1oA2i+DB6BSJa/MeiSmZYF4C/zJNgNhYfm/ZW1nQlSp+Ao3RGTCaNRITRJBhYx5kFIkk0f70zaLRCz+QLnEbiCA11VKLG5jE8Dc2gWfkXpUdW3VKW45yLe4e9ItUegxPCXmbvNNw==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </NFe>
+  <protNFe versao="4.00">
+    <infProt Id="ID141250383788286">
+      <tpAmb>1</tpAmb>
+      <verAplic>PR-v4_9_43</verAplic>
+      <chNFe>41251159654840000110550010000028971999971036</chNFe>
+      <dhRecbto>2025-11-11T17:33:25-03:00</dhRecbto>
+      <nProt>141250383788286</nProt>
+      <digVal>NvBb8KtH2exIY/ae+72LuZf7EXo=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</nfeProc>
