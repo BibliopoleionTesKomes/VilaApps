@@ -29,7 +29,7 @@ app.secret_key = 'vila_apps_secret_key'
 # Registra o módulo de conferência
 app.register_blueprint(conferencia_bp, url_prefix='/conferencia')
 
-CAMINHO_FIXO = r"C:\projetos\VilaApps\xml teste"
+CAMINHO_FIXO = r"C:\Users\AS informática\Documents\Modelos Python\Confronto _ NFE\xml teste"
 
 CACHE_ACERTO = os.path.join(tempfile.gettempdir(), 'vila_cache_acerto.json')
 CACHE_DEVOLUCAO = os.path.join(tempfile.gettempdir(), 'vila_cache_devolucao.json')
@@ -146,16 +146,31 @@ def tarefa_processamento_background(modulo):
         return
 
     STATUS_GLOBAL['msg'] = 'Cruzando dados com ERP...'
+    # 2. CRUZAMENTO DE FILIAIS (SQL)
     if 'CNPJ_Destinatario' in df_xml.columns:
-        df_lojas = buscar_filiais_sql()
-        if not df_lojas.empty:
-            df_xml['KEY_CNPJ'] = df_xml['CNPJ_Destinatario'].apply(limpar_cnpj)
-            df_lojas['KEY_CNPJ'] = df_lojas['CNPJ'].apply(limpar_cnpj)
-            df_m = pd.merge(df_xml, df_lojas[['KEY_CNPJ', 'Nome_Filial']], on='KEY_CNPJ', how='left')
-            df_m['Filial'] = df_m['Nome_Filial'].fillna('-')
-            df_xml = df_m.drop(columns=['Nome_Filial'])
-        else: df_xml['Filial'] = '-'
-    else: df_xml['Filial'] = '-'
+        # Limpeza prévia para garantir que o match funcione
+        df_xml['KEY_CNPJ'] = df_xml['CNPJ_Destinatario'].apply(limpar_cnpj)
+        
+        df_lojas_erp = buscar_filiais_sql()
+        
+        if not df_lojas_erp.empty:
+            df_lojas_erp['KEY_CNPJ'] = df_lojas_erp['CNPJ'].apply(limpar_cnpj)
+            
+            # Faz o cruzamento
+            df_merged = pd.merge(df_xml, df_lojas_erp[['KEY_CNPJ', 'Nome_Filial']], on='KEY_CNPJ', how='left')
+            
+            # Se 'Nome_Filial' (do banco) for NaN, usa 'Nome_Destinatario' (do XML)
+            df_merged['Filial'] = df_merged['Nome_Filial'].fillna(df_merged['Nome_Destinatario'])
+            
+            # Se mesmo assim ainda for NaN (XML vazio), coloca um texto padrão
+            df_merged['Filial'] = df_merged['Filial'].fillna("Filial Não Identificada")
+            
+            df_xml = df_merged.drop(columns=['Nome_Filial'])
+        else:
+            # Se o SQL falhar ou voltar vazio, usa o nome do XML direto
+            df_xml['Filial'] = df_xml.get('Nome_Destinatario', 'Sem Nome').fillna("Erro SQL")
+    else:
+        df_xml['Filial'] = 'Sem Destinatário'
 
     df_forn = buscar_dados_fornecedores()
     if not df_forn.empty:
@@ -168,7 +183,7 @@ def tarefa_processamento_background(modulo):
     for c in cols:
         if c not in df_final.columns: df_final[c] = '-'
         else: df_final[c] = df_final[c].fillna('-')
-
+    df_final = df_final.fillna("")  # Transforma qualquer NaN restante em vazio ""
     lista = df_final.to_dict('records')
     pedidos = [n.get('Numero_Pedido') for n in lista if n.get('Numero_Pedido')]
     
@@ -188,7 +203,7 @@ def tarefa_processamento_background(modulo):
             itens = df_itens_erp[df_itens_erp['Numero_Pedido_Chave'] == ped]
             if not itens.empty: nota['Itens_ERP'] = itens.to_dict('records')
         
-        # Calcula divergência com a nova lógica de Valor Unitário.
+        # Calcula divergência com a nova lógica de Valor Unitário
         nota['Divergencia_Resumo'] = gerar_resumo_divergencia(nota)
 
         if 'Valor_Total' in nota: nota['Valor_Total'] = formatar_moeda(nota['Valor_Total'])
@@ -235,7 +250,6 @@ def api_progresso():
         'msg': STATUS_GLOBAL['msg']
     })
 
-@app.post("/")  
 @app.route('/')
 def menu(): return render_template('menu.html')
 
