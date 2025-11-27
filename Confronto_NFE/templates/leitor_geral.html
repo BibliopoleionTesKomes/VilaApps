@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Vila Apps - Leitor Geral</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --cor-principal: #192F63; --cor-secundaria: #33508F; --cor-fundo-pagina: #E8EDF9; }
+        body { background-color: var(--cor-fundo-pagina); font-family: 'Montserrat', sans-serif; min-height: 100vh; display: flex; flex-direction: column; padding-bottom: 20px; overflow-x: hidden; }
+        
+        /* CABEÇALHO PADRÃO (90px) */
+        .header-bg { background-image: linear-gradient(135deg, #192F63 0%, #33508F 100%); color: white; padding: 0 2rem; height: 90px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
+        .header-title { font-weight: 700; font-size: 1.6rem; margin: 0; text-shadow: 0 2px 5px rgba(0,0,0,0.4); text-transform: uppercase; letter-spacing: 1px; }
+        .logo-img { max-height: 50px; width: auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+        .logo-argos { max-height: 120px; width: auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+        .btn-voltar { color: rgba(255,255,255,0.9); text-decoration: none; margin-right: 15px; font-size: 1rem; } .btn-voltar:hover { color: #fff; }
+        
+        /* CONTAINER FULL WIDTH */
+        .container-main { width: 100%; max-width: 100%; margin: 0; padding: 15px 20px; flex: 1; display: flex; flex-direction: column; }
+        
+        .card-tabela { background: white; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; flex: 1; display: flex; flex-direction: column; }
+        
+        /* Filtros Compactos */
+        .filter-row { background-color: #f8f9fa; padding: 8px 15px; border-bottom: 1px solid #dee2e6; }
+        .filter-input { border-radius: 15px; border: 1px solid #ced4da; font-size: 0.75rem; height: 30px; }
+        
+        /* Tabela Otimizada - SEM QUEBRA DE LINHA E FONTE MENOR */
+        .table-responsive { flex: 1; overflow-y: auto; max-height: 75vh; }
+        
+        .table-custom th { 
+            background-color: #192F63; color: white; vertical-align: middle; 
+            font-size: 0.7rem; text-transform: uppercase; white-space: nowrap; 
+            position: sticky; top: 0; z-index: 10; padding: 8px 6px; 
+        }
+        
+        .table-custom td { 
+            font-size: 0.7rem; /* Fonte reduzida */
+            vertical-align: middle; padding: 4px 6px; 
+            border-bottom: 1px solid #eee;
+            white-space: nowrap; /* Tira a quebra de linha */
+        }
+        
+        .timestamp-box { background-color: #e7f1ff; color: #192F63; padding: 4px 10px; border-radius: 6px; font-weight: 600; font-size: 0.8rem; }
+        
+        /* Colunas Específicas - Com overflow hidden se for muito grande */
+        .col-razao { max-width: 250px; overflow: hidden; text-overflow: ellipsis; }
+        .col-fantasia { max-width: 180px; overflow: hidden; text-overflow: ellipsis; font-weight: 600; color: var(--cor-secundaria); }
+        .col-filial { max-width: 180px; overflow: hidden; text-overflow: ellipsis; }
+        .col-prazo { color: #666; }
+
+        #progress-overlay { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(25, 47, 99, 0.95); z-index:9999; flex-direction:column; justify-content:center; align-items:center; color:white; }
+        .loader-content { width: 400px; text-align: center; }
+        .btn-compact { font-size: 0.8rem; padding: 5px 15px; border-radius: 20px; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <div id="progress-overlay">
+        <div class="loader-content">
+            <h3 class="fw-bold mb-2" id="pg-titulo">Lendo XMLs...</h3>
+            <div class="progress" style="height: 25px; border-radius: 15px; background-color: rgba(255,255,255,0.2);">
+                <div id="pg-bar" class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: 0%; font-weight: bold;">0%</div>
+            </div>
+            <p class="mt-2 text-white-50" id="pg-msg">Iniciando...</p>
+            <p class="small text-white-50" id="pg-detalhe">0 / 0 arquivos</p>
+        </div>
+    </div>
+
+    <header class="header-bg">
+        <div style="display:flex;align-items:center;"><a href="{{ url_for('menu') }}" class="btn-voltar">⬅ Menu</a><img src="{{ url_for('static', filename='logo.png') }}" class="logo-img"></div>
+        <h1 class="header-title">Notas de Acerto  de Consignação</h1>
+        <div><img src="{{ url_for('static', filename='logo_argos.png') }}" class="logo-argos"></div>
+    </header>
+
+    <div class="container-main">
+        <div class="card-tabela shadow-sm border-0">
+            
+            <!-- Barra de Topo e Filtros Integrados -->
+            <div class="filter-row">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <div class="d-flex align-items-center">
+                        <h5 class="fw-bold text-secondary m-0 me-3" style="font-size:1rem;">Total: <span id="contador">{{ dados|length }}</span></h5>
+                        {% if ultima_atualizacao %}<div class="timestamp-box">📅 {{ ultima_atualizacao }}</div>{% endif %}
+                    </div>
+                    <div class="d-flex gap-2">
+                        <form action="{{ url_for('exportar_excel') }}" method="POST" class="m-0">
+                            <input type="hidden" name="origem" value="geral">
+                            <button class="btn btn-success btn-compact shadow-sm">📊 Excel</button>
+                        </form>
+                        <button class="btn btn-primary btn-compact shadow-sm" onclick="iniciarAtualizacao('geral')">🔄 Atualizar Lista</button>
+                    </div>
+                </div>
+
+                <div class="row g-2">
+                    <!-- JANELA DE TEMPO -->
+                    <div class="col-md-2">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-text bg-white border-end-0 text-muted" style="border-radius: 15px 0 0 15px; border: 1px solid #ced4da; font-size: 0.7rem;">De</span>
+                            <input type="date" id="filtroDataIni" class="form-control filter-input border-start-0" style="border-radius: 0 15px 15px 0;" title="Data Início">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-text bg-white border-end-0 text-muted" style="border-radius: 15px 0 0 15px; border: 1px solid #ced4da; font-size: 0.7rem;">Até</span>
+                            <input type="date" id="filtroDataFim" class="form-control filter-input border-start-0" style="border-radius: 0 15px 15px 0;" title="Data Fim">
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <input type="text" id="filtroNota" list="listNotas" class="form-control filter-input" placeholder="🔢 Nota (Digitar)...">
+                        <datalist id="listNotas"></datalist>
+                    </div>
+
+                    <div class="col-md-2">
+                        <input type="text" id="filtroFantasia" list="listFantasia" class="form-control filter-input" placeholder="🏭 Fornecedor...">
+                        <datalist id="listFantasia"></datalist>
+                    </div>
+
+                    <div class="col-md-1">
+                        <input type="text" id="filtroDiaAcerto" list="listDiaAcerto" class="form-control filter-input text-center" placeholder="📅 Dia" title="Dia do Acerto">
+                        <datalist id="listDiaAcerto"></datalist>
+                    </div>
+
+                    <div class="col-md-3">
+                        <input type="text" id="filtroLoja" list="listaLojas" class="form-control filter-input" placeholder="🏪 Loja Destino...">
+                        <datalist id="listaLojas">
+                            {% for loja in lista_lojas %}<option value="{{ loja }}">{% endfor %}
+                        </datalist>
+                    </div>
+                </div>
+            </div>
+
+            {% if erro %}<div class="alert alert-danger m-3">{{ erro }}</div>{% endif %}
+
+            {% if dados %}
+            <div class="table-responsive">
+                <table class="table table-hover table-custom mb-0" id="tabela">
+                    <thead>
+                        <tr>
+                            <th>Emissão</th>
+                            <th>Vencimento</th>
+                            <th>Nota</th>
+                            <th>Série</th>
+                            <th>CFOP</th>
+                            <th>Razão Social</th>
+                            <th>Nome Fantasia</th>
+                            <th>Prazo</th>
+                            <th class="text-center">Dia Acerto</th>
+                            <th>Filial</th>
+                            <th class="text-end">Valor</th>
+                            <th>Chave</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in dados %}
+                        <tr>
+                            <td>{{ row.Data_Emissao }}</td>
+                            <td class="text-primary fw-bold">{{ row.Data_Vencimento }}</td> <!-- VENCIMENTO -->
+                            <td class="fw-bold">{{ row.Numero_NF }}</td>
+                            <td>{{ row.Serie }}</td>
+                            <td>{{ row.CFOPs }}</td>
+                            <td class="col-razao" title="{{ row.Nome_Emitente }}">{{ row.Nome_Emitente }}</td>
+                            <td class="col-fantasia" title="{{ row.Nome_Fantasia }}">{{ row.Nome_Fantasia }}</td>
+                            <td class="col-prazo">{{ row.Prazo }}</td>
+                            <td class="text-center fw-bold">{{ row.Dia_Acerto }}</td>
+                            <td class="col-filial" title="{{ row.Filial }}">{{ row.Filial }}</td>
+                            <td class="text-end fw-bold text-success">{{ row.Valor_Total }}</td>
+                            <td class="small text-muted font-monospace" style="font-size:0.65rem;">{{ row.Chave_Acesso }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        function iniciarAtualizacao(modulo) {
+            document.getElementById('progress-overlay').style.display = 'flex';
+            fetch('/api/iniciar_processamento', {
+                method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({ modulo: modulo })
+            }).then(r => r.json()).then(resp => {
+                if(resp.status === 'iniciado' || resp.status === 'ocupado') monitorarProgresso();
+            });
+        }
+
+        function monitorarProgresso() {
+            const interval = setInterval(() => {
+                fetch('/api/progresso').then(r => r.json()).then(dados => {
+                    const bar = document.getElementById('pg-bar');
+                    bar.style.width = dados.percentual + '%'; bar.innerText = dados.percentual + '%';
+                    document.getElementById('pg-msg').innerText = dados.msg;
+                    document.getElementById('pg-detalhe').innerText = `${dados.atual} / ${dados.total} arquivos`;
+                    if(dados.status === 'concluido') {
+                        clearInterval(interval);
+                        document.getElementById('pg-msg').innerText = "Recarregando página...";
+                        setTimeout(() => window.location.reload(), 1000);
+                    }
+                });
+            }, 500);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const fDataIni = document.getElementById('filtroDataIni');
+            const fDataFim = document.getElementById('filtroDataFim');
+            const fNota = document.getElementById('filtroNota');
+            const fFantasia = document.getElementById('filtroFantasia');
+            const fDiaAcerto = document.getElementById('filtroDiaAcerto');
+            const fLoja = document.getElementById('filtroLoja');
+            const contador = document.getElementById('contador');
+
+            // --- POPULAR FILTROS ---
+            function popularFiltros() {
+                const notasSet = new Set();
+                const fantasiasSet = new Set();
+                const diasSet = new Set();
+
+                const linhas = document.querySelectorAll('#tabela tbody tr');
+                linhas.forEach(tr => {
+                    const nota = tr.children[2].innerText.trim(); // Nota índice 2
+                    const razao = tr.children[5].innerText.trim(); // Razao índice 5
+                    const fantasia = tr.children[6].innerText.trim(); // Fantasia índice 6
+                    const dia = tr.children[8].innerText.trim(); // Dia índice 8
+
+                    if(nota) notasSet.add(nota);
+                    if(fantasia && fantasia !== '-') fantasiasSet.add(fantasia);
+                    else if(razao) fantasiasSet.add(razao);
+                    
+                    if(dia && dia !== '-') diasSet.add(dia);
+                });
+
+                const preencher = (id, set, sortNumerico=false) => {
+                    const datalist = document.getElementById(id);
+                    if(!datalist) return;
+                    let lista = Array.from(set);
+                    if(sortNumerico) lista.sort((a, b) => parseInt(a) - parseInt(b));
+                    else lista.sort();
+                    lista.forEach(val => {
+                        const opt = document.createElement('option');
+                        opt.value = val;
+                        datalist.appendChild(opt);
+                    });
+                };
+
+                preencher('listNotas', notasSet);
+                preencher('listFantasia', fantasiasSet);
+                preencher('listDiaAcerto', diasSet, true);
+            }
+            popularFiltros(); 
+
+            // --- FILTRAGEM ---
+            function parseDataBR(strData) {
+                if(!strData || strData === '-') return null;
+                const partes = strData.split('/');
+                if(partes.length === 3) {
+                    const d = new Date(partes[2], partes[1]-1, partes[0]); 
+                    d.setHours(0,0,0,0);
+                    return d;
+                }
+                return null;
+            }
+
+            function filtrarTabela() {
+                const dtIni = fDataIni.value ? new Date(fDataIni.value) : null;
+                const dtFim = fDataFim.value ? new Date(fDataFim.value) : null;
+                if(dtIni) dtIni.setHours(0,0,0,0);
+                if(dtFim) dtFim.setHours(0,0,0,0);
+
+                const termoNota = fNota.value.toLowerCase();
+                const termoFantasia = fFantasia.value.toLowerCase();
+                const termoDiaAcerto = fDiaAcerto.value;
+                const termoLoja = fLoja.value.toLowerCase();
+
+                const linhas = document.querySelectorAll('#tabela tbody tr');
+                let visiveis = 0;
+
+                linhas.forEach(tr => {
+                    // Índices atualizados devido à nova coluna
+                    const txtData = tr.children[0].innerText.trim();
+                    const txtNota = tr.children[2].innerText.toLowerCase();
+                    const txtRazao = tr.children[5].innerText.toLowerCase();
+                    const txtFantasia = tr.children[6].innerText.toLowerCase();
+                    const txtDiaAcerto = tr.children[8].innerText.trim();
+                    const txtLoja = tr.children[9].innerText.toLowerCase();
+
+                    let matchData = true;
+                    const dataLinha = parseDataBR(txtData);
+                    if (dataLinha) {
+                        if (dtIni && dataLinha < dtIni) matchData = false;
+                        if (dtFim && dataLinha > dtFim) matchData = false;
+                    } else if (dtIni || dtFim) {
+                        matchData = false; 
+                    }
+
+                    const matchForn = txtRazao.includes(termoFantasia) || txtFantasia.includes(termoFantasia);
+                    const matchDia = termoDiaAcerto === '' || txtDiaAcerto === termoDiaAcerto; 
+
+                    if (matchData && txtNota.includes(termoNota) && matchForn && matchDia && txtLoja.includes(termoLoja)) {
+                        tr.style.display = ''; visiveis++;
+                    } else { tr.style.display = 'none'; }
+                });
+                if(contador) contador.innerText = visiveis;
+            }
+            
+            [fDataIni, fDataFim, fNota, fFantasia, fDiaAcerto, fLoja].forEach(el => { 
+                if(el) {
+                    el.addEventListener('keyup', filtrarTabela);
+                    el.addEventListener('change', filtrarTabela);
+                    el.addEventListener('input', filtrarTabela);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vila Apps - Resumo da Conferência</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cor-fundo-pagina: #E8EDF9; 
+            --cor-principal: #192F63; 
+            --cor-secundaria: #33508F; 
+            --cor-destaque: #FFC107; 
+            --cor-borda-suave: #DDE2E7; 
+            --cor-texto-claro: #FFFFFF;
+            --cor-input-bg: #F0F2F5; 
+            --cor-tabela-fundo-claro: #F0F0F0;
+        }
+
+        body {
+            background-color: var(--cor-fundo-pagina); 
+            color: #333;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            padding-bottom: 20px; 
+            overflow-x: hidden;
+        }
+
+        /* --- CABEÇALHO COMPACTO --- */
+        .header-bg {
+            background-image: linear-gradient(135deg, #192F63 0%, #33508F 100%); 
+            color: white; 
+            padding: 0 1.5rem; 
+            height: 60px;
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo-vila { max-height: 40px; width: auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+        .logo-argos { max-height: 120px; width: auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+
+        .container-main { 
+            width: 100%; 
+            max-width: 100%; 
+            margin: 0; 
+            padding: 10px 15px; 
+            flex: 1; 
+            display: flex; 
+            flex-direction: column; 
+        }
+
+        /* --- BOTÕES COMPACTOS --- */
+        .btn-compact {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-weight: 600;
+            border: none;
+            transition: all 0.2s;
+            white-space: nowrap;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-gradiente-azul {
+            background: linear-gradient(135deg, var(--cor-secundaria), var(--cor-principal));
+            color: white !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .btn-gradiente-azul:hover {
+            background: linear-gradient(135deg, #4a69a8, #2c4a8a);
+            transform: translateY(-1px);
+        }
+
+        /* --- CARDS DE TOTAIS COMPACTOS --- */
+        .section-card { 
+            background: white; 
+            border-radius: 6px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+            padding: 10px 15px; 
+            margin-bottom: 10px;
+            border: 1px solid var(--cor-borda-suave);
+        }
+        
+        .card-total h5 { 
+            font-weight: 700; 
+            font-size: 0.85rem; 
+            text-transform: uppercase; 
+            margin-bottom: 5px;
+            color: #666;
+        }
+        .card-total .value { 
+            font-size: 1.5rem; /* Reduzido de 2rem */
+            font-weight: 800; 
+            font-family: 'Montserrat', sans-serif; 
+            line-height: 1;
+        }
+        .card-total p { 
+            font-size: 0.75rem; 
+            margin-top: 5px; 
+            margin-bottom: 0;
+            line-height: 1.2;
+        }
+        .value.text-danger { color: #dc3545 !important; } 
+        .value.text-success { color: #198754 !important; }
+
+        /* --- TABELA COMPACTA --- */
+        .card-tabela { 
+            background: white; 
+            border-radius: 6px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
+            overflow: hidden; 
+            flex: 1; 
+            display: flex; 
+            flex-direction: column; 
+        }
+        
+        .table-responsive { flex: 1; overflow-y: auto; max-height: 75vh; }
+        .table-sticky { width: 100%; border-collapse: collapse; } 
+        
+        .table-sticky thead th { 
+            position: sticky; top: 0; 
+            background: var(--cor-principal); 
+            color: var(--cor-texto-claro); 
+            z-index: 10; 
+            font-size: 0.75rem; 
+            text-transform: uppercase;
+            padding: 8px 6px; 
+            border: none;
+            white-space: nowrap;
+            text-align: right;
+        }
+        .table-sticky thead th:first-child { text-align: left; } /* Filial à esquerda */
+
+        .table-sticky td { 
+            font-size: 0.8rem; 
+            vertical-align: middle; 
+            padding: 6px 6px; 
+            border-bottom: 1px solid #eee;
+            white-space: nowrap;
+            text-align: right;
+        }
+        .table-sticky td:first-child { text-align: left; font-weight: 600; color: var(--cor-secundaria); }
+        
+        .table-sticky tbody tr:nth-child(even) { background-color: #f8f9fa; }
+
+        h4 { 
+            color: var(--cor-principal); 
+            font-family: 'Montserrat', sans-serif; 
+            font-weight: 700; 
+            font-size: 1.1rem; 
+            margin: 0 0 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<header class="header-bg">
+    <div style="display: flex; align-items: center; gap: 1rem;">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Livraria da Vila" class="logo-vila">
+        <span style="font-weight: 600; font-size: 0.9rem; opacity: 0.9; border-left: 1px solid rgba(255,255,255,0.3); padding-left: 1rem;">
+            Fornecedor: {{ fornecedor }}
+        </span>
+    </div>
+    <div class="d-flex gap-2">
+        <a href="{{ url_for('conferencia.show_results') }}" class="btn-compact btn-gradiente-azul">⬅️ Voltar</a>
+        <a href="{{ url_for('conferencia.show_export_list') }}" class="btn-compact btn-gradiente-azul">Lista Import</a>
+        <a href="{{ url_for('conferencia.download_file') }}" class="btn-compact btn-gradiente-azul">Baixar Excel</a>
+        <a href="{{ url_for('conferencia.index') }}" class="btn-compact btn-gradiente-azul">Nova Conferência</a>
+    </div>
+    <img src="{{ url_for('static', filename='logo_argos.png') }}" alt="Logo Argos" class="logo-argos">
+</header>
+
+<div class="container-main">
+    <!-- CARDS DE TOTAIS LADO A LADO -->
+    <div class="row g-2 mb-3">
+        <div class="col-md-6">
+            <div class="section-card card-total h-100 d-flex flex-column justify-content-center">
+                <h5>Valor Total Divergência</h5>
+                <div class="value text-danger">{{ totais_gerais['TOTAL ESTIMADO DA DIVERGÊNCIA LÍQUIDA'] }}</div>
+                <p class="text-muted">Valor total da divergência de quantidade (baseado no preço líquido).</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="section-card card-total h-100 d-flex flex-column justify-content-center">
+                <h5>Valor Total Divergência Devido</h5>
+                <div class="value text-success">{{ totais_gerais['TOTAL LÍQUIDO A ACERTAR (MANUAL)'] }}</div>
+                <p class="text-muted">Valor total a ser acertado (baseado no ajuste manual).</p>
+            </div>
+        </div>
+    </div>
+
+    <h4>Resumo Consolidado por Filial</h4>
+    
+    <div class="card-tabela">
+        <div class="table-responsive">
+            <table class="table-sticky mb-0">
+                <thead>
+                    <tr>
+                        <th>Filial</th>
+                        <th>Valor Líquido</th>
+                        <th>Valor Bruto</th>
+                        <th>Venda Bruta</th>
+                        <th>Vlr. Divergente (Total)</th>
+                        <th>Vlr. Divergente (Devido)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for row in resumo_por_filial %}
+                <tr>
+                    <td>{{ row['filial'] }}</td>
+                    <td>{{ row['Valor Líquido (Total Acertado)'] }}</td>
+                    <td>{{ row['Valor Bruto (Total Acertado)'] }}</td>
+                    <td>{{ row['Venda Bruta'] }}</td>
+                    <td class="text-danger fw-bold">{{ row['Vlr. Divergente no Acerto (Total)'] }}</td>
+                    <td class="text-success fw-bold">{{ row['Vlr. Líquido a Acertar (Manual)'] }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
