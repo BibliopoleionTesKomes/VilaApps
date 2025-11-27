@@ -29,7 +29,7 @@ app.secret_key = 'vila_apps_secret_key'
 # Registra o módulo de conferência
 app.register_blueprint(conferencia_bp, url_prefix='/conferencia')
 
-CAMINHO_FIXO = r"C:\Users\AS informática\Documents\Modelos Python\Confronto _ NFE\xml teste"
+CAMINHO_FIXO = r"C:\projetos\VilaApps\xml teste"
 
 CACHE_ACERTO = os.path.join(tempfile.gettempdir(), 'vila_cache_acerto.json')
 CACHE_DEVOLUCAO = os.path.join(tempfile.gettempdir(), 'vila_cache_devolucao.json')
@@ -235,6 +235,7 @@ def api_progresso():
         'msg': STATUS_GLOBAL['msg']
     })
 
+@app.post("/")  
 @app.route('/')
 def menu(): return render_template('menu.html')
 

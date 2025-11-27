@@ -1,0 +1,66 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+/xml teste/
+
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Environment variables
+*.env
+*.dotenv
+.env.*
+!.env.example
+
+# Flask instance folder
+instance/
+
+# PyInstaller
+*.spec
+dist/
+build/
+
+# Logs
+*.log
+logs/
+
+# SQLite / DB files
+*.sqlite
+*.sqlite3
+
+# Cache
+.cache/
+*.cache
+*.pytest_cache/
+pip-wheel-metadata/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE / Editor settings
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Coverage
+htmlcov/
+.coverage
+.coverage.*
+
+# Test reports
+junitxml/
+test-results/
+
+# Python packaging
+*.egg-info/
+.eggs/
+MANIFEST
