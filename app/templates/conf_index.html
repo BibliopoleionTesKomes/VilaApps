@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vila Apps - Nova Conferência</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo_vila.png') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --cor-fundo-pagina: #E8EDF9; --cor-principal: #192F63; --cor-secundaria: #33508F; }
+        body { background-color: var(--cor-fundo-pagina); font-family: 'Inter', sans-serif; font-size: 0.8rem; height: 100vh; overflow-y: auto; }
+        
+        /* --- PADRONIZAÇÃO DO HEADER (Igual ao Menu e Gestão) --- */
+        .header-bg { 
+            background-image: linear-gradient(135deg, #192F63 0%, #33508F 100%); 
+            color: white; 
+            padding: 0 2rem; 
+            height: 90px; /* Altura fixa padrão */
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25); 
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-logo-container { 
+            flex: 0 0 300px; 
+            display: flex; 
+            align-items: center; 
+        } 
+        .header-logo-container.right { justify-content: flex-end; }
+        
+        /* Logos Padronizados (70px) */
+        .logo-vila { 
+            max-height: 120px; 
+            width: auto; 
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); 
+        } 
+        .logo-argos { 
+            max-height: 120px; 
+            width: auto; 
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); 
+        }
+
+        /* Título Padronizado */
+        .header-title-text {
+            font-weight: 700;
+            margin: 0;
+            color: white;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 2px;
+            font-size: 1.6rem;
+            text-align: center;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        /* Botão Voltar (Ajustado) */
+        .btn-voltar { 
+            color: rgba(255,255,255,0.9); 
+            text-decoration: none; 
+            margin-right: 20px; 
+            font-size: 1rem; 
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.2s;
+        } 
+        .btn-voltar:hover { color: #fff; text-decoration: none; }
+        /* --- FIM DO HEADER --- */
+        
+        /* CARD PRINCIPAL */
+        .main-card { background: #fff; border-radius: 15px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); margin: 20px auto; max-width: 1400px; padding: 20px; min-height: 80vh; }
+        
+        /* ABAS E BOTÕES */
+        .nav-link.active { background: var(--cor-principal); color: #fff; }
+        .btn-iniciar { background: linear-gradient(145deg, #28a745, #218838); color: white; border: none; border-radius: 50px; padding: 8px 40px; font-weight: 700; display: none; transition: all 0.2s; }
+        .btn-iniciar:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3); }
+        .btn-iniciar.visible { display: inline-block; }
+        
+        /* ESTILOS DE FORMULÁRIO */
+        .section-title { font-size: 0.8rem; color: var(--cor-secundaria); font-weight: 700; text-transform: uppercase; border-bottom: 1px solid #eee; margin-bottom: 15px; padding-bottom: 5px; }
+        .form-label { font-size: 0.7rem; font-weight: 700; color: #6c757d; margin-bottom: 2px; text-transform: uppercase; }
+        .form-control, .form-select { font-size: 0.75rem; padding: 4px 10px; height: 32px; border-radius: 6px; border: 1px solid #ced4da; }
+        textarea.form-control { height: auto; }
+        
+        /* LISTA E UPLOAD */
+        .list-wrapper { border: 1px solid #dee2e6; border-radius: 8px; height: 100%; display: flex; flex-direction: column; }
+        .list-header { padding: 8px 12px; background: #f8f9fa; border-bottom: 1px solid #dee2e6; }
+        .scrollable-list { height: 400px; overflow-y: auto; padding: 5px; }
+        
+        .btn-buscar { background-color: var(--cor-secundaria); color: #fff; width: 100%; border: none; border-radius: 6px; padding: 8px; font-weight: 600; margin-top: 15px; font-size: 0.75rem; }
+        .btn-buscar:hover { background-color: var(--cor-principal); }
+
+        /* ÁREA DE DROP DE ARQUIVO (Visual Melhorado) */
+        .file-drop-area { 
+            border: 2px dashed #cbd5e0; 
+            border-radius: 10px; 
+            padding: 25px; 
+            text-align: center; 
+            background: #f8fafc; 
+            cursor: pointer; 
+            margin-bottom: 15px; 
+            transition: all 0.2s ease;
+            position: relative;
+        }
+        .file-drop-area:hover { 
+            border-color: var(--cor-secundaria); 
+            background: #f0f4ff; 
+            transform: translateY(-2px);
+        }
+        .file-icon { font-size: 2rem; margin-bottom: 0.5rem; display: block; opacity: 0.7; }
+        
+        /* ACORDEÃO */
+        .accordion-button { padding: 0.6rem 1rem; font-size: 0.75rem; font-weight: 600; color: var(--cor-principal); background-color: #f8f9fa; box-shadow: none !important; min-height: 40px; }
+        .accordion-button:not(.collapsed) { color: var(--cor-secundaria); background-color: #e8edf9; }
+        .accordion-body { padding: 15px; background-color: #fff; font-size: 0.75rem; }
+        
+        #submit-loader { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(25, 47, 99, 0.9); z-index: 9998; flex-direction: column; justify-content: center; align-items: center; color: white; }
+    </style>
+</head>
+<body>
+
+<div id="submit-loader">
+    <div class="spinner-border text-warning" role="status"></div>
+    <h4 class="mt-3 fw-bold">Processando Dados...</h4>
+    <p class="text-white-50 small">Isso pode levar alguns segundos.</p>
+</div>
+
+<!-- HEADER PADRONIZADO -->
+<header class="header-bg">
+    <div class="header-logo-container">
+        <a href="{{ url_for('menu') }}" class="btn-voltar">⬅ Menu</a>
+        <img src="{{ url_for('static', filename='logo.png') }}" class="logo-vila">
+    </div>
+    
+    <h1 class="header-title-text">Confere - Acerto de Consignação</h1>
+    
+    <div class="header-logo-container right">
+        <img src="{{ url_for('static', filename='logo_argos.png') }}" class="logo-argos">
+    </div>
+</header>
+
+<div class="container-fluid">
+    <div class="main-card">
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{ 'danger' if category == 'error' else category }} alert-dismissible fade show py-1 px-3 mb-3" style="font-size: 0.8rem;">
+                {{ message }} <button type="button" class="btn-close" data-bs-dismiss="alert" style="padding: 0.5rem;"></button>
+            </div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
+            <ul class="nav nav-tabs border-0 mb-0" id="myTab" role="tablist">
+                <li class="nav-item"><button class="nav-link active" id="sql-tab" data-bs-toggle="tab" data-bs-target="#sql-pane" type="button" onclick="toggleStartButton('sql')">🖥️ Buscar via Sistema</button></li>
+                <li class="nav-item"><button class="nav-link" id="excel-tab" data-bs-toggle="tab" data-bs-target="#excel-pane" type="button" onclick="toggleStartButton('excel')">📂 Carregar via Excel</button></li>
+            </ul>
+            <div>
+                <button type="button" id="btn-start-sql" class="btn-iniciar visible" onclick="submitForm('sql-form')">INICIAR CONFERÊNCIA ▶</button>
+                <button type="button" id="btn-start-excel" class="btn-iniciar" onclick="submitForm('excel-form')">INICIAR CONFERÊNCIA ▶</button>
+            </div>
+        </div>
+
+        <div class="tab-content" id="myTabContent">
+            
+            <!-- ================= ABA SQL ================= -->
+            <div class="tab-pane fade show active" id="sql-pane">
+                <form method="POST" action="{{ url_for('conferencia.iniciar_processamento') }}" enctype="multipart/form-data" id="sql-form">
+                    <input type="hidden" name="source" value="sql">
+                    <div class="row g-4">
+                        <div class="col-lg-3 border-end">
+                            <h5 class="section-title">1. Parâmetros da Busca</h5>
+                            <div class="mb-3">
+                                <label class="form-label">Fornecedor</label>
+                                <select class="form-select" id="fornecedor-select" name="fornecedor_id" required>
+                                    <option value="" disabled selected>Selecione...</option>
+                                    {% for f in fornecedores %}<option value="{{ f.CODECLI }}">{{ f.FANTASIA }}</option>{% endfor %}
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Status Proposta</label>
+                                <select class="form-select" id="status-select" name="status_id"><option value="3" selected>Digitação</option><option value="1">Enviado</option></select>
+                            </div>
+                            <div class="row g-2 mb-3">
+                                <div class="col-6"><label class="form-label">De:</label><input type="date" class="form-control" id="data_inicio_sql"></div>
+                                <div class="col-6"><label class="form-label">Até:</label><input type="date" class="form-control" id="data_fim_sql"></div>
+                            </div>
+                            <button type="button" class="btn-buscar shadow-sm" id="btn-buscar-pedidos">🔍 Buscar Pedidos</button>
+                        </div>
+
+                        <div class="col-lg-5 border-end">
+                            <h5 class="section-title">2. Selecione a Proposta</h5>
+                            <div class="list-wrapper shadow-sm">
+                                <div class="list-header">
+                                    <div class="form-check m-0">
+                                        <input class="form-check-input" type="checkbox" id="check-select-all" style="width: 14px; height: 14px;">
+                                        <label class="form-check-label fw-bold" for="check-select-all" style="font-size: 0.75rem; cursor: pointer;">Selecionar Todos</label>
+                                    </div>
+                                </div>
+                                <div class="scrollable-list" id="pedidos-list">
+                                    <div class="d-flex flex-column justify-content-center align-items-center h-100 text-muted">
+                                        <span style="font-size: 2rem; opacity: 0.3;">📋</span>
+                                        <p class="mt-2 small">Utilize os filtros ao lado para buscar.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <h5 class="section-title">3. Configurações Adicionais</h5>
+                            <div class="row g-2 mb-4">
+                                <div class="col-12"><label class="form-label fw-bold text-primary">Período de Venda (Geral)</label></div>
+                                <div class="col-6"><input type="date" class="form-control" id="data_inicio_vendas_sql" name="data_inicio_vendas" required></div>
+                                <div class="col-6"><input type="date" class="form-control" id="data_fim_vendas_sql" name="data_fim_vendas" required></div>
+                            </div>
+                            <div class="accordion shadow-sm" id="accordionParametros">
+                                <div class="accordion-item border mb-1 rounded">
+                                    <h2 class="accordion-header" id="headingPromo">
+                                        <button class="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePromo">Ações Promocionais</button>
+                                    </h2>
+                                    <div id="collapsePromo" class="accordion-collapse collapse" data-bs-parent="#accordionParametros">
+                                        <div class="accordion-body bg-light">
+                                            <label class="form-label">Período da Ação</label>
+                                            <div class="row g-2 mb-3">
+                                                <div class="col-6"><input type="date" class="form-control" name="data_inicio_vendas_acao" id="di_acao"></div>
+                                                <div class="col-6"><input type="date" class="form-control" name="data_fim_vendas_acao" id="df_acao"></div>
+                                            </div>
+                                            <label class="form-label">Lista de ISBNs</label>
+                                            <textarea class="form-control" name="isbns_promocionais" rows="4" placeholder="Cole os ISBNs aqui..." style="resize: none; font-size: 0.75rem;"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item border rounded">
+                                    <h2 class="accordion-header" id="headingQuebra">
+                                        <button class="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseQuebra">Relatório de Quebra</button>
+                                    </h2>
+                                    <div id="collapseQuebra" class="accordion-collapse collapse" data-bs-parent="#accordionParametros">
+                                        <div class="accordion-body bg-light">
+                                            <label class="form-label text-danger">Arquivo Inventário (.csv/.xls)</label>
+                                            <input type="file" class="form-control" name="quebra_file" accept=".csv,.xls,.xlsx">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- ================= ABA EXCEL ================= -->
+            <div class="tab-pane fade" id="excel-pane">
+                <form method="POST" action="{{ url_for('conferencia.iniciar_processamento') }}" enctype="multipart/form-data" id="excel-form">
+                    <input type="hidden" name="source" value="excel">
+                    <div class="row g-4 mt-1">
+                        <div class="col-lg-6 border-end">
+                            <h5 class="section-title">1. Arquivos Principais</h5>
+                            <div class="mb-4">
+                                <label class="form-label fw-bold text-primary">Arquivo de Acerto (Obrigatório)</label>
+                                <div class="file-drop-area shadow-sm" onclick="document.getElementById('acerto_input').click()">
+                                    <span class="file-icon">📂</span>
+                                    <p class="mb-1 fw-bold text-secondary">Carregar Relatório de Acerto</p>
+                                    <small class="text-muted d-block mb-2">Clique ou arraste aqui</small>
+                                    <input type="file" id="acerto_input" class="form-control form-control-sm" name="acerto_files" accept=".xls,.xlsx" required multiple style="max-width: 80%; margin: 0 auto;">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold text-primary">Relatório de Venda Geral (Obrigatório)</label>
+                                <input type="file" class="form-control" name="venda_file" accept=".xls,.xlsx" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <h5 class="section-title">2. Dados Complementares (Opcional)</h5>
+                            <div class="accordion shadow-sm" id="accordionExcel">
+                                <div class="accordion-item border mb-2 rounded">
+                                    <h2 class="accordion-header" id="headingExcelAcao">
+                                        <button class="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExcelAcao">Venda de Ação Promocional</button>
+                                    </h2>
+                                    <div id="collapseExcelAcao" class="accordion-collapse collapse" data-bs-parent="#accordionExcel">
+                                        <div class="accordion-body bg-light">
+                                            <label class="form-label">Relatório Venda Ação</label>
+                                            <input type="file" class="form-control mb-3" name="venda_acao_file" accept=".xls,.xlsx">
+                                            <label class="form-label">Lista de ISBNs Promocionais</label>
+                                            <textarea class="form-control" name="isbns_promocionais" rows="4" placeholder="Cole os ISBNs aqui..." style="resize: none; font-size: 0.75rem;"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item border rounded">
+                                    <h2 class="accordion-header" id="headingExcelQuebra">
+                                        <button class="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExcelQuebra">Relatório de Quebra (Inventário)</button>
+                                    </h2>
+                                    <div id="collapseExcelQuebra" class="accordion-collapse collapse" data-bs-parent="#accordionExcel">
+                                        <div class="accordion-body bg-light">
+                                            <label class="form-label text-danger">Arquivo de Quebra (.csv/.xls)</label>
+                                            <input type="file" class="form-control" name="quebra_file" accept=".xls,.xlsx,.csv">
+                                            <small class="text-muted mt-2 d-block">Use para carregar as divergências físicas.</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const today = new Date().toISOString().split('T')[0];
+        const past = new Date(); past.setDate(past.getDate() - 30);
+        const pastStr = past.toISOString().split('T')[0];
+        ['data_inicio_sql', 'data_fim_sql', 'data_fim_vendas_sql', 'di_acao', 'df_acao'].forEach(id => { const el = document.getElementById(id); if(el) el.value = today; });
+        ['data_inicio_vendas_sql'].forEach(id => { const el = document.getElementById(id); if(el) el.value = pastStr; });
+    });
+
+    function toggleStartButton(mode) {
+        document.querySelectorAll('.btn-iniciar').forEach(btn => btn.classList.remove('visible'));
+        document.getElementById(`btn-start-${mode}`).classList.add('visible');
+    }
+
+    function submitForm(id) {
+        const form = document.getElementById(id);
+        if(form.checkValidity()) {
+            document.getElementById('submit-loader').style.display = 'flex';
+            // Simulação de delay para teste visual
+            setTimeout(() => form.submit(), 500); 
+        } else { form.reportValidity(); }
+    }
+
+    document.getElementById('btn-buscar-pedidos').addEventListener('click', async () => {
+        const fornecedor = document.getElementById('fornecedor-select').value;
+        const status = document.getElementById('status-select').value;
+        const dataIni = document.getElementById('data_inicio_sql').value;
+        const dataFim = document.getElementById('data_fim_sql').value;
+        const listContainer = document.getElementById('pedidos-list');
+
+        if(!fornecedor || !dataIni || !dataFim) { alert("Preencha todos os campos."); return; }
+        listContainer.innerHTML = '<div class="text-center mt-5"><div class="spinner-border spinner-border-sm text-secondary"></div></div>';
+
+        try {
+            const res = await fetch('{{ url_for("conferencia.api_get_pedidos") }}', {
+                method: 'POST', headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ fornecedor_id: fornecedor, status_id: status, data_ini: dataIni, data_fim: dataFim })
+            });
+            const data = await res.json();
+            if(data.length === 0) {
+                listContainer.innerHTML = '<div class="text-center mt-5 text-muted"><small>Nenhum pedido encontrado.</small></div>';
+            } else {
+                listContainer.innerHTML = data.map((p, i) => `
+                    <div class="pedido-item" style="padding:8px; border-bottom:1px solid #eee;">
+                        <div class="form-check m-0">
+                            <input class="form-check-input" type="checkbox" name="pedidos_selecionados" value="${p.PEDIDO}" id="p-${i}" style="width: 14px; height: 14px; margin-top: 3px;">
+                            <label class="form-check-label w-100 ps-1" for="p-${i}" style="cursor:pointer; font-size:0.75rem;">
+                                <strong>${p.PEDIDO}</strong> - ${p.FILIAL} <span class="text-muted ms-1" style="font-size:0.7rem;">(${p.DT_PED})</span>
+                            </label>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        } catch(e) { listContainer.innerHTML = '<div class="text-center text-danger small mt-5">Erro na busca.</div>'; }
+    });
+
+    document.getElementById('check-select-all').addEventListener('change', function() {
+        const isChecked = this.checked;
+        document.querySelectorAll('#pedidos-list input[type="checkbox"]').forEach(cb => cb.checked = isChecked);
+    });
+</script>
+</body>
+</html>

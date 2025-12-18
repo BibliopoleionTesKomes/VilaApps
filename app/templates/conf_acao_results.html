@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado - Ação Promocional</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo_vila.png') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Adicionando ícones do Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <style>
+        :root {
+            /* TEMA VERDE E CREME */
+            --cor-principal: #125740; 
+            --cor-secundaria: #0e4532; 
+            --cor-destaque: #d1ccb4;
+            
+            --cor-fundo-pagina: #E8E5D4; 
+            --cor-borda-suave: #cfccc0; 
+            --cor-texto-claro: #FFFFFF;
+            --cor-input-bg: #F9F8F0; 
+            --cor-tabela-fundo-claro: #FDFDF9;
+
+            /* Header Verde */
+            --cor-header-start: #125740;
+            --cor-header-end: #1a6b51;
+        }
+
+        body {
+            background-color: var(--cor-fundo-pagina); 
+            color: #333;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            padding-bottom: 20px; 
+            overflow-x: hidden;
+        }
+
+        /* Header Verde */
+        .header-bg {
+            background-image: linear-gradient(135deg, var(--cor-header-start) 0%, var(--cor-header-end) 100%); 
+            color: white; 
+            padding: 0 1.5rem; 
+            height: 90px;
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-logo-container { 
+            flex: 0 0 300px; 
+            display: flex; 
+            align-items: center; 
+        } 
+        .header-logo-container.right { justify-content: flex-end; }
+        
+        .logo-vila { max-height: 120px; width: auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+        .logo-argos { max-height: 120px; width: auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+
+        .header-title-text {
+            font-weight: 700;
+            margin: 0;
+            color: white;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 2px;
+            font-size: 1.6rem;
+            text-align: center;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .container-main { width: 100%; max-width: 100%; margin: 0; padding: 10px 15px; flex: 1; display: flex; flex-direction: column; }
+
+        .btn-compact {
+            font-size: 0.75rem;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            border: none;
+            transition: all 0.2s;
+            white-space: nowrap;
+            cursor: pointer;
+            text-decoration: none; /* Garante que links pareçam botões */
+            display: inline-block;
+        }
+        /* Botões com gradiente Verde */
+        .btn-gradiente-acao {
+            background: linear-gradient(135deg, var(--cor-principal), var(--cor-secundaria));
+            color: white !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        }
+        .btn-gradiente-acao:hover {
+            filter: brightness(1.1);
+            transform: translateY(-1px);
+        }
+
+        .section-card { 
+            background: white; 
+            border-radius: 6px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+            padding: 8px 12px; 
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: space-between;
+            border-top: 3px solid var(--cor-principal); 
+        }
+
+        .form-select-sm {
+            border: 1px solid var(--cor-borda-suave);
+            border-radius: 8px;
+            padding: 2px 8px;
+            font-size: 0.75rem;
+            height: 28px;
+            background-color: var(--cor-input-bg);
+            color: #333;
+        }
+
+        .summary-group { display: flex; gap: 15px; align-items: center; flex-wrap: wrap; }
+        .summary-stat { text-align: right; padding-left: 10px; border-left: 2px solid var(--cor-borda-suave); line-height: 1.1; }
+        .summary-stat h5 { margin: 0; font-weight: 700; font-size: 0.9rem; white-space: nowrap; }
+        .summary-stat small { font-size: 0.65rem; color: #666; text-transform: uppercase; font-weight: 600; white-space: nowrap; }
+        
+        .card-tabela { background: white; border-radius: 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden; flex: 1; display: flex; flex-direction: column; }
+        
+        .table-responsive { flex: 1; overflow-y: auto; max-height: 72vh; }
+        .table-sticky { width: 100%; border-collapse: collapse; table-layout: fixed; } 
+        
+        /* Cabeçalho da tabela em Verde */
+        .table-sticky thead th { 
+            position: sticky; top: 0; 
+            background: var(--cor-principal); 
+            color: var(--cor-texto-claro); 
+            z-index: 10; 
+            font-size: 0.7rem; 
+            text-transform: uppercase; 
+            padding: 6px 4px; 
+            border: none;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .table-sticky td { font-size: 0.75rem; vertical-align: middle; padding: 4px 6px; border-bottom: 1px solid #e0dfd5; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        
+        /* Zebra striping adaptado para o tema creme */
+        .table-sticky tbody tr:nth-child(even) { background-color: #f7f6ef; }
+
+        .qty-input { width: 100%; text-align: right; border-radius: 4px; border: 1px solid var(--cor-secundaria); padding: 2px 4px; font-size: 0.75rem; height: 24px; }
+
+        .text-end { text-align: right; }
+        .col-num { text-align: right; }
+        tr.divergente { background-color: #ffe4e1 !important; }
+        tr.selected-row { background-color: var(--cor-destaque) !important; }
+        td.col-destaque { background-color: #f2f5f4 !important; border-left: 2px solid var(--cor-principal) !important; border-right: 2px solid var(--cor-principal) !important; }
+
+        .btn-copy-isbn { background: none; border: none; cursor: pointer; padding: 0; margin-left: 5px; opacity: 0.5; color: var(--cor-principal); vertical-align: middle; transition: all 0.2s ease; }
+        .btn-copy-isbn:hover { transform: scale(1.1); opacity: 1; color: var(--cor-principal); }
+        .btn-copy-isbn svg { width: 16px; height: 16px; }
+        
+        #toast-container { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: #125740; color: #fff; padding: 8px 16px; border-radius: 20px; font-size: 0.8rem; opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 2000; }
+        #toast-container.show { opacity: 1; }
+
+        #saving-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(18, 87, 64, 0.8); z-index: 200; display: none; align-items: center; justify-content: center; backdrop-filter: blur(2px); }
+
+        /* Estilos dos Modais Personalizados */
+        .modal-header { background-color: var(--cor-principal); color: white; border-bottom: none; }
+        .modal-content { border-radius: 12px; border: none; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+        .modal-title { font-weight: 700; font-size: 1.1rem; }
+        .btn-close-white { filter: invert(1) grayscale(100%) brightness(200%); }
+        
+        .export-options { display: flex; flex-direction: column; gap: 10px; }
+        .btn-export-option { 
+            display: flex; align-items: center; justify-content: space-between; 
+            padding: 15px 20px; background: white; border: 1px solid #eee; 
+            border-radius: 8px; text-decoration: none; color: #333; transition: all 0.2s; 
+            font-weight: 500;
+        }
+        .btn-export-option:hover { background: #f0f7f4; border-color: var(--cor-principal); transform: translateX(5px); }
+        .btn-export-option i { color: var(--cor-principal); font-size: 1.2rem; }
+
+        /* Estilo da tabela do modal */
+        .table-resumo th { background-color: #f8f9fa; color: #333; font-weight: 600; font-size: 0.8rem; }
+        .table-resumo td { font-size: 0.85rem; vertical-align: middle; }
+        .table-resumo tfoot tr { background-color: #eee; font-weight: 700; }
+
+        /* Botão Voltar (Ajustado para o header) */
+        .btn-voltar { 
+            color: rgba(255,255,255,0.9); 
+            text-decoration: none; 
+            margin-right: 20px; 
+            font-size: 1rem; 
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.2s;
+        } 
+        .btn-voltar:hover { color: #fff; text-decoration: none; }
+
+    </style>
+</head>
+<body>
+
+<div id="toast-container">ISBN Copiado!</div>
+<div id="saving-overlay">
+    <div class="text-center">
+        <div class="spinner-border text-white spinner-border-sm" role="status"></div>
+        <h6 class="mt-2 text-white fw-bold" style="font-size: 0.9rem;">Salvando...</h6>
+    </div>
+</div>
+
+<header class="header-bg">
+    <div class="header-logo-container">
+        <a href="{{ url_for('menu') }}" class="btn-voltar">⬅ Menu</a>
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Livraria da Vila" class="logo-vila">
+    </div>
+    
+    <h1 class="header-title-text">Resultado - Ação Promocional</h1>
+    
+    <div class="header-logo-container right">
+        <img src="{{ url_for('static', filename='logo_argos.png') }}" alt="Logo Argos" class="logo-argos">
+    </div>
+</header>
+
+<div class="container-main">
+    
+    <div class="section-card">
+        <div class="d-flex align-items-center gap-2">
+            <div style="display: flex; flex-direction: column; line-height: 1.2; margin-right: 20px;">
+                <small class="text-muted fw-bold">FORNECEDOR</small>
+                <span class="fw-bold" style="color: var(--cor-principal);">{{ fornecedor }}</span>
+            </div>
+
+            <label class="fw-bold" style="color: var(--cor-principal); font-size: 0.75rem;">Filial:</label>
+            <select class="form-select form-select-sm w-auto" id="filial-select">
+                <option value="all" {% if current_filial == 'all' %}selected{% endif %}>Todas</option>
+                {% for f in filiais_list %}
+                <option value="{{ f }}" {% if current_filial == f %}selected{% endif %}>{{ f }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="d-flex gap-2 align-items-center">
+             <!-- Link correto para voltar ao inicio do módulo de ação -->
+             <a href="{{ url_for('conferencia.index_acao') }}" class="btn-compact btn-gradiente-acao text-decoration-none">Nova Conferência</a>
+        
+             <!-- Botão Resumo abre Modal -->
+             <button type="button" class="btn-compact btn-gradiente-acao" data-bs-toggle="modal" data-bs-target="#modalResumo" onclick="atualizarModalResumo()">
+                 Ver Resumo
+             </button>
+             
+             <!-- Botão Exportar abre Modal -->
+             <button type="button" class="btn-compact btn-gradiente-acao" data-bs-toggle="modal" data-bs-target="#modalExport" onclick="atualizarModalExport()">
+                 Exportar / Baixar
+             </button>
+        </div>
+    </div>
+
+    <!-- KPI Display -->
+    <div class="section-card justify-content-center" style="background-color: transparent; border: none; box-shadow: none;">
+        <div class="summary-group">
+            <div class="summary-stat">
+                <small>Acerto Líquido</small>
+                <h5 id="total-acerto-liquido" style="color: var(--cor-principal);">R$ 0,00</h5>
+            </div>
+            <div class="summary-stat">
+                <small>Acerto Bruto</small>
+                <h5 id="total-acerto-bruto" style="color: var(--cor-principal);">R$ 0,00</h5>
+            </div>
+
+            <div class="summary-stat">
+                <small>Venda Bruta</small>
+                <h5 id="total-venda-bruta" style="color: #5a5a5a;">{{ venda_bruta_total }}</h5>
+            </div>
+
+            <div class="summary-stat">
+                <small>Total Divergência</small>
+                <h5 id="total-divergencia-auto" style="color: #dc3545;">R$ 0,00</h5>
+            </div>
+            <div class="summary-stat">
+                <small>Divergência Devida</small>
+                <h5 id="total-acerto-manual" style="color: #198754;">R$ 0,00</h5>
+            </div>
+
+            {% if has_quebra %}
+            <div class="summary-stat">
+                <small>Quebra Líquida</small>
+                <h5 id="total-quebra-liquida" style="color: #d63384;">R$ 0,00</h5>
+            </div>
+            {% endif %}
+            
+            <button id="btn-refresh-numeros" class="btn-compact btn-gradiente-acao" title="Recalcular">🔄</button>
+        </div>
+    </div>
+
+    <div class="card-tabela">
+        <div class="table-responsive">
+            <table class="table-sticky" id="export-table">
+                <colgroup>
+                    <col style="width: 7%;">  <!-- Filial -->
+                    <col style="width: 9%;">  <!-- ISBN -->
+                    <col style="width: auto;"> <!-- Titulo -->
+                    <col style="width: 4%;">  <!-- Acerto -->
+                    <col style="width: 4%;">  <!-- Venda -->
+                    <col style="width: 4%;">  <!-- Div -->
+                    <col style="width: 5%;">  <!-- Situação -->
+                    <col style="width: 6%;">  <!-- Qtd. a Acertar -->
+                    <col style="width: 5%;">  <!-- Unit Acerto -->
+                    <col style="width: 5%;">  <!-- Unit Venda -->
+                    <col style="width: 4%;">  <!-- Desc -->
+                    <col style="width: 6%;">  <!-- Total Div -->
+                    {% if has_quebra %}
+                    <col style="width: 4%;">
+                    <col style="width: 5%;">
+                    <col style="width: 5%;">
+                    {% endif %}
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Filial</th>
+                        <th>ISBN</th> 
+                        <th>Título</th>
+                        <th class="col-num">Acerto</th>
+                        <th class="col-num">Venda</th>
+                        <th class="col-num">Div.</th>
+                        <th>Situação</th>
+                        <th class="col-num" style="background-color: var(--cor-principal); color: #ffffff;">Qtd. a Acertar</th>
+                        <th class="col-num">Unit. Acerto</th>
+                        <th class="col-num">Unit. Venda</th>
+                        <th class="col-num">Desc.</th>
+                        <th class="col-num">Total Div.</th>
+                        {% if has_quebra %}
+                        <th class="col-num">Quebra</th>
+                        <th class="col-num">Q. Líq.</th>
+                        <th class="col-num">Q. Bruta</th>
+                        {% endif %}
+                    </tr>
+                </thead>
+                <tbody id="results-tbody">
+                    {% for row in data %}
+                    {% set is_divergencia = row['Divergência Qtd.'] | int > 0 %}
+                    
+                    <tr class="{{ 'divergente' if is_divergencia else '' }}"
+                        data-filial="{{ row['filial'] }}"
+                        data-isbn="{{ row['ISBN'] }}"
+                        data-situacao="{{ row['Situação Qtd.'] }}"
+                        data-qtd-acao="{{ row['Quant_acao'] | int }}"
+                        data-qtd-acerto="{{ row['Quant'] | int }}"
+                        
+                        data-vl-unit-acerto="{{ row['Vl. Unit._acerto'] | string | replace('R$', '') | replace(' ', '') | replace('.', '') | replace(',', '.') }}"
+                        data-vl-unit-venda="0" {# Na ação, unit venda é menos relevante ou vem de outra tabela #}
+                        data-desconto="{{ row['Desconto'] }}"
+                        data-vlr-liq-divergencia="{{ row['Vlr. Liq. Qtd. Divergência'] | string | replace('R$', '') | replace(' ', '') | replace('.', '') | replace(',', '.') }}"
+                        data-vlr-quebra-liq="{{ row['Vlr. Quebra Liquida'] | string | replace('R$', '') | replace(' ', '') | replace('.', '') | replace(',', '.') }}"
+                        data-vlr-quebra-bruta="{{ row['Vlr. Quebra Bruta'] | string | replace('R$', '') | replace(' ', '') | replace('.', '') | replace(',', '.') }}">
+                        
+                        <td title="{{ row['filial'] }}">{{ row['filial'] }}</td>
+                        <td>
+                            <span style="font-family: monospace;">{{ row['ISBN'] }}</span>
+                            <button class="btn-copy-isbn" onclick="copyToClipboard('{{ row['ISBN'] }}')" title="Copiar ISBN">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            </button>
+                        </td>
+                        <td title="{{ row['Titulo'] }}">{{ row['Titulo'] }}</td>
+                        
+                        <td class="col-num">{{ row['Quant'] }}</td> <!-- Acerto -->
+                        <td class="col-num">{{ row['Quant_acao'] }}</td> <!-- Venda -->
+                        
+                        <td class="col-num fw-bold {{ 'text-danger' if row['Divergência Qtd.'] > 0 else '' }}">{{ row['Divergência Qtd.'] }}</td>
+                        <td>{{ row['Situação Qtd.'] }}</td>
+                        
+                        <td class="col-num col-destaque">
+                            {% if is_divergencia %}
+                                <!-- Na Ação, divergência permite input até o limite -->
+                                {% set max_val = (row['Quant']|int - row['Quant_acao']|int) %}
+                                {% if max_val < 0 %}{% set max_val = 0 %}{% endif %}
+
+                                <input type="number" class="qty-input" min="0" max="{{ max_val }}" 
+                                       value="{{ row['Qtd. a Acertar'] if row['Qtd. a Acertar']|int > 0 else (1 if row['Divergência Qtd.']|int > 0 else 0) }}" 
+                                       data-filial="{{ row['filial'] }}" data-isbn="{{ row['ISBN'] }}">
+                            {% else %}
+                                <span class="text-muted" style="font-size: 0.75rem;">-</span>
+                            {% endif %}
+                        </td>
+                        
+                        <td class="col-num">{{ row['Vl. Unit._acerto'] }}</td>
+                        <td class="col-num">R$ 0,00</td>
+                        <td class="col-num">{{ (row['Desconto'] * 100)|round(0) }}%</td>
+                        <td class="col-num">{{ row['Vlr. Liq. Qtd. Divergência'] }}</td>
+                        
+                        {% if has_quebra %}
+                        <td class="col-num text-danger fw-bold">{{ row['Quebra_Inv'] | int }}</td>
+                        <td class="col-num">{{ row['Vlr. Quebra Liquida'] }}</td>
+                        <td class="col-num">{{ row['Vlr. Quebra Bruta'] }}</td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Resumo (Tabela Detalhada) -->
+<div class="modal fade" id="modalResumo" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Resumo por Filial</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-0">
+          <div class="table-responsive">
+              <table class="table table-sm table-striped table-hover mb-0 table-resumo" id="tabela-resumo-filiais">
+                  <thead class="table-light">
+                      <tr>
+                          <th class="ps-3">Filial</th>
+                          <th class="text-end">Acerto Bruto</th>
+                          <th class="text-end">Acerto Líquido</th>
+                          <th class="text-end pe-3">Venda (Ação)</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <!-- Preenchido via JS -->
+                  </tbody>
+                  <tfoot>
+                      <tr>
+                          <td class="ps-3">TOTAL GERAL</td>
+                          <td class="text-end" id="sum-acerto-bruto">R$ 0,00</td>
+                          <td class="text-end" id="sum-acerto-liquido">R$ 0,00</td>
+                          <td class="text-end pe-3" id="sum-venda-acao">R$ 0,00</td>
+                      </tr>
+                  </tfoot>
+              </table>
+          </div>
+      </div>
+      <div class="modal-footer bg-light">
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Exportação (Novo Layout com Tabela) -->
+<div class="modal fade" id="modalExport" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Pré-visualização de Exportação</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-0">
+          <div class="alert alert-light m-0 border-bottom text-center" style="font-size: 0.85rem;">
+              <i class="bi bi-info-circle"></i> Itens a serem faturados (Venda da Ação + Ajustes).
+          </div>
+          <div class="table-responsive" style="max-height: 400px;">
+              <table class="table table-sm table-striped mb-0 table-resumo" id="tabela-export">
+                  <thead class="table-light" style="position: sticky; top: 0; z-index: 5;">
+                      <tr>
+                          <th class="ps-3">Filial</th>
+                          <th>ISBN</th>
+                          <th class="text-center">Qtd. a Exportar</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <!-- Preenchido via JS -->
+                  </tbody>
+              </table>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Fechar</button>
+        <a href="{{ url_for('conferencia.download_file') }}" onclick="saveChanges(this.href); return false;" class="btn btn-gradiente-acao">
+            <i class="bi bi-file-earmark-excel me-1"></i> Baixar Excel
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const API_URLS = {
+        updateManual: "{{ url_for('conferencia.update_manual_acerto') }}",
+        // REMOVIDA A ROTA PROBLEMÁTICA 'summary'
+        results: "{{ url_for('conferencia.show_results_acao') }}",
+        exportList: "{{ url_for('conferencia.show_export_list') }}",
+        downloadFile: "{{ url_for('conferencia.download_file') }}",
+        newConf: "{{ url_for('conferencia.index_acao') }}"
+    };
+
+    function formatCurrency(val) { 
+        return val.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}); 
+    }
+
+    function atualizarModalResumo() {
+        const tbody = document.querySelector('#tabela-resumo-filiais tbody');
+        tbody.innerHTML = ''; 
+        
+        const totaisPorFilial = {};
+        let grandTotalBruto = 0;
+        let grandTotalLiq = 0;
+        let grandTotalVenda = 0;
+
+        document.querySelectorAll('#results-tbody tr').forEach(row => {
+            const filial = row.dataset.filial;
+            if (!filial) return;
+
+            const vlUnitAcerto = parseFloat(row.dataset.vlUnitAcerto) || 0;
+            const vlUnitVenda = parseFloat(row.dataset.vlUnitVenda) || 0;
+            const desc = parseFloat(row.dataset.desconto) || 0;
+            const qtdAcao = parseInt(row.dataset.qtdAcao) || 0;
+            
+            let qtdManual = 0;
+            const input = row.querySelector('.qty-input');
+            if (input) qtdManual = parseInt(input.value) || 0;
+
+            const finalQty = qtdAcao + qtdManual; 
+            const linhaAcertoBruto = finalQty * vlUnitAcerto;
+            const linhaAcertoLiq = linhaAcertoBruto * (1 - desc);
+            const linhaVenda = qtdAcao * vlUnitVenda; 
+
+            if (!totaisPorFilial[filial]) {
+                totaisPorFilial[filial] = { bruto: 0, liq: 0, venda: 0 };
+            }
+            totaisPorFilial[filial].bruto += linhaAcertoBruto;
+            totaisPorFilial[filial].liq += linhaAcertoLiq;
+            totaisPorFilial[filial].venda += linhaVenda;
+
+            grandTotalBruto += linhaAcertoBruto;
+            grandTotalLiq += linhaAcertoLiq;
+            grandTotalVenda += linhaVenda;
+        });
+
+        Object.keys(totaisPorFilial).sort().forEach(f => {
+            const dados = totaisPorFilial[f];
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td class="ps-3 fw-bold text-secondary">${f}</td>
+                <td class="text-end">${formatCurrency(dados.bruto)}</td>
+                <td class="text-end">${formatCurrency(dados.liq)}</td>
+                <td class="text-end pe-3">${formatCurrency(dados.venda)}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+
+        document.getElementById('sum-acerto-bruto').textContent = formatCurrency(grandTotalBruto);
+        document.getElementById('sum-acerto-liquido').textContent = formatCurrency(grandTotalLiq);
+        document.getElementById('sum-venda-acao').textContent = formatCurrency(grandTotalVenda);
+    }
+
+    // NOVA FUNÇÃO CORRIGIDA PARA O MODAL DE EXPORTAÇÃO
+    function atualizarModalExport() {
+        const tbody = document.querySelector('#tabela-export tbody');
+        tbody.innerHTML = ''; 
+        
+        let hasData = false;
+
+        document.querySelectorAll('#results-tbody tr').forEach(row => {
+            const filial = row.dataset.filial;
+            const isbn = row.dataset.isbn || row.querySelector('td:nth-child(2) span').textContent;
+            
+            const qtdAcao = parseInt(row.dataset.qtdAcao) || 0; // Pega a Quantidade de Venda da Ação
+            
+            let qtdManual = 0;
+            const input = row.querySelector('.qty-input');
+            if (input) qtdManual = parseInt(input.value) || 0;
+            
+            // Calcula o Total a Exportar/Faturar (Ação + Ajuste)
+            const finalQty = qtdAcao + qtdManual;
+
+            // Adiciona ao modal se o total final for maior que 0
+            if (finalQty > 0) {
+                hasData = true;
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td class="ps-3">${filial}</td>
+                    <td style="font-family: monospace;">${isbn}</td>
+                    <td class="text-center fw-bold text-success">${finalQty}</td>
+                `;
+                tbody.appendChild(tr);
+            }
+        });
+
+        if (!hasData) {
+             tbody.innerHTML = '<tr><td colspan="3" class="text-center text-muted py-4">Nenhum item para exportar.</td></tr>';
+        }
+    }
+
+    function copyToClipboard(text) {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+            document.execCommand('copy');
+            const toast = document.getElementById('toast-container');
+            toast.innerText = `ISBN ${text} Copiado!`;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2000);
+        } catch (err) { console.error('Erro ao copiar', err); }
+        document.body.removeChild(textArea);
+    }
+    
+    function calculateTotals() {
+        let totDiv = 0;
+        let totAcertoDevido = 0; 
+        let totAcertoBruto = 0; 
+        let totAcertoLiq = 0; 
+        let totQuebraLiq = 0;
+
+        document.querySelectorAll('#results-tbody tr').forEach(row => {
+            if(row.style.display === 'none') return; 
+
+            // Recupera dados
+            const vlUnit = parseFloat(row.dataset.vlUnitAcerto) || 0;
+            const desc = parseFloat(row.dataset.desconto) || 0;
+            const vlLiqDiv = parseFloat(row.dataset.vlrLiqDivergencia) || 0;
+            const vlrQuebraLiqRow = parseFloat(row.dataset.vlrQuebraLiq) || 0;
+            
+            const qtdAcao = parseInt(row.dataset.qtdAcao) || 0;
+            
+            let qtdManual = 0;
+            const input = row.querySelector('.qty-input');
+            if (input) qtdManual = parseInt(input.value) || 0;
+
+            // NO MÓDULO DE AÇÃO:
+            // Quantidade Final = Qtd Ação Original + Ajuste Manual
+            let finalQty = qtdAcao + qtdManual;
+
+            totAcertoBruto += finalQty * vlUnit;
+            totAcertoLiq += (finalQty * vlUnit) * (1 - desc);
+
+            // Total devido é apenas o que foi ajustado manualmente
+            if (qtdAcao > 0) {
+                totAcertoDevido += (qtdManual * vlUnit) * (1 - desc);
+            }
+
+            totDiv += vlLiqDiv; 
+            totQuebraLiq += vlrQuebraLiqRow;
+        });
+
+        document.getElementById('total-acerto-bruto').textContent = formatCurrency(totAcertoBruto);
+        document.getElementById('total-acerto-liquido').textContent = formatCurrency(totAcertoLiq);
+        document.getElementById('total-divergencia-auto').textContent = formatCurrency(totDiv);
+        document.getElementById('total-acerto-manual').textContent = formatCurrency(totAcertoDevido);
+        
+        const elQuebraLiq = document.getElementById('total-quebra-liquida');
+        if (elQuebraLiq) elQuebraLiq.textContent = formatCurrency(totQuebraLiq);
+        
+        // Se os modais estiverem abertos, atualiza-os em tempo real
+        if(document.getElementById('modalResumo').classList.contains('show')){
+            atualizarModalResumo();
+        }
+        if(document.getElementById('modalExport').classList.contains('show')){
+            atualizarModalExport();
+        }
+    }
+
+    async function saveChanges(redirectUrl = null) {
+        if(redirectUrl) document.getElementById('saving-overlay').style.display = 'flex';
+        const updates = [];
+        document.querySelectorAll('.qty-input').forEach(inp => {
+            updates.push({ filial: inp.dataset.filial, isbn: inp.dataset.isbn, qtd: inp.value });
+        });
+        try {
+            const res = await fetch(API_URLS.updateManual, {
+                method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(updates)
+            });
+            if(res.ok) {
+                if (redirectUrl) window.location.href = redirectUrl; 
+                else calculateTotals(); 
+            } else {
+                alert('Erro ao salvar.');
+                if(redirectUrl) document.getElementById('saving-overlay').style.display = 'none';
+            }
+        } catch(e) { alert('Erro de conexão.'); if(redirectUrl) document.getElementById('saving-overlay').style.display = 'none'; }
+    }
+
+    document.getElementById('btn-refresh-numeros').onclick = () => calculateTotals();
+    
+    document.querySelectorAll('.qty-input').forEach(inp => {
+        inp.addEventListener('input', function() {
+            const max = parseInt(this.getAttribute('max'));
+            let val = parseInt(this.value);
+            if (!isNaN(max) && !isNaN(val) && val > max) this.value = max;
+            calculateTotals();
+        });
+    });
+
+    document.getElementById('filial-select').onchange = function() {
+        const url = new URL(API_URLS.results, window.location.origin);
+        url.searchParams.set('filial', this.value);
+        saveChanges(url.toString());
+    };
+    
+    document.querySelectorAll('tbody tr').forEach(tr => {
+        tr.onclick = (e) => {
+            if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'BUTTON') {
+                document.querySelectorAll('tr').forEach(x => x.classList.remove('selected-row'));
+                tr.classList.add('selected-row');
+            }
+        }
+    });
+
+    calculateTotals();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

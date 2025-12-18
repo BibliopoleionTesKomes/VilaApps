@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Vila Apps - Gestão de Propostas</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo_vila.png') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        /* Variáveis Globais */
+        :root { --cor-principal: #192F63; --cor-secundaria: #33508F; --cor-fundo: #E8EDF9; --dash-valor: #192F63; --dash-pendente: #F59E0B; --dash-faturado: #10B981; }
+        body { background-color: var(--cor-fundo); font-family: 'Montserrat', sans-serif; min-height: 100vh; display: flex; flex-direction: column; }
+
+        /* --- PADRONIZAÇÃO DO HEADER (Igual ao Menu) --- */
+        .header-bg { 
+            background-image: linear-gradient(135deg, #192F63 0%, #33508F 100%); 
+            color: white; 
+            padding: 0 2rem; 
+            height: 90px; /* Altura fixa padrão */
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25); 
+            flex: 0 0 auto; 
+            z-index: 100; 
+        }
+        
+        .header-logo-container { 
+            flex: 0 0 300px; 
+            display: flex; 
+            align-items: center; 
+        } 
+        .header-logo-container.right { justify-content: flex-end; }
+        
+        /* Logos Padronizados (70px) */
+        .logo-vila { 
+            max-height: 120px; 
+            width: auto; 
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); 
+        } 
+        .logo-argos { 
+            max-height: 120px; 
+            width: auto; 
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); 
+        }
+
+        /* Título Padronizado */
+        .header-title-text {
+            font-weight: 700;
+            margin: 0;
+            color: white;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 2px;
+            font-size: 1.6rem;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        /* Botão Voltar (Ajustado para o novo header) */
+        .btn-voltar { 
+            color: rgba(255,255,255,0.9); 
+            text-decoration: none; 
+            margin-right: 20px; 
+            font-size: 1rem; 
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        } 
+        .btn-voltar:hover { color: #fff; }
+        /* --- FIM DO HEADER --- */
+
+        .container-main { padding: 20px; flex: 1; max-width: 1400px; margin: 0 auto; width: 100%; }
+        .card-filtro { background: white; border-radius: 10px; padding: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        .form-label { font-size: 0.7rem; font-weight: 700; color: #666; margin-bottom: 2px; text-transform: uppercase; }
+        .form-control, .form-select { font-size: 0.85rem; border-radius: 6px; }
+        .card-tabela { background: white; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden; }
+        .table { margin-bottom: 0; font-size: 0.85rem; }
+        .table thead th { background-color: var(--cor-principal); color: white; font-weight: 600; text-transform: uppercase; font-size: 0.75rem; border: none; padding: 12px; }
+        .table tbody td { vertical-align: middle; padding: 10px 12px; border-bottom: 1px solid #eee; }
+        .table tbody tr:hover { background-color: #f8f9fa; }
+        .badge-status { padding: 5px 10px; border-radius: 12px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+        .st-digitacao { background-color: #FFFBEB; color: #B45309; border: 1px solid #FEF3C7; }
+        .st-enviado { background-color: #EFF6FF; color: #1D4ED8; border: 1px solid #DBEAFE; }
+        .st-concluido { background-color: #ECFDF5; color: #047857; border: 1px solid #D1FAE5; }
+        .st-outros { background-color: #F3F4F6; color: #374151; }
+        .btn-ver-itens { background: none; border: none; color: var(--cor-secundaria); cursor: pointer; transition: transform 0.2s; } .btn-ver-itens:hover { transform: scale(1.2); color: var(--cor-principal); }
+        .modal-header { background-color: var(--cor-principal); color: white; }
+        .modal-body { padding: 0; max-height: 60vh; overflow-y: auto; }
+        .table-modal th { background-color: #f1f1f1 !important; color: #333 !important; position: sticky; top: 0; text-align: center; font-size: 0.75rem; }
+        .table-modal td { text-align: center; font-size: 0.8rem; }
+        .table-modal td:nth-child(2) { text-align: left; }
+        .col-destaque-pendente { color: var(--dash-pendente); font-weight: 700; background-color: #FFFBEB; }
+        .wf-card { font-size: 0.75rem; background: #f8f9fa; padding: 6px 10px; border-radius: 6px; border-left: 3px solid #ccc; cursor: pointer; transition: all 0.2s; }
+        .wf-card:hover { background: #e9ecef; border-left-color: var(--cor-secundaria); }
+        .wf-card.ativo { border-left-color: var(--dash-faturado); background: #F0FDFA; }
+        .wf-resp { font-weight: 700; display: block; color: #333; }
+        .wf-date { font-size: 0.7rem; color: #666; }
+        .btn-delete-wf { color: #dc3545; background: none; border: none; padding: 0; cursor: pointer; opacity: 0.6; transition: opacity 0.2s; }
+        .timeline-container { padding: 15px; background: #f8f9fa; border-radius: 8px; border: 1px solid #eee; max-height: 300px; overflow-y: auto; }
+        .timeline-item { border-left: 2px solid #ddd; padding-left: 15px; margin-bottom: 15px; position: relative; }
+        .timeline-item::before { content: ''; position: absolute; left: -6px; top: 0; width: 10px; height: 10px; border-radius: 50%; background: var(--cor-secundaria); }
+        .tl-header { font-size: 0.75rem; color: #666; margin-bottom: 2px; display: flex; justify-content: space-between; }
+        .tl-body { font-size: 0.85rem; color: #333; background: white; padding: 8px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .card-dash { background: white; border-radius: 12px; padding: 15px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border-left: 5px solid #ccc; display: flex; align-items: center; justify-content: space-between; transition: transform 0.2s; height: 100%; }
+        .card-dash:hover { transform: translateY(-3px); }
+        .dash-icon-box { width: 45px; height: 45px; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+        .dash-label { font-size: 0.7rem; font-weight: 700; color: #6c757d; text-transform: uppercase; display: block; margin-bottom: 5px; }
+        .dash-value { font-size: 1.4rem; font-weight: 800; line-height: 1; }
+        
+        /* Estilos Novos para o Modal de Itens e Email */
+        .modal-toolbar { background: #fff; padding: 12px 15px; border-bottom: 1px solid #dee2e6; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.03); }
+        .texto-email { font-family: 'Courier New', Courier, monospace; font-size: 0.85rem; background: #f8f9fa; border: 1px solid #dee2e6; padding: 10px; border-radius: 6px; width: 100%; height: 300px; resize: none; color: #333; }
+        .btn-acao-modal { font-size: 0.8rem; font-weight: 600; padding: 6px 15px; border-radius: 20px; display: flex; align-items: center; gap: 5px; transition: all 0.2s; }
+        
+        /* --- DESIGN DO FILTRO DE STATUS NO MODAL --- */
+        .filtro-group-moderno {
+            background-color: #f1f3f5;
+            padding: 4px;
+            border-radius: 30px;
+            display: inline-flex;
+            gap: 2px;
+        }
+        
+        .btn-check:checked + .btn-filtro-custom {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            color: #333;
+            font-weight: 700;
+        }
+
+        .btn-filtro-custom {
+            border: none;
+            border-radius: 25px;
+            padding: 6px 16px;
+            font-size: 0.75rem;
+            color: #666;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        /* Cores Específicas para os Filtros Ativos */
+        .btn-check:checked + .btn-filtro-pendente {
+            color: var(--dash-pendente);
+            background-color: #FFFBEB;
+            border: 1px solid #FEF3C7;
+        }
+        
+        .btn-check:checked + .btn-filtro-faturado {
+            color: var(--dash-faturado);
+            background-color: #ECFDF5;
+            border: 1px solid #D1FAE5;
+        }
+        
+        .btn-check:checked + .btn-filtro-todos {
+            color: var(--cor-principal);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- HEADER PADRONIZADO -->
+    <header class="header-bg">
+        <div class="header-logo-container">
+            <a href="{{ url_for('menu') }}" class="btn-voltar">⬅ Menu</a>
+            <!-- Uso da classe logo-vila padronizada -->
+            <img src="{{ url_for('static', filename='logo.png') }}" class="logo-vila">
+        </div>
+        
+        <h1 class="header-title-text">Gestão de Propostas</h1>
+        
+        <div class="header-logo-container right">
+            <!-- Uso da classe logo-argos padronizada -->
+            <img src="{{ url_for('static', filename='logo_argos.png') }}" class="logo-argos">
+        </div>
+    </header>
+
+    <div class="container-main">
+        <div class="row g-3 mb-4" style="min-height: 110px;">
+            <div class="col-md-3"><div class="card-dash" style="border-left-color: var(--dash-valor);"><div><span class="dash-label">Valor em Aberto</span><span class="dash-value" style="color: var(--dash-valor);" id="dash-valor-aberto">R$ 0,00</span></div><div class="dash-icon-box" style="background-color: #E8EDF9; color: var(--dash-valor);"><i data-lucide="dollar-sign"></i></div></div></div>
+            <div class="col-md-3"><div class="card-dash" style="border-left-color: var(--dash-pendente);"><div><span class="dash-label">Itens Pendentes</span><span class="dash-value" style="color: var(--dash-pendente);" id="dash-itens-pendentes">0</span></div><div class="dash-icon-box" style="background-color: #FFFBEB; color: var(--dash-pendente);"><i data-lucide="package-open"></i></div></div></div>
+            <div class="col-md-3"><div class="card-dash" style="border-left-color: var(--dash-faturado);"><div><span class="dash-label">Itens Faturados</span><span class="dash-value" style="color: var(--dash-faturado);" id="dash-itens-faturados">0</span></div><div class="dash-icon-box" style="background-color: #ECFDF5; color: var(--dash-faturado);"><i data-lucide="package-check"></i></div></div></div>
+            <div class="col-md-3"><div class="card-dash p-2" style="border-left-color: var(--cor-secundaria); justify-content: center; flex-direction: column;"><span class="dash-label mb-1" style="font-size: 0.65rem;">Progresso dos Itens</span><div style="height: 80px; width: 100%; position: relative;"><canvas id="chartItens"></canvas></div></div></div>
+        </div>
+
+        <form class="card-filtro" method="GET" action="{{ url_for('gestao.index') }}">
+            <div class="row g-3 align-items-end">
+                <div class="col-md-2"><label class="form-label">Data Início</label><input type="date" class="form-control" name="data_ini" value="{{ filtros.ini }}"></div>
+                <div class="col-md-2"><label class="form-label">Data Fim</label><input type="date" class="form-control" name="data_fim" value="{{ filtros.fim }}"></div>
+                <div class="col-md-2"><label class="form-label">Status</label><select class="form-select" name="status"><option value="todos" {% if filtros.status == 'todos' %}selected{% endif %}>Todos</option><option value="3" {% if filtros.status == '3' %}selected{% endif %}>Digitação</option><option value="1" {% if filtros.status == '1' %}selected{% endif %}>Enviado</option><option value="2" {% if filtros.status == '2' %}selected{% endif %}>Concluído</option></select></div>
+                <div class="col-md-2"><label class="form-label">Nº Proposta</label><input type="text" class="form-control" name="filtro_proposta" value="{{ filtros.proposta }}" placeholder="Digite..."></div>
+                <div class="col-md-2"><label class="form-label">Fornecedor</label><input type="text" class="form-control" name="filtro_fornecedor" value="{{ filtros.fornecedor }}" placeholder="Nome..."></div>
+                <div class="col-md-2"><label class="form-label">Filial</label><input type="text" class="form-control" name="filtro_filial" value="{{ filtros.filial }}" placeholder="Loja..."></div>
+                <div class="col-12 text-end mt-3"><a href="{{ url_for('gestao.index') }}" class="btn btn-outline-secondary me-2 btn-sm">Limpar</a><button type="submit" class="btn btn-primary px-4 fw-bold shadow-sm" style="background-color: var(--cor-secundaria); border: none;"><i data-lucide="search" style="width: 16px;"></i> Filtrar</button></div>
+            </div>
+        </form>
+
+        <div class="card-tabela">
+            <table class="table" id="tabelaPrincipal">
+                <thead><tr><th>Nº Proposta</th><th>Data</th><th>Filial</th><th>Fornecedor</th><th class="text-center">Qtd. Itens</th><th class="text-end">Valor Total</th><th class="text-center">Status</th><th>Acompanhamento</th><th class="text-center">Detalhes</th></tr></thead>
+                <tbody>
+                    {% for p in propostas %}
+                    <tr class="linha-proposta" data-status="{{ p.STATUS_DESC.strip() }}" data-qtd-pendente="{{ p.QTD_PENDENTE }}" data-qtd-faturada="{{ p.QTD_FATURADA }}" data-valor-pendente="{{ p.VALOR_PENDENTE }}">
+                        <td class="fw-bold">{{ p.PEDIDO }}</td><td>{{ p.DT_PED_FMT }}</td><td>{{ p.FILIAL }}</td><td class="text-truncate" style="max-width: 250px;" title="{{ p.FORNECEDOR }}">{{ p.FORNECEDOR }}</td><td class="text-center">{{ p.QTD_ITENS }}</td><td class="text-end fw-bold text-primary">{{ p.VALOR_TOTAL_FMT }}</td>
+                        <td class="text-center"><span class="badge-status st-{{ p.STATUS_DESC.split(' ')[0]|lower|replace('ç','c')|replace('ã','a')|replace('í','i') }}">{{ p.STATUS_DESC }}</span></td>
+                        <td style="width: 200px;">
+                            <div class="wf-card {{ 'ativo' if p.WF_RESPONSAVEL else '' }}" onclick="abrirWorkflow('{{ p.PEDIDO }}', '{{ p.WF_RESPONSAVEL }}', `{{ p.WF_HISTORY_JSON }}`)" title="Clique para ver ou adicionar histórico">
+                                {% if p.WF_RESPONSAVEL %}<span class="wf-resp"><i data-lucide="user" style="width:12px"></i> {{ p.WF_RESPONSAVEL }}</span><span class="wf-date">{{ p.WF_DATA_COBRANCA }}</span><small class="d-block text-truncate text-muted" style="max-width: 170px;">{{ p.WF_OBS }}</small>{% else %}<div class="text-center text-muted"><i data-lucide="plus-circle" style="width: 14px; vertical-align: middle;"></i> Registrar</div>{% endif %}
+                            </div>
+                        </td>
+                        <td class="text-center"><button class="btn-ver-itens" onclick="abrirItens('{{ p.PEDIDO }}', '{{ p.FORNECEDOR }}', '{{ p.COD_FORNECEDOR }}', '{{ p.FILIAL }}', '{{ p.DT_PED_FMT }}')" title="Ver Itens"><i data-lucide="list-plus"></i></button></td>
+                    </tr>
+                    {% else %}<tr><td colspan="9" class="text-center py-4 text-muted">Nenhuma proposta encontrada com esses filtros.</td></tr>{% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal Workflow (Mantido) -->
+    <div class="modal fade" id="modalWorkflow" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title fs-6">Acompanhamento: <span id="wfTitle"></span></h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="row"><div class="col-md-5 border-end"><h6 class="fw-bold mb-3 text-secondary">Nova Interação</h6><input type="hidden" id="wfPedido"><div class="mb-3"><label class="form-label">Responsável</label><input type="text" id="wfResponsavel" class="form-control" placeholder="Seu nome..."></div><div class="mb-3"><label class="form-label">Data</label><input type="date" id="wfData" class="form-control"></div><div class="mb-3"><label class="form-label">Observação</label><textarea id="wfObs" class="form-control" rows="4"></textarea></div><button type="button" class="btn btn-primary w-100" style="background-color: var(--cor-principal); border: none;" onclick="salvarWorkflow()">Salvar</button></div><div class="col-md-7"><h6 class="fw-bold mb-3 text-secondary">Histórico</h6><div class="timeline-container" id="wfTimeline"></div></div></div></div></div></div></div>
+    
+    <!-- Modal Itens (Melhorado) -->
+    <div class="modal fade" id="modalItens" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fs-6">Itens: <span id="lblPedido"></span></h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                
+                <!-- Barra de Ferramentas Nova -->
+                <div class="modal-toolbar">
+                    <!-- Novo Design do Seletor -->
+                    <div class="filtro-group-moderno" role="group">
+                        <input type="radio" class="btn-check" name="filtroItens" id="btnTodos" autocomplete="off" checked onclick="filtrarTabelaItens('todos')">
+                        <label class="btn btn-filtro-custom btn-filtro-todos" for="btnTodos">Todos</label>
+
+                        <input type="radio" class="btn-check" name="filtroItens" id="btnPendentes" autocomplete="off" onclick="filtrarTabelaItens('pendentes')">
+                        <label class="btn btn-filtro-custom btn-filtro-pendente" for="btnPendentes">Pendentes</label>
+
+                        <input type="radio" class="btn-check" name="filtroItens" id="btnFaturados" autocomplete="off" onclick="filtrarTabelaItens('faturados')">
+                        <label class="btn btn-filtro-custom btn-filtro-faturado" for="btnFaturados">Faturados</label>
+                    </div>
+                    
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-outline-primary btn-sm btn-acao-modal" onclick="abrirModalContato()">
+                            <i data-lucide="phone" style="width: 14px;"></i> Contato
+                        </button>
+                        <button class="btn btn-outline-danger btn-sm btn-acao-modal" onclick="gerarEmailCobranca()">
+                            <i data-lucide="mail" style="width: 14px;"></i> Gerar Email
+                        </button>
+                    </div>
+                </div>
+
+                <div class="modal-body">
+                    <div id="loadingModal" class="text-center py-4"><div class="spinner-border text-primary"></div><p class="mt-2 small text-muted">Carregando itens...</p></div>
+                    <table class="table table-sm table-modal mb-0" id="tabelaItens" style="display:none;">
+                        <!-- REMOVIDA A COLUNA STATUS -->
+                        <thead><tr><th>ISBN</th><th>Título</th><th>Qtd Total</th><th>Pendente</th><th>Vlr Unit.</th><th>Vlr Total</th></tr></thead>
+                        <tbody id="tbodyItens"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Contato -->
+    <div class="modal fade" id="modalContato" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title fs-6">Contato do Fornecedor</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body p-4"><div id="loadingContato" class="text-center"><div class="spinner-border text-primary spinner-border-sm"></div></div><div id="infoContato"></div></div></div></div></div>
+
+    <!-- Modal Email -->
+    <div class="modal fade" id="modalEmail" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title fs-6">Gerar Cobrança</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body p-3"><p class="small text-muted mb-2">Copie o texto abaixo e cole no seu cliente de email.</p><textarea id="txtEmailGerado" class="texto-email"></textarea><div class="text-end mt-2"><button class="btn btn-secondary btn-sm" onclick="copiarEmail()">Copiar Texto</button></div></div></div></div></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        lucide.createIcons();
+        document.addEventListener("DOMContentLoaded", function() { calcularDashboard(); });
+        let myChart = null;
+        let itensAtuais = []; // Armazena itens carregados
+        let dadosAtuais = {}; // Armazena dados do pedido atual (fornecedor, filial, etc)
+
+        // Dashboard e Workflow (Mesmos de antes)
+        function calcularDashboard() {
+            let tAberto = 0, tPend = 0, tFat = 0;
+            document.querySelectorAll('.linha-proposta').forEach(tr => {
+                tPend += parseInt(tr.getAttribute('data-qtd-pendente')) || 0;
+                tFat += parseInt(tr.getAttribute('data-qtd-faturada')) || 0;
+                let val = tr.getAttribute('data-valor-pendente');
+                if(val && val !== 'None') tAberto += parseFloat(val.replace('R$', '').trim().replaceAll('.', '').replace(',', '.')) || 0;
+            });
+            document.getElementById('dash-valor-aberto').innerText = tAberto.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
+            document.getElementById('dash-itens-pendentes').innerText = tPend;
+            document.getElementById('dash-itens-faturados').innerText = tFat;
+            if(myChart) myChart.destroy();
+            myChart = new Chart(document.getElementById('chartItens').getContext('2d'), { type: 'doughnut', data: { labels: ['Pendentes', 'Faturados'], datasets: [{ data: [tPend, tFat], backgroundColor: ['#F59E0B', '#10B981'], borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, cutout: '65%', plugins: { legend: { display: true, position: 'right', labels: { boxWidth: 8, font: { size: 9 } } } } } });
+        }
+        function abrirWorkflow(ped, resp, histJson) {
+            document.getElementById('wfPedido').value = ped; document.getElementById('wfTitle').innerText = ped; document.getElementById('wfResponsavel').value = resp || '';
+            const c = document.getElementById('wfTimeline'); c.innerHTML = '';
+            let h = []; try { if(histJson && histJson !== '[]') h = JSON.parse(histJson); } catch(e){}
+            h.reverse().forEach((x, i) => c.innerHTML += `<div class="timeline-item"><div class="tl-header"><span><strong>${x.responsavel}</strong> - ${x.data}</span> <button class="btn-delete-wf" onclick="excluirWorkflow('${ped}', ${h.length - 1 - i})">🗑️</button></div><div class="tl-body">${x.obs}</div></div>`);
+            new bootstrap.Modal(document.getElementById('modalWorkflow')).show();
+        }
+        async function salvarWorkflow() {
+            const d = { chave: document.getElementById('wfPedido').value, responsavel: document.getElementById('wfResponsavel').value, data: document.getElementById('wfData').value, obs: document.getElementById('wfObs').value };
+            if((await (await fetch('/gestao/api/adicionar_historico', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(d) })).json()).success) location.reload();
+        }
+        async function excluirWorkflow(ped, idx) {
+            if(confirm('Excluir?')) if((await (await fetch('/gestao/api/excluir_historico', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({chave: ped, index: idx}) })).json()).success) location.reload();
+        }
+
+        // --- NOVA LÓGICA DE ITENS, FILTROS E EMAIL ---
+
+        async function abrirItens(ped, forn, codForn, filial, data) {
+            new bootstrap.Modal(document.getElementById('modalItens')).show();
+            document.getElementById('lblPedido').innerText = ped + ' - ' + forn;
+            document.getElementById('loadingModal').style.display = 'block';
+            document.getElementById('tabelaItens').style.display = 'none';
+            document.getElementById('btnTodos').checked = true; // Reseta filtro
+            
+            // Salva contexto global para usar nos outros modais
+            dadosAtuais = { pedido: ped, fornecedor: forn, codFornecedor: codForn, filial: filial, data: data };
+            
+            try {
+                const res = await fetch(`/gestao/api/itens/${ped}`);
+                itensAtuais = await res.json();
+                renderizarTabela(itensAtuais);
+                document.getElementById('loadingModal').style.display = 'none';
+                document.getElementById('tabelaItens').style.display = 'table';
+            } catch (e) { console.error(e); }
+        }
+
+        function renderizarTabela(itens) {
+            const tbody = document.getElementById('tbodyItens');
+            tbody.innerHTML = '';
+            if (itens.length === 0) { tbody.innerHTML = '<tr><td colspan="6" class="text-center">Nenhum item.</td></tr>'; return; } // Colspan ajustado para 6
+            itens.forEach(item => {
+                const pendClass = item.QTD_PENDENTE > 0 ? 'fw-bold text-danger' : '';
+                const tr = document.createElement('tr');
+                // REMOVIDA A COLUNA STATUS DO HTML ABAIXO
+                tr.innerHTML = `<td>${item.ISBN || ''}</td><td class="text-start">${item.DESCRICAO || ''}</td><td>${item.QUANTIDADE}</td><td class="${pendClass}">${item.QTD_PENDENTE}</td><td>${item.VL_UNIT}</td><td>${item.VL_TOTAL}</td>`;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function filtrarTabelaItens(tipo) {
+            if(tipo === 'todos') renderizarTabela(itensAtuais);
+            else if(tipo === 'pendentes') renderizarTabela(itensAtuais.filter(i => i.QTD_PENDENTE > 0));
+            else if(tipo === 'faturados') renderizarTabela(itensAtuais.filter(i => i.QTD_PENDENTE === 0));
+        }
+
+        async function abrirModalContato() {
+            new bootstrap.Modal(document.getElementById('modalContato')).show();
+            document.getElementById('loadingContato').style.display = 'block';
+            document.getElementById('infoContato').innerHTML = '';
+            try {
+                const res = await fetch(`/gestao/api/contato/${dadosAtuais.codFornecedor}`);
+                const contatos = await res.json();
+                document.getElementById('loadingContato').style.display = 'none';
+                if(contatos.length > 0) {
+                    let html = `<h6 class="fw-bold">${contatos[0].NOME}</h6><hr>`;
+                    contatos.forEach(c => html += `<p><strong>CNPJ:</strong> ${c.CNPJ || '-'}<br><strong>Tel:</strong> ${c.TELEFONE || '-'}<br><strong>Email:</strong> ${c.EMAIL || '-'}</p>`);
+                    document.getElementById('infoContato').innerHTML = html;
+                } else {
+                    document.getElementById('infoContato').innerHTML = '<p class="text-muted text-center">Contato não encontrado.</p>';
+                }
+            } catch(e) { document.getElementById('loadingContato').style.display = 'none'; }
+        }
+
+        function gerarEmailCobranca() {
+            const pendentes = itensAtuais.filter(i => i.QTD_PENDENTE > 0);
+            if(pendentes.length === 0) { alert('Não há itens pendentes para cobrar.'); return; }
+            
+            let texto = `Prezado Fornecedor,\n\n`;
+            texto += `Gostaria de verificar a previsão de faturamento para os itens pendentes do Pedido ${dadosAtuais.pedido} (${dadosAtuais.filial}), emitido em ${dadosAtuais.data}.\n\n`;
+            texto += `ITENS PENDENTES:\n`;
+            texto += `--------------------------------------------------\n`;
+            pendentes.forEach(i => {
+                texto += `ISBN: ${i.ISBN} - ${i.DESCRICAO}\n`;
+                texto += `Qtd Pendente: ${i.QTD_PENDENTE}\n`;
+                texto += `--------------------------------------------------\n`;
+            });
+            texto += `\nFico no aguardo.\nAtt,`;
+            
+            document.getElementById('txtEmailGerado').value = texto;
+            new bootstrap.Modal(document.getElementById('modalEmail')).show();
+        }
+
+        function copiarEmail() {
+            const txt = document.getElementById('txtEmailGerado');
+            txt.select();
+            document.execCommand('copy');
+            alert('Texto copiado!');
+        }
+    </script>
+</body>
+</html>

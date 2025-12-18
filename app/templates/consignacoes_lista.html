@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consignações Ativas</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo_vila.png') }}">
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.bootstrap5.min.css">
+    
+    <style>
+        /* VISUAL PADRÃO (AZUL) */
+        :root { --cor-principal: #192F63; --cor-secundaria: #33508F; --cor-fundo: #E8EDF9; }
+        body { background-color: var(--cor-fundo); font-family: 'Inter', sans-serif; font-size: 0.8rem; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+        
+        /* Header */
+        .header-bg { background-image: linear-gradient(135deg, var(--cor-principal) 0%, var(--cor-secundaria) 100%); color: white; padding: 0 2rem; height: 80px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 15px rgba(0,0,0,0.15); flex: 0 0 auto; }
+        .logo-img { max-height: 120px; filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2)); } /* Ajustei a altura para não quebrar o header */
+        
+        .card-table { background: white; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); padding: 15px; height: 100%; display: flex; flex-direction: column; border-top: 4px solid var(--cor-principal); }
+        .table-responsive { flex: 1; overflow-y: auto; }
+        
+        table.dataTable thead th { background-color: var(--cor-principal); color: white; font-weight: 600; text-transform: uppercase; font-size: 0.7rem; white-space: nowrap; padding: 10px; border: none; }
+        table.dataTable tbody td { vertical-align: middle; color: #333; font-size: 0.75rem; padding: 8px 10px; white-space: nowrap; border-bottom: 1px solid #eee; }
+        table.dataTable tbody tr:hover { background-color: #f8f9fa; }
+        
+        /* Destaques */
+        .col-destaque-primaria { font-weight: 700; color: var(--cor-principal); }
+        .col-destaque-filial { font-weight: 700; color: #0d6efd; }
+        
+        /* Botões DataTables */
+        .dt-buttons .btn { background-color: var(--cor-principal); color: white; border: none; font-size: 0.75rem; padding: 5px 12px; border-radius: 4px; margin-right: 5px; }
+        .dt-buttons .btn:hover { background-color: var(--cor-secundaria); }
+        .page-item.active .page-link { background-color: var(--cor-principal); border-color: var(--cor-principal); }
+        
+        .btn-atualizar {
+            background-color: rgba(255, 255, 255, 0.15); color: white; border: 1px solid rgba(255,255,255,0.3);
+            font-size: 0.8rem; padding: 6px 15px; border-radius: 20px; transition: all 0.2s; font-weight: 600;
+            display: flex; align-items: center; gap: 6px; cursor: pointer;
+        }
+        .btn-atualizar:hover { background-color: white; color: var(--cor-principal); transform: translateY(-1px); }
+        .btn-atualizar:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+
+        .filter-input {
+            border: 1px solid #ced4da; border-radius: 6px; padding: 6px 12px; font-size: 0.8rem; width: 100%;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+        .filter-input:focus { border-color: var(--cor-principal); outline: 0; box-shadow: 0 0 0 0.2rem rgba(25, 47, 99, 0.15); }
+        .filter-label { font-size: 0.7rem; font-weight: 700; color: #6c757d; margin-bottom: 3px; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+
+    <header class="header-bg">
+        <div class="d-flex align-items-center">
+            <!-- Botão Voltar para Menu Principal -->
+            <a href="{{ url_for('menu') }}" class="text-white text-decoration-none fw-bold me-3" style="font-size: 0.9rem;">
+                <i class="fas fa-arrow-left me-1"></i> MENU
+            </a>
+            <!-- Logo ajustado para usar static -->
+            <img src="{{ url_for('static', filename='logo.png') }}" class="logo-img d-none d-sm-block" alt="Logo">
+        </div>
+        
+        <h2 class="m-0 fw-bold d-none d-md-block" style="font-family: 'Montserrat'; letter-spacing: 1px; font-size: 1.2rem;">CONSIGNAÇÕES ATIVAS</h2>
+        
+        <div class="d-flex align-items-center gap-3">
+            <div class="text-end text-white d-none d-lg-block" style="line-height: 1.1;">
+                <div style="font-size: 0.65rem; opacity: 0.8;">ÚLTIMA ATUALIZAÇÃO</div>
+                <div style="font-size: 0.8rem; font-weight: 600;" id="data-atualizacao">--/--/-- --:--</div>
+            </div>
+            
+            <!-- BOTÃO MODIFICADO PARA FORÇAR ATUALIZAÇÃO -->
+            <button onclick="atualizarDados()" id="btn-update" class="btn-atualizar" title="Clique para buscar dados novos no sistema">
+                <i class="fas fa-sync-alt" id="icon-update"></i> 
+                <span class="d-none d-sm-inline" id="text-update">Atualizar Dados</span>
+            </button>
+            
+            <img src="{{ url_for('static', filename='logo_argos.png') }}" class="logo-img" alt="Logo Secundária">
+        </div>
+    </header>
+
+    <div class="container-fluid p-3 h-100">
+        {% if erro %}
+        <div class="alert alert-danger py-2 mb-3 shadow-sm d-flex align-items-center">
+            <i class="fas fa-exclamation-circle me-2"></i>
+            <div><strong>Erro:</strong> {{ erro }}</div>
+        </div>
+        {% endif %}
+
+        <div class="card-table">
+            <!-- Filtros -->
+            <div class="row g-2 mb-3 px-1">
+                <div class="col-md-2 col-sm-4">
+                    <label class="filter-label" for="filtroCodForn">Cod. Forn</label>
+                    <input type="text" id="filtroCodForn" class="filter-input" placeholder="Digite o código...">
+                </div>
+                <div class="col-md-3 col-sm-4">
+                    <label class="filter-label" for="filtroFantasia">Fantasia</label>
+                    <input type="text" id="filtroFantasia" class="filter-input" placeholder="Digite o nome...">
+                </div>
+                <div class="col-md-2 col-sm-4">
+                    <label class="filter-label" for="filtroDia">Dia de Acerto</label>
+                    <input type="text" id="filtroDia" class="filter-input" placeholder="Digite o dia...">
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table id="tabelaConsignacoes" class="table table-striped w-100 text-nowrap">
+                    <thead>
+                        <tr>
+                            <!-- Os índices das colunas devem bater com o JS de filtro -->
+                            <th>Cod Forn</th>   <!-- 0 -->
+                            <th>Fantasia</th>   <!-- 1 -->
+                            <th>Filial</th>
+                            <th>Controle</th>
+                            <th>Dia Acerto</th> <!-- 4 -->
+                            <th>Obs</th>
+                            <th>CNPJ</th>
+                            <th>Razão Social</th>
+                            <th>Prazo</th>
+                            <th>Cod Consig</th>
+                            <th>Desc %</th>
+                            <th>Vencimento</th>
+                            <th>Início</th>
+                            <th>Status</th>
+                            <th>Usuário</th>
+                            <th>Tipo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in dados %}
+                        <tr>
+                            <td class="text-center col-destaque-primaria">{{ row['CodFornecedor'] }}</td>
+                            <td class="fw-bold">{{ row['Nome_Fantasia'] }}</td>
+                            <td class="col-destaque-filial">{{ row['Filial'] }}</td>
+                            <td class="fw-bold">{{ row['Controle'] }}</td>
+                            <td class="text-center">{{ row['Dia de acerto'] }}</td>
+                            <td class="text-truncate" style="max-width: 150px;" title="{{ row['Obs'] }}">
+                                {{ row['Obs'] }}
+                            </td>
+                            <td style="font-family: monospace;">{{ row['CNPJ'] }}</td>
+                            <td title="{{ row['Razao social'] }}">{{ row['Razao social'] }}</td>
+                            <td>{{ row['Prazo'] }}</td>
+                            <td class="text-center">{{ row['Cod'] }}</td>
+                            <td class="text-center">{{ row['Desconto'] }}%</td>
+                            <td>{{ row['DATA_VENCIMENTO'].strftime('%d/%m/%Y') if row['DATA_VENCIMENTO'] else '' }}</td>
+                            <td>{{ row['DATA_INICIO'].strftime('%d/%m/%Y') if row['DATA_INICIO'] else '' }}</td>
+                            <td class="text-center">
+                                <span class="badge {{ 'bg-success' if row['STATUS'] == 'ATIVA' else 'bg-secondary' }}">
+                                    {{ row['STATUS'] }}
+                                </span>
+                            </td>
+                            <td class="small">{{ row['USUARIOCAD'] }}</td>
+                            <td>{{ row['TIPO_CONSIGNACAO'] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.bootstrap5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const now = new Date();
+            const strDate = now.toLocaleDateString('pt-BR') + ' ' + now.toLocaleTimeString('pt-BR').substring(0,5);
+            const elData = document.getElementById('data-atualizacao');
+            if (elData) elData.textContent = strDate;
+        });
+
+        // --- FUNÇÃO PARA ATUALIZAR DADOS (NOVA LÓGICA) ---
+        function atualizarDados() {
+            const btn = document.getElementById('btn-update');
+            const icon = document.getElementById('icon-update');
+            const text = document.getElementById('text-update');
+            
+            // Feedback visual
+            btn.disabled = true;
+            icon.classList.add('fa-spin');
+            text.innerText = 'Processando...';
+
+            // Adiciona o parâmetro ?atualizar=true na URL
+            // O Backend deve ler este parâmetro para decidir se recarrega os dados do banco ou usa cache
+            const url = new URL(window.location.href);
+            url.searchParams.set('atualizar', 'true');
+            
+            // Redireciona forçando o reload com o parâmetro
+            window.location.href = url.toString();
+        }
+
+        function debounce(func, wait) {
+            let timeout;
+            return function() {
+                const context = this, args = arguments;
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(context, args), wait);
+            };
+        }
+
+        $(document).ready(function() {
+            var table = $('#tabelaConsignacoes').DataTable({
+                language: { url: '//cdn.datatables.net/plug-ins/1.13.7/i18n/pt-BR.json' },
+                dom: '<"d-flex justify-content-between align-items-center mb-2"Bf>rt<"d-flex justify-content-between align-items-center mt-2"lip>',
+                buttons: [
+                    { extend: 'excelHtml5', text: '<i class="fas fa-file-excel"></i> Excel', className: 'btn btn-success shadow-sm btn-sm', title: 'Relatorio_Consignacoes_Ativas' },
+                    { extend: 'csvHtml5', text: '<i class="fas fa-file-csv"></i> CSV', className: 'btn btn-primary shadow-sm btn-sm' }
+                ],
+                pageLength: 50,
+                lengthMenu: [[25, 50, 100, -1], [25, 50, 100, "Todos"]],
+                order: [[1, 'asc']], // Ordena por Fantasia (coluna index 1)
+                processing: true,
+                deferRender: true,
+                autoWidth: false
+            });
+
+            // Filtros Individuais
+            $('#filtroCodForn').on('keyup change', debounce(function() { table.column(0).search(this.value).draw(); }, 300));
+            $('#filtroFantasia').on('keyup change', debounce(function() { table.column(1).search(this.value).draw(); }, 300));
+            $('#filtroDia').on('keyup change', debounce(function() { table.column(4).search(this.value).draw(); }, 300));
+        });
+    </script>
+</body>
+</html>

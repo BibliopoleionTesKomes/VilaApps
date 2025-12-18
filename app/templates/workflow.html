@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Vila Apps - Workflow</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo_vila.png') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --cor-principal: #192F63; --cor-secundaria: #33508F; --cor-fundo-pagina: #E8EDF9; }
+        body { background-color: var(--cor-fundo-pagina); font-family: 'Montserrat', sans-serif; font-size: 0.8rem; }
+        
+        /* --- PADRONIZAÇÃO DO HEADER (Igual ao Menu e Gestão) --- */
+        .header-bg { 
+            background-image: linear-gradient(135deg, #192F63 0%, #33508F 100%); 
+            color: white; 
+            padding: 0 2rem; 
+            height: 90px; /* Altura fixa padrão */
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25); 
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-logo-container { 
+            flex: 0 0 300px; 
+            display: flex; 
+            align-items: center; 
+        } 
+        .header-logo-container.right { justify-content: flex-end; }
+        
+        /* Logos Padronizados (70px) */
+        .logo-vila { 
+            max-height: 120px; 
+            width: auto; 
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); 
+        } 
+        .logo-argos { 
+            max-height: 120px; 
+            width: auto; 
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); 
+        }
+
+        /* Título Padronizado */
+        .header-title-text {
+            font-weight: 700;
+            margin: 0;
+            color: white;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 2px;
+            font-size: 1.6rem;
+            text-align: center;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        /* Botão Voltar (Ajustado) */
+        .btn-voltar { 
+            color: rgba(255,255,255,0.9); 
+            text-decoration: none; 
+            margin-right: 20px; 
+            font-size: 1rem; 
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.2s;
+        } 
+        .btn-voltar:hover { color: #fff; text-decoration: none; }
+        /* --- FIM DO HEADER --- */
+        
+        .container-main { max-width: 100%; margin: 20px auto; padding: 0 15px; } 
+        
+        /* Filtros Compactos */
+        .filter-row { background-color: #f8f9fa; padding: 10px; border-radius: 6px; margin-bottom: 10px; border: 1px solid #dee2e6; }
+        .filter-input { border-radius: 15px; border: 1px solid #ced4da; font-size: 0.75rem; padding: 4px 10px; height: 30px; }
+        .filter-label { font-size: 0.7rem; font-weight: 600; color: #555; margin-bottom: 2px; display: block; }
+        
+        /* Tabela Ultra Compacta */
+        .table-custom { margin-bottom: 0; }
+        .table-custom th { 
+            background-color: #192F63; color: white; vertical-align: middle; 
+            font-size: 0.75rem; white-space: nowrap; padding: 6px 6px; font-weight: 500;
+        }
+        .table-custom td {
+            font-size: 0.75rem; vertical-align: middle; padding: 2px 4px;
+            white-space: nowrap; border-bottom: 1px solid #eee;
+        }
+        
+        .select-status { border: none; border-radius: 4px; font-size: 0.7rem; padding: 2px 4px; cursor: pointer; text-transform: uppercase; width: 100%; text-align: center; }
+        .st-pendente { background-color: #ffecb5; color: #664d03; display: none; }
+        .st-emanalise { background-color: #cfe2ff; color: #084298; }
+        .st-concluido { background-color: #d1e7dd; color: #0f5132; }
+
+        /* Inputs de Tabela */
+        .input-tratativa, .input-obs, .input-responsavel { 
+            font-size: 0.75rem; border-radius: 2px; border: 1px solid #ced4da; 
+            width: 100%; padding: 2px 4px; height: 26px; resize: none; overflow: hidden;
+            background-color: #fff;
+        }
+        .input-obs { background-color: #fffef0; }
+        .input-responsavel { background-color: #f0f7ff; }
+        .input-tratativa:focus, .input-obs:focus, .input-responsavel:focus { height: 60px; position: absolute; z-index: 10; width: 250px; overflow: auto; }
+        
+        .input-data-contato { 
+            font-size: 0.75rem; border-radius: 2px; border: 1px solid #ced4da; 
+            padding: 1px; width: 105px; height: 26px;
+        }
+        
+        .select-motivo { 
+            font-size: 0.75rem; padding: 2px; border-radius: 2px; 
+            border: 1px solid #ced4da; width: 100%; max-width: 180px; height: 26px;
+        }
+
+        .td-vencimento { color: #d63384; }
+        .small-auto-ref { font-size: 0.65rem; color: #999; display: block; overflow: hidden; text-overflow: ellipsis; max-width: 180px; }
+
+        /* KPIs */
+        .kpi-row { display: flex; gap: 10px; margin-bottom: 10px; }
+        .kpi-card { 
+            background: white; border-radius: 6px; padding: 5px 10px; 
+            display: flex; align-items: center; gap: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05); border-left: 3px solid #ccc; flex: 1;
+        }
+        .kpi-label { font-size: 0.7rem; font-weight: 600; color: #666; text-transform: uppercase; }
+        .kpi-value { font-size: 0.9rem; font-weight: 600; color: var(--cor-principal); margin-left: auto; }
+    </style>
+</head>
+<body>
+    <!-- HEADER PADRONIZADO -->
+    <header class="header-bg">
+        <div class="header-logo-container">
+            <a href="{{ url_for('menu') }}" class="btn-voltar">⬅ Menu</a>
+            <img src="{{ url_for('static', filename='logo.png') }}" class="logo-vila">
+        </div>
+        
+        <div style="text-align: center;">
+            <h1 class="header-title-text">Follow-up Divergências</h1>
+            {% if ultima_atualizacao %}
+            <div style="font-size: 0.75rem; opacity: 0.8; margin-top: 5px; font-weight: 500;">
+                Atualizado: {{ ultima_atualizacao }}
+            </div>
+            {% endif %}
+        </div>
+        
+        <div class="header-logo-container right">
+            <img src="{{ url_for('static', filename='logo_argos.png') }}" class="logo-argos">
+        </div>
+    </header>
+
+    <div class="container-main">
+        
+        <div class="kpi-row">
+            <div class="kpi-card" style="border-color: #cfe2ff;"><span class="kpi-label">Em Análise</span><span class="kpi-value text-primary" id="kpi-analise">0</span></div>
+            <div class="kpi-card" style="border-color: #d1e7dd;"><span class="kpi-label">Concluídos</span><span class="kpi-value text-success" id="kpi-concluido">0</span></div>
+            <div class="kpi-card" style="border-color: #192F63;"><span class="kpi-label">Total</span><span class="kpi-value" id="kpi-total">0</span></div>
+        </div>
+
+        <div class="card p-2 border-0 shadow-sm">
+            <div class="filter-row">
+                <div class="row g-2">
+                    <div class="col-md-2">
+                        <span class="filter-label">Busca Rápida</span>
+                        <input type="text" id="filtroFantasia" class="form-control filter-input" placeholder="Fornecedor, NF...">
+                    </div>
+                    <div class="col-md-2">
+                        <span class="filter-label">Loja</span>
+                        <input type="text" id="filtroLoja" list="listaLojas" class="form-control filter-input" placeholder="Todas">
+                        <datalist id="listaLojas">{% for loja in lista_lojas %}<option value="{{ loja }}">{% endfor %}</datalist>
+                    </div>
+                    <div class="col-md-2">
+                        <span class="filter-label">Status</span>
+                        <select id="filtroStatus" class="form-select filter-input">
+                            <option value="">Todos</option>
+                            <option value="EM ANÁLISE">Em Análise</option>
+                            <option value="CONCLUÍDO">Concluídos</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <span class="filter-label">Tipo Divergência</span>
+                        <select id="filtroMotivo" class="form-select filter-input">
+                            <option value="">Todos</option>
+                            <option value="Divergência de Qtde">Div. Qtde</option>
+                            <option value="Divergência de Preço">Div. Preço</option>
+                            <option value="Divergência de Desconto">Div. Desconto</option>
+                            <option value="Filial Errada">Filial Errada</option>
+                            <option value="Faturamento Indevido">Fat. Indevido</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <span class="filter-label">Data Emissão (De)</span>
+                        <input type="date" id="filtroDataIni" class="form-control filter-input">
+                    </div>
+                    <div class="col-md-2">
+                        <span class="filter-label">Data Emissão (Até)</span>
+                        <input type="date" id="filtroDataFim" class="form-control filter-input">
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-hover table-custom" id="tabela">
+                    <thead><tr>
+                        <th style="width:100px;">Status</th>
+                        <th>Emissão</th>
+                        <th>Vencimento</th>
+                        <th>Nota</th>
+                        <th>Fornecedor</th>
+                        <th>Filial</th>
+                        <th>Classificação</th>
+                        <th class="text-end">Valor</th>
+                        <th>Dt. Contato</th>
+                        <th style="width: 180px;">Observação</th>
+                        <th style="width: 180px;">Tratativa</th>
+                        <th style="width: 150px;">Responsável</th>
+                    </tr></thead>
+                    <tbody>
+                        {% for row in dados %}
+                        {% if row.Status_Workflow in ['EM ANÁLISE', 'CONCLUÍDO'] %}
+                        <tr data-status="{{ row.Status_Workflow }}" data-emissao="{{ row.Data_Emissao }}">
+                            <td>
+                                <select class="select-status st-{{ row.Status_Workflow|lower|replace(' ','')|replace('ê','e')|replace('í','i') }}" onchange="alterarStatus(this, '{{ row.Chave_Acesso }}')">
+                                    <option value="PENDENTE">VOLTAR</option>
+                                    <option value="EM ANÁLISE" {% if row.Status_Workflow == 'EM ANÁLISE' %}selected{% endif %}>ANÁLISE</option>
+                                    <option value="CONCLUÍDO" {% if row.Status_Workflow == 'CONCLUÍDO' %}selected{% endif %}>CONCLUÍDO</option>
+                                </select>
+                            </td>
+                            
+                            <td>{{ row.Data_Emissao }}</td>
+                            <td class="td-vencimento">{{ row.Data_Vencimento }}</td>
+                            <td>{{ row.Numero_NF }}</td>
+                            <td style="max-width: 150px; overflow: hidden; text-overflow: ellipsis;" title="{{ row.Nome_Fantasia }}">{{ row.Nome_Fantasia }}</td>
+                            <td>{{ row.Filial }}</td>
+                            
+                            <td>
+                                <select class="form-select select-motivo" onchange="salvarDadoExtra(this, '{{ row.Chave_Acesso }}', 'Motivo')">
+                                    <option value="">...</option>
+                                    <option value="Divergência de Qtde" {% if row.Motivo == 'Divergência de Qtde' %}selected{% endif %}>Div. Qtde</option>
+                                    <option value="Divergência de Preço" {% if row.Motivo == 'Divergência de Preço' %}selected{% endif %}>Div. Preço</option>
+                                    <option value="Divergência de Desconto" {% if row.Motivo == 'Divergência de Desconto' %}selected{% endif %}>Div. Desconto</option>
+                                    <option value="Filial Errada" {% if row.Motivo == 'Filial Errada' %}selected{% endif %}>Filial Errada</option>
+                                    <option value="Faturamento Indevido" {% if row.Motivo == 'Faturamento Indevido' %}selected{% endif %}>Fat. Indevido</option>
+                                </select>
+                                <span class="small-auto-ref" title="{{ row.Divergencia_Resumo }}">{{ row.Divergencia_Resumo }}</span>
+                            </td>
+
+                            <td class="text-end">{{ row.Valor_Total }}</td>
+                            
+                            <td>
+                                <input type="date" class="input-data-contato" 
+                                       value="{{ row.Data_Contato }}" 
+                                       onchange="salvarDadoExtra(this, '{{ row.Chave_Acesso }}', 'Data_Contato')">
+                            </td>
+                            
+                            <td>
+                                <textarea class="input-obs" rows="1" 
+                                          placeholder="Obs..."
+                                          onblur="salvarDadoExtra(this, '{{ row.Chave_Acesso }}', 'Observacao')">{{ row.Observacao }}</textarea>
+                            </td>
+
+                            <td>
+                                <textarea class="input-tratativa" rows="1" 
+                                          placeholder="Tratativa..."
+                                          onblur="salvarDadoExtra(this, '{{ row.Chave_Acesso }}', 'Tratativa')">{{ row.Tratativa }}</textarea>
+                            </td>
+
+                            <td>
+                                <input type="text" class="input-responsavel" 
+                                       placeholder="Nome..." 
+                                       value="{{ row.Responsavel }}"
+                                       onblur="salvarDadoExtra(this, '{{ row.Chave_Acesso }}', 'Responsavel')">
+                            </td>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function alterarStatus(select, chave) {
+            const novoStatus = select.value;
+            if (novoStatus === 'PENDENTE') {
+                if(confirm("Remover do workflow?")) {
+                    select.closest('tr').remove();
+                } else {
+                    window.location.reload(); 
+                    return;
+                }
+            } else {
+                select.className = 'select-status st-' + novoStatus.toLowerCase().replace(' ','').replace('ê','e').replace('í','i');
+                select.closest('tr').setAttribute('data-status', novoStatus);
+            }
+            atualizarKPIs();
+            
+            fetch('/gestao/api/atualizar_dados_extras', {
+                method: 'POST', headers: {'Content-Type': 'application/json'}, 
+                body: JSON.stringify({ chave: chave, campo: 'Status_Workflow', valor: novoStatus })
+            });
+        }
+
+        function salvarDadoExtra(elemento, chave, campo) {
+            const valor = elemento.value;
+            elemento.style.borderColor = '#ffc107';
+
+            fetch('/gestao/api/atualizar_dados_extras', {
+                method: 'POST', headers: {'Content-Type': 'application/json'}, 
+                body: JSON.stringify({ chave: chave, campo: campo, valor: valor })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.success) {
+                    elemento.style.borderColor = '#198754';
+                    setTimeout(() => elemento.style.borderColor = '#ced4da', 2000);
+                } else {
+                    elemento.style.borderColor = '#dc3545';
+                }
+            })
+            .catch(err => { elemento.style.borderColor = '#dc3545'; });
+        }
+
+        function atualizarKPIs() {
+            const linhas = document.querySelectorAll('#tabela tbody tr');
+            let a=0, c=0;
+            linhas.forEach(tr => {
+                if (tr.style.display !== 'none') { // Conta apenas visíveis
+                    const st = tr.getAttribute('data-status');
+                    if(st === 'EM ANÁLISE') a++; else if(st === 'CONCLUÍDO') c++;
+                }
+            });
+            document.getElementById('kpi-analise').innerText = a;
+            document.getElementById('kpi-concluido').innerText = c;
+            document.getElementById('kpi-total').innerText = a + c;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const fTexto = document.getElementById('filtroFantasia');
+            const fLoja = document.getElementById('filtroLoja');
+            const fStatus = document.getElementById('filtroStatus');
+            const fMotivo = document.getElementById('filtroMotivo');
+            const fDataIni = document.getElementById('filtroDataIni');
+            const fDataFim = document.getElementById('filtroDataFim');
+
+            function parseDatePTBR(dateStr) {
+                if(!dateStr) return null;
+                const parts = dateStr.split('/');
+                if(parts.length === 3) return new Date(parts[2], parts[1]-1, parts[0]);
+                return null;
+            }
+
+            function filtrar() {
+                const termo = fTexto.value.toLowerCase();
+                const loja = fLoja.value.toLowerCase();
+                const status = fStatus.value;
+                const motivo = fMotivo.value;
+                
+                let dIni = fDataIni.value ? new Date(fDataIni.value) : null;
+                if(dIni) dIni.setHours(0,0,0,0);
+                
+                let dFim = fDataFim.value ? new Date(fDataFim.value) : null;
+                if(dFim) dFim.setHours(23,59,59,999);
+
+                const linhas = document.querySelectorAll('#tabela tbody tr');
+                
+                linhas.forEach(tr => {
+                    const txt = tr.innerText.toLowerCase();
+                    const stRow = tr.getAttribute('data-status');
+                    const lojaRow = tr.children[5].innerText.toLowerCase(); 
+                    
+                    // Motivo Selecionado na linha
+                    const selMotivo = tr.querySelector('.select-motivo');
+                    const motivoRow = selMotivo ? selMotivo.value : "";
+
+                    // Data
+                    const dataStr = tr.getAttribute('data-emissao'); // dd/mm/yyyy
+                    const dataRow = parseDatePTBR(dataStr);
+
+                    const matchTexto = txt.includes(termo);
+                    const matchLoja = lojaRow.includes(loja);
+                    const matchStatus = status === "" || stRow === status;
+                    const matchMotivo = motivo === "" || motivoRow === motivo;
+                    
+                    let matchData = true;
+                    if(dataRow) {
+                        if(dIni && dataRow < dIni) matchData = false;
+                        if(dFim && dataRow > dFim) matchData = false;
+                    }
+
+                    if (matchTexto && matchLoja && matchStatus && matchMotivo && matchData) {
+                        tr.style.display = ''; 
+                    } else {
+                        tr.style.display = 'none';
+                    }
+                });
+                atualizarKPIs();
+            }
+            
+            [fTexto, fLoja, fStatus, fMotivo, fDataIni, fDataFim].forEach(el => {
+                el.addEventListener('keyup', filtrar);
+                el.addEventListener('change', filtrar);
+            });
+            
+            atualizarKPIs();
+        });
+    </script>
+</body>
+</html>

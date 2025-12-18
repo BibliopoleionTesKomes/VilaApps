@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vila Apps - Exportação</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo_vila.png') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cor-fundo-pagina: #E8EDF9; 
+            --cor-principal: #192F63; 
+            --cor-secundaria: #33508F; 
+            --cor-destaque: #FFC107; 
+            --cor-borda-suave: #DDE2E7; 
+            --cor-texto-claro: #FFFFFF;
+            --cor-input-bg: #F0F2F5; 
+            --cor-tabela-fundo-claro: #F0F0F0;
+        }
+
+        body {
+            background-color: var(--cor-fundo-pagina); 
+            color: #333;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            padding-bottom: 20px; 
+            overflow-x: hidden;
+        }
+
+        /* --- CABEÇALHO COMPACTO --- */
+        .header-bg {
+            background-image: linear-gradient(135deg, #192F63 0%, #33508F 100%); 
+            color: white; 
+            padding: 0 1.5rem; 
+            height: 60px;
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo-vila { max-height: 120px; width: auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+        .logo-argos { max-height: 120px; width: auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+
+        .container-main { 
+            width: 100%; 
+            max-width: 100%; 
+            margin: 0; 
+            padding: 10px 15px; 
+            flex: 1; 
+            display: flex; 
+            flex-direction: column; 
+        }
+
+        /* --- BOTÕES COMPACTOS --- */
+        .btn-compact {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-weight: 600;
+            border: none;
+            transition: all 0.2s;
+            white-space: nowrap;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-gradiente-azul {
+            background: linear-gradient(135deg, var(--cor-secundaria), var(--cor-principal));
+            color: white !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .btn-gradiente-azul:hover {
+            background: linear-gradient(135deg, #4a69a8, #2c4a8a);
+            transform: translateY(-1px);
+        }
+        .btn-gradiente-azul.active {
+            background: var(--cor-destaque);
+            color: var(--cor-principal) !important;
+            font-weight: 800;
+            border: 1px solid #b68b00;
+        }
+
+        /* --- BARRA DE FERRAMENTAS --- */
+        .section-card { 
+            background: white; 
+            border-radius: 6px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+            padding: 8px 12px; 
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        h4 { 
+            color: var(--cor-principal); 
+            font-family: 'Montserrat', sans-serif; 
+            font-weight: 700; 
+            font-size: 1rem; 
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .form-select-sm {
+            border: 1px solid var(--cor-borda-suave);
+            border-radius: 8px;
+            padding: 2px 8px;
+            font-size: 0.75rem;
+            height: 28px;
+            background-color: var(--cor-input-bg);
+            color: #333;
+        }
+
+        /* --- ESTATÍSTICAS (KPIs) --- */
+        .summary-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .summary-stat { 
+            text-align: right; 
+            padding-left: 10px; 
+            border-left: 2px solid var(--cor-borda-suave); 
+            line-height: 1.1;
+        }
+        .summary-stat h5 { margin: 0; font-weight: 700; font-size: 0.9rem; white-space: nowrap; }
+        .summary-stat small { font-size: 0.65rem; color: #666; text-transform: uppercase; font-weight: 600; white-space: nowrap; }
+
+        /* --- TABELA --- */
+        .card-tabela { 
+            background: white; 
+            border-radius: 6px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
+            overflow: hidden; 
+            flex: 1; 
+            display: flex; 
+            flex-direction: column; 
+        }
+        
+        .table-responsive { flex: 1; overflow-y: auto; max-height: 75vh; }
+        .table-sticky { width: 100%; border-collapse: collapse; } 
+        
+        .table-sticky thead th { 
+            position: sticky; top: 0; 
+            background: var(--cor-principal); 
+            color: var(--cor-texto-claro); 
+            z-index: 10; 
+            font-size: 0.75rem; 
+            text-transform: uppercase;
+            padding: 8px 6px; 
+            border: none;
+            white-space: nowrap;
+            text-align: left;
+        }
+        .table-sticky thead th:last-child { text-align: right; }
+
+        .table-sticky td { 
+            font-size: 0.8rem; 
+            vertical-align: middle; 
+            padding: 6px 6px; 
+            border-bottom: 1px solid #eee;
+            white-space: nowrap;
+        }
+        .table-sticky td:last-child { text-align: right; font-weight: 700; }
+        .table-sticky tbody tr:nth-child(even) { background-color: #f8f9fa; }
+
+        /* Estilo do Input na Tabela */
+        .qty-input-export { 
+            width: 80px; 
+            text-align: right; 
+            border-radius: 4px;
+            border: 1px solid var(--cor-secundaria); 
+            padding: 2px 4px;
+            font-size: 0.8rem;
+            background-color: #fff9c4; /* Fundo amarelo suave para destacar edição */
+        }
+        
+        #saving-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(25, 255, 255, 0.8);
+            z-index: 200; display: none; align-items: center; justify-content: center;
+            backdrop-filter: blur(2px);
+        }
+    </style>
+</head>
+<body>
+
+<div id="saving-overlay">
+    <div class="text-center">
+        <div class="spinner-border text-primary spinner-border-sm" role="status"></div>
+        <h6 class="mt-2 text-primary fw-bold" style="font-size: 0.9rem;">Salvando...</h6>
+    </div>
+</div>
+
+<header class="header-bg">
+    <div style="display: flex; align-items: center; gap: 1rem;">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Livraria da Vila" class="logo-vila">
+        <span style="font-weight: 600; font-size: 0.9rem; opacity: 0.9; border-left: 1px solid rgba(255,255,255,0.3); padding-left: 1rem;">
+            Fornecedor: {{ fornecedor }}
+        </span>
+    </div>
+    <div class="d-flex gap-2">
+        <a href="{{ url_for('conferencia.index') }}" class="btn-compact btn-gradiente-azul text-decoration-none">Nova Conferência</a>
+        
+        <!-- BOTÕES DE NAVEGAÇÃO -->
+        <a href="{{ url_for('conferencia.show_results') }}" class="btn-compact btn-gradiente-azul text-decoration-none">⬅️ Voltar Conferência</a>
+        <a href="{{ url_for('conferencia.show_summary') }}" class="btn-compact btn-gradiente-azul text-decoration-none">⬅️ Voltar Resumo</a>
+        
+        <button onclick="copyData()" id="btn-copiar" class="btn-compact btn-gradiente-azul">📋 Copiar Tabela</button>
+        <!-- O botão de baixar deve salvar antes de ir -->
+        <a href="#" onclick="downloadAndSave('{{ url_for('conferencia.download_export_list', filial=current_filial, filter=current_filter) }}'); return false;" class="btn-compact btn-gradiente-azul text-decoration-none">📥 Baixar Lista</a>
+    </div>
+    <img src="{{ url_for('static', filename='logo_argos.png') }}" alt="Logo Argos" class="logo-argos">
+</header>
+
+<div class="container-main">
+    <!-- PAINEL DE FILTROS + TOTAIS -->
+    <div class="section-card">
+        <div class="d-flex flex-column gap-1">
+            <h4>Lista para Exportação (Eris)</h4>
+            
+            <div class="d-flex gap-3 align-items-center mt-1">
+                <!-- Grupo de Botões de Filtro -->
+                <div class="btn-group" role="group">
+                    <a href="{{ url_for('conferencia.show_export_list', filial=current_filial, filter='all') }}" 
+                       class="btn-compact btn-gradiente-azul text-decoration-none {{ 'active' if current_filter == 'all' else '' }}"
+                       style="border-radius: 15px 0 0 15px;">Todos</a>
+                    <a href="{{ url_for('conferencia.show_export_list', filial=current_filial, filter='acao') }}" 
+                       class="btn-compact btn-gradiente-azul text-decoration-none {{ 'active' if current_filter == 'acao' else '' }}"
+                       style="border-radius: 0 15px 15px 0;">Apenas Ação</a>
+                </div>
+
+                <!-- Seletor de Filial -->
+                <select class="form-select form-select-sm w-auto" onchange="changeBranch(this.value)">
+                    <option value="all" {% if current_filial == 'all' %}selected{% endif %}>Todas as Filiais</option>
+                    {% for f in filiais_list %}
+                    <option value="{{ f }}" {% if current_filial == f %}selected{% endif %}>{{ f }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <!-- GRUPO DE TOTAIS (KPIS) -->
+        <div class="summary-group">
+            <div class="summary-stat">
+                <small>Acerto Líquido</small>
+                <h5 id="total-acerto-liquido" style="color: #0d6efd;">R$ 0,00</h5>
+            </div>
+            <div class="summary-stat">
+                <small>Acerto Bruto</small>
+                <h5 id="total-acerto-bruto" style="color: #0d6efd;">R$ 0,00</h5>
+            </div>
+            <div class="summary-stat">
+                <small>Venda Bruta</small>
+                <h5 style="color: #5a5a5a;">{{ venda_bruta_total }}</h5>
+            </div>
+            <div class="summary-stat">
+                <small>Qtd. Itens (Import)</small>
+                <h5 id="total-itens-import" style="color: #198754;">0</h5>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-tabela">
+        <div class="table-responsive">
+            <table class="table-sticky" id="export-table">
+                <thead><tr><th>Filial</th><th>ISBN</th><th class="text-end">Qtd. Final</th></tr></thead>
+                <tbody>
+                    {% for r in data %}
+                    <tr 
+                        data-vl-unit="{{ r['Vl. Unit._acerto'] }}"
+                        data-desc="{{ r['Desconto'] }}"
+                    >
+                        <td>{{ r.filial }}</td>
+                        <td>{{ r.ISBN }}</td>
+                        <td class="text-end">
+                            <!-- LÓGICA DO INPUT PARA AÇÃO COM TRAVA -->
+                            {% if r['Item Promocional'] == 'Sim' %}
+                                
+                                <!-- Calcula o saldo disponível (Limite Máximo) -->
+                                {% set max_val = (r['Quant']|float - r['Quant_acao']|float) %}
+                                {% if max_val < 0 %}{% set max_val = 0 %}{% endif %}
+
+                                <input type="number" 
+                                       class="qty-input-export" 
+                                       value="{{ r['Qtd. a Acertar'] }}" 
+                                       data-filial="{{ r['filial'] }}" 
+                                       data-isbn="{{ r['ISBN'] }}"
+                                       min="0"
+                                       max="{{ max_val | int }}">
+                            {% else %}
+                                <!-- Para itens normais, mantemos a Qtd. Final calculada (texto estático) -->
+                                <span class="fw-bold qty-value">{{ r['Qtd. Final'] }}</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+const API_URL = "{{ url_for('conferencia.update_manual_acerto') }}";
+
+// Função de Formatação
+function formatCurrency(val) { 
+    return val.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}); 
+}
+
+// Cálculo Dinâmico dos Totais
+function calculateTotals() {
+    let totAcertoBruto = 0;
+    let totAcertoLiq = 0;
+    let totItens = 0;
+
+    document.querySelectorAll('#export-table tbody tr').forEach(row => {
+        // Recupera valores ocultos (preço e desconto)
+        const vlUnit = parseFloat(row.dataset.vlUnit) || 0;
+        const desc = parseFloat(row.dataset.desc) || 0;
+        
+        let qtd = 0;
+        
+        // Verifica se é input ou span
+        const input = row.querySelector('input.qty-input-export');
+        if (input) {
+            qtd = parseInt(input.value) || 0;
+        } else {
+            const span = row.querySelector('.qty-value');
+            if (span) qtd = parseInt(span.innerText) || 0;
+        }
+
+        // Soma Itens
+        totItens += qtd;
+
+        // Soma Financeira
+        totAcertoBruto += qtd * vlUnit;
+        totAcertoLiq += (qtd * vlUnit) * (1 - desc);
+    });
+
+    document.getElementById('total-acerto-bruto').textContent = formatCurrency(totAcertoBruto);
+    document.getElementById('total-acerto-liquido').textContent = formatCurrency(totAcertoLiq);
+    document.getElementById('total-itens-import').textContent = totItens;
+}
+
+// Função para Salvar alterações (Igual à tela de resultados)
+async function saveChanges(redirectUrl = null) {
+    if(document.querySelectorAll('.qty-input-export').length === 0 && !redirectUrl) return; // Nada para salvar
+
+    if(redirectUrl) document.getElementById('saving-overlay').style.display = 'flex';
+    
+    const updates = [];
+    document.querySelectorAll('.qty-input-export').forEach(inp => {
+        updates.push({ filial: inp.dataset.filial, isbn: inp.dataset.isbn, qtd: inp.value });
+    });
+
+    if (updates.length === 0) {
+        if (redirectUrl) window.location.href = redirectUrl;
+        return;
+    }
+
+    try {
+        const res = await fetch(API_URL, {
+            method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(updates)
+        });
+        if(res.ok) {
+            if (redirectUrl) window.location.href = redirectUrl; 
+            else calculateTotals(); // Recalcula após salvar
+        } else {
+            alert('Erro ao salvar alterações.');
+            if(redirectUrl) document.getElementById('saving-overlay').style.display = 'none';
+        }
+    } catch(e) { 
+        alert('Erro de conexão ao salvar.'); 
+        if(redirectUrl) document.getElementById('saving-overlay').style.display = 'none'; 
+    }
+}
+
+function downloadAndSave(url) {
+    saveChanges(url);
+}
+
+function changeBranch(newBranch) {
+    const filter = "{{ current_filter }}";
+    const targetUrl = `{{ url_for('conferencia.show_export_list') }}?filial=${newBranch}&filter=${filter}`;
+    saveChanges(targetUrl);
+}
+
+function copyData() {
+    saveChanges();
+
+    const btn = document.getElementById('btn-copiar');
+    const originalText = btn.innerText;
+    let text = "";
+    let count = 0;
+    
+    document.querySelectorAll("#export-table tbody tr").forEach(tr => {
+        const cols = tr.querySelectorAll("td");
+        const filial = cols[0].innerText.trim();
+        const isbn = cols[1].innerText.trim();
+        
+        let qtd = "0";
+        const input = tr.querySelector('input');
+        if (input) {
+            qtd = input.value;
+        } else {
+            qtd = cols[2].innerText.trim();
+        }
+
+        text += `${isbn}\t${qtd}\n`; 
+        count++;
+    });
+
+    if(count === 0) { alert("Nenhum dado para copiar."); return; }
+    
+    navigator.clipboard.writeText(text).then(() => {
+        btn.innerText = "✅ Copiado!";
+        setTimeout(() => { btn.innerText = originalText; }, 2000);
+    }).catch(err => { console.error('Erro:', err); alert("Erro ao copiar."); });
+}
+
+// Inicialização
+document.addEventListener('DOMContentLoaded', () => {
+    // Lógica de Trava (Validation)
+    document.querySelectorAll('.qty-input-export').forEach(inp => {
+        inp.addEventListener('input', function() {
+            const max = parseInt(this.getAttribute('max'));
+            let val = parseInt(this.value);
+            if (!isNaN(max) && !isNaN(val) && val > max) this.value = max;
+            if (val < 0) this.value = 0;
+            calculateTotals(); // Recalcula ao digitar
+        });
+    });
+
+    // Calcula totais iniciais
+    calculateTotals();
+});
+</script>
+</body>
+</html>

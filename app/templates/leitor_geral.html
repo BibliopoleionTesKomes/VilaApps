@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vila Apps - Leitor Geral</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo_vila.png') }}">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fonte Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Variáveis de Cores para facilitar manutenção */
+        :root { 
+            --cor-principal: #192F63; 
+            --cor-secundaria: #33508F; 
+            --cor-fundo-pagina: #E8EDF9; 
+        }
+
+        /* Estilos Gerais */
+        body { 
+            background-color: var(--cor-fundo-pagina); 
+            font-family: 'Montserrat', sans-serif; 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            padding-bottom: 20px; 
+            overflow-x: hidden; 
+        }
+        
+        /* --- PADRONIZAÇÃO DO HEADER (Igual ao Menu e Gestão) --- */
+        .header-bg { 
+            background-image: linear-gradient(135deg, #192F63 0%, #33508F 100%); 
+            color: white; 
+            padding: 0 2rem; 
+            height: 90px; /* Altura fixa padrão */
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25); 
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-logo-container { 
+            flex: 0 0 300px; 
+            display: flex; 
+            align-items: center; 
+        } 
+        .header-logo-container.right { justify-content: flex-end; }
+        
+        /* Logos Padronizados (70px) */
+        .logo-vila { 
+            max-height: 120px; 
+            width: auto; 
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); 
+        } 
+        .logo-argos { 
+            max-height: 120px; 
+            width: auto; 
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); 
+        }
+
+        /* Título Padronizado */
+        .header-title-text {
+            font-weight: 700;
+            margin: 0;
+            color: white;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 2px;
+            font-size: 1.6rem;
+            text-align: center;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        /* Botão Voltar (Ajustado) */
+        .btn-voltar { 
+            color: rgba(255,255,255,0.9); 
+            text-decoration: none; 
+            margin-right: 20px; 
+            font-size: 1rem; 
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.2s;
+        } 
+        .btn-voltar:hover { color: #fff; text-decoration: none; }
+        /* --- FIM DO HEADER --- */
+        
+        /* Container Principal */
+        .container-main { 
+            width: 100%; 
+            max-width: 100%; 
+            margin: 0; 
+            padding: 15px 20px; 
+            flex: 1; 
+            display: flex; 
+            flex-direction: column; 
+        }
+        .card-tabela { 
+            background: white; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
+            overflow: hidden; 
+            flex: 1; 
+            display: flex; 
+            flex-direction: column; 
+        }
+        
+        /* Filtros */
+        .filter-row { 
+            background-color: #f8f9fa; 
+            padding: 8px 15px; 
+            border-bottom: 1px solid #dee2e6; 
+        }
+        .filter-input { 
+            border-radius: 15px; 
+            border: 1px solid #ced4da; 
+            font-size: 0.75rem; 
+            height: 30px; 
+        }
+        
+        /* Tabela */
+        .table-responsive { flex: 1; overflow-y: auto; max-height: 75vh; }
+        .table-custom th { 
+            background-color: #192F63; 
+            color: white; 
+            vertical-align: middle; 
+            font-size: 0.7rem; 
+            text-transform: uppercase; 
+            white-space: nowrap; 
+            position: sticky; 
+            top: 0; 
+            z-index: 10; 
+            padding: 8px 6px; 
+        }
+        .table-custom td { 
+            font-size: 0.7rem; 
+            vertical-align: middle; 
+            padding: 4px 6px; 
+            border-bottom: 1px solid #eee; 
+            white-space: nowrap; 
+        }
+        
+        /* Componentes Específicos */
+        .timestamp-box { background-color: #e7f1ff; color: #192F63; padding: 4px 10px; border-radius: 6px; font-weight: 600; font-size: 0.8rem; }
+        .col-razao { max-width: 250px; overflow: hidden; text-overflow: ellipsis; }
+        .col-fantasia { max-width: 180px; overflow: hidden; text-overflow: ellipsis; font-weight: 600; color: var(--cor-secundaria); }
+        .col-filial { max-width: 180px; overflow: hidden; text-overflow: ellipsis; }
+        .col-prazo { color: #666; }
+        .btn-compact { font-size: 0.8rem; padding: 5px 15px; border-radius: 20px; font-weight: 700; }
+
+        /* Estilo da Barra de Progresso */
+        #containerProgresso {
+            display: none; /* Começa escondido */
+            padding: 10px 15px;
+            background-color: #fff;
+            border-bottom: 1px solid #dee2e6;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER PADRONIZADO -->
+    <header class="header-bg">
+        <div class="header-logo-container">
+            <a href="{{ url_for('menu') }}" class="btn-voltar">⬅ Menu</a>
+            <img src="{{ url_for('static', filename='logo.png') }}" class="logo-vila">
+        </div>
+        
+        <h1 class="header-title-text">Notas de Acerto de Consignação</h1>
+        
+        <div class="header-logo-container right">
+            <img src="{{ url_for('static', filename='logo_argos.png') }}" class="logo-argos">
+        </div>
+    </header>
+
+    <div class="container-main">
+        <div class="card-tabela shadow-sm border-0">
+            
+            <!-- Linha de Filtros e Controles -->
+            <div class="filter-row">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <div class="d-flex align-items-center">
+                        <h5 class="fw-bold text-secondary m-0 me-3" style="font-size:1rem;">Total: <span id="contador">{{ dados|length if dados else 0 }}</span></h5>
+                        {% if ultima_atualizacao %}
+                            <div class="timestamp-box">📅 {{ ultima_atualizacao }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-primary btn-compact shadow-sm" id="btnAtualizar" onclick="iniciarLeitura()">
+                            🔄 Atualizar Lista
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row g-2">
+                    <div class="col-md-2"><input type="date" id="filtroDataIni" class="form-control filter-input" title="De"></div>
+                    <div class="col-md-2"><input type="date" id="filtroDataFim" class="form-control filter-input" title="Até"></div>
+                    <div class="col-md-2"><input type="text" id="filtroNota" list="listNotas" class="form-control filter-input" placeholder="🔢 Nota..."></div>
+                    <div class="col-md-2"><input type="text" id="filtroFantasia" list="listFantasia" class="form-control filter-input" placeholder="🏭 Fornecedor..."></div>
+                    <div class="col-md-1"><input type="text" id="filtroDiaAcerto" list="listDiaAcerto" class="form-control filter-input text-center" placeholder="📅 Dia"></div>
+                    <div class="col-md-3"><input type="text" id="filtroLoja" list="listaLojas" class="form-control filter-input" placeholder="🏪 Loja..."></div>
+                    
+                    <datalist id="listNotas"></datalist>
+                    <datalist id="listFantasia"></datalist>
+                    <datalist id="listDiaAcerto"></datalist>
+                    <datalist id="listaLojas"></datalist>
+                </div>
+            </div>
+
+            <!-- Container da Barra de Progresso -->
+            <div id="containerProgresso">
+                <small class="text-muted fw-bold mb-1 d-block">Lendo arquivos XML...</small>
+                <div class="progress" style="height: 20px;">
+                    <div id="barraProgresso" 
+                         class="progress-bar progress-bar-striped progress-bar-animated bg-success" 
+                         role="progressbar" 
+                         style="width: 0%;" 
+                         aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                         0%
+                    </div>
+                </div>
+            </div>
+
+            {% if erro %}
+                <div class="alert alert-danger m-3">{{ erro }}</div>
+            {% endif %}
+
+            {% if dados %}
+            <div class="table-responsive">
+                <table class="table table-hover table-custom mb-0" id="tabela">
+                    <thead>
+                        <tr>
+                            <th>Emissão</th>
+                            <th>Vencimento</th>
+                            <th>Nota</th>
+                            <th>Série</th>
+                            <th>CFOP</th>
+                            <th>Razão Social</th>
+                            <th>Nome Fantasia</th>
+                            <th>Prazo</th>
+                            <th class="text-center">Dia Acerto</th>
+                            <th>Filial</th>
+                            <th class="text-end">Valor</th>
+                            <th>Chave</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in dados %}
+                        <tr>
+                            <td>{{ row.Data_Emissao }}</td>
+                            <td class="text-primary fw-bold">{{ row.Data_Vencimento }}</td>
+                            <td class="fw-bold">{{ row.Numero_NF }}</td>
+                            <td>{{ row.Serie }}</td>
+                            <td>{{ row.CFOPs }}</td>
+                            <td class="col-razao" title="{{ row.Nome_Emitente }}">{{ row.Nome_Emitente }}</td>
+                            <td class="col-fantasia" title="{{ row.Nome_Fantasia }}">{{ row.Nome_Fantasia }}</td>
+                            <td class="col-prazo">{{ row.Prazo }}</td>
+                            <td class="text-center fw-bold">{{ row.Dia_Acerto }}</td>
+                            <td class="col-filial" title="{{ row.Filial }}">{{ row.Filial }}</td>
+                            <td class="text-end fw-bold text-success">{{ row.Valor_Total }}</td>
+                            <td class="small text-muted font-monospace" style="font-size:0.65rem;">{{ row.Chave_Acesso }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            configurarFiltros();
+        });
+
+        // --- Função da Barra de Progresso ---
+        function iniciarLeitura() {
+            const btn = document.getElementById('btnAtualizar');
+            const container = document.getElementById('containerProgresso');
+            const barra = document.getElementById('barraProgresso');
+            
+            btn.disabled = true;
+            btn.innerHTML = '⏳ Lendo...';
+            container.style.display = 'block';
+            
+            let largura = 0;
+            const intervalo = setInterval(() => {
+                largura += Math.random() * 10;
+                if (largura >= 100) {
+                    largura = 100;
+                    clearInterval(intervalo);
+                    barra.style.width = '100%';
+                    barra.innerHTML = 'Concluído!';
+                    setTimeout(() => { window.location.reload(); }, 500);
+                } else {
+                    barra.style.width = largura + '%';
+                    barra.innerHTML = Math.round(largura) + '%';
+                }
+            }, 200);
+        }
+
+        // --- Lógica de Filtros ---
+        function configurarFiltros() {
+            const campos = ['filtroDataIni', 'filtroDataFim', 'filtroNota', 'filtroFantasia', 'filtroDiaAcerto', 'filtroLoja'];
+            const inputs = campos.map(id => document.getElementById(id));
+            const contador = document.getElementById('contador');
+            const tabelaBody = document.querySelector('#tabela tbody');
+
+            if (!tabelaBody) return;
+
+            const sets = { nota: new Set(), fantasia: new Set(), dia: new Set(), loja: new Set() };
+            
+            tabelaBody.querySelectorAll('tr').forEach(tr => {
+                sets.nota.add(tr.children[2]?.innerText.trim());
+                sets.fantasia.add(tr.children[6]?.innerText.trim() || tr.children[5]?.innerText.trim());
+                sets.dia.add(tr.children[8]?.innerText.trim());
+                sets.loja.add(tr.children[9]?.innerText.trim());
+            });
+            
+            const fill = (id, s) => {
+                const dl = document.getElementById(id);
+                if(dl) {
+                    dl.innerHTML = ''; 
+                    Array.from(s).sort().forEach(v => { 
+                        if(v) dl.innerHTML += `<option value="${v}">`;
+                    });
+                }
+            };
+            fill('listNotas', sets.nota); fill('listFantasia', sets.fantasia); 
+            fill('listDiaAcerto', sets.dia); fill('listaLojas', sets.loja);
+
+            function filtrar() {
+                const vals = inputs.map(i => i ? i.value.toLowerCase() : '');
+                const [dIni, dFim, nota, fant, dia, loja] = vals;
+                let visiveis = 0;
+
+                tabelaBody.querySelectorAll('tr').forEach(tr => {
+                    const tds = tr.children;
+                    const txtData = tds[0].innerText;
+                    
+                    let dataOk = true;
+                    if (dIni || dFim) {
+                        const parts = txtData.split('/');
+                        if (parts.length === 3) {
+                            const dtRow = new Date(parts[2], parts[1]-1, parts[0]);
+                            dtRow.setHours(0,0,0,0);
+                            
+                            if (dIni) {
+                                const dtIniObj = new Date(dIni);
+                                dtIniObj.setHours(0,0,0,0);
+                                if (dtRow < dtIniObj) dataOk = false;
+                            }
+                            if (dFim) {
+                                const dtFimObj = new Date(dFim);
+                                dtFimObj.setHours(0,0,0,0);
+                                if (dtRow > dtFimObj) dataOk = false;
+                            }
+                        }
+                    }
+
+                    const match = dataOk &&
+                        (tds[2].innerText.toLowerCase().includes(nota)) &&
+                        (tds[6].innerText.toLowerCase().includes(fant) || tds[5].innerText.toLowerCase().includes(fant)) &&
+                        (tds[8].innerText.trim().includes(dia)) &&
+                        (tds[9].innerText.toLowerCase().includes(loja));
+
+                    tr.style.display = match ? '' : 'none';
+                    if(match) visiveis++;
+                });
+                if(contador) contador.innerText = visiveis;
+            }
+
+            inputs.forEach(el => { 
+                if(el) {
+                    el.addEventListener('keyup', filtrar); 
+                    el.addEventListener('change', filtrar); 
+                }
+            });
+        }
+    </script>
+</body>
+</html>
