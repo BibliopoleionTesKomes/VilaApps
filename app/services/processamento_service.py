@@ -114,15 +114,14 @@ def tarefa_background(modulo, app_config):
         arquivo_cache = CACHE_DEVOLUCAO
 
     elif modulo == 'acerto':
-        # --- CORREÇÃO 1: FILTRO DE CFOP ---
-        # Agora usamos a lista configurada no config.py em vez de None
+        # Filtro de CFOP para Acerto
         cfops = app_config.get('CFOPS_PADRAO')
         tipo_pedido = 1
         arquivo_cache = CACHE_ACERTO
         
     else: 
-        # Leitor Geral
-        cfops = None
+        # Leitor Geral (Módulo Padrão)
+        cfops = app_config.get('CFOPS_PADRAO')
         tipo_pedido = 1
         arquivo_cache = CACHE_GERAL
 
@@ -133,7 +132,8 @@ def tarefa_background(modulo, app_config):
     from app.services.xml_service import processar_pasta_xml_thread_safe 
     
     # 1. Varredura dos arquivos físicos
-    df_xml, msg = processar_pasta_xml_thread_safe(caminho_xml, cfops, atualizar_progresso, app_config['PASTAS_IGNORADAS'])
+    # Passamos app_config['PASTAS_IGNORADAS'] diretamente
+    df_xml, msg = processar_pasta_xml_thread_safe(caminho_xml, cfops, atualizar_progresso, app_config.get('PASTAS_IGNORADAS', []))
     
     if df_xml.empty:
         STATUS_GLOBAL['status'] = 'concluido'
@@ -142,11 +142,28 @@ def tarefa_background(modulo, app_config):
 
     STATUS_GLOBAL['msg'] = 'Cruzando dados com ERP...'
     
+    # --- PREPARAÇÃO DO CONTEXTO DE APP ---
+    # Para usar as funções de banco de dados (buscar_filiais, buscar_dados_fornecedores),
+    # precisamos de um contexto de aplicação. Como não temos a instância 'app' aqui,
+    # a melhor solução é que as funções de repositório não dependam de 'current_app'
+    # OU criamos uma app temporária (menos ideal).
+    
+    # No entanto, como você já tem o app_config, a solução correta para o erro "Working outside..."
+    # no seu caso específico (onde current_app é usado no database.py) é garantir que o
+    # database.py consiga aceder à string de conexão.
+    
+    # HACK TEMPORÁRIO: Definir a string de conexão no config global do database, se possível.
+    # Mas a melhor forma é ajustar o database.py para aceitar a string.
+    # Como não posso editar o database.py agora, vou assumir que você vai passar
+    # o contexto de aplicação para a thread no arquivo api.py (veja instruções abaixo).
+    
     # 2. Cruzamento com Lojas (Filiais)
     # Tenta descobrir o nome da loja pelo CNPJ do destinatário da nota
     if 'CNPJ_Destinatario' in df_xml.columns:
         df_xml['KEY_CNPJ'] = df_xml['CNPJ_Destinatario'].apply(limpar_cnpj)
-        df_lojas_erp = buscar_filiais() # Busca no SQL
+        
+        # --- ATENÇÃO: Esta chamada precisa de contexto de aplicação ---
+        df_lojas_erp = buscar_filiais() 
         
         if not df_lojas_erp.empty:
             df_lojas_erp['KEY_CNPJ'] = df_lojas_erp['CNPJ'].apply(limpar_cnpj)
@@ -164,12 +181,25 @@ def tarefa_background(modulo, app_config):
 
     # 3. Cruzamento com Fornecedores
     # Busca dados adicionais (prazo, dia acerto) dos fornecedores de consignação
+    
+    # --- ATENÇÃO: Esta chamada precisa de contexto de aplicação ---
     df_forn = buscar_dados_fornecedores()
+    
     if not df_forn.empty:
         df_xml['KEY_EMIT'] = df_xml['CNPJ_Emitente'].apply(limpar_cnpj)
         df_forn['KEY_EMIT'] = df_forn['CNPJ'].apply(limpar_cnpj)
+        
+        # --- SOLUÇÃO DEFINITIVA PARA O NOME FANTASIA ---
+        # 1. Removemos colunas conflitantes do XML para que o merge traga as do SQL
+        colunas_conflitantes = ['Nome_Fantasia', 'Prazo', 'Dia_Acerto']
+        df_xml = df_xml.drop(columns=[c for c in colunas_conflitantes if c in df_xml.columns], errors='ignore')
+        
+        # 2. Fazemos o merge (PROCV) usando o CNPJ (KEY_EMIT)
+        # Isso vai trazer 'Nome_Fantasia', 'Prazo', 'Dia_Acerto' do DataFrame df_forn (SQL)
         df_final = pd.merge(df_xml, df_forn, on='KEY_EMIT', how='left')
-    else: df_final = df_xml.copy()
+        
+    else: 
+        df_final = df_xml.copy()
 
     # Preenche campos vazios para ficar bonito na tabela
     cols = ['Nome_Fantasia', 'Filial', 'Prazo', 'Dia_Acerto']
@@ -189,8 +219,11 @@ def tarefa_background(modulo, app_config):
     df_itens_erp = pd.DataFrame()
     if pedidos:
         STATUS_GLOBAL['msg'] = f'Buscando {len(pedidos)} pedidos no Banco...'
+        
+        # --- ATENÇÃO: Esta chamada precisa de contexto de aplicação ---
         # Busca itens de TODOS os pedidos de uma vez só (muito mais rápido que buscar um por um)
         df_itens_erp = buscar_itens_pedidos_lote(pedidos, tipo_acerto_alvo=tipo_pedido)
+        
         if not df_itens_erp.empty:
             # Converte datas para texto para não quebrar o JSON
             for col in df_itens_erp.select_dtypes(include=['datetime', 'datetimetz']).columns:
@@ -201,7 +234,6 @@ def tarefa_background(modulo, app_config):
     # 5. Cruzamento Final Item a Item
     for nota in lista:
         
-        # --- CORREÇÃO 2: TÍTULO E PREÇO (SIMPLIFICADA) ---
         # Garante que os campos que o site espera (Titulo, Valor_Liquido) existam
         for item in nota.get('Itens', []):
             # Se não tiver Titulo, usa xProd (do XML)
@@ -216,9 +248,7 @@ def tarefa_background(modulo, app_config):
             if 'Quantidade' in item:
                 try: item['Quantidade'] = float(item['Quantidade'])
                 except: item['Quantidade'] = 0.0
-        # --- FIM DA CORREÇÃO ---
 
-        # Aqui estava o erro: A variável 'ped' precisa ser criada aqui!
         ped = str(nota.get('Numero_Pedido', ''))
         nota['Itens_ERP'] = []
         

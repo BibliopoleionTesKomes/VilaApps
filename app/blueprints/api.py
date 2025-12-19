@@ -1,7 +1,7 @@
 # Importações necessárias do Flask e bibliotecas padrão
 from flask import Blueprint, jsonify, request, current_app
 import threading
-
+from app.services.processamento_service import tarefa_background
 # Importações dos repositórios (funções que buscam dados no banco ou arquivos)
 # É boa prática separar a lógica de acesso a dados (repositório) da lógica da rota (controller)
 from app.repository.geral_repo import (
@@ -100,34 +100,27 @@ def api_dados_fornecedor():
 
 @api_bp.route('/iniciar_processamento', methods=['POST'])
 def api_iniciar():
-    """
-    Inicia uma tarefa pesada em segundo plano (Background Thread).
-    Isso é crucial para não travar a tela do usuário enquanto o sistema processa dados.
-    """
-    # Verifica se já existe algo rodando para evitar conflitos
-    if STATUS_GLOBAL['status'] == 'rodando':
-        return jsonify({'status': 'ocupado'})
+    # ... verificação de status ...
     
-    # Limpa contadores anteriores
-    resetar_progresso()
+    # PEGAR A APP REAL
+    app = current_app._get_current_object()
     
-    # Pega qual módulo será processado (ex: 'acerto', 'devolucao') do corpo do POST
     modulo = request.json.get('modulo', 'geral')
     
-    # PREPARAÇÃO DA THREAD:
-    # O Flask 'current_app' (que guarda configs) não existe dentro de Threads novas.
-    # Por isso, precisamos copiar as configurações necessárias para um dicionário simples
-    # e passar esse dicionário para a função da thread.
+    # Preparar config
     app_config = {
-        'CAMINHO_XML_PADRAO': current_app.config['CAMINHO_XML_PADRAO'],
-        'PASTAS_IGNORADAS': current_app.config['PASTAS_IGNORADAS'],
-        'CFOPS_PADRAO': current_app.config['CFOPS_PADRAO']
+        'CAMINHO_XML_PADRAO': app.config['CAMINHO_XML_PADRAO'],
+        'PASTAS_IGNORADAS': app.config['PASTAS_IGNORADAS'],
+        'CFOPS_PADRAO': app.config['CFOPS_PADRAO']
     }
     
-    # Cria e inicia a Thread
-    # target: a função que vai rodar
-    # args: os argumentos que essa função vai receber
-    thread = threading.Thread(target=tarefa_background, args=(modulo, app_config))
+    # Função wrapper para empurrar o contexto
+    def thread_com_contexto(app_ref, mod, conf):
+        with app_ref.app_context():
+            tarefa_background(mod, conf)
+            
+    # Iniciar a thread chamando o wrapper
+    thread = threading.Thread(target=thread_com_contexto, args=(app, modulo, app_config))
     thread.start()
     
     return jsonify({'status': 'iniciado'})

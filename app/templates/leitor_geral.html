@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vila Apps - Leitor Geral</title>
+    <!-- Use o caminho correto para o seu favicon -->
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo_vila.png') }}">
     
     <!-- Bootstrap 5 CSS -->
@@ -12,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* Variáveis de Cores para facilitar manutenção */
+        /* Variáveis de Cores */
         :root { 
             --cor-principal: #192F63; 
             --cor-secundaria: #33508F; 
@@ -30,12 +31,12 @@
             overflow-x: hidden; 
         }
         
-        /* --- PADRONIZAÇÃO DO HEADER (Igual ao Menu e Gestão) --- */
+        /* HEADER */
         .header-bg { 
             background-image: linear-gradient(135deg, #192F63 0%, #33508F 100%); 
             color: white; 
             padding: 0 2rem; 
-            height: 90px; /* Altura fixa padrão */
+            height: 90px; 
             display: flex; 
             align-items: center; 
             justify-content: space-between; 
@@ -45,107 +46,59 @@
             z-index: 100;
         }
         
-        .header-logo-container { 
-            flex: 0 0 300px; 
-            display: flex; 
-            align-items: center; 
-        } 
+        .header-logo-container { flex: 0 0 300px; display: flex; align-items: center; } 
         .header-logo-container.right { justify-content: flex-end; }
         
-        /* Logos Padronizados (70px) */
-        .logo-vila { 
-            max-height: 120px; 
-            width: auto; 
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); 
-        } 
-        .logo-argos { 
-            max-height: 120px; 
-            width: auto; 
+        .logo-vila, .logo-argos { 
+            max-height: 120px; width: auto; 
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); 
         }
 
-        /* Título Padronizado */
         .header-title-text {
-            font-weight: 700;
-            margin: 0;
-            color: white;
+            font-weight: 700; margin: 0; color: white;
             text-shadow: 0 2px 5px rgba(0,0,0,0.4);
             font-family: 'Montserrat', sans-serif;
-            letter-spacing: 2px;
-            font-size: 1.6rem;
-            text-align: center;
-            text-transform: uppercase;
-            line-height: 1;
+            letter-spacing: 2px; font-size: 1.6rem;
+            text-align: center; text-transform: uppercase; line-height: 1;
         }
 
-        /* Botão Voltar (Ajustado) */
         .btn-voltar { 
-            color: rgba(255,255,255,0.9); 
-            text-decoration: none; 
-            margin-right: 20px; 
-            font-size: 1rem; 
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 5px;
+            color: rgba(255,255,255,0.9); text-decoration: none; 
+            margin-right: 20px; font-size: 1rem; font-weight: 600;
+            display: flex; align-items: center; gap: 5px;
             transition: color 0.2s;
         } 
         .btn-voltar:hover { color: #fff; text-decoration: none; }
-        /* --- FIM DO HEADER --- */
         
         /* Container Principal */
         .container-main { 
-            width: 100%; 
-            max-width: 100%; 
-            margin: 0; 
-            padding: 15px 20px; 
-            flex: 1; 
-            display: flex; 
-            flex-direction: column; 
+            width: 100%; max-width: 100%; margin: 0; padding: 15px 20px; 
+            flex: 1; display: flex; flex-direction: column; 
         }
         .card-tabela { 
-            background: white; 
-            border-radius: 8px; 
+            background: white; border-radius: 8px; 
             box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
-            overflow: hidden; 
-            flex: 1; 
-            display: flex; 
-            flex-direction: column; 
+            overflow: hidden; flex: 1; display: flex; flex-direction: column; 
         }
         
         /* Filtros */
         .filter-row { 
-            background-color: #f8f9fa; 
-            padding: 8px 15px; 
-            border-bottom: 1px solid #dee2e6; 
+            background-color: #f8f9fa; padding: 8px 15px; border-bottom: 1px solid #dee2e6; 
         }
         .filter-input { 
-            border-radius: 15px; 
-            border: 1px solid #ced4da; 
-            font-size: 0.75rem; 
-            height: 30px; 
+            border-radius: 15px; border: 1px solid #ced4da; font-size: 0.75rem; height: 30px; 
         }
         
         /* Tabela */
         .table-responsive { flex: 1; overflow-y: auto; max-height: 75vh; }
         .table-custom th { 
-            background-color: #192F63; 
-            color: white; 
-            vertical-align: middle; 
-            font-size: 0.7rem; 
-            text-transform: uppercase; 
-            white-space: nowrap; 
-            position: sticky; 
-            top: 0; 
-            z-index: 10; 
-            padding: 8px 6px; 
+            background-color: #192F63; color: white; vertical-align: middle; 
+            font-size: 0.7rem; text-transform: uppercase; white-space: nowrap; 
+            position: sticky; top: 0; z-index: 10; padding: 8px 6px; 
         }
         .table-custom td { 
-            font-size: 0.7rem; 
-            vertical-align: middle; 
-            padding: 4px 6px; 
-            border-bottom: 1px solid #eee; 
-            white-space: nowrap; 
+            font-size: 0.7rem; vertical-align: middle; padding: 4px 6px; 
+            border-bottom: 1px solid #eee; white-space: nowrap; 
         }
         
         /* Componentes Específicos */
@@ -156,34 +109,34 @@
         .col-prazo { color: #666; }
         .btn-compact { font-size: 0.8rem; padding: 5px 15px; border-radius: 20px; font-weight: 700; }
 
-        /* Estilo da Barra de Progresso */
+        /* Barra de Progresso */
         #containerProgresso {
-            display: none; /* Começa escondido */
-            padding: 10px 15px;
-            background-color: #fff;
-            border-bottom: 1px solid #dee2e6;
+            display: none; padding: 10px 15px;
+            background-color: #fff; border-bottom: 1px solid #dee2e6;
         }
     </style>
 </head>
 <body>
-    <!-- HEADER PADRONIZADO -->
+    <!-- HEADER -->
     <header class="header-bg">
         <div class="header-logo-container">
             <a href="{{ url_for('menu') }}" class="btn-voltar">⬅ Menu</a>
-            <img src="{{ url_for('static', filename='logo.png') }}" class="logo-vila">
+            <!-- Ajuste o nome da imagem se necessário -->
+            <img src="{{ url_for('static', filename='logo.png') }}" class="logo-vila" alt="Logo Vila">
         </div>
         
         <h1 class="header-title-text">Notas de Acerto de Consignação</h1>
         
         <div class="header-logo-container right">
-            <img src="{{ url_for('static', filename='logo_argos.png') }}" class="logo-argos">
+            <!-- Ajuste o nome da imagem se necessário -->
+            <img src="{{ url_for('static', filename='logo_argos.png') }}" class="logo-argos" alt="Logo Argos">
         </div>
     </header>
 
     <div class="container-main">
         <div class="card-tabela shadow-sm border-0">
             
-            <!-- Linha de Filtros e Controles -->
+            <!-- Filtros e Controles -->
             <div class="filter-row">
                 <div class="d-flex justify-content-between align-items-center mb-2">
                     <div class="d-flex align-items-center">
@@ -193,7 +146,8 @@
                         {% endif %}
                     </div>
                     <div class="d-flex gap-2">
-                        <button class="btn btn-primary btn-compact shadow-sm" id="btnAtualizar" onclick="iniciarLeitura()">
+                        <!-- O Botão chama a nova função -->
+                        <button class="btn btn-primary btn-compact shadow-sm" id="btnAtualizar" onclick="iniciarLeituraReal()">
                             🔄 Atualizar Lista
                         </button>
                     </div>
@@ -214,9 +168,9 @@
                 </div>
             </div>
 
-            <!-- Container da Barra de Progresso -->
+            <!-- Barra de Progresso Real -->
             <div id="containerProgresso">
-                <small class="text-muted fw-bold mb-1 d-block">Lendo arquivos XML...</small>
+                <small id="txtProgresso" class="text-muted fw-bold mb-1 d-block">Iniciando...</small>
                 <div class="progress" style="height: 20px;">
                     <div id="barraProgresso" 
                          class="progress-bar progress-bar-striped progress-bar-animated bg-success" 
@@ -280,33 +234,80 @@
             configurarFiltros();
         });
 
-        // --- Função da Barra de Progresso ---
-        function iniciarLeitura() {
+        // --- NOVA FUNÇÃO REAL DE ATUALIZAÇÃO ---
+        // Agora ela chama o Python via API Fetch
+        async function iniciarLeituraReal() {
             const btn = document.getElementById('btnAtualizar');
             const container = document.getElementById('containerProgresso');
             const barra = document.getElementById('barraProgresso');
+            const texto = document.getElementById('txtProgresso');
             
+            // 1. Prepara a UI
             btn.disabled = true;
-            btn.innerHTML = '⏳ Lendo...';
+            btn.innerHTML = '⏳ Processando...';
             container.style.display = 'block';
-            
-            let largura = 0;
-            const intervalo = setInterval(() => {
-                largura += Math.random() * 10;
-                if (largura >= 100) {
-                    largura = 100;
-                    clearInterval(intervalo);
-                    barra.style.width = '100%';
-                    barra.innerHTML = 'Concluído!';
-                    setTimeout(() => { window.location.reload(); }, 500);
-                } else {
-                    barra.style.width = largura + '%';
-                    barra.innerHTML = Math.round(largura) + '%';
+            barra.style.width = '0%';
+            barra.innerHTML = '0%';
+
+            try {
+                // 2. Manda o comando INICIAR para o servidor (POST)
+                // modulo: 'geral' indica que queremos rodar o leitor de XMLs padrão
+                const respInicio = await fetch('/api/iniciar_processamento', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ modulo: 'geral' })
+                });
+                
+                const dadosInicio = await respInicio.json();
+
+                if (dadosInicio.status === 'ocupado') {
+                    alert('O sistema já está processando algo. Aguarde finalizar.');
+                    btn.disabled = false;
+                    btn.innerHTML = '🔄 Atualizar Lista';
+                    container.style.display = 'none';
+                    return;
                 }
-            }, 200);
+
+                // 3. Loop de Polling (Pergunta "E ai?" a cada 1 segundo)
+                const intervalo = setInterval(async () => {
+                    try {
+                        const respProg = await fetch('/api/progresso');
+                        const statusData = await respProg.json();
+
+                        // Atualiza visualmente
+                        const pct = statusData.percentual || 0;
+                        barra.style.width = pct + '%';
+                        barra.innerHTML = pct + '%';
+                        if (statusData.msg) texto.innerText = statusData.msg;
+
+                        // Se terminou, para o loop e recarrega
+                        if (statusData.status === 'concluido' || statusData.status === 'erro') {
+                            clearInterval(intervalo);
+                            barra.style.width = '100%';
+                            barra.innerHTML = 'Concluído!';
+                            texto.innerText = 'Atualizando página...';
+                            
+                            // Delayzinho para o usuário ver o 100%
+                            setTimeout(() => {
+                                window.location.reload();
+                            }, 800);
+                        }
+
+                    } catch (err) {
+                        console.error("Erro ao verificar progresso:", err);
+                    }
+                }, 1000); // Roda a cada 1000ms (1 segundo)
+
+            } catch (error) {
+                console.error("Erro ao iniciar:", error);
+                alert('Erro ao conectar com o servidor.');
+                btn.disabled = false;
+                btn.innerHTML = '🔄 Atualizar Lista';
+                container.style.display = 'none';
+            }
         }
 
-        // --- Lógica de Filtros ---
+        // --- Lógica de Filtros (Mantida igual, pois estava correta) ---
         function configurarFiltros() {
             const campos = ['filtroDataIni', 'filtroDataFim', 'filtroNota', 'filtroFantasia', 'filtroDiaAcerto', 'filtroLoja'];
             const inputs = campos.map(id => document.getElementById(id));
