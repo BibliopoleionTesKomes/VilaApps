@@ -1,6 +1,8 @@
 import pyodbc
 from flask import current_app
 import pandas as pd
+import warnings
+warnings.filterwarnings('ignore', category=UserWarning)
 
 def get_connection():
     """

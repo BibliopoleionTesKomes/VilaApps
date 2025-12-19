@@ -8,19 +8,10 @@ import pandas as pd # Para manipular tabelas de dados de forma eficiente
 import re        # Expressões Regulares (para limpar texto, como CNPJ)
 from datetime import datetime
 
-# Importações do próprio projeto
-from flask import current_app
-# Importamos a função que lê a pasta física de XMLs (comentada mais abaixo sobre a versão thread_safe)
-from app.services.xml_service import processar_pasta_xml
-# Repositórios para buscar dados no SQL Server
+# Importações do projeto
 from app.repository.geral_repo import buscar_filiais, buscar_dados_fornecedores, buscar_itens_pedidos_lote
-# Caminhos onde os arquivos JSON serão salvos
 from app.services.cache_service import CACHE_ACERTO, CACHE_DEVOLUCAO, CACHE_GERAL
 
-# --- VARIÁVEL GLOBAL DE STATUS ---
-# Como a Thread roda separada do site, usamos esta variável global para 
-# que o site possa perguntar "quantos % já foi?" (Polling).
-# É como um quadro de avisos compartilhado.
 STATUS_GLOBAL = {'atual': 0, 'total': 0, 'status': 'parado', 'msg': ''}
 
 def atualizar_progresso(atual, total):
@@ -131,9 +122,9 @@ def tarefa_background(modulo, app_config):
     # não dependa do contexto web do Flask, evitando erros de "Application Context".
     from app.services.xml_service import processar_pasta_xml_thread_safe 
     
-    # 1. Varredura dos arquivos físicos
-    # Passamos app_config['PASTAS_IGNORADAS'] diretamente
-    df_xml, msg = processar_pasta_xml_thread_safe(caminho_xml, cfops, atualizar_progresso, app_config.get('PASTAS_IGNORADAS', []))
+    # Passa as pastas ignoradas da config
+    pastas_ign = app_config.get('PASTAS_IGNORADAS', [])
+    df_xml, msg = processar_pasta_xml_thread_safe(caminho_xml, cfops, atualizar_progresso, pastas_ign)
     
     if df_xml.empty:
         STATUS_GLOBAL['status'] = 'concluido'
@@ -219,13 +210,8 @@ def tarefa_background(modulo, app_config):
     df_itens_erp = pd.DataFrame()
     if pedidos:
         STATUS_GLOBAL['msg'] = f'Buscando {len(pedidos)} pedidos no Banco...'
-        
-        # --- ATENÇÃO: Esta chamada precisa de contexto de aplicação ---
-        # Busca itens de TODOS os pedidos de uma vez só (muito mais rápido que buscar um por um)
         df_itens_erp = buscar_itens_pedidos_lote(pedidos, tipo_acerto_alvo=tipo_pedido)
-        
         if not df_itens_erp.empty:
-            # Converte datas para texto para não quebrar o JSON
             for col in df_itens_erp.select_dtypes(include=['datetime', 'datetimetz']).columns:
                 df_itens_erp[col] = df_itens_erp[col].astype(str)
 
@@ -239,7 +225,7 @@ def tarefa_background(modulo, app_config):
             # Se não tiver Titulo, usa xProd (do XML)
             item.setdefault('Titulo', item.get('xProd', 'Produto Sem Nome'))
             
-            # Se não tiver Valor_Liquido, usa vProd (do XML) e converte para número
+            # Garante valores numéricos
             if 'Valor_Liquido' not in item:
                 try: item['Valor_Liquido'] = float(item.get('vProd', 0))
                 except: item['Valor_Liquido'] = 0.0
@@ -248,6 +234,14 @@ def tarefa_background(modulo, app_config):
             if 'Quantidade' in item:
                 try: item['Quantidade'] = float(item['Quantidade'])
                 except: item['Quantidade'] = 0.0
+                
+            # Se não veio Valor Unitário do XML, calcula: Total / Qtd
+            if 'Valor_Unitario' not in item or item['Valor_Unitario'] == 0:
+                qtd = item.get('Quantidade', 0)
+                if qtd > 0:
+                    item['Valor_Unitario'] = item.get('Valor_Liquido', 0) / qtd
+                else:
+                    item['Valor_Unitario'] = 0.0
 
         ped = str(nota.get('Numero_Pedido', ''))
         nota['Itens_ERP'] = []

@@ -1,9 +1,7 @@
-# Importações necessárias do Flask e bibliotecas padrão
 from flask import Blueprint, jsonify, request, current_app
 import threading
-from app.services.processamento_service import tarefa_background
-# Importações dos repositórios (funções que buscam dados no banco ou arquivos)
-# É boa prática separar a lógica de acesso a dados (repositório) da lógica da rota (controller)
+
+# Importações dos repositórios
 from app.repository.geral_repo import (
     listar_fornecedores, 
     listar_filiais_do_fornecedor, 
@@ -24,103 +22,39 @@ from app.services.processamento_service import STATUS_GLOBAL, resetar_progresso,
 # Tudo que for definido aqui será acessível via prefixo definido no create_app (ex: /api)
 api_bp = Blueprint('api', __name__)
 
-# --- ROTAS DE CONSULTA BÁSICA (DADOS AUXILIARES) ---
-
-@api_bp.route('/fornecedores')
-def api_fornecedores():
+# --- FUNÇÃO WRAPPER PARA THREAD (SOLUÇÃO DO ERRO DE CONTEXTO) ---
+def executor_thread(app_real, modulo, app_config):
     """
-    Rota para listar fornecedores.
-    Recebe um parâmetro 'tipo' via URL (ex: ?tipo=1) para filtrar o tipo de fornecedor.
-    Retorna um JSON com a lista de fornecedores.
+    Esta função roda dentro da Thread.
+    Ela 'empurra' o contexto da aplicação para que o database.py 
+    consiga ler a string de conexão sem dar erro.
     """
-    # request.args.get pega parâmetros da URL (?chave=valor)
-    tipo = request.args.get('tipo', 1) 
-    dados = listar_fornecedores(tipo)
-    return jsonify(dados) # jsonify converte dicionários/listas Python para JSON (formato web)
-
-@api_bp.route('/filiais')
-def api_filiais():
-    """
-    Rota para listar filiais de um fornecedor específico.
-    Exige o parâmetro 'cod_cli' (código do cliente/fornecedor).
-    """
-    cod_cliente = request.args.get('cod_cli')
-    tipo = request.args.get('tipo', 1)
-    
-    # Chama a função do repositório passando os filtros
-    dados = listar_filiais_do_fornecedor(cod_cliente, tipo)
-    return jsonify(dados)
-
-@api_bp.route('/pedidos')
-def api_pedidos():
-    """
-    Rota para listar pedidos (propostas) com base em vários filtros.
-    Útil para preencher comboboxes ou listas de seleção.
-    """
-    # 'a' é um atalho para os argumentos da requisição
-    a = request.args
-    
-    # Passa todos os parâmetros possíveis para a função de busca
-    dados = listar_pedidos_do_fornecedor(
-        a.get('cod_cli'), 
-        a.get('cod_filial'), 
-        a.get('data_ini'), 
-        a.get('data_fim'), 
-        a.get('tipo', 1)
-    )
-    return jsonify(dados)
-
-@api_bp.route('/buscar_pedido')
-def api_buscar_pedido():
-    """
-    Rota específica para buscar os ITENS de um pedido.
-    Usada quando o usuário seleciona um pedido e clica em 'Confrontar'.
-    """
-    pedido = request.args.get('pedido')
-    tipo = request.args.get('tipo', 1)
-    
-    # Retorna a lista de itens do pedido encontrado
-    return jsonify(buscar_pedido_manual(pedido, tipo))
-
-@api_bp.route('/dados_fornecedor')
-def api_dados_fornecedor():
-    """
-    Rota para buscar dados de contato (email, telefone) de um fornecedor.
-    Usada no modal de contato.
-    """
-    cod = request.args.get('cod_cli')
-    
-    # Se não vier código, retorna lista vazia para evitar erro
-    if not cod: 
-        return jsonify([])
-        
-    return jsonify(buscar_contato_fornecedor(cod))
+    with app_real.app_context():
+        tarefa_background(modulo, app_config)
 
 # --- ROTAS DE PROCESSAMENTO (TAREFAS DEMORADAS) ---
 
 @api_bp.route('/iniciar_processamento', methods=['POST'])
 def api_iniciar():
-    # ... verificação de status ...
+    if STATUS_GLOBAL['status'] == 'rodando':
+        return jsonify({'status': 'ocupado'})
     
-    # PEGAR A APP REAL
-    app = current_app._get_current_object()
+    resetar_progresso()
     
     modulo = request.json.get('modulo', 'geral')
     
-    # Preparar config
+    # 1. Captura a aplicação real (não o proxy) para passar à thread
+    app_real = current_app._get_current_object()
+    
+    # 2. Prepara as configs manuais (backup)
     app_config = {
-        'CAMINHO_XML_PADRAO': app.config['CAMINHO_XML_PADRAO'],
-        'PASTAS_IGNORADAS': app.config['PASTAS_IGNORADAS'],
-        'CFOPS_PADRAO': app.config['CFOPS_PADRAO']
+        'CAMINHO_XML_PADRAO': current_app.config['CAMINHO_XML_PADRAO'],
+        'PASTAS_IGNORADAS': current_app.config['PASTAS_IGNORADAS'],
+        'CFOPS_PADRAO': current_app.config['CFOPS_PADRAO']
     }
     
-    # Função wrapper para empurrar o contexto
-    def thread_com_contexto(app_ref, mod, conf):
-        with app_ref.app_context():
-            tarefa_background(mod, conf)
-            
-    # Iniciar a thread chamando o wrapper
-    thread = threading.Thread(target=thread_com_contexto, args=(app, modulo, app_config))
+    # 3. Inicia a Thread passando a APP REAL para o executor
+    thread = threading.Thread(target=executor_thread, args=(app_real, modulo, app_config))
     thread.start()
     
     return jsonify({'status': 'iniciado'})
@@ -144,7 +78,39 @@ def api_progresso():
         'msg': STATUS_GLOBAL['msg']
     })
 
-# --- ROTAS DE ATUALIZAÇÃO (ESCRITA DE DADOS) ---
+# --- ROTAS DE CONSULTA BÁSICA ---
+
+@api_bp.route('/fornecedores')
+def api_fornecedores():
+    tipo = request.args.get('tipo', 1) 
+    return jsonify(listar_fornecedores(tipo))
+
+@api_bp.route('/filiais')
+def api_filiais():
+    cod_cliente = request.args.get('cod_cli')
+    tipo = request.args.get('tipo', 1)
+    return jsonify(listar_filiais_do_fornecedor(cod_cliente, tipo))
+
+@api_bp.route('/pedidos')
+def api_pedidos():
+    a = request.args
+    dados = listar_pedidos_do_fornecedor(
+        a.get('cod_cli'), a.get('cod_filial'), 
+        a.get('data_ini'), a.get('data_fim'), a.get('tipo', 1)
+    )
+    return jsonify(dados)
+
+@api_bp.route('/buscar_pedido')
+def api_buscar_pedido():
+    pedido = request.args.get('pedido')
+    tipo = request.args.get('tipo', 1)
+    return jsonify(buscar_pedido_manual(pedido, tipo))
+
+@api_bp.route('/dados_fornecedor')
+def api_dados_fornecedor():
+    cod = request.args.get('cod_cli')
+    if not cod: return jsonify([])
+    return jsonify(buscar_contato_fornecedor(cod))
 
 @api_bp.route('/atualizar_status', methods=['POST'])
 def api_upd_status():
