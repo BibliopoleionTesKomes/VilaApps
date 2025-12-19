@@ -109,13 +109,22 @@ def tarefa_background(modulo, app_config):
     # Define as regras com base no módulo escolhido pelo usuário
     if modulo == 'devolucao':
         # Devolução filtra por CFOPs específicos (saída) e Tipo Pedido 4
-        cfops, tipo_pedido, arquivo_cache = ['5917', '6917'], 4, CACHE_DEVOLUCAO
+        cfops = ['5917', '6917']
+        tipo_pedido = 4
+        arquivo_cache = CACHE_DEVOLUCAO
+
     elif modulo == 'acerto':
-        # Acerto não filtra CFOP (pega tudo configurado) e Tipo Pedido 1
-        cfops, tipo_pedido, arquivo_cache = None, 1, CACHE_ACERTO
+        # --- CORREÇÃO 1: FILTRO DE CFOP ---
+        # Agora usamos a lista configurada no config.py em vez de None
+        cfops = app_config.get('CFOPS_PADRAO')
+        tipo_pedido = 1
+        arquivo_cache = CACHE_ACERTO
+        
     else: 
         # Leitor Geral
-        cfops, tipo_pedido, arquivo_cache = None, 1, CACHE_GERAL
+        cfops = None
+        tipo_pedido = 1
+        arquivo_cache = CACHE_GERAL
 
     STATUS_GLOBAL['msg'] = 'Lendo arquivos XML...'
     
@@ -191,6 +200,25 @@ def tarefa_background(modulo, app_config):
     
     # 5. Cruzamento Final Item a Item
     for nota in lista:
+        
+        # --- CORREÇÃO 2: TÍTULO E PREÇO (SIMPLIFICADA) ---
+        # Garante que os campos que o site espera (Titulo, Valor_Liquido) existam
+        for item in nota.get('Itens', []):
+            # Se não tiver Titulo, usa xProd (do XML)
+            item.setdefault('Titulo', item.get('xProd', 'Produto Sem Nome'))
+            
+            # Se não tiver Valor_Liquido, usa vProd (do XML) e converte para número
+            if 'Valor_Liquido' not in item:
+                try: item['Valor_Liquido'] = float(item.get('vProd', 0))
+                except: item['Valor_Liquido'] = 0.0
+            
+            # Garante quantidade como número
+            if 'Quantidade' in item:
+                try: item['Quantidade'] = float(item['Quantidade'])
+                except: item['Quantidade'] = 0.0
+        # --- FIM DA CORREÇÃO ---
+
+        # Aqui estava o erro: A variável 'ped' precisa ser criada aqui!
         ped = str(nota.get('Numero_Pedido', ''))
         nota['Itens_ERP'] = []
         
