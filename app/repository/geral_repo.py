@@ -15,7 +15,7 @@ def listar_fornecedores(tipo_acerto=1):
     FROM ERIS_LIVRARIAVILA.DBO.PEDC_CAB P 
     INNER JOIN ERIS_LIVRARIAVILA.DBO.PEDC_CAB_CONSIG PC ON P.PEDIDO = PC.PEDIDO 
     INNER JOIN ERIS_LIVRARIAVILA.DBO.CLIENTE C ON P.CODECLI = C.CODECLI 
-    WHERE PC.TIPO_ACERTO = ? AND P.STATUS = 1 
+    WHERE PC.TIPO_ACERTO = ? AND P.STATUS IN (1, 3) 
     ORDER BY C.FANTASIA
     """
     return execute_query(sql, [tipo_acerto]).to_dict('records')
@@ -26,7 +26,7 @@ def listar_filiais_do_fornecedor(cod_cli, tipo_acerto=1):
     FROM ERIS_LIVRARIAVILA.DBO.PEDC_CAB P 
     INNER JOIN ERIS_LIVRARIAVILA.DBO.PEDC_CAB_CONSIG PC ON P.PEDIDO = PC.PEDIDO 
     LEFT JOIN ERIS_LIVRARIAVILA.DBO.CLIENTE C2 ON P.EMITENTE = C2.CODECLI 
-    WHERE P.CODECLI = ? AND PC.TIPO_ACERTO = ? AND P.STATUS = 1 AND C2.CODECLI IS NOT NULL 
+    WHERE P.CODECLI = ? AND PC.TIPO_ACERTO = ? AND P.STATUS IN (1, 3) AND C2.CODECLI IS NOT NULL 
     ORDER BY C2.FANTASIA
     """
     return execute_query(sql, [cod_cli, tipo_acerto]).to_dict('records')
@@ -38,7 +38,7 @@ def listar_pedidos_do_fornecedor(cod_cli, cod_filial=None, data_ini=None, data_f
     FROM ERIS_LIVRARIAVILA.DBO.PEDC_CAB P 
     INNER JOIN ERIS_LIVRARIAVILA.DBO.PEDC_CAB_CONSIG PC ON P.PEDIDO = PC.PEDIDO 
     LEFT JOIN ERIS_LIVRARIAVILA.DBO.CLIENTE C2 ON P.EMITENTE = C2.CODECLI 
-    WHERE P.CODECLI = ? AND PC.TIPO_ACERTO = ? AND P.STATUS = 1
+    WHERE P.CODECLI = ? AND PC.TIPO_ACERTO = ? AND P.STATUS = ?
     """
     params = [cod_cli, tipo_acerto]
     if cod_filial: sql += " AND P.EMITENTE = ?"; params.append(cod_filial)
