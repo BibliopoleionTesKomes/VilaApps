@@ -1,11 +1,9 @@
 # --- IMPORTAÇÕES ---
-# Threading: Permite rodar esta tarefa em paralelo ("em segundo plano") 
-# para que o site não fique travado esperando o processamento terminar.
 import threading
 import os
-import json      # Para salvar o resultado final em arquivo texto estruturado
-import pandas as pd # Para manipular tabelas de dados de forma eficiente
-import re        # Expressões Regulares (para limpar texto, como CNPJ)
+import json
+import pandas as pd
+import re
 from datetime import datetime
 
 # Importações do projeto
@@ -15,13 +13,11 @@ from app.services.cache_service import CACHE_ACERTO, CACHE_DEVOLUCAO, CACHE_GERA
 STATUS_GLOBAL = {'atual': 0, 'total': 0, 'status': 'parado', 'msg': ''}
 
 def atualizar_progresso(atual, total):
-    """Atualiza o quadro de avisos com o progresso atual."""
     STATUS_GLOBAL['atual'] = atual
     STATUS_GLOBAL['total'] = total
     STATUS_GLOBAL['status'] = 'rodando'
 
 def resetar_progresso():
-    """Limpa o quadro de avisos antes de começar uma nova tarefa."""
     STATUS_GLOBAL['atual'] = 0
     STATUS_GLOBAL['total'] = 0
     STATUS_GLOBAL['status'] = 'iniciando'
@@ -30,31 +26,20 @@ def resetar_progresso():
 # --- FUNÇÕES AUXILIARES ---
 
 def limpar_cnpj(valor):
-    """
-    Remove pontos, traços e barras do CNPJ e garante que tenha 14 dígitos.
-    Isso é vital para conseguir cruzar dados do XML com dados do Banco.
-    """
     if not valor: return ""
     return re.sub(r'\D', '', str(valor)).zfill(14) 
 
 def formatar_moeda(val):
-    """Formata um número (float) para o padrão de moeda brasileiro (R$ 1.000,00)."""
     try: return f"R$ {float(val):,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
     except: return val
 
 def gerar_resumo_divergencia(nota):
-    """
-    Lógica inteligente que compara os itens lidos do XML com os itens buscados no ERP.
-    Retorna uma string simples resumindo o problema (ex: "Qtde Diferente (2x)").
-    """
     itens_xml = nota.get('Itens', [])
     itens_erp = nota.get('Itens_ERP', [])
     
-    # Cria "mapas" (dicionários) usando o ISBN como chave para busca rápida
     map_xml = {str(i.get('ISBN', '')).strip(): i for i in itens_xml}
     map_erp = {str(i.get('ISBN', '')).strip(): i for i in itens_erp}
     
-    # Pega todos os ISBNs únicos que existem em qualquer um dos dois lados
     todos_isbns = set(map_xml.keys()) | set(map_erp.keys())
     c_preco = 0
     c_qtd = 0
@@ -63,19 +48,15 @@ def gerar_resumo_divergencia(nota):
         x = map_xml.get(isbn)
         e = map_erp.get(isbn)
         
-        # Só compara se o item existir nos dois lados (cruzamento perfeito)
         if x and e:
-            # Compara Quantidades
             qtd_x = float(x.get('Quantidade', 0))
             qtd_e = float(e.get('Quant', 0))
             if qtd_x != qtd_e: c_qtd += 1
             
-            # Compara Preços Unitários (Calculando a partir do total se necessário)
             val_liq_total_x = float(x.get('Valor_Liquido', 0))
             val_unit_x = val_liq_total_x / qtd_x if qtd_x > 0 else 0
             val_unit_e = float(e.get('VlLiqUnit', 0))
             
-            # Considera divergência apenas se a diferença for maior que 1 centavo
             if abs(val_unit_x - val_unit_e) > 0.01: c_preco += 1
 
     msgs = []
@@ -84,7 +65,7 @@ def gerar_resumo_divergencia(nota):
     
     if not msgs:
         if not itens_xml: return "XML Vazio"
-        return "" # Se vazio, está tudo OK
+        return "" 
     return " | ".join(msgs)
 
 # --- TAREFA PRINCIPAL (THREAD) ---
@@ -92,107 +73,78 @@ def gerar_resumo_divergencia(nota):
 def tarefa_background(modulo, app_config):
     """
     Função principal que é executada em segundo plano.
-    Recebe 'app_config' manualmente porque dentro de uma Thread nova, 
-    o Flask perde o acesso às configurações globais (current_app).
     """
     caminho_xml = app_config.get('CAMINHO_XML_PADRAO')
     
-    # Define as regras com base no módulo escolhido pelo usuário
+    # DEBUG: Imprime no terminal para sabermos onde ele está a procurar
+    print(f"--- INICIANDO PROCESSAMENTO BACKEND ---")
+    print(f"Pasta Alvo: {caminho_xml}")
+    
     if modulo == 'devolucao':
-        # Devolução filtra por CFOPs específicos (saída) e Tipo Pedido 4
         cfops = ['5917', '6917']
         tipo_pedido = 4
         arquivo_cache = CACHE_DEVOLUCAO
-
     elif modulo == 'acerto':
-        # Filtro de CFOP para Acerto
         cfops = app_config.get('CFOPS_PADRAO')
         tipo_pedido = 1
         arquivo_cache = CACHE_ACERTO
-        
     else: 
-        # Leitor Geral (Módulo Padrão)
         cfops = app_config.get('CFOPS_PADRAO')
         tipo_pedido = 1
         arquivo_cache = CACHE_GERAL
 
     STATUS_GLOBAL['msg'] = 'Lendo arquivos XML...'
     
-    # IMPORTANTE: Reimportamos a função aqui dentro para usar uma versão que
-    # não dependa do contexto web do Flask, evitando erros de "Application Context".
     from app.services.xml_service import processar_pasta_xml_thread_safe 
     
-    # Passa as pastas ignoradas da config
     pastas_ign = app_config.get('PASTAS_IGNORADAS', [])
     df_xml, msg = processar_pasta_xml_thread_safe(caminho_xml, cfops, atualizar_progresso, pastas_ign)
     
+    # --- CORREÇÃO CRÍTICA AQUI ---
+    # Se não encontrou XMLs, imprimimos o aviso mas CONTINUAMOS.
+    # Isso garante que lá no final do código ele salve um arquivo vazio,
+    # limpando os dados antigos da tela.
     if df_xml.empty:
-        STATUS_GLOBAL['status'] = 'concluido'
+        print(f"AVISO BACKEND: Nenhum XML encontrado. Motivo: {msg}")
         STATUS_GLOBAL['msg'] = msg or "Nenhum XML encontrado"
-        return
+        # NÃO FAZEMOS MAIS 'return' AQUI. O CÓDIGO SEGUE PARA LIMPAR O ARQUIVO.
 
     STATUS_GLOBAL['msg'] = 'Cruzando dados com ERP...'
     
-    # --- PREPARAÇÃO DO CONTEXTO DE APP ---
-    # Para usar as funções de banco de dados (buscar_filiais, buscar_dados_fornecedores),
-    # precisamos de um contexto de aplicação. Como não temos a instância 'app' aqui,
-    # a melhor solução é que as funções de repositório não dependam de 'current_app'
-    # OU criamos uma app temporária (menos ideal).
-    
-    # No entanto, como você já tem o app_config, a solução correta para o erro "Working outside..."
-    # no seu caso específico (onde current_app é usado no database.py) é garantir que o
-    # database.py consiga aceder à string de conexão.
-    
-    # HACK TEMPORÁRIO: Definir a string de conexão no config global do database, se possível.
-    # Mas a melhor forma é ajustar o database.py para aceitar a string.
-    # Como não posso editar o database.py agora, vou assumir que você vai passar
-    # o contexto de aplicação para a thread no arquivo api.py (veja instruções abaixo).
-    
     # 2. Cruzamento com Lojas (Filiais)
-    # Tenta descobrir o nome da loja pelo CNPJ do destinatário da nota
-    if 'CNPJ_Destinatario' in df_xml.columns:
+    if not df_xml.empty and 'CNPJ_Destinatario' in df_xml.columns:
         df_xml['KEY_CNPJ'] = df_xml['CNPJ_Destinatario'].apply(limpar_cnpj)
         
-        # --- ATENÇÃO: Esta chamada precisa de contexto de aplicação ---
-        df_lojas_erp = buscar_filiais() 
-        
-        if not df_lojas_erp.empty:
-            df_lojas_erp['KEY_CNPJ'] = df_lojas_erp['CNPJ'].apply(limpar_cnpj)
-            # 'pd.merge' é como um PROCV do Excel
-            df_merged = pd.merge(df_xml, df_lojas_erp[['KEY_CNPJ', 'Nome_Filial']], on='KEY_CNPJ', how='left')
-            
-            # Se achou no banco, usa. Se não, usa o nome que estava no XML.
-            df_merged['Filial'] = df_merged['Nome_Filial'].fillna(df_merged['Nome_Destinatario'])
-            df_merged['Filial'] = df_merged['Filial'].fillna("Filial Não Identificada")
-            df_xml = df_merged.drop(columns=['Nome_Filial'])
-        else:
+        try:
+            df_lojas_erp = buscar_filiais() 
+            if not df_lojas_erp.empty:
+                df_lojas_erp['KEY_CNPJ'] = df_lojas_erp['CNPJ'].apply(limpar_cnpj)
+                df_merged = pd.merge(df_xml, df_lojas_erp[['KEY_CNPJ', 'Nome_Filial']], on='KEY_CNPJ', how='left')
+                df_merged['Filial'] = df_merged['Nome_Filial'].fillna(df_merged['Nome_Destinatario'])
+                df_merged['Filial'] = df_merged['Filial'].fillna("Filial Não Identificada")
+                df_xml = df_merged.drop(columns=['Nome_Filial'])
+            else:
+                df_xml['Filial'] = df_xml.get('Nome_Destinatario', 'Sem Nome')
+        except Exception as e:
+            print(f"Erro ao buscar filiais: {e}")
             df_xml['Filial'] = df_xml.get('Nome_Destinatario', 'Sem Nome')
-    else:
+    elif not df_xml.empty:
         df_xml['Filial'] = 'Sem Destinatário'
 
     # 3. Cruzamento com Fornecedores
-    # Busca dados adicionais (prazo, dia acerto) dos fornecedores de consignação
-    
-    # --- ATENÇÃO: Esta chamada precisa de contexto de aplicação ---
-    df_forn = buscar_dados_fornecedores()
-    
-    if not df_forn.empty:
-        df_xml['KEY_EMIT'] = df_xml['CNPJ_Emitente'].apply(limpar_cnpj)
-        df_forn['KEY_EMIT'] = df_forn['CNPJ'].apply(limpar_cnpj)
-        
-        # --- SOLUÇÃO DEFINITIVA PARA O NOME FANTASIA ---
-        # 1. Removemos colunas conflitantes do XML para que o merge traga as do SQL
-        colunas_conflitantes = ['Nome_Fantasia', 'Prazo', 'Dia_Acerto']
-        df_xml = df_xml.drop(columns=[c for c in colunas_conflitantes if c in df_xml.columns], errors='ignore')
-        
-        # 2. Fazemos o merge (PROCV) usando o CNPJ (KEY_EMIT)
-        # Isso vai trazer 'Nome_Fantasia', 'Prazo', 'Dia_Acerto' do DataFrame df_forn (SQL)
-        df_final = pd.merge(df_xml, df_forn, on='KEY_EMIT', how='left')
-        
-    else: 
-        df_final = df_xml.copy()
+    df_final = df_xml.copy()
+    if not df_xml.empty:
+        try:
+            df_forn = buscar_dados_fornecedores()
+            if not df_forn.empty:
+                df_xml['KEY_EMIT'] = df_xml['CNPJ_Emitente'].apply(limpar_cnpj)
+                df_forn['KEY_EMIT'] = df_forn['CNPJ'].apply(limpar_cnpj)
+                colunas_conflitantes = ['Nome_Fantasia', 'Prazo', 'Dia_Acerto']
+                df_xml = df_xml.drop(columns=[c for c in colunas_conflitantes if c in df_xml.columns], errors='ignore')
+                df_final = pd.merge(df_xml, df_forn, on='KEY_EMIT', how='left')
+        except Exception as e:
+            print(f"Erro ao buscar fornecedores: {e}")
 
-    # Preenche campos vazios para ficar bonito na tabela
     cols = ['Nome_Fantasia', 'Filial', 'Prazo', 'Dia_Acerto']
     for c in cols:
         if c not in df_final.columns: df_final[c] = '-'
@@ -200,69 +152,65 @@ def tarefa_background(modulo, app_config):
         
     df_final = df_final.fillna("")
     
-    # Converte de Tabela (DataFrame) para Lista de Dicionários (JSON)
     lista = df_final.to_dict('records')
     
     # 4. Busca de Pedidos Vinculados no ERP
-    # Pega todos os números de pedido que estavam no campo 'xPed' dos XMLs
     pedidos = [n.get('Numero_Pedido') for n in lista if n.get('Numero_Pedido')]
     
     df_itens_erp = pd.DataFrame()
     if pedidos:
         STATUS_GLOBAL['msg'] = f'Buscando {len(pedidos)} pedidos no Banco...'
-        df_itens_erp = buscar_itens_pedidos_lote(pedidos, tipo_acerto_alvo=tipo_pedido)
-        if not df_itens_erp.empty:
-            for col in df_itens_erp.select_dtypes(include=['datetime', 'datetimetz']).columns:
-                df_itens_erp[col] = df_itens_erp[col].astype(str)
+        try:
+            df_itens_erp = buscar_itens_pedidos_lote(pedidos, tipo_acerto_alvo=tipo_pedido)
+            if not df_itens_erp.empty:
+                for col in df_itens_erp.select_dtypes(include=['datetime', 'datetimetz']).columns:
+                    df_itens_erp[col] = df_itens_erp[col].astype(str)
+        except Exception as e:
+            print(f"Erro ao buscar pedidos no lote: {e}")
 
     STATUS_GLOBAL['msg'] = 'Finalizando análises...'
     
     # 5. Cruzamento Final Item a Item
     for nota in lista:
-        
-        # Garante que os campos que o site espera (Titulo, Valor_Liquido) existam
         for item in nota.get('Itens', []):
-            # Se não tiver Titulo, usa xProd (do XML)
             item.setdefault('Titulo', item.get('xProd', 'Produto Sem Nome'))
-            
-            # Garante valores numéricos
             if 'Valor_Liquido' not in item:
                 try: item['Valor_Liquido'] = float(item.get('vProd', 0))
                 except: item['Valor_Liquido'] = 0.0
             
-            # Garante quantidade como número
             if 'Quantidade' in item:
                 try: item['Quantidade'] = float(item['Quantidade'])
                 except: item['Quantidade'] = 0.0
                 
-            # Se não veio Valor Unitário do XML, calcula: Total / Qtd
             if 'Valor_Unitario' not in item or item['Valor_Unitario'] == 0:
                 qtd = item.get('Quantidade', 0)
-                if qtd > 0:
-                    item['Valor_Unitario'] = item.get('Valor_Liquido', 0) / qtd
-                else:
-                    item['Valor_Unitario'] = 0.0
+                if qtd > 0: item['Valor_Unitario'] = item.get('Valor_Liquido', 0) / qtd
+                else: item['Valor_Unitario'] = 0.0
 
         ped = str(nota.get('Numero_Pedido', ''))
         nota['Itens_ERP'] = []
         
-        # Se essa nota tem pedido e trouxemos dados do banco, anexa os itens
         if ped and not df_itens_erp.empty:
             itens = df_itens_erp[df_itens_erp['Numero_Pedido_Chave'] == ped]
             if not itens.empty: nota['Itens_ERP'] = itens.to_dict('records')
         
-        # Roda a função de comparação para gerar o resumo (ex: "Preço Diferente")
         nota['Divergencia_Resumo'] = gerar_resumo_divergencia(nota)
-        
         if 'Valor_Total' in nota: nota['Valor_Total'] = formatar_moeda(nota['Valor_Total'])
 
     # 6. Salva no Disco (Cache)
+    # IMPORTANTE: Se a lista estiver vazia, ele vai salvar vazio, limpando o cache antigo.
     ts = datetime.now().strftime("%d/%m/%Y às %H:%M")
     try:
+        print(f"Salvando {len(lista)} registros em: {arquivo_cache}")
         with open(arquivo_cache, 'w', encoding='utf-8') as f:
             json.dump({"timestamp": ts, "dados": lista}, f, ensure_ascii=False, indent=4)
-    except: pass
+    except Exception as e:
+        print(f"ERRO AO SALVAR CACHE: {e}")
 
     # Avisa que acabou
-    STATUS_GLOBAL['status'] = 'concluido'
-    STATUS_GLOBAL['msg'] = 'Concluído!'
+    if not lista:
+        STATUS_GLOBAL['status'] = 'concluido_vazio' # Status especial para avisar que limpou
+        STATUS_GLOBAL['msg'] = 'Nenhum arquivo encontrado na pasta.'
+    else:
+        STATUS_GLOBAL['status'] = 'concluido'
+        STATUS_GLOBAL['msg'] = 'Concluído!'

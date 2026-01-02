@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vila Apps - Leitor Geral</title>
-    <!-- Use o caminho correto para o seu favicon -->
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo_vila.png') }}">
     
     <!-- Bootstrap 5 CSS -->
@@ -121,14 +120,12 @@
     <header class="header-bg">
         <div class="header-logo-container">
             <a href="{{ url_for('menu') }}" class="btn-voltar">⬅ Menu</a>
-            <!-- Ajuste o nome da imagem se necessário -->
             <img src="{{ url_for('static', filename='logo.png') }}" class="logo-vila" alt="Logo Vila">
         </div>
         
-        <h1 class="header-title-text">Notas de Acerto de Consignação</h1>
+        <h1 class="header-title-text">Leitor Geral de XML</h1>
         
         <div class="header-logo-container right">
-            <!-- Ajuste o nome da imagem se necessário -->
             <img src="{{ url_for('static', filename='logo_argos.png') }}" class="logo-argos" alt="Logo Argos">
         </div>
     </header>
@@ -146,7 +143,7 @@
                         {% endif %}
                     </div>
                     <div class="d-flex gap-2">
-                        <!-- O Botão chama a nova função -->
+                        <!-- O Botão chama a nova função corrigida -->
                         <button class="btn btn-primary btn-compact shadow-sm" id="btnAtualizar" onclick="iniciarLeituraReal()">
                             🔄 Atualizar Lista
                         </button>
@@ -229,29 +226,29 @@
         </div>
     </div>
 
+    <!-- JAVASCRIPT CORRIGIDO -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             configurarFiltros();
         });
 
-        // --- NOVA FUNÇÃO REAL DE ATUALIZAÇÃO ---
-        // Agora ela chama o Python via API Fetch
+        // --- FUNÇÃO CORRIGIDA DE ATUALIZAÇÃO ---
         async function iniciarLeituraReal() {
             const btn = document.getElementById('btnAtualizar');
             const container = document.getElementById('containerProgresso');
             const barra = document.getElementById('barraProgresso');
             const texto = document.getElementById('txtProgresso');
             
-            // 1. Prepara a UI
+            // 1. Prepara a tela (Desabilita botão e mostra barra)
             btn.disabled = true;
             btn.innerHTML = '⏳ Processando...';
             container.style.display = 'block';
             barra.style.width = '0%';
             barra.innerHTML = '0%';
+            barra.className = "progress-bar progress-bar-striped progress-bar-animated bg-success"; // Reseta cor verde
 
             try {
-                // 2. Manda o comando INICIAR para o servidor (POST)
-                // modulo: 'geral' indica que queremos rodar o leitor de XMLs padrão
+                // 2. Manda o comando INICIAR para o servidor (Python)
                 const respInicio = await fetch('/api/iniciar_processamento', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -262,52 +259,72 @@
 
                 if (dadosInicio.status === 'ocupado') {
                     alert('O sistema já está processando algo. Aguarde finalizar.');
-                    btn.disabled = false;
-                    btn.innerHTML = '🔄 Atualizar Lista';
-                    container.style.display = 'none';
+                    resetarBotao();
                     return;
                 }
 
-                // 3. Loop de Polling (Pergunta "E ai?" a cada 1 segundo)
+                // 3. Loop de Polling (Verifica o progresso a cada 1 segundo)
                 const intervalo = setInterval(async () => {
                     try {
                         const respProg = await fetch('/api/progresso');
+                        
+                        if (!respProg.ok) throw new Error("Erro na comunicação com a API");
+                        
                         const statusData = await respProg.json();
 
-                        // Atualiza visualmente
+                        // Atualiza visualmente a barra
                         const pct = statusData.percentual || 0;
                         barra.style.width = pct + '%';
                         barra.innerHTML = pct + '%';
                         if (statusData.msg) texto.innerText = statusData.msg;
 
-                        // Se terminou, para o loop e recarrega
-                        if (statusData.status === 'concluido' || statusData.status === 'erro') {
-                            clearInterval(intervalo);
-                            barra.style.width = '100%';
-                            barra.innerHTML = 'Concluído!';
-                            texto.innerText = 'Atualizando página...';
+                        // Verifica se acabou
+                        if (statusData.status === 'concluido' || statusData.status === 'erro' || statusData.status === 'concluido_vazio') {
                             
-                            // Delayzinho para o usuário ver o 100%
-                            setTimeout(() => {
-                                window.location.reload();
-                            }, 800);
+                            clearInterval(intervalo); // Para o loop
+                            
+                            if (statusData.status === 'erro') {
+                                // Se deu erro: barra vermelha
+                                barra.className = "progress-bar bg-danger";
+                                barra.innerHTML = "Erro";
+                                alert('Ocorreu um erro: ' + statusData.msg);
+                                resetarBotao();
+                            } else {
+                                // Se deu certo: barra cheia e recarrega
+                                barra.style.width = '100%';
+                                barra.innerHTML = 'Concluído!';
+                                texto.innerText = 'Atualizando tabela...';
+                                
+                                // --- A MÁGICA ESTÁ AQUI ---
+                                // Espera 1.5 segundos e recarrega forçando atualização
+                                setTimeout(() => {
+                                    const url = new URL(window.location.href);
+                                    // Adiciona um número aleatório na URL para enganar o cache do navegador
+                                    url.searchParams.set('t', Date.now()); 
+                                    window.location.href = url.toString();
+                                }, 1500); 
+                            }
                         }
 
                     } catch (err) {
-                        console.error("Erro ao verificar progresso:", err);
+                        console.error("Erro no polling:", err);
                     }
-                }, 1000); // Roda a cada 1000ms (1 segundo)
+                }, 1000);
 
             } catch (error) {
                 console.error("Erro ao iniciar:", error);
                 alert('Erro ao conectar com o servidor.');
+                resetarBotao();
+            }
+
+            function resetarBotao() {
                 btn.disabled = false;
                 btn.innerHTML = '🔄 Atualizar Lista';
-                container.style.display = 'none';
+                // container.style.display = 'none'; // Se quiser esconder a barra ao falhar
             }
         }
 
-        // --- Lógica de Filtros (Mantida igual, pois estava correta) ---
+        // --- Lógica de Filtros (Busca, Datas, etc) ---
         function configurarFiltros() {
             const campos = ['filtroDataIni', 'filtroDataFim', 'filtroNota', 'filtroFantasia', 'filtroDiaAcerto', 'filtroLoja'];
             const inputs = campos.map(id => document.getElementById(id));
@@ -316,11 +333,11 @@
 
             if (!tabelaBody) return;
 
+            // Preenche as listas de sugestão (datalist)
             const sets = { nota: new Set(), fantasia: new Set(), dia: new Set(), loja: new Set() };
-            
             tabelaBody.querySelectorAll('tr').forEach(tr => {
                 sets.nota.add(tr.children[2]?.innerText.trim());
-                sets.fantasia.add(tr.children[6]?.innerText.trim() || tr.children[5]?.innerText.trim());
+                sets.fantasia.add(tr.children[6]?.innerText.trim());
                 sets.dia.add(tr.children[8]?.innerText.trim());
                 sets.loja.add(tr.children[9]?.innerText.trim());
             });
@@ -344,6 +361,9 @@
 
                 tabelaBody.querySelectorAll('tr').forEach(tr => {
                     const tds = tr.children;
+                    // Proteção simples
+                    if(tds.length < 10) return;
+
                     const txtData = tds[0].innerText;
                     
                     let dataOk = true;
@@ -368,7 +388,7 @@
 
                     const match = dataOk &&
                         (tds[2].innerText.toLowerCase().includes(nota)) &&
-                        (tds[6].innerText.toLowerCase().includes(fant) || tds[5].innerText.toLowerCase().includes(fant)) &&
+                        (tds[6].innerText.toLowerCase().includes(fant)) &&
                         (tds[8].innerText.trim().includes(dia)) &&
                         (tds[9].innerText.toLowerCase().includes(loja));
 
