@@ -4,12 +4,19 @@ import numpy as np
 import re
 import uuid
 import time
+import os
+import json
+import tempfile
 from io import BytesIO, StringIO
 from app.repository.conferencia_repo import buscar_acerto_sql_repo, buscar_vendas_sql_repo
 
-# Cache em memória
-DATA_CACHE = {}
-SESSION_EXPIRY_TIME = 3600
+# --- CONFIGURAÇÃO DE PERSISTÊNCIA (DISCO EM VEZ DE RAM) ---
+# Usamos a pasta temporária do sistema para salvar os dados da conferência.
+TEMP_DIR = tempfile.gettempdir()
+
+def _get_file_path(did):
+    """Gera o caminho do arquivo baseado no ID da sessão."""
+    return os.path.join(TEMP_DIR, f'vila_conf_{did}.json')
 
 # --- FUNÇÕES DE LIMPEZA ---
 def _limpar_isbn(isbn_sujo):
@@ -373,25 +380,57 @@ def gerar_resumo_acao(df, sum_venda):
 
 # --- CACHE ---
 def cache_save(df, fornecedor, venda_sum, has_quebra):
-    now = time.time()
-    keys = [k for k, v in DATA_CACHE.items() if now - v['timestamp'] > SESSION_EXPIRY_TIME]
-    for k in keys: del DATA_CACHE[k]
-    
     did = str(uuid.uuid4())
-    DATA_CACHE[did] = {
+    
+    dados_para_salvar = {
         'df_json': df.to_json(orient='records'),
         'fornecedor': fornecedor,
-        'timestamp': now,
+        'timestamp': time.time(),
         'venda_summary_json': venda_sum.to_json(orient='records') if not venda_sum.empty else '[]',
         'has_quebra': has_quebra
     }
+    
+    arquivo = _get_file_path(did)
+    try:
+        with open(arquivo, 'w', encoding='utf-8') as f:
+            json.dump(dados_para_salvar, f)
+    except Exception as e:
+        print(f"Erro ao salvar cache em disco: {e}")
+        return None
+
     return did
 
 def cache_get(did):
-    if did not in DATA_CACHE: return None, None, None, False
-    cached = DATA_CACHE[did]
-    cached['timestamp'] = time.time()
-    df = pd.read_json(StringIO(cached['df_json']), orient='records')
-    v_json = cached['venda_summary_json']
-    venda_sum = pd.read_json(StringIO(v_json), orient='records') if v_json != '[]' else pd.DataFrame()
-    return df, cached['fornecedor'], venda_sum, cached.get('has_quebra', False)
+    arquivo = _get_file_path(did)
+    
+    if not os.path.exists(arquivo):
+        return None, None, None, False
+        
+    try:
+        with open(arquivo, 'r', encoding='utf-8') as f:
+            cached = json.load(f)
+            
+        df = pd.read_json(StringIO(cached['df_json']), orient='records')
+        v_json = cached['venda_summary_json']
+        venda_sum = pd.read_json(StringIO(v_json), orient='records') if v_json != '[]' else pd.DataFrame()
+        
+        return df, cached['fornecedor'], venda_sum, cached.get('has_quebra', False)
+        
+    except Exception as e:
+        print(f"Erro ao ler cache do disco: {e}")
+        return None, None, None, False
+
+def atualizar_cache_manual(did, df):
+    arquivo = _get_file_path(did)
+    if os.path.exists(arquivo):
+        try:
+            with open(arquivo, 'r+', encoding='utf-8') as f:
+                cached = json.load(f)
+                cached['df_json'] = df.to_json(orient='records')
+                cached['timestamp'] = time.time()
+                
+                f.seek(0)
+                json.dump(cached, f)
+                f.truncate()
+        except Exception as e:
+            print(f"Erro ao atualizar manual: {e}")

@@ -20,7 +20,8 @@ from app.services.conferencia_service import (
     carregar_acerto_excel, carregar_venda_excel, carregar_quebra_inventario,
     calcular_conferencia_padrao, cache_save, cache_get,
     gerar_planilha_acao, calcular_qtd_final_acao, gerar_resumo_acao,
-    calcular_qtd_final, gerar_resumo_consolidado, DATA_CACHE
+    calcular_qtd_final, gerar_resumo_consolidado,
+    atualizar_cache_manual  # <--- (NOVO) Função necessária para salvar edições no disco
 )
 
 # Criação do Blueprint 'conferencia'
@@ -197,9 +198,8 @@ def iniciar_processamento():
             flash('Sem correspondência de dados.', 'error')
             return redirect(request.referrer)
         
-        # --- SALVAMENTO EM CACHE ---
-        # Salvamos o DataFrame processado na memória do servidor e guardamos apenas o ID na sessão do usuário.
-        # Isso evita passar dados gigantes pela URL ou Cookies.
+        # --- SALVAMENTO EM CACHE (AGORA EM DISCO) ---
+        # Salvamos o DataFrame processado no DISCO (não mais RAM) e guardamos o ID na sessão.
         did = cache_save(df_res, fornecedor, venda_sum, has_quebra)
         session['data_id'] = did
         
@@ -228,7 +228,7 @@ def show_results():
     """
     if 'data_id' not in session: return redirect(url_for('conferencia.index'))
     
-    # Recupera o DataFrame original do cache
+    # Recupera o DataFrame original do cache (DO DISCO)
     df, forn, sum_df, has_quebra = cache_get(session['data_id'])
     if df is None: return redirect(url_for('conferencia.index'))
     
@@ -273,6 +273,8 @@ def show_results_acao():
     Similar à rota acima, mas usa templates e cálculos específicos de ação.
     """
     if 'data_id' not in session: return redirect(url_for('conferencia.index_acao'))
+    
+    # Recupera do Disco
     df, forn, sum_df, has_quebra = cache_get(session['data_id'])
     if df is None: return redirect(url_for('conferencia.index_acao'))
     
@@ -297,7 +299,7 @@ def show_results_acao():
                            venda_bruta_total=formatar_valor(v_bruta),
                            has_quebra=has_quebra)
 
-# --- ROTA DE ATUALIZAÇÃO MANUAL ---
+# --- ROTA DE ATUALIZAÇÃO MANUAL (CORRIGIDA) ---
 
 @conferencia_bp.route('/update_manual', methods=['POST'])
 def update_manual_acerto():
@@ -307,8 +309,13 @@ def update_manual_acerto():
     """
     if 'data_id' not in session: return jsonify({'message': 'Sessão expirada'}), 400
     did = session['data_id']
-    df, _, _, _ = cache_get(did) # Pega o DF da memória
     
+    # Pega o DF do arquivo no disco
+    # O cache_get retorna uma tupla (df, fornecedor, venda_sum, has_quebra), ignoramos o resto com _
+    df, _, _, _ = cache_get(did) 
+    
+    if df is None: return jsonify({'message': 'Dados não encontrados'}), 404
+
     updates = request.get_json() # Lista de alterações [{filial, isbn, qtd}, ...]
     if updates:
         # Cria um mapa de busca rápida para atualizar
@@ -322,12 +329,9 @@ def update_manual_acerto():
         # Aplica a atualização linha a linha
         df['Qtd. a Acertar'] = df.apply(update_row, axis=1)
         
-        # Atualiza o cache (salva o novo estado dos dados)
-        # Atenção: Aqui usamos uma conversão para JSON interna se necessário, ou atualizamos o objeto direto
-        # Dependendo da implementação do cache_service, isso pode variar.
-        # No exemplo original, parecia atualizar DATA_CACHE direto.
-        DATA_CACHE[did]['df_json'] = df.to_json(orient='records') 
-        DATA_CACHE[did]['timestamp'] = time.time()
+        # --- CORREÇÃO: Salva de volta no arquivo físico ---
+        atualizar_cache_manual(did, df)
+        # --------------------------------------------------
         
     return jsonify({'success': True})
 
@@ -340,7 +344,12 @@ def download_file():
     Cria duas abas: 'Conferencia' (detalhada) e 'Resumo' (por filial).
     """
     if 'data_id' not in session: return redirect(url_for('conferencia.index'))
+    
+    # Recupera do Disco
     df, forn, sum_df, _ = cache_get(session['data_id'])
+    
+    # Se o arquivo sumiu do disco (alguém limpou o temp), volta pro início
+    if df is None: return redirect(url_for('conferencia.index'))
     
     is_acao = '/acao' in request.referrer or 'acao' in request.url
     
