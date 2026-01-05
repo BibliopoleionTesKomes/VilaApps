@@ -1,6 +1,4 @@
 # --- IMPORTAÇÕES ---
-import threading
-import os
 import json
 import pandas as pd
 import re
@@ -9,6 +7,7 @@ from datetime import datetime
 # Importações do projeto
 from app.repository.geral_repo import buscar_filiais, buscar_dados_fornecedores, buscar_itens_pedidos_lote
 from app.services.cache_service import CACHE_ACERTO, CACHE_DEVOLUCAO, CACHE_GERAL
+from config import Config
 
 STATUS_GLOBAL = {'atual': 0, 'total': 0, 'status': 'parado', 'msg': ''}
 
@@ -74,7 +73,7 @@ def tarefa_background(modulo, app_config):
     """
     Função principal que é executada em segundo plano.
     """
-    caminho_xml = app_config.get('CAMINHO_XML_PADRAO')
+    caminho_xml = Config.CAMINHO_XML_PADRAO
     
     # DEBUG: Imprime no terminal para sabermos onde ele está a procurar
     print(f"--- INICIANDO PROCESSAMENTO BACKEND ---")

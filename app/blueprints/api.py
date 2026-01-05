@@ -16,6 +16,7 @@ from app.repository.gestao_repo import (
 
 # Importações do serviço de processamento (lógica pesada que roda em segundo plano)
 from app.services.processamento_service import STATUS_GLOBAL, resetar_progresso, tarefa_background
+from config import Config
 
 # Criação do Blueprint 'api'
 # Blueprints ajudam a organizar a aplicação em módulos.
@@ -48,9 +49,9 @@ def api_iniciar():
     
     # 2. Prepara as configs manuais (backup)
     app_config = {
-        'CAMINHO_XML_PADRAO': current_app.config['CAMINHO_XML_PADRAO'],
-        'PASTAS_IGNORADAS': current_app.config['PASTAS_IGNORADAS'],
-        'CFOPS_PADRAO': current_app.config['CFOPS_PADRAO']
+        'CAMINHO_XML_PADRAO': Config.CAMINHO_XML_PADRAO,
+        'PASTAS_IGNORADAS': Config.PASTAS_IGNORADAS,
+        'CFOPS_PADRAO': Config.CFOPS_PADRAO
     }
     
     # 3. Inicia a Thread passando a APP REAL para o executor

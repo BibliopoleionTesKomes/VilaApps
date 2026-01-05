@@ -1,15 +1,18 @@
 # --- IMPORTAÇÕES ---
 import os           # Para verificar se arquivos existem e manipular caminhos
 import json         # Para ler e gravar arquivos no formato JSON (texto estruturado)
-import tempfile     # Para encontrar a pasta temporária do sistema (ex: /tmp no Linux ou %TEMP% no Windows)
+import tempfile
+
+from config import Config     # Para encontrar a pasta temporária do sistema (ex: /tmp no Linux ou %TEMP% no Windows)
 
 # --- CONFIGURAÇÃO DOS CAMINHOS ---
 # Definimos onde os arquivos de cache serão salvos.
 # Usamos 'tempfile.gettempdir()' para garantir que funcione em qualquer computador,
 # pois ele busca automaticamente a pasta temporária correta do sistema operacional.
-CACHE_ACERTO = os.path.join(tempfile.gettempdir(), 'vila_cache_acerto.json')
-CACHE_DEVOLUCAO = os.path.join(tempfile.gettempdir(), 'vila_cache_devolucao.json')
-CACHE_GERAL = os.path.join(tempfile.gettempdir(), 'vila_cache_geral.json')
+path=Config.PATH_CACHE
+CACHE_ACERTO = os.path.join(path, 'vila_cache_acerto.json')
+CACHE_DEVOLUCAO = os.path.join(path, 'vila_cache_devolucao.json')
+CACHE_GERAL = os.path.join(path, 'vila_cache_geral.json')
 
 def ler_cache(tipo='geral'):
     """

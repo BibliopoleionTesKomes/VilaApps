@@ -1,7 +1,8 @@
 import pyodbc
-from flask import current_app
 import pandas as pd
 import warnings
+
+from config import Config
 warnings.filterwarnings('ignore', category=UserWarning)
 
 def get_connection():
@@ -9,7 +10,7 @@ def get_connection():
     Cria uma conexão com o banco usando a string definida no config.py
     """
     try:
-        conn_str = current_app.config['SQL_CONNECTION_STRING']
+        conn_str = Config.SQL_CONNECTION_STRING
         return pyodbc.connect(conn_str)
     except Exception as e:
         print(f"CRITICAL: Erro ao conectar no banco: {e}")
