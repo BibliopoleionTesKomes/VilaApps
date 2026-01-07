@@ -10,6 +10,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Fonte Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Ícones Bootstrap (Necessário para o ícone do Excel) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     
     <style>
         /* Variáveis de Cores */
@@ -143,7 +145,12 @@
                         {% endif %}
                     </div>
                     <div class="d-flex gap-2">
-                        <!-- O Botão chama a nova função corrigida -->
+                        <!-- Botão Baixar Excel (NOVO) -->
+                        <button class="btn btn-success btn-compact shadow-sm" onclick="exportarExcel()">
+                            <i class="bi bi-file-earmark-excel"></i> Baixar Excel
+                        </button>
+
+                        <!-- Botão Atualizar -->
                         <button class="btn btn-primary btn-compact shadow-sm" id="btnAtualizar" onclick="iniciarLeituraReal()">
                             🔄 Atualizar Lista
                         </button>
@@ -226,11 +233,33 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT CORRIGIDO -->
+    <!-- Bibliotecas JS -->
+    <!-- SheetJS (Excel) -->
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             configurarFiltros();
         });
+
+        // --- FUNÇÃO DE EXPORTAR EXCEL (NOVA) ---
+        function exportarExcel() {
+            const tabela = document.getElementById('tabela');
+            if (!tabela) {
+                alert('Sem dados para exportar.');
+                return;
+            }
+            
+            // Cria o arquivo Excel a partir da tabela
+            // Nota: O SheetJS (table_to_book) geralmente exporta o que está visível ou tudo
+            // dependendo da versão. Se tiver filtros ativos, ele pode exportar tudo.
+            // Para simplicidade, exportamos a tabela como está no DOM.
+            const wb = XLSX.utils.table_to_book(tabela, {sheet: "Dados XML"});
+            
+            // Gera o nome do arquivo com a data de hoje
+            const hoje = new Date().toISOString().slice(0,10);
+            XLSX.writeFile(wb, `Leitura_Geral_${hoje}.xlsx`);
+        }
 
         // --- FUNÇÃO CORRIGIDA DE ATUALIZAÇÃO ---
         async function iniciarLeituraReal() {
@@ -245,7 +274,7 @@
             container.style.display = 'block';
             barra.style.width = '0%';
             barra.innerHTML = '0%';
-            barra.className = "progress-bar progress-bar-striped progress-bar-animated bg-success"; // Reseta cor verde
+            barra.className = "progress-bar progress-bar-striped progress-bar-animated bg-success"; 
 
             try {
                 // 2. Manda o comando INICIAR para o servidor (Python)
