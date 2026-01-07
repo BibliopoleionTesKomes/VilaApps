@@ -236,11 +236,17 @@ def show_results():
     df = calcular_qtd_final(df)
     
     # Filtros visuais (Filial e Tipo de Divergência)
-    filial = request.args.get('filial', 'all').strip().lower() or 'all'
+    filial_arg = request.args.get('filial', 'all').strip().lower() or 'all'
     filt = request.args.get('filter', 'all')
     
     df_show = df.copy()
-    if filial != 'all': df_show = df_show[df_show['filial'] == filial]
+    
+    # Normaliza nomes de filial para garantir compatibilidade
+    if 'filial' in df_show.columns:
+        df_show['filial'] = df_show['filial'].astype(str).str.strip().str.lower()
+        
+    if filial_arg != 'all': 
+        df_show = df_show[df_show['filial'] == filial_arg]
     
     # Aplica filtros de visualização
     if filt == 'qty': df_show = df_show[df_show['Situação Qtd.'] == 'Divergência']
@@ -250,20 +256,32 @@ def show_results():
     
     df_show = df_show.sort_values(by=['filial', 'Titulo'])
 
-    # Calcula totais para o cabeçalho
-    v_bruta = 0
+    # --- CORREÇÃO DO VALOR DE VENDA ---
+    # Prepara o objeto de vendas totais por filial vindo do sum_df (que tem a venda integral)
+    vendas_por_filial = {}
+    v_bruta_total_kpi = 0
+    
     if not sum_df.empty:
+        # Garante normalização para bater com as chaves do front
         sum_df['filial'] = sum_df['filial'].astype(str).str.strip().str.lower()
-        v_bruta = sum_df['Venda Bruta'].sum() if filial == 'all' else sum_df[sum_df['filial'] == filial]['Venda Bruta'].sum()
+        
+        # Cria dicionário { 'nome_filial': valor_float }
+        vendas_por_filial = sum_df.set_index('filial')['Venda Bruta'].to_dict()
+        
+        # Calcula KPI do card (topo da tela)
+        if filial_arg == 'all':
+            v_bruta_total_kpi = sum_df['Venda Bruta'].sum()
+        else:
+            v_bruta_total_kpi = vendas_por_filial.get(filial_arg, 0)
 
-    # Renderiza o HTML passando os dados como lista de dicionários
     return render_template('conf_results.html', 
                            data=df_show.to_dict('records'), 
                            fornecedor=forn, 
                            filiais_list=sorted(df['filial'].unique()), 
-                           current_filial=filial, 
+                           current_filial=filial_arg, 
                            current_filter=filt,
-                           venda_bruta_total=formatar_valor(v_bruta),
+                           venda_bruta_total=formatar_valor(v_bruta_total_kpi),
+                           vendas_por_filial=vendas_por_filial, # <--- NOVO PARÂMETRO
                            has_quebra=has_quebra)
 
 @conferencia_bp.route('/acao/results')

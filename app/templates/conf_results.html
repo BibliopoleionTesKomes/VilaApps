@@ -138,6 +138,9 @@
 <script>
     // Se a variável 'exibir_quebra' não for passada, assume false
     const EXIBIR_QUEBRA = {{ 'true' if exibir_quebra else 'false' }};
+
+    // --- CORREÇÃO: Objeto com vendas integrais vindas do Python ---
+    const DADOS_VENDA_FILIAL = {{ vendas_por_filial | tojson }};
 </script>
 
 <div id="toast-container">ISBN Copiado!</div>
@@ -521,15 +524,29 @@
         const branchData = {};
         const grandTotal = { acertoLiq: 0, acertoBruto: 0, vendaBruta: 0, divDevida: 0, totalDiv: 0, quebraLiq: 0, quebraBruta: 0 };
 
+        // 1. Inicializa todas as filiais que tem venda (mesmo que não tenham acerto)
+        // Isso garante que filiais que só tiveram venda apareçam no modal
+        for (const [nomeFilial, valorVenda] of Object.entries(DADOS_VENDA_FILIAL)) {
+            branchData[nomeFilial] = { 
+                acertoLiq: 0, acertoBruto: 0, 
+                vendaBruta: valorVenda, // <--- Fonte Correta (Integral)
+                divDevida: 0, totalDiv: 0, quebraLiq: 0, quebraBruta: 0 
+            };
+            grandTotal.vendaBruta += valorVenda;
+        }
+
+        // 2. Itera sobre a tabela APENAS para somar Acerto, Divergência e Quebra
         document.querySelectorAll('#results-tbody tr').forEach(row => {
-            const filial = row.dataset.filial;
+            // Normaliza nome da filial para bater com a chave do dicionário
+            const filial = row.dataset.filial.trim().toLowerCase(); 
+            
             if (!branchData[filial]) {
+                // Caso raro: filial tem acerto mas não tinha registro de venda no sum_df
                 branchData[filial] = { acertoLiq: 0, acertoBruto: 0, vendaBruta: 0, divDevida: 0, totalDiv: 0, quebraLiq: 0, quebraBruta: 0 };
             }
 
-            const vlUnit  = parseFloat(row.dataset.vlUnit) || 0;
-            const vlVenda = parseFloat(row.dataset.vlVenda) || 0;
-            const desc    = parseFloat(row.dataset.desc) || 0;
+            const vlUnit    = parseFloat(row.dataset.vlUnit) || 0;
+            const desc      = parseFloat(row.dataset.desc) || 0;
             const qtdAcerto = parseInt(row.dataset.qtdAcerto) || 0;
             const qtdVenda  = parseInt(row.dataset.qtdVenda) || 0;
             const qtdAcao   = parseInt(row.dataset.qtdAcao) || 0;
@@ -542,7 +559,7 @@
             const input = row.querySelector('.qty-input');
             const qtdManual = input ? parseInt(input.value) || 0 : 0;
 
-            // Lógica de cálculo unificada
+            // Lógica de Quantidade Final
             let qtdFinal = qtdAcerto; 
             if (itemPromo === 'Sim') {
                 qtdFinal = (qtdAcerto - qtdAcao) + qtdManual;
@@ -551,30 +568,31 @@
             }
             if(qtdFinal < 0) qtdFinal = 0;
 
+            // Cálculos (Venda Bruta removida daqui pois já pegamos a integral acima)
             const bruto     = qtdFinal * vlUnit;
             const liquido   = bruto * (1 - desc);
-            const vendaB    = qtdVenda * vlVenda;
             const devido    = qtdManual * vlUnit * (1 - desc);
             const qBruta    = qtdQuebra * vlUnit;
             const qLiq      = qBruta * (1 - desc);
 
+            // Acumula
             branchData[filial].acertoLiq += liquido;
             branchData[filial].acertoBruto += bruto;
-            branchData[filial].vendaBruta += vendaB;
             branchData[filial].divDevida += devido;
             branchData[filial].totalDiv += vlDivOriginal;
             branchData[filial].quebraLiq += qLiq;
             branchData[filial].quebraBruta += qBruta;
 
+            // Totais Gerais (Exceto Venda que já foi somada no loop inicial)
             grandTotal.acertoLiq += liquido;
             grandTotal.acertoBruto += bruto;
-            grandTotal.vendaBruta += vendaB;
             grandTotal.divDevida += devido;
             grandTotal.totalDiv += vlDivOriginal;
             grandTotal.quebraLiq += qLiq;
             grandTotal.quebraBruta += qBruta;
         });
 
+        // 3. Renderização do HTML (Mantido igual, apenas gerando as linhas)
         const theadRow = document.getElementById('modal-header-row');
         let headerHTML = `
             <th class="text-start">Filial</th>
@@ -592,14 +610,22 @@
         const tbody = document.getElementById('tbody-resumo-filial');
         tbody.innerHTML = '';
 
+        // Ordena por nome da filial
         Object.keys(branchData).sort().forEach(filial => {
             const d = branchData[filial];
+            
+            // CORREÇÃO SOLICITADA: Filtrar apenas filiais com Acerto Líquido > 0 (ou diferente de zero)
+            // if (d.acertoBruto === 0 && d.vendaBruta === 0 && d.totalDiv === 0) return; // Antigo
+            
+            // Usamos Math.abs para garantir que não pegue resíduos de float, e < 0.01 trata como zero
+            if (Math.abs(d.acertoLiq) < 0.01) return; 
+
             let rowHTML = `
                 <tr>
-                    <td class="fw-bold">${filial}</td>
+                    <td class="fw-bold text-uppercase">${filial}</td>
                     <td class="text-end" style="color: var(--cor-principal);">${formatCurrency(d.acertoLiq)}</td>
                     <td class="text-end" style="color: var(--cor-principal);">${formatCurrency(d.acertoBruto)}</td>
-                    <td class="text-end text-muted">${formatCurrency(d.vendaBruta)}</td>
+                    <td class="text-end text-muted fw-bold">${formatCurrency(d.vendaBruta)}</td>
                     <td class="text-end text-success fw-bold">${formatCurrency(d.divDevida)}</td>
                     <td class="text-end text-danger">${formatCurrency(d.totalDiv)}</td>
             `;
