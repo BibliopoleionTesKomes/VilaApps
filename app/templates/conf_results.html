@@ -111,7 +111,16 @@
         .qty-input:focus { border-color: var(--cor-secundaria); outline: none; }
 
         .col-num { text-align: right; }
-        tr.divergente { background-color: #fff0f0 !important; }
+        
+        /* LÓGICA DE CORES DA TABELA */
+        tr.divergente { background-color: #ffdce0 !important; }
+        
+        /* CORREÇÃO MELHORIA 2: Cor ao clicar na linha (Sempre amarela quando selecionada) */
+        tr.selected-row, #results-tbody tr.selected-row { 
+            background-color: var(--cor-destaque) !important; 
+            transition: background-color 0.2s; 
+        }
+
         td.col-destaque { background-color: #fffbea !important; border-left: 2px solid var(--cor-destaque) !important; border-right: 2px solid var(--cor-destaque) !important; }
         td.col-quebra { background-color: #fff5f5 !important; color: #dc3545; font-weight: bold; }
 
@@ -124,6 +133,24 @@
         
         #toast-container { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: #192F63; color: #fff; padding: 8px 16px; border-radius: 20px; font-size: 0.8rem; opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 2000; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
         #toast-container.show { opacity: 1; }
+
+        /* MELHORIA CHECKBOX: MUITO MAIS VISÍVEL (GRANDE E COM BORDA) */
+        .label-conferido { 
+            color: #157347; 
+            font-weight: 800; 
+            font-size: 0.65rem; 
+            text-transform: uppercase; 
+            margin-left: 5px; 
+        }
+        
+        .check-box-conferido { 
+            width: 18px !important; 
+            height: 18px !important; 
+            cursor: pointer; 
+            vertical-align: middle;
+            border: 2px solid #192F63 !important; /* Borda visível */
+            accent-color: #192F63; 
+        }
 
         /* Modal Styles */
         .modal-header { background-color: var(--cor-principal); color: white; }
@@ -221,6 +248,8 @@
             <div class="summary-stat"><small>Quebra Líquida</small><h5 id="total-quebra-liquida" style="color: #dc3545;">R$ 0,00</h5></div>
             <div class="summary-stat"><small>Quebra Bruta</small><h5 id="total-quebra-bruta" style="color: #d63384;">R$ 0,00</h5></div>
             {% endif %}
+            
+            
         </div>
     </div>
 
@@ -229,23 +258,21 @@
         <div class="table-responsive">
             <table class="table-sticky" id="main-table">
                 <colgroup>
-                    <col style="width: 7%"><col style="width: 10%"><col style="width: auto">
+                    <col style="width: 95px"> 
+                    <col style="width: 7%"><col style="width: 10%"><col style="width: 300px">
                     <col style="width: 5%"><col style="width: 6%"><col style="width: 6%"><col style="width: 6%">
                     <col style="width: 6%"><col style="width: 10%"><col style="width: 10%">
                     <col style="width: 8%"><col style="width: 8%"><col style="width: 6%">
                 </colgroup>
                 <thead>
                     <tr>
+                        <th class="text-center">Visto</th> 
                         <th>Filial</th><th>ISBN</th><th>Título</th>
                         <th class="text-center">Promo</th><th class="text-end">Ação</th>
                         <th class="text-end">Acerto</th><th class="text-end">Venda</th><th class="text-end">Div.</th>
                         <th>Situação</th>
                         <th class="text-end" style="background-color: var(--cor-principal); color: #FFC107;">Qtd. a Acertar</th>
                         <th class="text-end">Unit. Acerto</th><th class="text-end">Unit. Venda</th><th class="text-end">Desc.</th>
-                        
-                        {% if exibir_quebra %}
-                        <th class="text-end" style="background-color: #f8d7da; color: #721c24;">Qtd. Quebra</th>
-                        {% endif %}
                     </tr>
                 </thead>
                 <tbody id="results-tbody">
@@ -269,6 +296,15 @@
                         data-desc="{{ row['Desconto'] | string | replace(',', '.') }}"
                         data-vl-div="{{ row['Vlr. Liq. Qtd. Divergência'] | string | replace(',', '.') }}">
                         
+                        <td class="text-center">
+                            {% if is_div %}
+                            <div class="d-flex align-items-center justify-content-center">
+                                <input type="checkbox" class="form-check-input check-box-conferido" onchange="this.nextElementSibling.classList.toggle('d-none', !this.checked)">
+                                <span class="label-conferido d-none">Conferido</span>
+                            </div>
+                            {% endif %}
+                        </td>
+
                         <td title="{{ row['filial'] }}">{{ row['filial'] }}</td>
                         <td>
                             <span class="font-monospace small">{{ row['ISBN'] }}</span>
@@ -310,12 +346,6 @@
                         <td class="text-end">R$ {{ "{:,.2f}".format(row['Vl. Unit._acerto']).replace(',','X').replace('.',',').replace('X','.') }}</td>
                         <td class="text-end">R$ {{ "{:,.2f}".format(row['Vl. Unit._venda']).replace(',','X').replace('.',',').replace('X','.') }}</td>
                         <td class="text-end">{{ (row['Desconto'] * 100)|round(0) }}%</td>
-                        
-                        {% if exibir_quebra %}
-                        <td class="text-end col-quebra">
-                            {{ row['Divergência Qtd.'] | int }}
-                        </td>
-                        {% endif %}
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -404,55 +434,40 @@
         XLSX.writeFile(wb, `${fileName}.xlsx`);
     }
 
+    // MELHORIA 2: Pintar linha ao clicar (Corrigido para priorizar destaque sobre divergência)
+    document.querySelectorAll('#results-tbody tr').forEach(tr => {
+        tr.addEventListener('click', function(e) {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON' || e.target.closest('button') || e.target.type === 'checkbox') return;
+            document.querySelectorAll('#results-tbody tr').forEach(row => row.classList.remove('selected-row'));
+            this.classList.add('selected-row');
+        });
+    });
+
     function calculateTotals() {
         let totDiv = 0, totDev = 0, totBruto = 0, totLiq = 0;
-        let totQuebraBruta = 0, totQuebraLiq = 0;
-
         document.querySelectorAll('#results-tbody tr').forEach(row => {
             if (row.style.display === 'none') return;
-
             const vlUnit  = parseFloat(row.dataset.vlUnit) || 0;
             const desc    = parseFloat(row.dataset.desc) || 0;
-            const qtdAcerto = parseInt(row.dataset.qtdAcerto) || 0; 
-            const vlDivOriginal = parseFloat(row.dataset.vlDiv) || 0;
-            const qtdAcao = parseInt(row.dataset.qtdAcao) || 0;
-            const qtdVenda = parseInt(row.dataset.qtdVenda) || 0;
-            
-            // CORREÇÃO JS: Ler atributo data-promo corretamente
-            const itemPromo = (row.dataset.promo || '').trim();
-            const situacao = row.dataset.situacao;
+            const qA = parseInt(row.dataset.qtdAcerto) || 0; 
+            const vlDivO = parseFloat(row.dataset.vlDiv) || 0;
+            const qAc = parseInt(row.dataset.qtdAcao) || 0;
+            const qV = parseInt(row.dataset.qtdVenda) || 0;
+            const promo = (row.dataset.promo || '').trim();
+            const situ = row.dataset.situacao;
+            const inp = row.querySelector('.qty-input');
+            const qM = inp ? parseInt(inp.value) || 0 : 0;
 
-            const input = row.querySelector('.qty-input');
-            const qtdManual = input ? parseInt(input.value) || 0 : 0;
+            // --- LÓGICA DE QUANTIDADE FINAL PARA TOTAIS (Mesma da Lista Final) ---
+            let qBase = qA;
+            if (situ && situ.includes('Divergência')) { qBase = qV + qM; }
+            let qF = qBase;
+            if (promo === 'Sim') { qF = qBase - qAc; }
+            if (qF > qA) qF = qA;
+            if (qF < 0) qF = 0;
 
-            // --- LÓGICA FINANCEIRA REVISADA (Mesma da Lista Final) ---
-            let qtdFinal = qtdAcerto; 
-
-            if (itemPromo === 'Sim') {
-                // Promo: Acerto - Ação + Manual
-                qtdFinal = (qtdAcerto - qtdAcao) + qtdManual;
-            } else if (situacao && situacao.includes('Divergência')) {
-                // Div: Venda + Manual
-                qtdFinal = qtdVenda + qtdManual;
-            }
-            if(qtdFinal < 0) qtdFinal = 0;
-
-            // Cálculos Totais
-            const bruto = qtdFinal * vlUnit;
-            const liquido = bruto * (1 - desc);
-            const devido = qtdManual * vlUnit * (1 - desc);
-
-            const qtdQuebra = parseInt(row.dataset.qtdQuebra) || 0;
-            const quebraBruta = qtdQuebra * vlUnit;
-            const quebraLiq   = quebraBruta * (1 - desc);
-
-            totBruto += bruto;
-            totLiq   += liquido;
-            totDev   += devido;
-            totDiv   += vlDivOriginal;
-            
-            totQuebraBruta += quebraBruta;
-            totQuebraLiq   += quebraLiq;
+            const bruto = qF * vlUnit;
+            totBruto += bruto; totLiq += bruto * (1 - desc); totDev += qM * vlUnit * (1 - desc); totDiv += vlDivO;
         });
 
         document.getElementById('total-acerto-bruto').innerText = formatCurrency(totBruto);
@@ -474,50 +489,37 @@
         tbody.innerHTML = '';
 
         document.querySelectorAll('#results-tbody tr').forEach(row => {
-            const filial = row.dataset.filial;
-            const titulo = row.dataset.titulo;
-            const isbn = row.dataset.isbn;
-            const situacao = row.dataset.situacao;
-            // CORREÇÃO: Ler dataset.promo com segurança
-            const itemPromo = (row.dataset.promo || '').trim();
-
-            const qtdAcerto = parseInt(row.dataset.qtdAcerto) || 0;
-            const qtdAcao = parseInt(row.dataset.qtdAcao) || 0;
-            const qtdVenda = parseInt(row.dataset.qtdVenda) || 0;
-
-            let qtdManual = 0;
+            const qA = parseInt(row.dataset.qtdAcerto) || 0;
+            const qV = parseInt(row.dataset.qtdVenda) || 0;
+            const qAc = parseInt(row.dataset.qtdAcao) || 0;
+            const situ = row.dataset.situacao;
+            const promo = (row.dataset.promo || '').trim();
             const input = row.querySelector('.qty-input');
-            if (input) qtdManual = parseInt(input.value) || 0;
+            const qM = input ? parseInt(input.value) || 0 : 0;
 
-            // --- LÓGICA DE QUANTIDADE FINAL PARA IMPORTAÇÃO ---
-            let qtdFinal = qtdAcerto; // Padrão: Acerto Físico
+            // REGRA 1: Considera o Acerto em primeiro lugar
+            let qBase = qA;
 
-            if (itemPromo === 'Sim') {
-                // CORREÇÃO: Para Ação Promocional = (Acerto - Ação) + Ajuste Manual
-                qtdFinal = (qtdAcerto - qtdAcao) + qtdManual;
-            } else if (situacao && situacao.includes('Divergência')) {
-                // Divergência Comum = Venda + Ajuste Manual
-                qtdFinal = qtdVenda + qtdManual;
+            // REGRA 2: Se houver divergência: Venda + Manual
+            if (situ && situ.includes('Divergência')) {
+                qBase = qV + qM;
             }
-            
-            if(qtdFinal < 0) qtdFinal = 0; // Segurança contra negativos
 
-            // --- FILTRO DE ZEROS ---
-            if (qtdFinal === 0) return;
+            // REGRA 3: Se for Promoção: subtrai a coluna Ação
+            let qF = qBase;
+            if (promo === 'Sim') {
+                qF = qBase - qAc;
+            }
 
-            const tr = `
-                <tr>
-                    <td>${filial}</td>
-                    <td>${titulo}</td>
-                    <td class="font-monospace">${isbn}</td>
-                    <td class="text-center fw-bold text-primary">${qtdFinal}</td>
-                </tr>
-            `;
-            tbody.innerHTML += tr;
+            // TRAVA FINAL: Nunca superior ao Acerto e nunca negativo
+            if (qF > qA) qF = qA;
+            if (qF < 0) qF = 0;
+
+            if (qF === 0) return;
+
+            tbody.innerHTML += `<tr><td>${row.dataset.filial}</td><td>${row.dataset.titulo}</td><td class="font-monospace">${row.dataset.isbn}</td><td class="text-center fw-bold text-primary">${qF}</td></tr>`;
         });
-
-        const modal = new bootstrap.Modal(document.getElementById('modalListaFinal'));
-        modal.show();
+        new bootstrap.Modal(document.getElementById('modalListaFinal')).show();
     }
 
     function openBranchSummary() {
@@ -731,6 +733,10 @@
         }
     });
 
+    function copyToClipboard(t) {
+        const ta = document.createElement("textarea"); ta.value = t; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); const toast = document.getElementById('toast-container'); if(toast) { toast.innerText = `ISBN ${t} Copiado!`; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 2000); } } catch (err) {} document.body.removeChild(ta);
+    }
     window.onload = calculateTotals;
 </script>
 </body>
