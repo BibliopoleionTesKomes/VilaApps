@@ -281,8 +281,8 @@ def show_results():
                            current_filial=filial_arg, 
                            current_filter=filt,
                            venda_bruta_total=formatar_valor(v_bruta_total_kpi),
-                           vendas_por_filial=vendas_por_filial, # <--- NOVO PARÂMETRO
-                           has_quebra=has_quebra)
+                           vendas_por_filial=vendas_por_filial,
+                           exibir_quebra=has_quebra) # <-- MUDADO: De 'has_quebra' para 'exibir_quebra'
 
 @conferencia_bp.route('/acao/results')
 def show_results_acao():

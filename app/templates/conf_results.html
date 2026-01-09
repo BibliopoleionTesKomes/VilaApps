@@ -263,6 +263,7 @@
                     <col style="width: 5%"><col style="width: 6%"><col style="width: 6%"><col style="width: 6%">
                     <col style="width: 6%"><col style="width: 10%"><col style="width: 10%">
                     <col style="width: 8%"><col style="width: 8%"><col style="width: 6%">
+                    {% if exibir_quebra %}<col style="width: 65px">{% endif %}
                 </colgroup>
                 <thead>
                     <tr>
@@ -273,11 +274,16 @@
                         <th>Situação</th>
                         <th class="text-end" style="background-color: var(--cor-principal); color: #FFC107;">Qtd. a Acertar</th>
                         <th class="text-end">Unit. Acerto</th><th class="text-end">Unit. Venda</th><th class="text-end">Desc.</th>
+                        {% if exibir_quebra %}
+                        <th class="text-end" style="background-color: #d63384; color: white;">Quebra</th>
+                        {% endif %}
                     </tr>
                 </thead>
                 <tbody id="results-tbody">
                     {% for row in data %}
-                    {% set is_div = 'Divergência' in (row['Situação Qtd.'] | string) %}
+                    {# CORREÇÃO: Força o reconhecimento de quebra se o valor for > 0 #}
+                    {% set val_quebra = row['Quebra_Inv'] | default(0) | int %}
+                    {% set is_div = ('Divergência' in (row['Situação Qtd.'] | string)) or (val_quebra > 0) %}
                     {% set is_acao = (row['Item Promocional'] == 'Sim') %}
                     
                     <tr class="{{ 'divergente' if is_div else '' }}"
@@ -290,11 +296,13 @@
                         data-qtd-acerto="{{ row['Quant'] | int }}"
                         data-qtd-venda="{{ row['Quant_venda'] | int }}"
                         data-divergencia="{{ row['Divergência Qtd.'] | int }}"
-                        data-qtd-quebra="{{ row['Divergência Qtd.'] | int if exibir_quebra else 0 }}" 
+                        data-qtd-quebra="{{ val_quebra }}" 
                         data-vl-unit="{{ row['Vl. Unit._acerto'] | string | replace(',', '.') }}"
                         data-vl-venda="{{ row['Vl. Unit._venda'] | string | replace(',', '.') }}"
                         data-desc="{{ row['Desconto'] | string | replace(',', '.') }}"
-                        data-vl-div="{{ row['Vlr. Liq. Qtd. Divergência'] | string | replace(',', '.') }}">
+                        data-vl-div="{{ row['Vlr. Liq. Qtd. Divergência'] | string | replace(',', '.') }}"
+                        data-vl-quebra-liq="{{ row['Vlr. Quebra Liquida'] | default(0) | float }}"
+                        data-vl-quebra-bruta="{{ row['Vlr. Quebra Bruta'] | default(0) | float }}">
                         
                         <td class="text-center">
                             {% if is_div %}
@@ -346,6 +354,13 @@
                         <td class="text-end">R$ {{ "{:,.2f}".format(row['Vl. Unit._acerto']).replace(',','X').replace('.',',').replace('X','.') }}</td>
                         <td class="text-end">R$ {{ "{:,.2f}".format(row['Vl. Unit._venda']).replace(',','X').replace('.',',').replace('X','.') }}</td>
                         <td class="text-end">{{ (row['Desconto'] * 100)|round(0) }}%</td>
+
+                        <!-- COLUNA DE QUEBRA NO FINAL DA PLANILHA -->
+                        {% if exibir_quebra %}
+                        <td class="text-end col-quebra">
+                            {{ val_quebra }}
+                        </td>
+                        {% endif %}
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -445,6 +460,8 @@
 
     function calculateTotals() {
         let totDiv = 0, totDev = 0, totBruto = 0, totLiq = 0;
+        let totQuebraBruta = 0, totQuebraLiq = 0; 
+
         document.querySelectorAll('#results-tbody tr').forEach(row => {
             if (row.style.display === 'none') return;
             const vlUnit  = parseFloat(row.dataset.vlUnit) || 0;
@@ -468,6 +485,11 @@
 
             const bruto = qF * vlUnit;
             totBruto += bruto; totLiq += bruto * (1 - desc); totDev += qM * vlUnit * (1 - desc); totDiv += vlDivO;
+
+            if(EXIBIR_QUEBRA) {
+                totQuebraBruta += parseFloat(row.dataset.vlQuebraBruta) || 0;
+                totQuebraLiq += parseFloat(row.dataset.vlQuebraLiq) || 0;
+            }
         });
 
         document.getElementById('total-acerto-bruto').innerText = formatCurrency(totBruto);
@@ -552,7 +574,6 @@
             const qtdAcerto = parseInt(row.dataset.qtdAcerto) || 0;
             const qtdVenda  = parseInt(row.dataset.qtdVenda) || 0;
             const qtdAcao   = parseInt(row.dataset.qtdAcao) || 0;
-            const qtdQuebra = parseInt(row.dataset.qtdQuebra) || 0;
             const vlDivOriginal = parseFloat(row.dataset.vlDiv) || 0;
             
             const itemPromo = (row.dataset.promo || '').trim();
@@ -569,13 +590,14 @@
                 qtdFinal = qtdVenda + qtdManual;
             }
             if(qtdFinal < 0) qtdFinal = 0;
+            if(qtdFinal > qtdAcerto) qtdFinal = qtdAcerto;
 
             // Cálculos (Venda Bruta removida daqui pois já pegamos a integral acima)
             const bruto     = qtdFinal * vlUnit;
             const liquido   = bruto * (1 - desc);
             const devido    = qtdManual * vlUnit * (1 - desc);
-            const qBruta    = qtdQuebra * vlUnit;
-            const qLiq      = qBruta * (1 - desc);
+            const qLiq      = parseFloat(row.dataset.vlQuebraLiq) || 0;
+            const qBruta    = parseFloat(row.dataset.vlQuebraBruta) || 0;
 
             // Acumula
             branchData[filial].acertoLiq += liquido;
@@ -630,42 +652,41 @@
                     <td class="text-end text-muted fw-bold">${formatCurrency(d.vendaBruta)}</td>
                     <td class="text-end text-success fw-bold">${formatCurrency(d.divDevida)}</td>
                     <td class="text-end text-danger">${formatCurrency(d.totalDiv)}</td>
-            `;
+                    `;
             if(EXIBIR_QUEBRA) {
-                rowHTML += `<td class="text-end text-danger">${formatCurrency(d.quebraLiq)}</td><td class="text-end" style="color: #d63384;">${formatCurrency(d.quebraBruta)}</td>`;
-            }
+                 rowHTML += `<td class="text-end text-danger">${formatCurrency(d.quebraLiq)}</td><td class="text-end" style="color: #d63384;">${formatCurrency(d.quebraBruta)}</td>`; 
+                }
             rowHTML += `</tr>`;
             tbody.innerHTML += rowHTML;
         });
 
         const tfoot = document.getElementById('tfoot-resumo-total');
         let footerHTML = `
-            <td class="fw-bold">TOTAL</td>
-            <td class="text-end fw-bold">${formatCurrency(grandTotal.acertoLiq)}</td>
-            <td class="text-end fw-bold">${formatCurrency(grandTotal.acertoBruto)}</td>
-            <td class="text-end fw-bold">${formatCurrency(grandTotal.vendaBruta)}</td>
-            <td class="text-end fw-bold">${formatCurrency(grandTotal.divDevida)}</td>
-            <td class="text-end fw-bold">${formatCurrency(grandTotal.totalDiv)}</td>
-        `;
+                    <td class="fw-bold">TOTAL</td>
+                    <td class="text-end fw-bold">${formatCurrency(grandTotal.acertoLiq)}</td>
+                    <td class="text-end fw-bold">${formatCurrency(grandTotal.acertoBruto)}</td>
+                    <td class="text-end fw-bold">${formatCurrency(grandTotal.vendaBruta)}</td>
+                    <td class="text-end fw-bold">${formatCurrency(grandTotal.divDevida)}</td>
+                    <td class="text-end fw-bold">${formatCurrency(grandTotal.totalDiv)}</td>
+                    `;
         if(EXIBIR_QUEBRA) {
-            footerHTML += `<td class="text-end fw-bold">${formatCurrency(grandTotal.quebraLiq)}</td><td class="text-end fw-bold">${formatCurrency(grandTotal.quebraBruta)}</td>`;
-        }
+             footerHTML += `<td class="text-end fw-bold">${formatCurrency(grandTotal.quebraLiq)}</td><td class="text-end fw-bold">${formatCurrency(grandTotal.quebraBruta)}</td>`; 
+            }
         tfoot.innerHTML = footerHTML;
 
-        const modal = new bootstrap.Modal(document.getElementById('modalResumoFilial'));
-        modal.show();
+        new bootstrap.Modal(document.getElementById('modalResumoFilial')).show();
     }
 
     async function saveChanges(href) {
         if(href) document.getElementById('saving-overlay').style.display='flex';
         const d = [];
-        document.querySelectorAll('.qty-input').forEach(i => {
+        document.querySelectorAll('.qty-input').forEach(i => { 
             d.push({
-                filial: i.dataset.filial, 
-                isbn: i.dataset.isbn, 
-                qtd: String(i.value) 
-            });
-        });
+                 filial: i.dataset.filial,
+                  isbn: i.dataset.isbn,
+                   qtd: String(i.value)
+                 });
+     });
         try {
             await fetch(API_URLS.updateManual, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(d)});
             if(href) window.location.href = href;
@@ -713,30 +734,21 @@
             this.classList.add('active');
             
             const filterType = this.dataset.filter;
-            const rows = document.querySelectorAll('#results-tbody tr');
-
-            rows.forEach(row => {
+            document.querySelectorAll('#results-tbody tr').forEach(row => {
                 let show = true;
                 if (filterType === 'qty') {
-                    const qtdDiv = parseInt(row.dataset.divergencia) || 0;
-                    show = (qtdDiv !== 0);
-                } else if (filterType === 'price') {
-                    const vlDiv = parseFloat(row.dataset.vlDiv) || 0;
-                    show = (vlDiv !== 0);
-                } else if (filterType === 'acao') {
-                    const promo = row.dataset.promo;
-                    show = (promo === 'Sim');
+                    const qDiv = parseInt(row.dataset.divergencia) || 0;
+                    const qQuebra = parseInt(row.dataset.qtdQuebra) || 0;
+                    show = (qDiv !== 0 || qQuebra !== 0); 
                 }
+                else if (filterType === 'price') show = (parseFloat(row.dataset.vlDiv) !== 0);
+                else if (filterType === 'acao') show = (row.dataset.promo === 'Sim');
                 row.style.display = show ? '' : 'none';
             });
             calculateTotals();
         }
     });
 
-    function copyToClipboard(t) {
-        const ta = document.createElement("textarea"); ta.value = t; document.body.appendChild(ta); ta.select();
-        try { document.execCommand('copy'); const toast = document.getElementById('toast-container'); if(toast) { toast.innerText = `ISBN ${t} Copiado!`; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 2000); } } catch (err) {} document.body.removeChild(ta);
-    }
     window.onload = calculateTotals;
 </script>
 </body>
