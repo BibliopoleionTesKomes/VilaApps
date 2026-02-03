@@ -134,11 +134,21 @@ def iniciar_processamento():
                         # Calcula totais brutos para o cabeçalho do resumo
                         venda_sum = df_acao_raw.groupby('filial', as_index=False).agg({'Vl. Unit._venda': 'sum'}).rename(columns={'Vl. Unit._venda': 'Venda Bruta'})
 
-            # 5. Processa arquivo de quebra (se enviado)
-            f_quebra = request.files.get('quebra_file')
-            if f_quebra and f_quebra.filename != '':
-                df_quebra = carregar_quebra_inventario(BytesIO(f_quebra.read()))
-                if not df_quebra.empty: has_quebra = True
+            # 5. Processa arquivos de quebra (MÚLTIPLOS)
+            files_quebra = request.files.getlist('quebra_file')
+            dfs_quebra_temp = []
+            
+            for f_q in files_quebra:
+                if f_q.filename == '': continue
+                # Processa cada arquivo individualmente para ler o cabeçalho daquela filial
+                df_temp = carregar_quebra_inventario(BytesIO(f_q.read()))
+                if not df_temp.empty:
+                    dfs_quebra_temp.append(df_temp)
+            
+            # Junta todos os DataFrames de quebra em um só
+            if dfs_quebra_temp:
+                df_quebra = pd.concat(dfs_quebra_temp, ignore_index=True)
+                has_quebra = True
 
         # --- FLUXO 2: DADOS VIA EXCEL (UPLOAD) ---
         else: 
@@ -170,11 +180,19 @@ def iniciar_processamento():
                 df_acao = carregar_venda_excel(BytesIO(f_acao.read()), 'Quant_acao')
                 if not df_acao.empty: df_acao = df_acao[['filial', 'ISBN', 'Quant_acao']]
 
-            # 4. Carrega arquivo de Quebra
-            f_quebra = request.files.get('quebra_file')
-            if f_quebra and f_quebra.filename != '':
-                df_quebra = carregar_quebra_inventario(BytesIO(f_quebra.read()))
-                if not df_quebra.empty: has_quebra = True
+            # 4. Carrega arquivo de Quebra (MÚLTIPLOS)
+            files_quebra = request.files.getlist('quebra_file')
+            dfs_quebra_temp = []
+            
+            for f_q in files_quebra:
+                if f_q.filename == '': continue
+                df_temp = carregar_quebra_inventario(BytesIO(f_q.read()))
+                if not df_temp.empty:
+                    dfs_quebra_temp.append(df_temp)
+            
+            if dfs_quebra_temp:
+                df_quebra = pd.concat(dfs_quebra_temp, ignore_index=True)
+                has_quebra = True
 
         # Calcula totais de venda se houver dados
         if not is_acao and not df_venda.empty:
@@ -186,7 +204,7 @@ def iniciar_processamento():
         # --- CÁLCULO FINAL (CRUZAMENTO DE DADOS) ---
         if is_acao:
             # Lógica específica para Ação Promocional
-            df_res = gerar_planilha_acao(df_acerto, df_acao, promos)
+            df_res = gerar_planilha_acao(df_acerto, df_acao, promos, df_quebra)
             if df_res.empty:
                 flash('Sem itens promocionais. Verifique os ISBNs.', 'error')
                 return redirect(url_for('conferencia.index_acao'))
@@ -336,13 +354,35 @@ def update_manual_acerto():
 
     updates = request.get_json() # Lista de alterações [{filial, isbn, qtd}, ...]
     if updates:
-        # Cria um mapa de busca rápida para atualizar
-        up_map = {(u['filial'].strip().lower(), str(u['isbn']).strip()): int(u['qtd']) for u in updates}
         
+        # --- FUNÇÃO DE LIMPEZA ABSOLUTA ---
+        # Resolve o problema de 9781234.0 (float) vs "9781234" (string)
+        # Garante que SEMPRE vamos comparar texto limpo com texto limpo
+        def clean_key_val(val):
+            # Converte pra string, divide no ponto (remove decimal) e tira espaços
+            return str(val).split('.')[0].strip().lower()
+
+        # Função para converter a quantidade em Inteiro seguro
+        def safe_int(val):
+            try:
+                if not val: return 0
+                return int(float(val))
+            except: return 0
+
+        # 1. Cria o Dicionário de Atualização usando a CHAVE LIMPA
+        # Ex: { ('loja1', '978853590'): 10 }
+        up_map = {}
+        for u in updates:
+            chave = (clean_key_val(u['filial']), clean_key_val(u['isbn']))
+            up_map[chave] = safe_int(u['qtd'])
+        
+        # 2. Aplica a atualização linha a linha no DataFrame
         def update_row(row):
-            key = (str(row['filial']).strip().lower(), str(row['ISBN']).strip())
-            # Se encontrar a chave no mapa de updates, usa o novo valor, senão mantém o antigo
-            return up_map.get(key, row['Qtd. a Acertar'])
+            # Gera a chave da linha atual usando a MESMA limpeza
+            chave_linha = (clean_key_val(row['filial']), clean_key_val(row['ISBN']))
+            
+            # Se a chave bater, retorna o novo valor. Se não, mantém o antigo.
+            return up_map.get(chave_linha, row['Qtd. a Acertar'])
         
         # Aplica a atualização linha a linha
         df['Qtd. a Acertar'] = df.apply(update_row, axis=1)

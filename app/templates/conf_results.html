@@ -115,11 +115,41 @@
         /* LÓGICA DE CORES DA TABELA */
         tr.divergente { background-color: #ffdce0 !important; }
         
-        /* CORREÇÃO MELHORIA 2: Cor ao clicar na linha (Sempre amarela quando selecionada) */
+        /* --- NOVO: Quebra TOTALMENTE Resolvida (Verde Suave) --- */
+        tr.quebra-resolvida { 
+            background-color: #d1e7dd !important; 
+        }
+        tr.quebra-resolvida td {
+            color: #0f5132; /* Verde Escuro */
+        }
+        tr.quebra-resolvida .qty-input {
+            border-color: #198754;
+            color: #198754;
+            background-color: #f8fff9;
+            font-weight: bold;
+        }
+
+        /* --- NOVO: Quebra PARCIAL (Amarelo Alerta) --- */
+        /* Divergência 3, Quebra 2 -> Falta 1 */
+        tr.quebra-parcial {
+            background-color: #fff3cd !important; 
+        }
+        tr.quebra-parcial td {
+            color: #664d03;
+        }
+        tr.quebra-parcial .qty-input {
+            border-color: #ffc107;
+            background-color: #fffbf0;
+            color: #997404;
+            font-weight: bold;
+        }
+        
+        /* Cor ao clicar na linha (Sempre amarela quando selecionada) */
         tr.selected-row, #results-tbody tr.selected-row { 
             background-color: var(--cor-destaque) !important; 
             transition: background-color 0.2s; 
         }
+        tr.selected-row td { color: #333 !important; } /* Reseta cor do texto ao selecionar */
 
         td.col-destaque { background-color: #fffbea !important; border-left: 2px solid var(--cor-destaque) !important; border-right: 2px solid var(--cor-destaque) !important; }
         td.col-quebra { background-color: #fff5f5 !important; color: #dc3545; font-weight: bold; }
@@ -134,23 +164,9 @@
         #toast-container { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: #192F63; color: #fff; padding: 8px 16px; border-radius: 20px; font-size: 0.8rem; opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 2000; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
         #toast-container.show { opacity: 1; }
 
-        /* MELHORIA CHECKBOX: MUITO MAIS VISÍVEL (GRANDE E COM BORDA) */
-        .label-conferido { 
-            color: #157347; 
-            font-weight: 800; 
-            font-size: 0.65rem; 
-            text-transform: uppercase; 
-            margin-left: 5px; 
-        }
-        
-        .check-box-conferido { 
-            width: 18px !important; 
-            height: 18px !important; 
-            cursor: pointer; 
-            vertical-align: middle;
-            border: 2px solid #192F63 !important; /* Borda visível */
-            accent-color: #192F63; 
-        }
+        /* MELHORIA CHECKBOX */
+        .label-conferido { color: #157347; font-weight: 800; font-size: 0.65rem; text-transform: uppercase; margin-left: 5px; }
+        .check-box-conferido { width: 18px !important; height: 18px !important; cursor: pointer; vertical-align: middle; border: 2px solid #192F63 !important; accent-color: #192F63; }
 
         /* Modal Styles */
         .modal-header { background-color: var(--cor-principal); color: white; }
@@ -232,6 +248,10 @@
                 <a href="#" class="btn-compact btn-gradiente-azul {% if current_filter == 'all' %}active{% endif %}" data-filter="all" style="border-radius: 15px 0 0 15px;">Todas</a>
                 <a href="#" class="btn-compact btn-gradiente-azul" data-filter="qty" style="border-radius: 0;">Qtd. Div</a>
                 <a href="#" class="btn-compact btn-gradiente-azul" data-filter="price" style="border-radius: 0;">Preço Div</a>
+                <!-- FILTRO QUEBRA -->
+                {% if exibir_quebra %}
+                <a href="#" class="btn-compact btn-gradiente-azul" data-filter="quebra" style="border-radius: 0;">Quebra</a>
+                {% endif %}
                 <a href="#" class="btn-compact btn-gradiente-azul" data-filter="acao" style="border-radius: 0 15px 15px 0;">Ação</a>
             </div>
         </div>
@@ -281,12 +301,41 @@
                 </thead>
                 <tbody id="results-tbody">
                     {% for row in data %}
-                    {# CORREÇÃO: Força o reconhecimento de quebra se o valor for > 0 #}
-                    {% set val_quebra = row['Quebra_Inv'] | default(0) | int %}
-                    {% set is_div = ('Divergência' in (row['Situação Qtd.'] | string)) or (val_quebra > 0) %}
-                    {% set is_acao = (row['Item Promocional'] == 'Sim') %}
+                        {# VARIÁVEIS DE CÁLCULO #}
+                        {% set val_quebra = row['Quebra_Inv'] | default(0) | int %}
+                        {% set qtd_acerto = row['Quant'] | int %}
+                        {% set qtd_venda = row['Quant_venda'] | int %}
+                        {% set qtd_faturar = row['Qtd. a Acertar'] | default(0) | int %}
+                        {% set div_original = row['Divergência Qtd.'] | int %}
+                        
+                        {# CÁLCULO DA PENDÊNCIA REAL: Acerto - (Venda + A Faturar/Quebra) #}
+                        {# Se der 0, significa que "A Faturar" (provavelmente vindo da quebra) resolveu tudo #}
+                        {% set pendencia_real = qtd_acerto - (qtd_venda + qtd_faturar) %}
+                        
+                        {# LOGICA VISUAL #}
+                        {% set row_class = '' %}
+                        {% set badge_icon = '' %}
+                        
+                        {% if val_quebra > 0 %}
+                            {% if pendencia_real <= 0 %}
+                                {# Caso 1: Quebra cobriu toda a divergência -> VERDE (User pode ignorar) #}
+                                {% set row_class = 'quebra-resolvida' %}
+                                {% set badge_icon = 'bi-check-circle-fill text-success' %}
+                            {% else %}
+                                {# Caso 2: Quebra cobriu parte (ex: Div 3, Quebra 2, Falta 1) -> AMARELO (Alerta) #}
+                                {% set row_class = 'quebra-parcial' %}
+                                {% set badge_icon = 'bi-exclamation-circle-fill text-warning' %}
+                            {% endif %}
+                        {# Se não tem quebra, mas tem divergência, é o ERRO PADRÃO (Vermelho) #}
+                        {% elif div_original > 0 %}
+                            {% set row_class = 'divergente' %}
+                        {% endif %}
+                        
+                        {# Mantém lógica do checkbox de 'conferido' se houver divergência OU quebra #}
+                        {% set show_checkbox = (div_original > 0) or (val_quebra > 0) %}
+                        {% set is_acao = (row['Item Promocional'] == 'Sim') %}
                     
-                    <tr class="{{ 'divergente' if is_div else '' }}"
+                    <tr class="{{ row_class }}"
                         data-filial="{{ row['filial'] }}"
                         data-isbn="{{ row['ISBN'] }}"
                         data-titulo="{{ row['Titulo'] | trim }}"
@@ -295,7 +344,7 @@
                         data-qtd-acao="{{ row['Quant_acao'] | int }}"
                         data-qtd-acerto="{{ row['Quant'] | int }}"
                         data-qtd-venda="{{ row['Quant_venda'] | int }}"
-                        data-divergencia="{{ row['Divergência Qtd.'] | int }}"
+                        data-divergencia="{{ div_original }}"
                         data-qtd-quebra="{{ val_quebra }}" 
                         data-vl-unit="{{ row['Vl. Unit._acerto'] | string | replace(',', '.') }}"
                         data-vl-venda="{{ row['Vl. Unit._venda'] | string | replace(',', '.') }}"
@@ -305,10 +354,10 @@
                         data-vl-quebra-bruta="{{ row['Vlr. Quebra Bruta'] | default(0) | float }}">
                         
                         <td class="text-center">
-                            {% if is_div %}
+                            {% if show_checkbox %}
                             <div class="d-flex align-items-center justify-content-center">
                                 <input type="checkbox" class="form-check-input check-box-conferido" onchange="this.nextElementSibling.classList.toggle('d-none', !this.checked)">
-                                <span class="label-conferido d-none">Conferido</span>
+                                <span class="label-conferido d-none">OK</span>
                             </div>
                             {% endif %}
                         </td>
@@ -334,16 +383,21 @@
 
                         <td class="text-end">{{ row['Quant'] | int }}</td>
                         <td class="text-end">{{ row['Quant_venda'] | int }}</td>
-                        <td class="text-end fw-bold {{ 'text-danger' if row['Divergência Qtd.'] > 0 else '' }}">
-                            {{ row['Divergência Qtd.'] | int }}
+                        <td class="text-end fw-bold {{ 'text-danger' if div_original > 0 else '' }}">
+                            {{ div_original }}
                         </td>
                         <td>{{ row['Situação Qtd.'] }}</td>
                         
                         <td class="text-end col-destaque">
-                            {% if is_div %}
-                                <input type="number" class="qty-input" min="0" max="{{ row['Divergência Qtd.'] | int }}" 
-                                       value="{{ row['Qtd. a Acertar'] | default(0) }}" 
-                                       data-filial="{{ row['filial'] }}" data-isbn="{{ row['ISBN'] }}">
+                            {% if show_checkbox %}
+                                <div class="d-flex align-items-center justify-content-end gap-1">
+                                    {% if badge_icon %}
+                                        <i class="bi {{ badge_icon }}" style="font-size: 1.1rem;"></i>
+                                    {% endif %}
+                                    <input type="number" class="qty-input" min="0" max="{{ div_original }}" 
+                                           value="{{ qtd_faturar }}" 
+                                           data-filial="{{ row['filial'] }}" data-isbn="{{ row['ISBN'] }}">
+                                </div>
                             {% elif is_acao %}
                                 <span class="fw-bold text-primary small">AÇÃO</span>
                             {% else %}
@@ -742,6 +796,10 @@
                     show = (qDiv !== 0 || qQuebra !== 0); 
                 }
                 else if (filterType === 'price') show = (parseFloat(row.dataset.vlDiv) !== 0);
+                else if (filterType === 'quebra') { // --- NOVA LOGICA DE FILTRO ---
+                    const qQuebra = parseInt(row.dataset.qtdQuebra) || 0;
+                    show = (qQuebra !== 0); 
+                }
                 else if (filterType === 'acao') show = (row.dataset.promo === 'Sim');
                 row.style.display = show ? '' : 'none';
             });

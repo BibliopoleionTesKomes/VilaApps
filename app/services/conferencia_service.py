@@ -267,8 +267,12 @@ def calcular_conferencia_padrao(df_acerto, df_venda, df_acao, isbns_promo, df_qu
     else:
         df['Quebra_Inv'] = 0; df['Vlr. Quebra Liquida'] = 0; df['Vlr. Quebra Bruta'] = 0
 
-    # Inicializa com 0 para forçar o preenchimento manual do usuário
-    df['Qtd. a Acertar'] = 0
+    # Lógica de auto-preenchimento da quebra (APENAS AQUI - CONFERÊNCIA PADRÃO)
+    df['Qtd. a Acertar'] = np.where(
+        (df['Divergência Qtd.'] > 0) & (df['Quebra_Inv'] > 0),
+        df[['Divergência Qtd.', 'Quebra_Inv']].min(axis=1),
+        0
+    ).astype(int)
     
     df['Vlr. Liq. A Acertar'] = 0.0
     df['Qtd. Final'] = 0.0
@@ -276,7 +280,7 @@ def calcular_conferencia_padrao(df_acerto, df_venda, df_acao, isbns_promo, df_qu
     
     return df
 
-def gerar_planilha_acao(df_acerto, df_acao, isbns_promo):
+def gerar_planilha_acao(df_acerto, df_acao, isbns_promo, df_quebra=None):
     if df_acerto.empty: return pd.DataFrame()
     
     df_acerto = _garantir_dataframe_seguro(df_acerto, ['filial', 'ISBN', 'Titulo'])
@@ -285,6 +289,15 @@ def gerar_planilha_acao(df_acerto, df_acao, isbns_promo):
         df[['ISBN', 'filial']] = df[['ISBN', 'filial']].astype(str)
 
     df = pd.merge(df_acerto, df_acao, on=['filial', 'ISBN'], how='left')
+    
+    if df_quebra is not None and not df_quebra.empty:
+        df_quebra = _garantir_dataframe_seguro(df_quebra, ['filial', 'ISBN'])
+        df_quebra[['ISBN', 'filial']] = df_quebra[['ISBN', 'filial']].astype(str)
+        df = pd.merge(df, df_quebra, on=['filial', 'ISBN'], how='left')
+        df['Quebra_Inv'] = pd.to_numeric(df['Quebra_Inv'], errors='coerce').fillna(0)
+    else:
+        df['Quebra_Inv'] = 0
+
     for c in ['Quant', 'Quant_acao', 'Vl. Unit._acerto', 'Desconto']:
         if c in df.columns: df[c] = pd.to_numeric(df[c], errors='coerce').fillna(0)
         else: df[c] = 0
@@ -301,7 +314,7 @@ def gerar_planilha_acao(df_acerto, df_acao, isbns_promo):
     df['Vl. Unit. Liq. Acerto'] = df['Vl. Unit._acerto'] * (1 - df['Desconto'])
     df['Vlr. Liq. Qtd. Divergência'] = df['Divergência Qtd.'] * df['Vl. Unit. Liq. Acerto']
 
-    cols_extra = ['Preco_Venda_F', 'Quant_venda', 'Quebra_Inv', 'Vlr. Quebra Liquida', 'Vlr. Quebra Bruta', 'Divergência Preço', 'Situação Preço']
+    cols_extra = ['Preco_Venda_F', 'Quant_venda', 'Vlr. Quebra Liquida', 'Vlr. Quebra Bruta', 'Divergência Preço', 'Situação Preço']
     for c in cols_extra: df[c] = 0
     
     # Inicializa com 0 (Zero) para que o usuário analise e preencha
@@ -350,14 +363,8 @@ def calcular_qtd_final_acao(df):
     # Agora: O valor digitado pelo usuário é respeitado incondicionalmente.
     
     mask_div = df_c['Divergência Qtd.'] > 0
-    
-    # Se houver divergência, soma venda + acerto manual. 
-    # Se não houver divergência (ex: Ação), soma venda + acerto manual também.
-    df_c['Qtd. Final'] = df_c['Quant_acao'] + df_c['Qtd. a Acertar']
-    
-    # Garante que não excede o total enviado (opcional, mas seguro)
-    # Se quiser liberar total, remova a linha abaixo. Por segurança, mantemos não estourar o acerto original.
-    df_c['Qtd. Final'] = df_c[['Qtd. Final', 'Quant']].min(axis=1)
+    df_c.loc[mask_div, 'Qtd. Final'] = df_c.loc[mask_div, 'Quant_acao'] + df_c.loc[mask_div, 'Qtd. a Acertar']
+    df_c.loc[~mask_div, 'Qtd. Final'] = df_c.loc[~mask_div, 'Quant']
     
     df_c['Qtd. Final'] = df_c['Qtd. Final'].clip(lower=0).astype(int)
     df_c['Vlr. Liq. A Acertar'] = df_c['Qtd. a Acertar'] * df_c['Vl. Unit._acerto'] * (1 - df_c['Desconto'])
