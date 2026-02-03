@@ -336,14 +336,28 @@ def calcular_qtd_final(df):
     return df_c
 
 def calcular_qtd_final_acao(df):
+    """
+    CORREÇÃO CRÍTICA:
+    Removi a trava .clip() que forçava a quantidade digitada a ser menor que a divergência.
+    Isso permite que o usuário digite um valor para faturar mesmo que o sistema calcule divergência zero.
+    """
     df_c = df.copy()
     cols_num = ['Quant', 'Quant_acao', 'Qtd. a Acertar', 'Vl. Unit._acerto', 'Desconto', 'Divergência Qtd.']
     for c in cols_num: df_c[c] = pd.to_numeric(df_c.get(c, 0), errors='coerce').fillna(0)
     
-    df_c['Qtd. a Acertar'] = df_c['Qtd. a Acertar'].clip(upper=df_c['Divergência Qtd.'])
+    # --- TRAVA REMOVIDA AQUI ---
+    # Antes: df_c['Qtd. a Acertar'] = df_c['Qtd. a Acertar'].clip(upper=df_c['Divergência Qtd.'])
+    # Agora: O valor digitado pelo usuário é respeitado incondicionalmente.
+    
     mask_div = df_c['Divergência Qtd.'] > 0
-    df_c.loc[mask_div, 'Qtd. Final'] = df_c.loc[mask_div, 'Quant_acao'] + df_c.loc[mask_div, 'Qtd. a Acertar']
-    df_c.loc[~mask_div, 'Qtd. Final'] = df_c.loc[~mask_div, 'Quant']
+    
+    # Se houver divergência, soma venda + acerto manual. 
+    # Se não houver divergência (ex: Ação), soma venda + acerto manual também.
+    df_c['Qtd. Final'] = df_c['Quant_acao'] + df_c['Qtd. a Acertar']
+    
+    # Garante que não excede o total enviado (opcional, mas seguro)
+    # Se quiser liberar total, remova a linha abaixo. Por segurança, mantemos não estourar o acerto original.
+    df_c['Qtd. Final'] = df_c[['Qtd. Final', 'Quant']].min(axis=1)
     
     df_c['Qtd. Final'] = df_c['Qtd. Final'].clip(lower=0).astype(int)
     df_c['Vlr. Liq. A Acertar'] = df_c['Qtd. a Acertar'] * df_c['Vl. Unit._acerto'] * (1 - df_c['Desconto'])
