@@ -248,6 +248,7 @@ def show_results():
     
     # Recupera o DataFrame original do cache (DO DISCO)
     df, forn, sum_df, has_quebra = cache_get(session['data_id'])
+    has_quebra=True #temporario pra descobrir quebra, depois tirar
     if df is None: return redirect(url_for('conferencia.index'))
     
     # Recalcula a coluna 'Qtd. a Acertar' (caso tenha lógica dinâmica)
